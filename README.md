@@ -1,6 +1,6 @@
 # README
 
-Members of the [OASIS OpenEoX TC](https://www.oasis-open.org/committees/openeox-tc/) create and manage technical content in this [TC GitHub repository](https://github.com/oasis-tcs/openeox/) as part of the TC's chartered work (the program of work and deliverables described in its [charter](https://www.oasis-open.org/committees/openeox-tc/charter.php).
+Members of the [OASIS OpenEoX TC](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openeox) create and manage technical content in this [TC GitHub repository](https://github.com/oasis-tcs/openeox/) as part of the TC's chartered work (the program of work and deliverables described in its [charter](https://www.oasis-open.org/committees/openeox/charter.php).
 
 OASIS TC GitHub repositories, as described in [GitHub Repositories for OASIS TC Members' Chartered Work](https://www.oasis-open.org/resources/tcadmin/github-repositories-for-oasis-tc-members-chartered-work), are governed by the OASIS [TC Process](https://www.oasis-open.org/policies-guidelines/tc-process), [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr), and other policies. While they make use of public GitHub repositories, these repositories are distinct from [OASIS Open Repositories](https://www.oasis-open.org/resources/open-repositories), which are used for development of open source [licensed](https://www.oasis-open.org/resources/open-repositories/licenses) content.
 
@@ -34,4 +34,4 @@ The primary deliverables of the OpenEoX TC will be:
 
 ## Contact
 
-Please send questions or comments about [OASIS TC GitHub repositories](https://www.oasis-open.org/resources/tcadmin/github-repositories-for-oasis-tc-members-chartered-work) to the [OASIS TC Administrator](mailto:tc-admin@oasis-open.org).  For questions about content in this repository, please contact the TC Chair or Co-Chairs as listed on the the <tc short name> TC's [home page](https://www.oasis-open.org/committees/openeox-tc/).
+Please send questions or comments about [OASIS TC GitHub repositories](https://www.oasis-open.org/resources/tcadmin/github-repositories-for-oasis-tc-members-chartered-work) to the [OASIS TC Administrator](mailto:tc-admin@oasis-open.org).  For questions about content in this repository, please contact the TC Chair or Co-Chairs as listed on the the <tc short name> TC's [home page](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openeox).
