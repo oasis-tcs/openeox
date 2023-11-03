@@ -11,11 +11,11 @@ including prose specification editing and secondary artifacts like meeting minut
 
 ## Contributions
 
-As stated in this repository's [CONTRIBUTING](https://github.com/oasis-tcs/<tc-repo-name>/blob/master/CONTRIBUTING.md) file, contributors to this repository must be Members of the OASIS <TC shortname> TC for any substantive contributions or change requests.  Anyone wishing to contribute to this GitHub project and [participate](https://www.oasis-open.org/join/participation-instructions) in the TC's technical activity is invited to join as an OASIS TC Member. Public feedback is also accepted, subject to the terms of the [OASIS Feedback License](https://www.oasis-open.org/policies-guidelines/ipr#appendixa). 
+As stated in this repository's [CONTRIBUTING](https://github.com/oasis-tcs/openeox/blob/master/CONTRIBUTING.md) file, contributors to this repository must be Members of the OASIS OpenEox TC for any substantive contributions or change requests.  Anyone wishing to contribute to this GitHub project and [participate](https://www.oasis-open.org/join/participation-instructions) in the TC's technical activity is invited to join as an OASIS TC Member. Public feedback is also accepted, subject to the terms of the [OASIS Feedback License](https://www.oasis-open.org/policies-guidelines/ipr#appendixa). 
 
 ## Licensing
 
-Please see the [LICENSE](https://github.com/oasis-tcs/<tc-repo-name>/blob/master/LICENSE.md) file for description of the license terms and OASIS policies applicable to the TC's work in this GitHub project. Content in this repository is intended to be part of the <tc short name> TC's permanent record of activity, visible and freely available for all to use, subject to applicable OASIS policies, as presented in the repository [LICENSE](https://github.com/oasis-tcs/<repo-abbrev>/blob/master/LICENSE.md). 
+Please see the [LICENSE](https://github.com/oasis-tcs/openeox/blob/master/LICENSE.md) file for description of the license terms and OASIS policies applicable to the TC's work in this GitHub project. Content in this repository is intended to be part of the OpenEoX TC's permanent record of activity, visible and freely available for all to use, subject to applicable OASIS policies, as presented in the repository [LICENSE](https://github.com/oasis-tcs/openeox/blob/master/LICENSE.md). 
 
 ## Further Description of this Repository
 
