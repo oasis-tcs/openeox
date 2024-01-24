@@ -1,6 +1,5 @@
 # Value Scenarios
-This directory is scenarios showing scenarios
-which show the value of some aspect of EoX.
+This directory provides scenarios that demonstrate the value of some aspects of EoX.
 
 There are two subdirectories:
 * contributor-scenarios
