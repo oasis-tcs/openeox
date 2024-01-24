@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oasis-open.org/openeox/tbd/openeox_core_json_schema.json",
+  "title": "EOL and EOS Information",
+  "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+  "type": "object",
+  "$defs": {
+    "schema_t": {
+      "title": "OpenEoX Core schema",
+      "description": "Specifies the schema the JSON object must be valid against.",
+      "type": "string",
+      "enum": [
+        "https://docs.oasis-open.org/openeox/tbd/openeox_core_json_schema.json"
+      ]
+    }
+  },
+  "required": ["$schema", "last_updated", "status"],
+  "properties": {
+    "$schema": {
+      "$ref": "#/$defs/schema_t"
+    },
+    "last_updated": {
+      "title": "Timestamp of last change",
+      "description": "Contains the RFC 3339 timestamp when the record was last updated.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "title": "List of status",
+      "description": "Contains a list of status elements.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "title": "Status",
+        "description": "Contains a single entry in the product lifecycle.",
+        "type": "object",
+        "required": ["category", "timestamp"],
+        "properties": {
+          "category": {
+            "title": "Status category",
+            "description": "Contains the category of the status",
+            "type": "string",
+            "enum": ["EndOfLife", "EndOfSupport"]
+          },
+          "timestamp": {
+            "title": "Timestamp",
+            "description": "Contains the timestamp at which the product enters the category.",
+            "type": "string",
+            "oneOf": [
+              {
+                "format": "date-time"
+              },
+              {
+                "enum": ["tba"]
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
