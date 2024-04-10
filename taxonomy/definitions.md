@@ -1,6 +1,6 @@
 # Glossary of Terms: Understanding Lifecycle Phases in Technology
 
-This document aims to clearly define key terms related to the lifecycle of software and hardware products, providing a reference for understanding various phases from sales or creation to support termination. 
+This document aims to clearly define key terms related to the lifecycle of specifications, software and hardware products, providing a reference for understanding various phases including but not limited to creation, sales, until support termination.
 
 **Note**: With open source software or hardware, there is typically no "end-of-sales".
 
