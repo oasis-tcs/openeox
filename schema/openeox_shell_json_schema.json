@@ -34,7 +34,7 @@
     },
     "required": [
         "$schema",
-        "list"
+        "statements"
     ],
     "properties": {
         "$schema": {
