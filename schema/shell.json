@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://docs.oasis-open.org/openeox/tbd/openeox_shell_json_schema.json",
+    "$id": "https://docs.oasis-open.org/openeox/tbd/schema/shell.json",
     "title": "EOL and EOS Information",
     "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
     "type": "object",
@@ -28,7 +28,7 @@
             "description": "Specifies the schema the JSON object must be valid against.",
             "type": "string",
             "enum": [
-                "https://docs.oasis-open.org/openeox/tbd/openeox_shell_json_schema.json"
+                "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
             ]
         }
     },
@@ -52,7 +52,7 @@
                 "required": ["core", "productName", "productVersion", "supplierName"],
                 "properties": {
                     "core": {
-                        "$ref": "https://docs.oasis-open.org/openeox/tbd/openeox_core_json_schema.json"
+                        "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/core.json"
                     },
                     "productName": {
                         "$ref": "#/$defs/productName_t"
