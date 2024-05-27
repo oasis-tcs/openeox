@@ -1,0 +1,30 @@
+       title: "EOL and EOS Information"
+     package: "https://docs.oasis-open.org/openeox/tbd/schema/core"
+ description: "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX."
+     exports: ["Core"]
+      config: {"$TypeName": "^[$A-Z][-_$A-Za-z0-9]{0,63}$"}
+
+Core = Record
+   1 schema           Schema_core
+   2 last_updated     Timestamp                    // Timestamp of last change
+   3 status           Status [1..*]                // Contains a list of status elements.
+
+Schema_core = Enumerated                           // Specifies the schema the JSON object must be valid against.
+   1 https://docs.oasis-open.org/openeox/tbd/schema/core
+
+Timestamp = String                                 // Contains the RFC 3339 timestamp
+
+Status = Record                                    // Contains a single entry in the product lifecycle.
+   1 category         Category                     // Contains the category of the status
+   2 timestamp        StatusTimestamp              // Contains the timestamp at which the product enters the category.
+
+Category = Enumerated
+   1 EndOfLife
+   2 EndOfSupport
+
+StatusTimestamp = Choice
+   1 timestamp        Timestamp
+   2 timeValues       TimeValues
+
+TimeValues = Enumerated
+   1 tba

@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.oasis-open.org/openeox/tbd/schema/core",
+  "title": "EOL and EOS Information",
+  "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+  "$ref": "#/definitions/Core",
+  "definitions": {
+    "Core": {
+      "title": "Core",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "last_updated",
+        "status"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "schema": {
+          "$ref": "#/definitions/Schema_core",
+          "description": ""
+        },
+        "last_updated": {
+          "$ref": "#/definitions/Timestamp",
+          "description": "Timestamp of last change"
+        },
+        "status": {
+          "type": "array",
+          "description": "Contains a list of status elements.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/Status",
+            "description": "Contains a list of status elements."
+          }
+        }
+      }
+    },
+    "Schema_core": {
+      "title": "Schema core",
+      "type": "string",
+      "description": "Specifies the schema the JSON object must be valid against.",
+      "enum": [
+        "https://docs.oasis-open.org/openeox/tbd/schema/core"
+      ]
+    },
+    "Timestamp": {
+      "title": "Timestamp",
+      "type": "string",
+      "description": "Contains the RFC 3339 timestamp",
+      "maxLength": 255
+    },
+    "Status": {
+      "title": "Status",
+      "type": "object",
+      "description": "Contains a single entry in the product lifecycle.",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "timestamp"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/Category",
+          "description": "Contains the category of the status"
+        },
+        "timestamp": {
+          "$ref": "#/definitions/StatusTimestamp",
+          "description": "Contains the timestamp at which the product enters the category."
+        }
+      }
+    },
+    "Category": {
+      "title": "Category",
+      "type": "string",
+      "enum": [
+        "EndOfLife",
+        "EndOfSupport"
+      ]
+    },
+    "StatusTimestamp": {
+      "title": "StatusTimestamp",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1,
+      "properties": {
+        "timestamp": {
+          "$ref": "#/definitions/Timestamp",
+          "description": ""
+        },
+        "timeValues": {
+          "$ref": "#/definitions/TimeValues",
+          "description": ""
+        }
+      }
+    },
+    "TimeValues": {
+      "title": "TimeValues",
+      "type": "string",
+      "enum": [
+        "tba"
+      ]
+    }
+  }
+}

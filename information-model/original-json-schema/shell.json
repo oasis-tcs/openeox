@@ -1,0 +1,70 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://docs.oasis-open.org/openeox/tbd/schema/shell.json",
+    "title": "EOL and EOS Information",
+    "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+    "type": "object",
+    "$defs": {
+        "productName_t": {
+            "title": "Product name",
+            "description": "Contains the name of the product.",
+            "type": "string",
+            "minLength": 1
+          },
+          "productVersion_t": {
+            "title": "Product version",
+            "description": "Contains the version or release of the product.",
+            "type": "string",
+            "minLength": 1
+          },
+        "supplierName_t": {
+            "title": "Supplier name",
+            "description": "Contains the name of the supplier or service provider.",
+            "type": "string",
+            "minLength": 1
+        },
+        "schema_t": {
+            "title": "OpenEoX Shell schema",
+            "description": "Specifies the schema the JSON object must be valid against.",
+            "type": "string",
+            "enum": [
+                "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
+            ]
+        }
+    },
+    "required": [
+        "$schema",
+        "statements"
+    ],
+    "properties": {
+        "$schema": {
+            "$ref": "#/$defs/schema_t"
+        },
+        "statements": {
+            "title": "List of statements",
+            "description": "Contains a list of statement elements.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Statement",
+                "description": "Statements contain the single OpenEoX entries.",
+                "type": "object",
+                "required": ["core", "productName", "productVersion", "supplierName"],
+                "properties": {
+                    "core": {
+                        "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/core.json"
+                    },
+                    "productName": {
+                        "$ref": "#/$defs/productName_t"
+                    },
+                    "productVersion": {
+                        "$ref": "#/$defs/productVersion_t"
+                    },
+                    "supplierName": {
+                        "$ref": "#/$defs/supplierName_t"
+                    }
+                }
+            }
+        }
+    }
+}

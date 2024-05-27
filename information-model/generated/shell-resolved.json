@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.oasis-open.org/openeox/tbd/schema/shell",
+  "title": "EOL and EOS Information",
+  "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+  "$ref": "#/definitions/Shell",
+  "definitions": {
+    "Shell": {
+      "title": "Shell",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "statements"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "schema": {
+          "$ref": "#/definitions/Schema_shell",
+          "description": ""
+        },
+        "statements": {
+          "type": "array",
+          "description": "Contains a list of statement elements.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/Statement",
+            "description": "Contains a list of statement elements."
+          }
+        }
+      }
+    },
+    "Statement": {
+      "title": "Statement",
+      "type": "object",
+      "description": "Statements contain the single OpenEoX entries.",
+      "additionalProperties": false,
+      "required": [
+        "core",
+        "productName",
+        "productVersion",
+        "supplierName"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "core": {
+          "$ref": "#/definitions/Core",
+          "description": ""
+        },
+        "productName": {
+          "$ref": "#/definitions/ProductName_t",
+          "description": ""
+        },
+        "productVersion": {
+          "$ref": "#/definitions/ProductVersion_t",
+          "description": ""
+        },
+        "supplierName": {
+          "$ref": "#/definitions/SupplierName_t",
+          "description": ""
+        }
+      }
+    },
+    "Core": {
+      "title": "Core",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "last_updated",
+        "status"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "schema": {
+          "$ref": "#/definitions/Schema_core",
+          "description": ""
+        },
+        "last_updated": {
+          "$ref": "#/definitions/Timestamp",
+          "description": "Timestamp of last change"
+        },
+        "status": {
+          "type": "array",
+          "description": "Contains a list of status elements.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/Status",
+            "description": "Contains a list of status elements."
+          }
+        }
+      }
+    },
+    "Status": {
+      "title": "Status",
+      "type": "object",
+      "description": "Contains a single entry in the product lifecycle.",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "timestamp"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/Category",
+          "description": "Contains the category of the status"
+        },
+        "timestamp": {
+          "$ref": "#/definitions/StatusTimestamp",
+          "description": "Contains the timestamp at which the product enters the category."
+        }
+      }
+    },
+    "StatusTimestamp": {
+      "title": "StatusTimestamp",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "maxProperties": 1,
+      "properties": {
+        "timestamp": {
+          "$ref": "#/definitions/Timestamp",
+          "description": ""
+        },
+        "timeValues": {
+          "$ref": "#/definitions/TimeValues",
+          "description": ""
+        }
+      }
+    },
+    "Schema_core": {
+      "title": "Schema core",
+      "type": "string",
+      "description": "Specifies the schema the JSON object must be valid against.",
+      "enum": [
+        "https://docs.oasis-open.org/openeox/tbd/schema/core"
+      ]
+    },
+    "Schema_shell": {
+      "title": "Schema shell",
+      "type": "string",
+      "description": "Specifies the schema the JSON object must be valid against.",
+      "enum": [
+        "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
+      ]
+    },
+    "Category": {
+      "title": "Category",
+      "type": "string",
+      "enum": [
+        "EndOfLife",
+        "EndOfSupport"
+      ]
+    },
+    "TimeValues": {
+      "title": "TimeValues",
+      "type": "string",
+      "enum": [
+        "tba"
+      ]
+    },
+    "Timestamp": {
+      "title": "Timestamp",
+      "type": "string",
+      "description": "Contains the RFC 3339 timestamp",
+      "maxLength": 255
+    },
+    "ProductName_t": {
+      "title": "ProductName t",
+      "type": "string",
+      "description": "Contains the name of the product.",
+      "maxLength": 255
+    },
+    "ProductVersion_t": {
+      "title": "ProductVersion t",
+      "type": "string",
+      "description": "Contains the version or release of the product.",
+      "maxLength": 255
+    },
+    "SupplierName_t": {
+      "title": "SupplierName t",
+      "type": "string",
+      "description": "Contains the name of the supplier or service provider.",
+      "maxLength": 255
+    }
+  }
+}

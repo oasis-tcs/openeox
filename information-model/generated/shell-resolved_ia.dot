@@ -1,0 +1,88 @@
+# package: https://docs.oasis-open.org/openeox/tbd/schema/shell
+# title: EOL and EOS Information
+# description: A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.
+# exports: ['Shell']
+# config: {'$TypeName': '^[$A-Z][-_$A-Za-z0-9]{0,63}$'}
+
+digraph G {
+  graph [fontname=Arial, fontsize=12];
+  node [fontname=Arial, fontsize=8, shape=plain, style=filled, fillcolor=lightskyblue1];
+  edge [fontname=Arial, fontsize=7, arrowsize=0.5, labelangle=45.0, labeldistance=0.9];
+  bgcolor="transparent";
+
+n0 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Shell : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 schema : Schema_shell  </td></tr>
+  <tr><td align="left">  2 statements : Statement [1..*]  </td></tr>
+</table>>]
+
+n1 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Statement : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 core : Core  </td></tr>
+  <tr><td align="left">  2 productName : ProductName_t  </td></tr>
+  <tr><td align="left">  3 productVersion : ProductVersion_t  </td></tr>
+  <tr><td align="left">  4 supplierName : SupplierName_t  </td></tr>
+</table>>]
+
+n2 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Core : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 schema : Schema_core  </td></tr>
+  <tr><td align="left">  2 last_updated : Timestamp  </td></tr>
+  <tr><td align="left">  3 status : Status [1..*]  </td></tr>
+</table>>]
+
+n3 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Status : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 category : Category  </td></tr>
+  <tr><td align="left">  2 timestamp : StatusTimestamp  </td></tr>
+</table>>]
+
+n4 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  StatusTimestamp : Choice  </b></td></tr><hr/>
+  <tr><td align="left">  1 timestamp : Timestamp  </td></tr>
+  <tr><td align="left">  2 timeValues : TimeValues  </td></tr>
+</table>>]
+
+n5 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Schema_core : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  1 https://docs.oasis-open.org/openeox/tbd/schema/core  </td></tr>
+</table>>]
+
+n6 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Schema_shell : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  1 https://docs.oasis-open.org/openeox/tbd/schema/shell.json  </td></tr>
+</table>>]
+
+n7 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Category : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  1 EndOfLife  </td></tr>
+  <tr><td align="left">  2 EndOfSupport  </td></tr>
+</table>>]
+
+n8 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  TimeValues : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  1 tba  </td></tr>
+</table>>]
+
+n9 [label=<<b>Timestamp : String</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+n10 [label=<<b>ProductName_t : String</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+n11 [label=<<b>ProductVersion_t : String</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+n12 [label=<<b>SupplierName_t : String</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+  n0 -> n6 [label=schema, headlabel="1", taillabel="1"]
+  n0 -> n1 [label=statements, headlabel="1..*", taillabel="1"]
+  n1 -> n2 [label=core, headlabel="1", taillabel="1"]
+  n1 -> n10 [label=productName, headlabel="1", taillabel="1"]
+  n1 -> n11 [label=productVersion, headlabel="1", taillabel="1"]
+  n1 -> n12 [label=supplierName, headlabel="1", taillabel="1"]
+  n2 -> n5 [label=schema, headlabel="1", taillabel="1"]
+  n2 -> n9 [label=last_updated, headlabel="1", taillabel="1"]
+  n2 -> n3 [label=status, headlabel="1..*", taillabel="1"]
+  n3 -> n7 [label=category, headlabel="1", taillabel="1"]
+  n3 -> n4 [label=timestamp, headlabel="1", taillabel="1"]
+  n4 -> n9 [label=timestamp, headlabel="1", taillabel="1"]
+  n4 -> n8 [label=timeValues, headlabel="1", taillabel="1"]
+}
