@@ -7,3 +7,4 @@ They are:
 - [Compare products of different vendors](Scenario-03.md)
 - [Check producer compliance](Scenario-04.md)
 - [Audit compliance](Scenario-05.md)
+- [Track lifecycle state](Scenario-06.md)
