@@ -8,3 +8,4 @@ They are:
 - [Check producer compliance](Scenario-04.md)
 - [Audit compliance](Scenario-05.md)
 - [Track lifecycle state](Scenario-06.md)
+- [Trigger replacement notifications](Scenario-07.md)
