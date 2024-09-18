@@ -89,3 +89,8 @@ Affected_Products
 
 ```
 
+A few examples of Dell End of Security Support documents which contain subset of the data that would need to be supported by a machine-readable format.
+- https://www.dell.com/support/kbdoc/en-us/000224135/cloudlink-security-support-policy-and-security-update-release-schedule-for-supported-versions
+- https://www.dell.com/support/kbdoc/en-ca/000222799/security-support-policy-for-dell-docking-stations-with-an-integrated-ethernet-port
+- https://www.dell.com/support/kbdoc/en-ca/000128563/end-of-life-end-of-support-policy-for-dell-data-security
+ 
