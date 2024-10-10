@@ -1,0 +1,38 @@
+{
+  "info": {
+    "package": "https://docs.oasis-open.org/openeox/tbd/schema/shell",
+    "title": "EOL and EOS Information",
+    "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+    "namespaces": {
+      "c": "https://docs.oasis-open.org/openeox/tbd/schema/core"
+    },
+    "exports": ["Shell"],
+    "config": {
+      "$TypeName": "^[$A-Z][-_$A-Za-z0-9]{0,63}$"
+    }
+  },
+
+  "types": [
+    ["Shell", "Record", [], "", [
+      [1, "schema", "Schema_shell", [], ""],
+      [2, "statements", "Statement", ["]0"], "Contains a list of statement elements."]
+    ]],
+
+    ["Schema_shell", "Enumerated", [], "Specifies the schema the JSON object must be valid against.", [
+      [1, "https://docs.oasis-open.org/openeox/tbd/schema/shell.json", ""]
+    ]],
+
+    ["Statement", "Record", [], "Statements contain the single OpenEoX entries.", [
+      [1, "core", "c:Core", [], ""],
+      [2, "productName", "ProductName_t", [], ""],
+      [3, "productVersion", "ProductVersion_t", [], ""],
+      [4, "supplierName", "SupplierName_t", [], ""]
+    ]],
+
+    ["ProductName_t", "String", [], "Contains the name of the product.", []],
+
+    ["ProductVersion_t", "String", [], "Contains the version or release of the product.", []],
+
+    ["SupplierName_t", "String", [], "Contains the name of the supplier or service provider.", []]
+  ]
+}

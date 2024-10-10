@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.oasis-open.org/openeox/tbd/schema/shell",
+  "title": "EOL and EOS Information",
+  "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+  "$ref": "#/definitions/Shell",
+  "definitions": {
+    "Shell": {
+      "title": "Shell",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "statements"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "schema": {
+          "$ref": "#/definitions/Schema_shell",
+          "description": ""
+        },
+        "statements": {
+          "type": "array",
+          "description": "Contains a list of statement elements.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/Statement",
+            "description": "Contains a list of statement elements."
+          }
+        }
+      }
+    },
+    "Schema_shell": {
+      "title": "Schema shell",
+      "type": "string",
+      "description": "Specifies the schema the JSON object must be valid against.",
+      "enum": [
+        "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
+      ]
+    },
+    "Statement": {
+      "title": "Statement",
+      "type": "object",
+      "description": "Statements contain the single OpenEoX entries.",
+      "additionalProperties": false,
+      "required": [
+        "core",
+        "productName",
+        "productVersion",
+        "supplierName"
+      ],
+      "maxProperties": 100,
+      "properties": {
+        "core": {
+          "$ref": "#/imports/c/Core",
+          "description": ""
+        },
+        "productName": {
+          "$ref": "#/definitions/ProductName_t",
+          "description": ""
+        },
+        "productVersion": {
+          "$ref": "#/definitions/ProductVersion_t",
+          "description": ""
+        },
+        "supplierName": {
+          "$ref": "#/definitions/SupplierName_t",
+          "description": ""
+        }
+      }
+    },
+    "ProductName_t": {
+      "title": "ProductName t",
+      "type": "string",
+      "description": "Contains the name of the product.",
+      "maxLength": 255
+    },
+    "ProductVersion_t": {
+      "title": "ProductVersion t",
+      "type": "string",
+      "description": "Contains the version or release of the product.",
+      "maxLength": 255
+    },
+    "SupplierName_t": {
+      "title": "SupplierName t",
+      "type": "string",
+      "description": "Contains the name of the supplier or service provider.",
+      "maxLength": 255
+    }
+  },
+  "imports": {
+    "c": {
+      "Core": {}
+    }
+  }
+}
