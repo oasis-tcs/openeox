@@ -1,3 +1,0 @@
-# End of Sales Definition
-
-The End-of-Sales (EoS) indicates the last day when a particular product (or the product version/release) may be ordered by customers from vendor sales channels. After this date, the product or specific version or edition of the software or license is no longer for sale. However, there might be other sources where the product is still available. Once the product reaches the End-of-Sales (EoS) lifecycle stage, it may still be supported by the vendor, based on the official or dedicated vendor lifecycle model for this product, for existing customers. The implications for existing customers regarding license renewals, updates, upgrades to newer versions or ongoing technical support can vary depending on the vendor's specific policies.
