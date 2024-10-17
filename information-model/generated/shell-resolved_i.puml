@@ -1,0 +1,39 @@
+' package: https://docs.oasis-open.org/openeox/tbd/schema/shell
+' title: EOL and EOS Information
+' description: A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.
+' exports: ['Shell']
+' config: {'$TypeName': '^[$A-Z][-_$A-Za-z0-9]{0,63}$'}
+
+@startuml
+  ' !theme spacelab
+  hide empty members
+  hide circle
+
+class "Shell : Record" as n0
+  n0 : 1 schema : {field} Schema_shell
+  n0 : 2 statements : {field} Statement [1..*]
+
+class "Statement : Record" as n1
+  n1 : 1 core : {field} Core
+  n1 : 2 productName : {field} ProductName_t
+  n1 : 3 productVersion : {field} ProductVersion_t
+  n1 : 4 supplierName : {field} SupplierName_t
+
+class "Core : Record" as n2
+  n2 : 1 schema : {field} Schema_core
+  n2 : 2 last_updated : {field} Timestamp
+  n2 : 3 status : {field} Status [1..*]
+
+class "Status : Record" as n3
+  n3 : 1 category : {field} Category
+  n3 : 2 timestamp : {field} StatusTimestamp
+
+class "StatusTimestamp : Choice" as n4
+  n4 : 1 timestamp : {field} Timestamp
+  n4 : 2 timeValues : {field} TimeValues
+
+  n0 "1" --> "1..*" n1 : statements
+  n1 "1" --> "1" n2 : core
+  n2 "1" --> "1..*" n3 : status
+  n3 "1" --> "1" n4 : timestamp
+@enduml
