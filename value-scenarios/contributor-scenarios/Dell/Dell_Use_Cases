@@ -1,0 +1,17 @@
+Companies including our own may speak in terms of End of Sale, End of Standard Support, End of Security Support/Life, End of Life, End of Service Life. These terms might not match the use case of other vendors.
+A few examples of Dell End of Security Support documents which contain subset of the data that would need to be supported:
+•	https://www.dell.com/support/kbdoc/en-us/000224135/cloudlink-security-support-policy-and-security-update-release-schedule-for-supported-versions
+•	https://www.dell.com/support/kbdoc/en-ca/000222799/security-support-policy-for-dell-docking-stations-with-an-integrated-ethernet-port
+•	https://www.dell.com/support/kbdoc/en-ca/000128563/end-of-life-end-of-support-policy-for-dell-data-security
+
+Use Cases for Implementation
+Dell_001: As a vendor, want to communicate to customers when they will stop receiving vulnerability remediations for a given product / product version under regular support
+Dell_002: As a consumer of a Dell product, want to know when I will stop receiving vulnerability remediations for all my product(s) under regular support
+Dell_003: As a vendor, want to remain compliant with EU CRA legislation and ensure security support period is available to customers at point of sale
+Dell_004: As a consumer, want to be able to programmatically retrieve the following information:
+•	Product Name
+•	Product Version
+•	End of Life
+•	End of Support
+•	End of Security Support
+Dell_005: As a vendor who has adopted CSAF, want to be able to integrate the EoX data with existing CSAF / VEX datasets.
