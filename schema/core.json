@@ -44,6 +44,11 @@
       "description": "Indicates the last day when the particular product is officially supported in any way by the vendor.",
       "$ref": "#/$defs/timestamp_t"
     },
+    "end_of_sales": {
+      "title": "End of Sales",
+      "description": "Indicates the last day when a particular product may be ordered by customers from vendor sales channels.",
+      "$ref": "#/$defs/timestamp_t"
+    },
     "end_of_security_support": {
       "title": "End of Security Support",
       "description": "Indicates the last day when the vendor has committed to providing security remediations for the particular product.",
@@ -55,5 +60,6 @@
       "type": "string",
       "format": "date-time"
     }
-  }
+  },
+  "unevaluatedProperties": false
 }
