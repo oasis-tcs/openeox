@@ -12,9 +12,29 @@
       "enum": [
         "https://docs.oasis-open.org/openeox/tbd/schema/core.json"
       ]
+    },
+    "timestamp_t": {
+      "title": "Timestamp",
+      "description": "Contains the timestamp at which the product reaches the specified stage.",
+      "type": "string",
+      "oneOf": [
+        {
+          "format": "date-time"
+        },
+        {
+          "enum": [
+            "tba"
+          ]
+        }
+      ]
     }
   },
-  "required": ["$schema", "last_updated", "status"],
+  "required": [
+    "$schema",
+    "last_updated",
+    "end_of_life",
+    "end_of_security_support"
+  ],
   "properties": {
     "$schema": {
       "$ref": "#/$defs/schema_t"
@@ -25,39 +45,15 @@
       "type": "string",
       "format": "date-time"
     },
-    "status": {
-      "title": "List of status",
-      "description": "Contains a list of status elements.",
-      "type": "array",
-      "minItems": 1,
-      "uniqueItems": true,
-      "items": {
-        "title": "Status",
-        "description": "Contains a single entry in the product lifecycle.",
-        "type": "object",
-        "required": ["category", "timestamp"],
-        "properties": {
-          "category": {
-            "title": "Status category",
-            "description": "Contains the category of the status",
-            "type": "string",
-            "enum": ["EndOfLife", "EndOfSupport"]
-          },
-          "timestamp": {
-            "title": "Timestamp",
-            "description": "Contains the timestamp at which the product enters the category.",
-            "type": "string",
-            "oneOf": [
-              {
-                "format": "date-time"
-              },
-              {
-                "enum": ["tba"]
-              }
-            ]
-          }
-        }
-      }
+    "end_of_life": {
+      "title": "End of Life",
+      "description": "Indicates the last day when the particular product is officially supported in any way by the vendor.",
+      "$ref": "#/$defs/timestamp_t"
+    },
+    "end_of_security_support": {
+      "title": "End of Security Support",
+      "description": "Indicates the last day when the vendor has committed to providing security remediations for the particular product.",
+      "$ref": "#/$defs/timestamp_t"
     }
   }
 }
