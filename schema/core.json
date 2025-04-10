@@ -31,19 +31,13 @@
   },
   "required": [
     "$schema",
-    "last_updated",
     "end_of_life",
-    "end_of_security_support"
+    "end_of_security_support",
+    "last_updated"
   ],
   "properties": {
     "$schema": {
       "$ref": "#/$defs/schema_t"
-    },
-    "last_updated": {
-      "title": "Timestamp of last change",
-      "description": "Contains the RFC 3339 timestamp when the record was last updated.",
-      "type": "string",
-      "format": "date-time"
     },
     "end_of_life": {
       "title": "End of Life",
@@ -54,6 +48,12 @@
       "title": "End of Security Support",
       "description": "Indicates the last day when the vendor has committed to providing security remediations for the particular product.",
       "$ref": "#/$defs/timestamp_t"
+    },
+    "last_updated": {
+      "title": "Timestamp of last change",
+      "description": "Contains the RFC 3339 timestamp when the record was last updated.",
+      "type": "string",
+      "format": "date-time"
     }
   }
 }
