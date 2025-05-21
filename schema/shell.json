@@ -5,13 +5,13 @@
     "description": "The schema for representing OpenEoX statements as standalone information.",
     "type": "object",
     "$defs": {
-        "productName_t": {
+        "product_name_t": {
             "title": "Product name",
             "description": "Contains the name of the product.",
             "type": "string",
             "minLength": 1
         },
-            "productVersion_t": {
+        "product_version_t": {
             "title": "Product version",
             "description": "Contains the version or release of the product.",
             "type": "string",
@@ -25,7 +25,7 @@
                 "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
             ]
         },
-        "vendorName_t": {
+        "vendor_name_t": {
             "title": "Vendor name",
             "description": "Contains the name of the vendor or service provider.",
             "type": "string",
@@ -49,18 +49,23 @@
                 "title": "Statement",
                 "description": "Statements contain the single OpenEoX entries.",
                 "type": "object",
-                "required": ["core", "productName", "productVersion", "vendorName"],
+                "required": [
+                    "core",
+                    "product_name",
+                    "product_version",
+                     "vendor_name"
+                ],
                 "properties": {
                     "core": {
                         "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/core.json"
                     },
-                    "productName": {
+                    "product_name": {
                         "$ref": "#/$defs/productName_t"
                     },
-                    "productVersion": {
+                    "product_version": {
                         "$ref": "#/$defs/productVersion_t"
                     },
-                    "vendorName": {
+                    "vendor_name": {
                         "$ref": "#/$defs/vendorName_t"
                     }
                 }
