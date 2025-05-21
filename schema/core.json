@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://docs.oasis-open.org/openeox/tbd/schema/core.json",
-  "title": "EOL and EOS Information",
-  "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+  "title": "EoX Information - Core",
+  "description": "The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX.",
   "type": "object",
   "$defs": {
     "schema_t": {
@@ -40,17 +40,17 @@
       "$ref": "#/$defs/schema_t"
     },
     "end_of_life": {
-      "title": "End of Life",
+      "title": "End-of-Life",
       "description": "Indicates the last day when the particular product is officially supported in any way by the vendor.",
       "$ref": "#/$defs/timestamp_t"
     },
     "end_of_sales": {
-      "title": "End of Sales",
+      "title": "End-of-Sales",
       "description": "Indicates the last day when a particular product may be ordered by customers from vendor sales channels.",
       "$ref": "#/$defs/timestamp_t"
     },
     "end_of_security_support": {
-      "title": "End of Security Support",
+      "title": "End-of-Security-Support",
       "description": "Indicates the last day when the vendor has committed to providing security remediations for the particular product.",
       "$ref": "#/$defs/timestamp_t"
     },

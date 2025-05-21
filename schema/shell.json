@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://docs.oasis-open.org/openeox/tbd/schema/shell.json",
-    "title": "EOL and EOS Information",
-    "description": "A draft schema for representing End-of-Life (EOL) and End-of-Support (EOS) information in OpenEoX.",
+    "title": "EoX Information - Shell",
+    "description": "The schema for representing OpenEoX statements as standalone information.",
     "type": "object",
     "$defs": {
         "productName_t": {
@@ -66,5 +66,6 @@
                 }
             }
         }
-    }
+    },
+    "additionalProperties": false
 }
