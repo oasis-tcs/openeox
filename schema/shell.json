@@ -5,17 +5,13 @@
     "description": "The schema for representing OpenEoX statements as standalone information.",
     "type": "object",
     "$defs": {
-        "product_name_t": {
-            "title": "Product name",
-            "description": "Contains the name of the product.",
-            "type": "string",
-            "minLength": 1
-        },
-        "product_version_t": {
-            "title": "Product version",
-            "description": "Contains the version or release of the product.",
-            "type": "string",
-            "minLength": 1
+        "product_t": {
+            "title": "Product",
+            "description": "Contains the product object as defined by the specifing schema.",
+            "oneOf": [
+                {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware.json"},
+                {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_software.json"}
+            ]
         },
         "schema_t": {
             "title": "OpenEoX Shell schema",
@@ -24,12 +20,6 @@
             "enum": [
                 "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
             ]
-        },
-        "vendor_name_t": {
-            "title": "Vendor name",
-            "description": "Contains the name of the vendor or service provider.",
-            "type": "string",
-            "minLength": 1
         }
     },
     "required": [
@@ -51,26 +41,18 @@
                 "type": "object",
                 "required": [
                     "core",
-                    "product_name",
-                    "product_version",
-                     "vendor_name"
+                    "product"
                 ],
                 "properties": {
                     "core": {
                         "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/core.json"
                     },
-                    "product_name": {
-                        "$ref": "#/$defs/productName_t"
-                    },
-                    "product_version": {
-                        "$ref": "#/$defs/productVersion_t"
-                    },
-                    "vendor_name": {
-                        "$ref": "#/$defs/vendorName_t"
+                    "product": {
+                        "$ref": "#/$defs/product_t"
                     }
                 }
             }
         }
     },
-    "additionalProperties": false
+    "unevaluatedProperties": false
 }
