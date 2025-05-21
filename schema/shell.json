@@ -50,6 +50,9 @@
                     },
                     "product": {
                         "$ref": "#/$defs/product_t"
+                    },
+                    "product_identification_helper": {
+                        "$ref": "https://docs.oasis-open.org/csaf/csaf/v2.1/csaf_json_schema.json#/$defs/full_product_name_t/properties/product_identification_helper"
                     }
                 }
             }
