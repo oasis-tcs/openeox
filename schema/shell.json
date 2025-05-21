@@ -10,6 +10,7 @@
             "description": "Contains the product object as defined by the specifing schema.",
             "oneOf": [
                 {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware.json"},
+                {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware_with_software.json"},
                 {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_software.json"}
             ]
         },
