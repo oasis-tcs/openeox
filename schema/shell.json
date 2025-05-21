@@ -10,16 +10,10 @@
             "description": "Contains the name of the product.",
             "type": "string",
             "minLength": 1
-          },
-          "productVersion_t": {
+        },
+            "productVersion_t": {
             "title": "Product version",
             "description": "Contains the version or release of the product.",
-            "type": "string",
-            "minLength": 1
-          },
-        "vendorName_t": {
-            "title": "Vendor name",
-            "description": "Contains the name of the vendor or service provider.",
             "type": "string",
             "minLength": 1
         },
@@ -30,6 +24,12 @@
             "enum": [
                 "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
             ]
+        },
+        "vendorName_t": {
+            "title": "Vendor name",
+            "description": "Contains the name of the vendor or service provider.",
+            "type": "string",
+            "minLength": 1
         }
     },
     "required": [
