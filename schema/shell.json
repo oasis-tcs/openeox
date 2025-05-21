@@ -1,0 +1,63 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://docs.oasis-open.org/openeox/tbd/schema/shell.json",
+    "title": "EoX Information - Shell",
+    "description": "The schema for representing OpenEoX statements as standalone information.",
+    "type": "object",
+    "$defs": {
+        "product_t": {
+            "title": "Product",
+            "description": "Contains the product object as defined by the specifing schema.",
+            "oneOf": [
+                {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware.json"},
+                {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware_with_software.json"},
+                {"$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_software.json"}
+            ]
+        },
+        "schema_t": {
+            "title": "OpenEoX Shell schema",
+            "description": "Specifies the schema the JSON object must be valid against.",
+            "type": "string",
+            "enum": [
+                "https://docs.oasis-open.org/openeox/tbd/schema/shell.json"
+            ]
+        }
+    },
+    "required": [
+        "$schema",
+        "statements"
+    ],
+    "properties": {
+        "$schema": {
+            "$ref": "#/$defs/schema_t"
+        },
+        "statements": {
+            "title": "List of statements",
+            "description": "Contains a list of statement elements.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Statement",
+                "description": "Statements contain the single OpenEoX entries.",
+                "type": "object",
+                "required": [
+                    "core",
+                    "product",
+                    "product_identification_helper"
+                ],
+                "properties": {
+                    "core": {
+                        "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/core.json"
+                    },
+                    "product": {
+                        "$ref": "#/$defs/product_t"
+                    },
+                    "product_identification_helper": {
+                        "$ref": "https://docs.oasis-open.org/csaf/csaf/v2.1/csaf_json_schema.json#/$defs/full_product_name_t/properties/product_identification_helper"
+                    }
+                }
+            }
+        }
+    },
+    "unevaluatedProperties": false
+}
