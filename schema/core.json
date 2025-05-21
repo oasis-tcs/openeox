@@ -15,7 +15,7 @@
     },
     "timestamp_t": {
       "title": "Timestamp",
-      "description": "Contains the timestamp at which the product reaches the specified stage.",
+      "description": "Contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.",
       "type": "string",
       "oneOf": [
         {
