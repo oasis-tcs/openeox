@@ -42,7 +42,8 @@
                 "type": "object",
                 "required": [
                     "core",
-                    "product"
+                    "product",
+                    "product_identification_helper"
                 ],
                 "properties": {
                     "core": {
