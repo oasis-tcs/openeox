@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://docs.oasis-open.org/openeox/tbd/schema/shell_csaf.json",
+    "title": "EoX Information - Shell with CSAF",
+    "description": "The schema for representing OpenEoX statements as standalone information with a CSAF product tree.",
+    "type": "object",
+    "$defs": {
+        "schema_t": {
+            "title": "OpenEoX Shell CSAF schema",
+            "description": "Specifies the schema the JSON object must be valid against.",
+            "type": "string",
+            "enum": [
+                "https://docs.oasis-open.org/openeox/tbd/schema/shell_csaf.json"
+            ]
+        }
+    },
+    "required": [
+        "$schema",
+        "product_tree",
+        "statements"
+    ],
+    "properties": {
+        "$schema": {
+            "$ref": "#/$defs/schema_t"
+        },
+        "product_tree": {
+            "title": "Reduced CSAF product tree",
+            "description": "Is a container for all fully qualified product names that can be referenced in the statements.",
+            "type": "object",
+            "required": [
+                "branches"
+            ],
+            "properties": {
+                "branches": {
+                    "$ref": "https://docs.oasis-open.org/csaf/csaf/v2.1/schema/csaf.json#/properties/product_tree/properties/branches"
+                },
+                "product_groups": {
+                    "$ref": "https://docs.oasis-open.org/csaf/csaf/v2.1/schema/csaf.json#/properties/product_tree/properties/product_groups"
+                },
+                "relationships": {
+                    "$ref": "https://docs.oasis-open.org/csaf/csaf/v2.1/schema/csaf.json#/properties/product_tree/properties/relationships"
+                }
+            }
+        },
+        "statements": {
+            "title": "List of statements",
+            "description": "Contains a list of statement elements.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Statement",
+                "description": "Contain the single OpenEoX entry applicable to a product or product group.",
+                "type": "object",
+                "minItems": 2,
+                "required": [
+                    "core"
+                ],
+                "properties": {
+                    "core": {
+                        "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/core.json"
+                    },
+                    "group_ids": {
+                        "$ref": "https://docs.oasis-open.org/csaf/csaf/v2.1/schema/csaf.json#/$defs/product_groups_t"
+                    },
+                    "product_ids": {
+                        "$ref": "https://docs.oasis-open.org/csaf/csaf/v2.1/schema/csaf.json#/$defs/product_t"
+                    }
+                }
+            }
+        }
+    },
+    "unevaluatedProperties": false
+}
