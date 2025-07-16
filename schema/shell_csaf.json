@@ -51,7 +51,7 @@
                 "title": "Statement",
                 "description": "Contain the single OpenEoX entry applicable to a product or product group.",
                 "type": "object",
-                "minItems": 2,
+                "minProperties": 2,
                 "required": [
                     "core"
                 ],
