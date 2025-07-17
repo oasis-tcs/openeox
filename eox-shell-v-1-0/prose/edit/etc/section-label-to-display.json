@@ -1,0 +1,14 @@
+{
+  "Please do not edit manually!": "Instead, call 'make invert-sections' inside the clone-root/eox-shell-v-1-0/prose/edit folder.",
+  "acknowledgments": "C",
+  "conformance": "3",
+  "informative-references": "A.2",
+  "introduction": "1",
+  "normative-references": "A.1",
+  "notices": "E",
+  "overview": "2",
+  "references": "A",
+  "revision-history": "D",
+  "safety-security-and-data-protection": "B",
+  "typographical-conventions": "1.1"
+}

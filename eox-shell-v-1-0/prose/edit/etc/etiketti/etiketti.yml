@@ -1,0 +1,25 @@
+---
+label:
+  prefix: MSIP_Label_191e0ef5-16de-48bd-b086-0b184ea0551a_
+  site-id: 739cf378-7656-4da5-97bf-cb22b98d2cfd
+  action-id: a8f7e485-c7fc-4a19-a41f-960c96ba26bf
+  approvals-yml-name: approvals.yml
+  metadata-yml-name: metadata.yml
+  bookmatter-tex-name: bookmatter.tex
+  document-tex-name: document.tex
+  driver-tex-name: driver.tex
+  metadata-tex-name: metadata.tex
+  publisher-tex-name: publisher.tex
+  setup-tex-name: setup.tex
+  this-tex-name: this.tex
+  classification: Public
+  creator:
+  - Jautau White, Stefan Hagen, and Thomas Schmidt
+  keywords:
+    - EOL
+    - EOS
+    - EOX
+    - OpenEOX
+  subject: OASIS OpenEOX TC
+  title: OpenEOX Shell Schema Version 1.0
+
