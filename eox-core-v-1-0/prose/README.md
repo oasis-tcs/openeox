@@ -15,6 +15,6 @@ instead of the specific idioms mixed in for ease of use in specific reading tool
 The `share/eox-core-v1.0-draft.md` file is generated from the source files below `edit/src/` as collected per `edit/etc/bind.txt` through
 the `edit/bin/volatile.py` script.
 
-To generate the Markdown version and the HTML user facing delivery item simply call make inside the edit folder.
+To generate the Markdown version and the HTML user facing delivery item simply call `make` inside the edit folder.
 
 To generate the PDF (experimental) file, call make render-pdf in the edit folder.
