@@ -2,7 +2,7 @@
 
 This place offers access to the editable sources of the v1.0 EOX-CORE specification (to be).
 
-In the `share` folder there are the user facing delivery items that offer layout and navigation
+In the `share` folder, there are the user facing delivery items that offer layout and navigation
 optimized for online viewing per
 
 - a typical web interface of a version control server (like Codeberg, GitHub, GitLab, or SourceHut) - the Markdown file
