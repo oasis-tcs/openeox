@@ -1,0 +1,151 @@
+%% first titlepage (book front matter)
+\pdfbookmark[startatroot,bold]{OpenEOX Core Schema Version 1.0}{doctitle}
+\pdfbookmark[section]{Frontmatter}{status}
+\mbox{}\vskip -2em
+\includegraphics{\theChosenTitlePageLogo}
+\vskip 1em
+\hrule
+\section*{OpenEOX Core Schema Version 1.0}\label{eox-core-schema-version-1.0}
+
+\subsection*{Committee Specification Draft
+01/WD}\label{committee-specification-draft-01}
+
+\subsection*{16 Jul 2025}\label{july-2025}
+
+\paragraph*{This stage:}\label{this-stage}
+
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.md}{https://docs.oasis-open.org/openeox/eox-core/v2.1/csd01/eox-core-v1.0-csd01.md}
+(Authoritative)\\
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v2.1/csd01/eox-core-v1.0-csd01.html}\\
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.pdf}{https://docs.oasis-open.org/openeox/eox-core/v2.1/csd01/eox-core-v1.0-csd01.pdf}
+
+\paragraph*{Previous stage:}\label{previous-stage}
+
+N/A
+
+\paragraph*{Latest stage:}\label{latest-stage}
+
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md}{https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.md}
+(Authoritative)\\
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html}\\
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf}
+
+\paragraph*{Technical Committee:}\label{technical-committee}
+
+\href{https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa}{OASIS OpenEOX TC}
+
+\paragraph*{Chair:}\label{chair}
+
+Justin Murphy (justin.murphy@cisa.dhs.gov),
+\href{https://www.cisa.gov}{DHS Cybersecurity and Infrastructure Security Agency (CISA)} \\
+Omar Santos (osantos@cisco.com),
+\href{https://cisco.com/}{Cisco Systems} \\
+
+\paragraph*{Editors:}\label{editors}
+
+Jautau White (jaywhite@microsoft.com),
+\href{https://microsoft.com/}{Microsoft Corporation}\\
+Stefan Hagen (stefan@hagen.link),
+\href{https://stefan-hagen.website/}{Individual}\\
+Thomas Schmidt (thomas.schmidt@bsi.bund.de),
+\href{https://www.bsi.bund.de/}{Federal Office for Information Security
+(BSI) Germany}
+
+\paragraph*{Additional artifacts:}\label{additional-artifacts}
+
+This prose specification is one component of a Work Product that also
+includes:
+
+\begin{itemize}
+\tightlist
+\item
+  EOX Core JSON schema:
+  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json}.\\
+  Latest stage:
+  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}.
+\end{itemize}
+
+\paragraph*{Related work:}\label{related-work}
+
+This specification replaces or supersedes:
+
+n/a
+
+\paragraph*{Declared JSON namespaces:}\label{declared-json-namespaces}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}
+\end{itemize}
+
+\paragraph*{Abstract:}\label{abstract}
+
+The OpenEoX Core Schema defines the core schema for the OpenEOX unified machine-readable approach to
+managing and sharing End-of-Life (EOL) and End-of-Support (EOS) information for commercial and open source software and hardware.
+
+\paragraph*{Status:}\label{status}
+
+This document was last revised or approved by the membership of OASIS on
+the above date. The level of approval is also listed above. Check the
+``Latest stage'' location noted above for possible later revisions of
+this document. Any other numbered Versions and other technical work
+produced by the Technical Committee (TC) are listed at
+https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa.
+
+TC members should send comments on this specification to the TC's email list.
+Any individual may submit comments by following the instructions listed at 
+https://groups.oasis-open.org/communities/community-home?CommunityKey=c9295ed5-b5f9-4a51-8893-018f5aa7fc09.
+
+This specification is provided under the
+\href{https://www.oasis-open.org/policies-guidelines/ipr/\#Non-Assertion-Mode}{Non-Assertion}
+Mode of the
+\href{https://www.oasis-open.org/policies-guidelines/ipr/}{OASIS IPR
+Policy}, the mode chosen when the Technical Committee was established.
+For information on whether any patents have been disclosed that may be
+essential to implementing this specification, and any offers of patent
+licensing terms, please refer to the Intellectual Property Rights
+section of the TC's web page
+(https://www.oasis-open.org/committees/openeox/ipr.php).
+
+Note that any machine-readable content
+(\href{https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/\#wpComponentsCompLang}{Computer
+Language Definitions}) declared Normative for this Work Product is
+provided in separate plain text files. In the event of a discrepancy
+between any such plain text file and display content in the Work
+Product's prose narrative document(s), the content in the separate plain
+text file prevails.
+
+\paragraph*{Key words:}\label{key-words}
+
+The key words ``MUST'', ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHALL
+NOT'', ``SHOULD'', ``SHOULD NOT'', ``RECOMMENDED'', ``NOT RECOMMENDED'',
+``MAY'', and ``OPTIONAL'' in this document are to be interpreted as
+described in BCP 14 {[}\hyperref[RFC2119]{RFC2119}{]} and
+{[}\hyperref[RFC8174]{RFC8174}{]} when, and only when, they appear in
+all capitals, as shown here.
+
+\paragraph*{Citation format:}\label{citation-format}
+
+When referencing this specification the following citation format should
+be used:
+
+\textbf{{[}EOX-Core-v1.0{]}}
+
+\emph{OpenEOX Core Schema Version 1.0}. Edited by jautau WHite, Stefan
+Hagen, and Thomas Schmidt. 16 July 2025. OASIS Committee Specification
+Draft 01.
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.htmll}.
+Latest stage: \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0-csd01.html}.
+
+\paragraph*{Notices}\label{notices-bookmatter}
+
+Copyright 2025. All Rights Reserved.
+
+Distributed under the terms of the OASIS \href{https://www.oasis-open.org/policies-guidelines/ipr/}{IPR Policy}.
+
+The name ``OASIS'' is a trademark of \href{https://www.oasis-open.org/}{OASIS},
+the owner and developer of this specification, and should be used only to refer to the organization and its official outputs.
+
+For complete copyright information please see the full Notices section in an Appendix \hyperref[notices]{below}.
+
