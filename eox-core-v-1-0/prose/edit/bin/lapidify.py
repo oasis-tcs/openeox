@@ -111,7 +111,7 @@ LABEL = 'label'
 TOC = 'toc'
 
 CITE_COSMETICS_TEMPLATE = '**\\[**<span id="$label$" class="anchor"></span>**$code$\\]** $text$'
-CITATION_SOURCES = ('introduction-03-normative-references.md', 'introduction-04-informative-references.md')
+CITATION_SOURCES = ('references.md')
 GLOSSARY_SOURCES = ('introduction-02-terminology-glossary.md',)
 
 # Type declarations:
