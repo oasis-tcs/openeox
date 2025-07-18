@@ -17,4 +17,4 @@ the `edit/bin/volatile.py` script.
 
 To generate the Markdown version and the HTML user facing delivery item simply call `make` inside the edit folder.
 
-To generate the PDF (experimental) file, call make render-pdf in the edit folder.
+To generate the PDF (experimental) file, call `make render-pdf` in the edit folder.
