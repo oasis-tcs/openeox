@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware_with_software.json",
+    "title": "EoX Information - Product Hardware with Software",
+    "description": "The schema for representing a hardware product.",
+    "type": "object",
+    "$defs": {
+        "schema_t": {
+            "title": "OpenEoX Product Hardware with Software schema",
+            "description": "Specifies the schema the JSON object must be valid against.",
+            "type": "string",
+            "enum": [
+                "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware_with_software.json"
+            ]
+        }
+    },
+    "required": [
+        "$schema",
+        "hardware",
+        "software"
+    ],
+    "properties": {
+        "$schema": {
+            "$ref": "#/$defs/schema_t"
+        },
+        "hardware": {
+            "title": "Hardware",
+            "description": "Contains the information to identify the hardware.",
+            "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware.json"
+        },
+        "software": {
+            "title": "Hardware",
+            "description": "Contains the information to identify the software that is delivered together with the hardware.",
+            "$ref": "https://docs.oasis-open.org/openeox/tbd/schema/product_software.json"
+        }
+    },
+    "additionalProperties": false
+}

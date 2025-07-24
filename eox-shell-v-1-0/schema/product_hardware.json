@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware.json",
+    "title": "EoX Information - Product Hardware",
+    "description": "The schema for representing a hardware product.",
+    "type": "object",
+    "$defs": {
+        "product_name_t": {
+            "title": "Product name",
+            "description": "Contains the name of the product.",
+            "type": "string",
+            "minLength": 1
+        },
+        "product_version_t": {
+            "title": "Product version",
+            "description": "Contains the version or release of the product.",
+            "type": "string",
+            "minLength": 1
+        },
+        "schema_t": {
+            "title": "OpenEoX Product Hardware schema",
+            "description": "Specifies the schema the JSON object must be valid against.",
+            "type": "string",
+            "enum": [
+                "https://docs.oasis-open.org/openeox/tbd/schema/product_hardware.json"
+            ]
+        },
+        "vendor_name_t": {
+            "title": "Vendor name",
+            "description": "Contains the name of the vendor or service provider.",
+            "type": "string",
+            "minLength": 1
+        }
+    },
+    "required": [
+        "$schema",
+        "product_name",
+        "product_version",
+        "vendor_name"
+    ],
+    "properties": {
+        "$schema": {
+            "$ref": "#/$defs/schema_t"
+        },
+        "product_name": {
+            "$ref": "#/$defs/productName_t"
+        },
+        "product_version": {
+            "$ref": "#/$defs/productVersion_t"
+        },
+        "vendor_name": {
+            "$ref": "#/$defs/vendorName_t"
+        }
+    },
+    "additionalProperties": false
+}
