@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://docs.oasis-open.org/openeox/eox-core/tbd/schema/meta.json",
   "$id": "https://docs.oasis-open.org/openeox/tbd/schema/core.json",
   "title": "EoX Information - Core",
   "description": "The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX.",
