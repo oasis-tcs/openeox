@@ -3,6 +3,7 @@ introduction-00.md
 introduction-01-typographical-conventions.md
 overview.md
 design-considerations-00.md
+design-considerations-01-construction-principles.md
 conformance.md
 references.md
 safety-security-and-data-protection.md
