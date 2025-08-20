@@ -5,6 +5,7 @@ overview.md
 design-considerations-00.md
 design-considerations-01-construction-principles.md
 design-considerations-02-format-validation.md
+design-considerations-03-date-time.md
 conformance.md
 references.md
 safety-security-and-data-protection.md
