@@ -7,7 +7,7 @@
 
 ## Committee Specification Draft 01
 
-## 16 July 2025
+## 20 August 2025
 
 #### This stage:
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.md (Authoritative) \
