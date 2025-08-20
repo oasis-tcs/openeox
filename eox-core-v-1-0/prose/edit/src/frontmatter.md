@@ -39,6 +39,8 @@ This prose specification is one component of a Work Product that also includes:
 
 * OpenEOX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json.
+* OpenEOX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
+Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json.
 
 #### Related work:
 This specification is related to
@@ -48,6 +50,7 @@ This specification is related to
 #### Declared JSON namespaces:
 
 * [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json)
+* [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json)
 
 
 #### Abstract:
