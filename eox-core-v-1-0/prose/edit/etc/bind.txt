@@ -7,6 +7,7 @@ design-considerations-01-construction-principles.md
 design-considerations-02-format-validation.md
 design-considerations-03-date-time.md
 schema-elements-00.md
+schema-elements-01-definitions.md
 conformance.md
 references.md
 safety-security-and-data-protection.md
