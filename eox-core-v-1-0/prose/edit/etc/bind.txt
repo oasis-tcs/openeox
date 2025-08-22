@@ -13,6 +13,7 @@ schema-elements-02-props-01-schema.md
 schema-elements-02-props-02-end-of-life.md
 schema-elements-02-props-02-end-of-sales.md
 schema-elements-02-props-02-end-of-security-support.md
+schema-elements-02-props-02-last-updated.md
 conformance.md
 references.md
 safety-security-and-data-protection.md
