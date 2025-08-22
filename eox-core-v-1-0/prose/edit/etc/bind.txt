@@ -8,6 +8,7 @@ design-considerations-02-format-validation.md
 design-considerations-03-date-time.md
 schema-elements-00.md
 schema-elements-01-definitions.md
+schema-elements-02-properties.md
 conformance.md
 references.md
 safety-security-and-data-protection.md
