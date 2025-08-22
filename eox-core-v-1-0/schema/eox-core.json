@@ -5,16 +5,8 @@
   "description": "The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX.",
   "type": "object",
   "$defs": {
-    "schema_t": {
-      "title": "OpenEoX Core schema",
-      "description": "Specifies the schema the JSON object must be valid against.",
-      "type": "string",
-      "enum": [
-        "https://docs.oasis-open.org/openeox/v1.0/schema/core.json"
-      ]
-    },
-    "timestamp_t": {
-      "title": "Timestamp",
+    "eox_timestamp_t": {
+      "title": "EoX Timestamp",
       "description": "Contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.",
       "type": "string",
       "oneOf": [
@@ -22,9 +14,7 @@
           "format": "date-time"
         },
         {
-          "enum": [
-            "tba"
-          ]
+          "const": "tba"
         }
       ]
     }
@@ -37,22 +27,25 @@
   ],
   "properties": {
     "$schema": {
-      "$ref": "#/$defs/schema_t"
+      "title": "OpenEoX Core Schema",
+      "description": "Specifies the schema the JSON object must be valid against.",
+      "type": "string",
+      "const": "https://docs.oasis-open.org/openeox/v1.0/schema/core.json"
     },
     "end_of_life": {
       "title": "End-of-Life",
       "description": "Indicates the last day when the particular product is officially supported in any way by the vendor.",
-      "$ref": "#/$defs/timestamp_t"
+      "$ref": "#/$defs/eox_timestamp_t"
     },
     "end_of_sales": {
       "title": "End-of-Sales",
       "description": "Indicates the last day when a particular product may be ordered by customers from vendor sales channels.",
-      "$ref": "#/$defs/timestamp_t"
+      "$ref": "#/$defs/eox_timestamp_t"
     },
     "end_of_security_support": {
       "title": "End-of-Security-Support",
       "description": "Indicates the last day when the vendor has committed to providing security remediations for the particular product.",
-      "$ref": "#/$defs/timestamp_t"
+      "$ref": "#/$defs/eox_timestamp_t"
     },
     "last_updated": {
       "title": "Timestamp of last change",
