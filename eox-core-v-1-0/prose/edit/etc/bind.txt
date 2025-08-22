@@ -10,6 +10,7 @@ schema-elements-00.md
 schema-elements-01-definitions.md
 schema-elements-02-properties.md
 schema-elements-02-props-01-schema.md
+schema-elements-02-props-02-end-of-life.md
 conformance.md
 references.md
 safety-security-and-data-protection.md
