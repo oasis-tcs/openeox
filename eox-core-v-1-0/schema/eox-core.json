@@ -9,9 +9,7 @@
       "title": "OpenEoX Core schema",
       "description": "Specifies the schema the JSON object must be valid against.",
       "type": "string",
-      "enum": [
-        "https://docs.oasis-open.org/openeox/v1.0/schema/core.json"
-      ]
+      "const": "https://docs.oasis-open.org/openeox/v1.0/schema/core.json"
     },
     "timestamp_t": {
       "title": "Timestamp",
@@ -22,9 +20,7 @@
           "format": "date-time"
         },
         {
-          "enum": [
-            "tba"
-          ]
+          "const": "tba"
         }
       ]
     }
