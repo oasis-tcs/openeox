@@ -1,19 +1,19 @@
 ## Definitions
 
 The definitions (`$defs`) introduce the following domain specific types into the OpenEoX language:
-Timestamp (`timestamp_t`).
+EoX Timestamp (`eox_timestamp_t`).
 
 ```
   "$defs": {
-    "timestamp_t": {
+    "eox_timestamp_t": {
       // ...
     }
   },
 ```
 
-### Timestamp Type
+### EoX Timestamp Type
 
-The Timestamp (`timestamp_t`) type of value type `string` contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.
+The EoX Timestamp (`eox_timestamp_t`) type of value type `string` contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.
 
 ```
     "oneOf": [
