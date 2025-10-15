@@ -12,6 +12,7 @@ Contains the fundamental EoX lifecycle information elements and is designed to b
 The Core schema establishes one part of the essential data elements required for any EoX statement:
 
 **Required fields:**
+
 - **end_of_life**: The definitive timestamp when all vendor support ceases
 - **end_of_security_support**: The critical timestamp when security remediation commitments end
 - **last_updated**: RFC 3339 timestamp tracking for data freshness and change management
@@ -36,6 +37,7 @@ Addresses the distribution, discovery, and consumption of OpenEoX Core and Shell
 ### Standardization and Interoperability
 
 The OpenEoX addresses the current industry challenge where vendors use proprietary, inconsistent formats for communicating lifecycle information. By establishing a common JSON-based format, OpenEoX enables:
+
 - Automated processing and integration across vendor ecosystems
 - Consistent interpretation of lifecycle stages regardless of vendor
 - Reduced operational overhead in managing multi-vendor environments
@@ -44,6 +46,7 @@ The OpenEoX addresses the current industry challenge where vendors use proprieta
 ### Security-First Approach
 
 Recognition that End-of-Security-Support represents a critical inflection point for infrastructure security has influenced the OpenEoX design. The mandatory **end_of_security_support** field ensures that security lifecycle information is always available, supporting:
+
 - Proactive vulnerability management planning
 - Compliance with security frameworks requiring current support status
 - Risk assessment for critical infrastructure components
@@ -53,7 +56,8 @@ Recognition that End-of-Security-Support represents a critical inflection point 
 
 ### Vendor Perspectives
 
-The OpenEoX enables vendors to:
+**The OpenEoX enables vendors to:**
+
 - Standardize EoX communication across all product lines and channels
 - Reduce support inquiries related to lifecycle confusion
 - Demonstrate proactive customer stewardship through clear lifecycle communication
@@ -62,7 +66,8 @@ The OpenEoX enables vendors to:
 
 ### Consumer Perspectives
 
-Organizations consuming EoX information benefit through:
+**Organizations consuming EoX information benefit through:**
+
 - Automated discovery of lifecycle status across multi-vendor environments
 - Proactive planning for product refreshes and migrations
 - Enhanced compliance reporting for security and regulatory frameworks
