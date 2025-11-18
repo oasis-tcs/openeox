@@ -1,39 +1,45 @@
 ## Construction Principles
 
-OpenEoX Core information bound to products is created through the application of
-a well-defined schema, typically by product managers or vendors making lifecycle decisions.
-The focused and purposefully minimal schema contains standardized dates, while the product context is provided through neighbor specifications such as OpenEoX Shell, OpenEoX API, integration into the product itself (e.g., via SNMP calls), or integration into other standards (e.g., CSAF). This separation serves the goal of providing actionable, structured, and validated lifecycle information targeting a high degree of automation.
+The OpenEoX Core schema describes a map for well-known named transition events (like end-of-support) to dates.
+Producers use this mapping to bind products to this minimal set of life cycle events.
 
-The format chosen is JSON Schema Draft 2020-12 which allows validation and delegation to sub-schema providers.
-The latter aligns well with separation of concerns and enables the OpenEoX Core schema to be imported and referenced
-by other standards, specifications, and product-specific implementations.
+Other schemata provide models to add the data needed for product identification. Examples for, such schemata are:
 
-Technically, the use of JSON Schema Draft 2020-12 allows validation and proof of model conformance through
-established schema-based validation of the declared OpenEoX Core information.
+- OpenEoX Shell
+- OpenEoX API
+- integration into the product itself (for example via SNMP calls)
+- integration into other standards (for example CSAF)
 
-The OpenEoX Core schema structures is defined at https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json
+This separation provides actionable, structured, and validated lifecycle information
+with the goal to offer complete automation.
+
+The chosen data format and version "JSON Schema Draft 2020-12" \[JSc2020] allows
+validation and delegation to providers of referenced schemata.
+The latter enables separation of concerns as it allows other standards, specifications,
+and product-specific implementations to import and reference the OpenEoX Core schema.
+
+The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json>
 
 The schema elements and their expected usage patterns are detailed in subsequent sections.
-The linking and integration with product identification schemas relies on importing the OpenEoX Core schema
-appropriately and thus implies that semantic validation (e.g. ensuring lifecycle dates are logically ordered)
-is to be ensured by the producer and consumer of documents containing OpenEoX statements.
-Such semantic validation is out of scope for the core schema specification.
 
-The OpenEoX Core schema is designed to be self-contained with minimal external dependencies,
-utilizing only:
+Linking and integration of the OpenEoX Core schema with product identification schema information may lead to inconsistencies.
+The producers of OpenEoX information items have to ensure the intended semantics.
+For example, that lifecycle dates are ordered logically.
+Semantic validation is out of scope for this OpenEoX Core specification.
 
-* **RFC 3339**: Date and time format specification for timestamp representation
-* **JSON Schema Draft 2020-12**: Schema validation and structure definition
+The OpenEoX Core schema is designed to be self-contained with minimal external dependencies, utilizing only:
 
-When suppliers do not provide specific lifecycle dates, the corresponding fields should be omitted entirely rather than using placeholder values. This approach maintains data type integrity and avoids complications in the information model.
+\[RFC3339]
+:    Date and time format specification for timestamp representation
 
-Even though not all - especially the referenced - JSON schemas prohibit specifically additional properties and custom keywords,
-it is strongly recommended not to use them.
-Suggestions for new fields or values SHOULD be made through issues in the TC's GitHub.
-The JSON schemas defined in this standard do not allow the use of additional properties and custom keywords.
+\[JSc2020]
+:    Schema validation and structure definition
 
-> The standardized fields allow for scalability across different issuing parties and dramatically reduce the human effort and
-> need for dedicated parsers as well as other tools on the side of the consuming parties.
+OpenEoX information items SHOULD only contain members where the value is a life cycle date.
+The use of placeholders or `null` values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
 
-The schema elements and their detailed specifications are provided in the subsequent Schema Elements section.
-Additional conventions for timestamp handling and lifecycle stage interpretations are detailed in the Additional Conventions section.
+> In combination, these to preceding requirements maximize clarity and simplify automation.
+<!-- TODO(sthagen): Where and when did we decide on date references, like v25 will be end-of-support when v27 is GA? -->
+
+OpenEoX information items SHOULD not contain additional properties in themselves or as part of
+referenced schema instances.
