@@ -1,16 +1,17 @@
 ## Construction Principles
 
-The OpenEoX Core schema describes a map for well-known named transition events (like end-of-support) to dates.
+The OpenEoX Core schema describes a map for well-known named transition events (like end-of-life) to dates.
 Producers use this mapping to bind products to this minimal set of life cycle events.
 
-Other schemata provide models to add the data needed for product identification. Examples for, such schemata are:
+Other schemata provide models to add the data needed for product identification.
+Examples for such schemata are:
 
 - OpenEoX Shell
 - OpenEoX API
 - integration into the product itself (for example via SNMP calls)
 - integration into other standards (for example CSAF)
 
-This separation provides actionable, structured, and validated lifecycle information
+This separation provides actionable, structured, and validated life cycle information
 with the goal to offer complete automation.
 
 The chosen data format and version "JSON Schema Draft 2020-12" \[JSc2020] allows
@@ -35,11 +36,11 @@ The OpenEoX Core schema is designed to be self-contained with minimal external d
 \[JSc2020]
 :    Schema validation and structure definition
 
-OpenEoX information items SHOULD only contain members where the value is a life cycle date.
+OpenEoX information items SHOULD only contain members where the value is an OpenEoX life cycle date.
 The use of placeholders or `null` values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
 
 > In combination, these to preceding requirements maximize clarity and simplify automation.
 <!-- TODO(sthagen): Where and when did we decide on date references, like v25 will be end-of-support when v27 is GA? -->
 
-OpenEoX information items SHOULD not contain additional properties in themselves or as part of
+OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of
 referenced schema instances.
