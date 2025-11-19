@@ -13,6 +13,7 @@ Informative Comments:
 This document defines requirements for the file format and for certain software components that interact with it.
 The entities ("conformance targets") for which this document defines requirements are:
 
+* **OpenEoX Core Consumer**: A program that reads and interprets OpenEoX Core Information.
 * **OpenEoX Core Information**: An EoX information in the format defined by this document.
 * **OpenEoX Core Producer**: A program which emits output in the OpenEoX Core format.
 
@@ -32,5 +33,13 @@ A program satisfies the "OpenEoX Core Producer" conformance profile if the progr
 * produces output in the OpenEoX Core format, according to the conformance profile "OpenEoX Core Information".
 * satisfies those normative requirements in section [sec](#schema-elements) and
   [sec](#safety-security-and-data-protection-considerations) that are designated as applying to OpenEoX Producers.
+
+### Conformance Clause 3: OpenEoX Core Consumer
+
+A processor satisfies the "OpenEoX Core Consumer" conformance profile if the processor:
+
+* reads OpenEoX Core Information and interprets them according to the semantics defined in section [sec](#schema-elements).
+* satisfies those normative requirements in section [sec](#schema-elements) and
+  [sec](#safety-security-and-data-protection-considerations) that are designated as applying to OpenEoX Consumers.
 
 -------
