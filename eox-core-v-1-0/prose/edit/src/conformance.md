@@ -14,6 +14,7 @@ This document defines requirements for the file format and for certain software 
 The entities ("conformance targets") for which this document defines requirements are:
 
 * **OpenEoX Core Information**: An EoX information in the format defined by this document.
+* **OpenEoX Core Producer**: A program which emits output in the OpenEoX Core format.
 
 ### Conformance Clause 1: OpenEoX Core Information
 
@@ -23,5 +24,13 @@ A text file or data stream satisfies the "OpenEoX Core Information" conformance 
 * conforms to the syntax and semantics defined in section [sec](#date-and-time).
 * conforms to the syntax and semantics defined in section [sec](#schema-elements).
 * does not fail any mandatory test defined in section [sec](#mandatory-tests).
+
+### Conformance Clause 2: OpenEoX Core Producer
+
+A program satisfies the "OpenEoX Core Producer" conformance profile if the program:
+
+* produces output in the OpenEoX Core format, according to the conformance profile "OpenEoX Core Information".
+* satisfies those normative requirements in section [sec](#schema-elements) and
+  [sec](#safety-security-and-data-protection-considerations) that are designated as applying to OpenEoX Producers.
 
 -------
