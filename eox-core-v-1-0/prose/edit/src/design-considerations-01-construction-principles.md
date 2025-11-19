@@ -14,7 +14,7 @@ Examples for such schemata are:
 This separation provides actionable, structured, and validated life cycle information
 with the goal to offer complete automation.
 
-The chosen data format and version "JSON Schema Draft 2020-12" \[JSc2020] allows
+The chosen data format and version "JSON Schema Draft 2020-12" [cite](#JSON-Schema-Core) allows
 validation and delegation to providers of referenced schemata.
 The latter enables separation of concerns as it allows other standards, specifications,
 and product-specific implementations to import and reference the OpenEoX Core schema.
@@ -30,10 +30,10 @@ Semantic validation is out of scope for this OpenEoX Core specification.
 
 The OpenEoX Core schema is designed to be self-contained with minimal external dependencies, utilizing only:
 
-\[RFC3339]
+[cite](#RFC3339)
 :    Date and time format specification for timestamp representation
 
-\[JSc2020]
+[cite](#JSON-Schema-Core)
 :    Schema validation and structure definition
 
 OpenEoX information items SHOULD only contain members where the value is an OpenEoX life cycle date.
