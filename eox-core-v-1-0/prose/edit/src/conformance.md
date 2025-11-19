@@ -25,6 +25,7 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Library with Full Validation**: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Full Validator".
 * **OpenEoX Core Differ**: A program that compares OpenEoX Core Information and calculates the changes.
 * **OpenEoX Core Comparator**: A program that compares OpenEoX Core Information and returns the newer one.
+* **OpenEoX Core Sorter**: A program that sorts OpenEoX Core Information from newest to oldest or vice versa.
 
 ### Conformance Clause 1: OpenEoX Core Information
 
@@ -171,5 +172,15 @@ A program satisfies the "OpenEoX Core Comparator" conformance profile if the pro
   * `a` if `a["last_updated"] > b["last_updated"]`
 
 A OpenEoX Core Comparator MAY choose to make that information also available in other data formats.
+
+### Conformance Clause 13: OpenEoX Core Sorter
+
+A program satisfies the "OpenEoX Core Sorter" conformance profile if the program:
+
+* satisfies the "OpenEoX Core Consumer" conformance profile.
+* provide a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value descending (default).
+* provide a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value ascending.
+
+A OpenEoX Core Sorter MAY choose to make that information also available in other data formats.
 
 -------
