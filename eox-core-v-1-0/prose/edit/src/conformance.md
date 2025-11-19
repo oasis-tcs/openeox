@@ -24,6 +24,7 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Library with Extended Validation**: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Extended Validator".
 * **OpenEoX Core Library with Full Validation**: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Full Validator".
 * **OpenEoX Core Differ**: A program that compares OpenEoX Core Information and calculates the changes.
+* **OpenEoX Core Comparator**: A program that compares OpenEoX Core Information and returns the newer one.
 
 ### Conformance Clause 1: OpenEoX Core Information
 
@@ -105,7 +106,7 @@ A library satisfies the "OpenEoX Core Library" conformance profile if the librar
 The library MAY implement an option to retrieve the keys unsorted.
 
 ### Conformance Clause 8: OpenEoX Core Library with Basic Validation
-
+-1
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
 
 * satisfies the "OpenEoX Core Library" conformance profile.
@@ -146,7 +147,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validat
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Full Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Full Validator" part and does not enforce its presence.
 
-### Conformance Clause 10: OpenEoX Core Differ
+### Conformance Clause 11: OpenEoX Core Differ
 
 A program satisfies the "OpenEoX Core Differ" conformance profile if the program:
 
@@ -154,5 +155,21 @@ A program satisfies the "OpenEoX Core Differ" conformance profile if the program
 * calculates the difference between two OpenEoX Core Information JSON Objects and presents it as JSON Diff.
 
 A OpenEoX Core Differ MAY choose to make that information also available in other data formats.
+
+### Conformance Clause 12: OpenEoX Core Comparator
+
+A program satisfies the "OpenEoX Core Comparator" conformance profile if the program:
+
+* satisfies the "OpenEoX Core Consumer" conformance profile.
+* provide a function to compares two OpenEoX Core Information Objects `a` and `b` based on their `last_updated` value and returns:
+  * `-1` if `a["last_updated"] < b["last_updated"]`
+  * `0` if `a["last_updated"] = b["last_updated"]`
+  * `1` if `a["last_updated"] > b["last_updated"]`
+* provide a function to compares two OpenEoX Core Information Objects `a` and `b` based on their `last_updated` value and returns:
+  * `b` if `a["last_updated"] < b["last_updated"]`
+  * `a` if `a["last_updated"] = b["last_updated"]`
+  * `a` if `a["last_updated"] > b["last_updated"]`
+
+A OpenEoX Core Comparator MAY choose to make that information also available in other data formats.
 
 -------
