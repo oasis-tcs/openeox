@@ -26,6 +26,7 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Differ**: A program that compares OpenEoX Core Information and calculates the changes.
 * **OpenEoX Core Comparator**: A program that compares OpenEoX Core Information and returns the newer one.
 * **OpenEoX Core Sorter**: A program that sorts OpenEoX Core Information from newest to oldest or vice versa.
+* **OpenEoX Core Merger**: A program that combines OpenEoX Core Information.
 
 ### Conformance Clause 1: OpenEoX Core Information
 
@@ -162,11 +163,11 @@ A OpenEoX Core Differ MAY choose to make that information also available in othe
 A program satisfies the "OpenEoX Core Comparator" conformance profile if the program:
 
 * satisfies the "OpenEoX Core Consumer" conformance profile.
-* provide a function to compares two OpenEoX Core Information Objects `a` and `b` based on their `last_updated` value and returns:
+* provides a function to compares two OpenEoX Core Information Objects `a` and `b` based on their `last_updated` value and returns:
   * `-1` if `a["last_updated"] < b["last_updated"]`
   * `0` if `a["last_updated"] = b["last_updated"]`
   * `1` if `a["last_updated"] > b["last_updated"]`
-* provide a function to compares two OpenEoX Core Information Objects `a` and `b` based on their `last_updated` value and returns:
+* provides a function to compares two OpenEoX Core Information Objects `a` and `b` based on their `last_updated` value and returns:
   * `b` if `a["last_updated"] < b["last_updated"]`
   * `a` if `a["last_updated"] = b["last_updated"]`
   * `a` if `a["last_updated"] > b["last_updated"]`
@@ -178,9 +179,36 @@ A OpenEoX Core Comparator MAY choose to make that information also available in 
 A program satisfies the "OpenEoX Core Sorter" conformance profile if the program:
 
 * satisfies the "OpenEoX Core Consumer" conformance profile.
-* provide a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value descending (default).
-* provide a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value ascending.
+* provides a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value descending (default).
+* provides a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value ascending.
 
 A OpenEoX Core Sorter MAY choose to make that information also available in other data formats.
+
+### Conformance Clause 14: OpenEoX Core Merger
+
+A program satisfies the "OpenEoX Core Merger" conformance profile if the program:
+
+* satisfies the "OpenEoX Core Consumer" conformance profile.
+* provides a function to merge OpenEoX Core Information into a single OpenEoX Core Information Object by overwriting all old values
+  of keys present in newer OpenEoX Core Information Objects with the values from newer objects.
+
+  > This includes the value of `last_updated`.
+
+* provides a function to merge OpenEoX Core Information into a single OpenEoX Core Information Object by overwriting all old values
+  of keys present in newer OpenEoX Core Information Objects with the values from newer objects but treating `tba` as not present during
+  the overwrite process.
+
+  > This includes the value of `last_updated`.
+  > Ignoring `tba` while overwriting ensures that a date value is never overwritten by `tba`.
+
+* provides a function to merge OpenEoX Core Information into a single OpenEoX Core Information Object by taking the newest as base
+  and iterative appending keys that are not present in that object while iterating over the OpenEoX Core Information from newest to oldest.
+
+  > As `last_updated` is a required field, it is not changed during the process.
+  > Values of keys that are inserted are never changed in that process.
+
+A program MAY implement other algorithms than defined here, if and only if, the results are guaranteed to be the same.
+
+A OpenEoX Core Merger MAY choose to make that information also available in other data formats.
 
 -------
