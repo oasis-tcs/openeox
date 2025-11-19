@@ -27,3 +27,5 @@ The EoX Timestamp (`eox_timestamp_t`) type of value type `string` contains the t
 ```
 
 Therefore, it MUST either be a `string` with format `date-time` or use the constant value `tba`.
+
+OpenEoX Consumer MUST treat `tba` as a date greater than the maximum date.
