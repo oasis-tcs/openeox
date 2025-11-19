@@ -1,6 +1,6 @@
 ## Construction Principles
 
-The OpenEoX Core schema describes a map for well-known named transition events (like end-of-life) to dates.
+The OpenEoX Core specification describes a map for well-known named transition events (like end-of-life) to dates.
 Producers use this mapping to bind products to this minimal set of life cycle events.
 
 Other schemata provide models to add the data needed for product identification.
@@ -11,13 +11,14 @@ Examples for such schemata are:
 - integration into the product itself (for example via SNMP calls or HTTPS requests)
 - integration into other standards (for example CSAF)
 
-This separation provides actionable, structured, and validated life cycle information
+This separation provides consistent, interoperable, actionable, structured, and validated life cycle information
 with the goal to offer complete automation.
 
 The chosen data format and version "JSON Schema Draft 2020-12" [cite](#JSON-Schema-Core) allows
 validation and delegation to providers of referenced schemata.
 The latter enables separation of concerns as it allows other standards, specifications,
 and product-specific implementations to import and reference the OpenEoX Core schema.
+This enables consistency and interoperability across different implementations.
 
 The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json>
 
