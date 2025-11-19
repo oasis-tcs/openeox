@@ -8,7 +8,7 @@ Examples for such schemata are:
 
 - OpenEoX Shell
 - OpenEoX API
-- integration into the product itself (for example via SNMP calls)
+- integration into the product itself (for example via SNMP calls or HTTPS requests)
 - integration into other standards (for example CSAF)
 
 This separation provides actionable, structured, and validated life cycle information
@@ -44,3 +44,8 @@ The use of placeholders or `null` values is discouraged and any compliant OpenEo
 
 OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of
 referenced schema instances.
+Suggestions for new fields or values SHOULD be made through issues in the TC's GitHub.
+The JSON schemas defined in this standard do not allow the use of additional properties and custom keywords.
+
+> The standardized fields allow for scalability across different issuing parties and dramatically reduce the human effort and
+> need for dedicated parsers as well as other tools on the side of the consuming parties.
