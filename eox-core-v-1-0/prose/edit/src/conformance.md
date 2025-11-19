@@ -16,10 +16,13 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Information**: An EoX information in the format defined by this document.
 * **OpenEoX Core Producer**: A program which emits output in the OpenEoX Core format.
 * **OpenEoX Core Consumer**: A program that reads and interprets OpenEoX Core Information.
-* **OpenEoX Core Library**: A library that implements OpenEoX Core data capabilities.
 * **OpenEoX Core Basic Validator**: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
 * **OpenEoX Core Extended Validator**: A OpenEoX Core Basic Validator that additionally performs recommended tests.
 * **OpenEoX Core Full Validator**: A OpenEoX Core Extended Validator that additionally performs guidance tests.
+* **OpenEoX Core Library**: A library that implements OpenEoX Core data capabilities.
+* **OpenEoX Core Library with Basic Validation**: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Basic Validator".
+* **OpenEoX Core Library with Extended Validation**: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Extended Validator".
+* **OpenEoX Core Library with Full Validation**: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Full Validator".
 
 ### Conformance Clause 1: OpenEoX Core Information
 
@@ -46,7 +49,42 @@ A processor satisfies the "OpenEoX Core Consumer" conformance profile if the pro
 * satisfies those normative requirements in section [sec](#schema-elements) and
   [sec](#safety-security-and-data-protection-considerations) that are designated as applying to OpenEoX Consumers.
 
-### Conformance Clause 4: OpenEoX Core Library
+### Conformance Clause 4: OpenEoX Core Basic Validator
+
+A program satisfies the "OpenEoX Core Basic Validator" conformance profile if the program:
+
+* reads JSON objects and performs a check against the JSON schema.
+* performs all mandatory tests as given in section [sec](#mandatory-tests).
+* does not change the OpenEoX Core Information.
+
+A OpenEoX Core Basic Validator MAY provide one or more additional functions:
+
+* Only run one or more selected mandatory tests.
+* Apply quick fixes as specified in the standard.
+* Apply additional quick fixes as implemented by the vendor.
+
+### Conformance Clause 5: OpenEoX Core Extended Validator
+
+A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" conformance profile if the OpenEoX Core Basic Validator:
+
+* satisfies the "OpenEoX Core Basic Validator" conformance profile.
+* additionally performs all recommended tests as given in section [sec](#recommended-tests).
+* provides a function that allows to specify tests for which test results of warning are reported as error.
+
+A OpenEoX Core Extended Validator MAY provide an additional function to only run one or more selected recommended tests.
+
+### Conformance Clause 6: OpenEoX Core Full Validator
+
+A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" conformance profile if the OpenEoX Core Extended Validator:
+
+* satisfies the "OpenEoX Core Extended Validator" conformance profile.
+* additionally performs all guidance tests as given in section [sec](#guidance-tests).
+* provides a function that allows to specify tests for which test results of information are reported as warning.
+* provides a function that allows to specify tests for which test results of information are reported as error.
+
+A OpenEoX Core Full Validator MAY provide an additional function to only run one or more selected guidance tests.
+
+### Conformance Clause 7: OpenEoX Core Library
 
 A library satisfies the "OpenEoX Core Library" conformance profile if the library:
 
@@ -65,40 +103,46 @@ A library satisfies the "OpenEoX Core Library" conformance profile if the librar
 
 The library MAY implement an option to retrieve the keys unsorted.
 
-### Conformance Clause 5: OpenEoX Core Basic Validator
+### Conformance Clause 8: OpenEoX Core Library with Basic Validation
 
-A program satisfies the "OpenEoX Core Basic Validator" conformance profile if the program:
+A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
 
-* reads JSON objects and performs a check against the JSON schema.
-* performs all mandatory tests as given in section [sec](#mandatory-tests).
-* does not change the OpenEoX Core Information.
-
-A OpenEoX Core Basic Validator MAY provide one or more additional functions:
-
-* Only run one or more selected mandatory tests.
-* Apply quick fixes as specified in the standard.
-* Apply additional quick fixes as implemented by the vendor.
-
-### Conformance Clause 6: OpenEoX Core Extended Validator
-
-A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" conformance profile if the OpenEoX Core Basic Validator:
-
+* satisfies the "OpenEoX Core Library" conformance profile.
 * satisfies the "OpenEoX Core Basic Validator" conformance profile.
-* additionally performs all recommended tests as given in section [sec](#recommended-tests).
-* provides a function that allows to specify tests for which test results of warning are reported as error.
+* validates the OpenEoX Core Information before output according to the "OpenEoX Core Basic Validator" and
+  presents the validation result accordingly.
+* provide a function to validate the data structure in its current state according to the "OpenEoX Core Basic Validator"
+  and presents the validation result accordingly.
 
-A OpenEoX Core Extended Validator MAY provide an additional function to only run one or more selected recommended tests.
+A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core
+Library uses an external library or program for the "OpenEoX Core Basic Validator" part and does not enforce its presence.
 
-### Conformance Clause 7: OpenEoX Core Full Validator
+### Conformance Clause 9: OpenEoX Core Library with Extended Validation
 
-A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" conformance profile if the OpenEoX Core Extended Validator:
+A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
 
+* satisfies the "OpenEoX Core Library" conformance profile.
 * satisfies the "OpenEoX Core Extended Validator" conformance profile.
-* additionally performs all guidance tests as given in section [sec](#guidance-tests).
-* provides a function that allows to specify tests for which test results of information are reported as warning.
-* provides a function that allows to specify tests for which test results of information are reported as error.
+* validates the OpenEoX Core Information before output according to the "OpenEoX Core Extended Validator" and
+  presents the validation result accordingly.
+* provide a function to validate the data structure in its current state according to the "OpenEoX Core Extended Validator"
+  and presents the validation result accordingly.
 
-A OpenEoX Core Full Validator MAY provide an additional function to only run one or more selected guidance tests.
+A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core
+Library uses an external library or program for the "OpenEoX Core Extended Validator" part and does not enforce its presence.
 
+### Conformance Clause 10: OpenEoX Core Library with Full Validation
+
+A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
+
+* satisfies the "OpenEoX Core Library" conformance profile.
+* satisfies the "OpenEoX Core Full Validator" conformance profile.
+* validates the OpenEoX Core Information before output according to the "OpenEoX Core Full Validator" and
+  presents the validation result accordingly.
+* provide a function to validate the data structure in its current state according to the "OpenEoX Core Full Validator" and
+  presents the validation result accordingly.
+
+A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Full Validation" conformance profile if the OpenEoX Core
+Library uses an external library or program for the "OpenEoX Core Full Validator" part and does not enforce its presence.
 
 -------
