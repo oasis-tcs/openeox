@@ -14,6 +14,9 @@ schema-elements-02-props-02-end-of-life.md
 schema-elements-02-props-02-end-of-sales.md
 schema-elements-02-props-02-end-of-security-support.md
 schema-elements-02-props-02-last-updated.md
+tests-00.md
+tests-01-mandatory.md
+tests-01-mndtr-01-inconsistent-eol-date.md
 conformance.md
 references.md
 safety-security-and-data-protection.md
