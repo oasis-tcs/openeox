@@ -171,6 +171,7 @@ A program satisfies the "OpenEoX Core Comparator" conformance profile if the pro
   * `b` if `a["last_updated"] < b["last_updated"]`
   * `a` if `a["last_updated"] = b["last_updated"]`
   * `a` if `a["last_updated"] > b["last_updated"]`
+* takes timezones into account.
 
 A OpenEoX Core Comparator MAY choose to make that information also available in other data formats.
 
@@ -181,6 +182,7 @@ A program satisfies the "OpenEoX Core Sorter" conformance profile if the program
 * satisfies the "OpenEoX Core Consumer" conformance profile.
 * provides a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value descending (default).
 * provides a function to sort an arbitrary number of OpenEoX Core Information Objects `last_updated` value with that value ascending.
+* takes timezones into account.
 
 A OpenEoX Core Sorter MAY choose to make that information also available in other data formats.
 
@@ -206,6 +208,8 @@ A program satisfies the "OpenEoX Core Merger" conformance profile if the program
 
   > As `last_updated` is a required field, it is not changed during the process.
   > Values of keys that are inserted are never changed in that process.
+
+* takes timezones into account.
 
 A program MAY implement other algorithms than defined here, if and only if, the results are guaranteed to be the same.
 
