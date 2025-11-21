@@ -1,9 +1,7 @@
 # Conformance
 
-In the only subsection of this section, the conformance targets and clauses are listed.
-The clauses, matching the targets one to one, are listed in separate sub-subsections of the targets listing subsection.
-
-Informative Comments:
+The single subsection of this section lists the conformance targets and clauses.
+The clauses directly corresponding to the targets are listed in separate sub-subsections of the target list subsection.
 
 > The order in which targets, and their corresponding clauses appear is somewhat arbitrary as there is
 > no natural order on such diverse roles participating in the EoX exchanging ecosystem.
