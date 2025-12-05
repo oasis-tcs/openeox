@@ -1,0 +1,18 @@
+# Environments
+.env
+.python-version
+.venv
+ENV/
+env/
+env.bak/
+venv/
+venv.bak/
+
+# Other local development artifacts
+*~
+._*
+.DS_Store
+.idea
+.vscode/
+local*
+build/
