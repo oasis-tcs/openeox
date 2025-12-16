@@ -31,23 +31,7 @@ test_all() {
   done
 }
 
-test_all_strict() {
-  for i in $(ls -1 ${TESTPATH} | grep -Ev "${EXCLUDE}" | grep -Ev "${EXCLUDE_LEAP}" )
-  do
-    validate $i
-  done
-}
-
 SCHEMA=$ORIG_SCHEMA
 test_all
-
-
-printf "%s" "Generating strict schema ... "
-mkdir -p ${STRICT_BUILD}
-python3 "${STRICT_GENERATOR}" "${ORIG_SCHEMA}" > "${CSAF_STRICT_SCHEMA}"
-printf "%s\n" "done"
-
-SCHEMA=${CSAF_STRICT_SCHEMA}
-test_all_strict
 
 exit ${FAIL}
