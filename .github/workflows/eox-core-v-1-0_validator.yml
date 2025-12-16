@@ -29,8 +29,8 @@ jobs:
       run: python3 -c "from importlib.metadata import version; print(version('jsonschema'))"
     - name: Test validator/data/mandatory against schema
       run: ./eox-core-v-1-0/test/validator/run_tests.sh mandatory
-    #- name: Test validator/data/recommended against schema
-    #  run: ./eox-core-v-1-0/test/validator/run_tests.sh recommended
+    - name: Test validator/data/recommended against schema
+      run: ./eox-core-v-1-0/test/validator/run_tests.sh recommended
     #- name: Test validator/data/informative against schema
     #  run: ./eox-core-v-1-0/test/validator/run_tests.sh informative
 

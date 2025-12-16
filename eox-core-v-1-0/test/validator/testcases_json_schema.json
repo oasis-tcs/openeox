@@ -62,7 +62,7 @@
           "title": "Number of the test",
           "description": "Contains the section number of the test in the specification.",
           "type": "string",
-          "pattern": "^6\\.(([1]\\.[1-2]))$"
+          "pattern": "^6\\.(([12]\\.[1])|([1]\\.[2]))$"
         },
         "valid": {
           "title": "List of valid examples",
