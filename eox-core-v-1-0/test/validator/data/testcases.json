@@ -35,6 +35,10 @@
         {
           "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-15.json",
           "valid": true
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-16.json",
+          "valid": true
         }
       ]
     },
