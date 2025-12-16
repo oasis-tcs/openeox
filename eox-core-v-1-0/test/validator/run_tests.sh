@@ -5,8 +5,8 @@ META_SCHEMA=eox-core-v-1-0/schema/meta.json
 VALIDATOR=eox-core-v-1-0/test/validator.py
 STRICT_GENERATOR=eox-core-v-1-0/test/generate_strict_schema.py
 TESTPATH=eox-core-v-1-0/test/validator/data/$1/*.json
-EXCLUDE=''
-EXCLUDE_LEAP=''
+EXCLUDE='oasis_openeox_tc-core-1_0-2025-6-1-02-01.json'
+EXCLUDE_LEAP='oasis_openeox_tc-core-1_0-2025-6-1-02-02.json'
 
 FAIL=0
 

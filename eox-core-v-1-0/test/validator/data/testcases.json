@@ -49,11 +49,19 @@
         {
           "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-02-01.json",
           "valid": false
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-02-02.json",
+          "valid": false
         }
       ],
       "valid": [
         {
           "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-02-11.json",
+          "valid": true
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-02-12.json",
           "valid": true
         }
       ]
