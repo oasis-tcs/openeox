@@ -9,11 +9,31 @@
         {
           "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-01.json",
           "valid": false
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-02.json",
+          "valid": false
         }
       ],
       "valid": [
         {
           "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-11.json",
+          "valid": true
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-12.json",
+          "valid": true
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-13.json",
+          "valid": true
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-14.json",
+          "valid": true
+        },
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-01-15.json",
           "valid": true
         }
       ]
