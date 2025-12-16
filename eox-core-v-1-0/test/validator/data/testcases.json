@@ -97,6 +97,34 @@
           "valid": true
         }
       ]
+    },
+    {
+      "id": "6.3.1",
+      "group": "informative",
+      "failures": [
+        {
+          "name": "informative/oasis_openeox_tc-core-1_0-2025-6-3-01-01.json",
+          "valid": true
+        }
+      ],
+      "valid": [
+        {
+          "name": "informative/oasis_openeox_tc-core-1_0-2025-6-3-01-11.json",
+          "valid": true
+        },
+        {
+          "name": "informative/oasis_openeox_tc-core-1_0-2025-6-3-01-12.json",
+          "valid": true
+        },
+        {
+          "name": "informative/oasis_openeox_tc-core-1_0-2025-6-3-01-13.json",
+          "valid": true
+        },
+        {
+          "name": "informative/oasis_openeox_tc-core-1_0-2025-6-3-01-14.json",
+          "valid": true
+        }
+      ]
     }
   ]
 }

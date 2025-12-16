@@ -20,6 +20,8 @@ tests-01-mndtr-01-inconsistent-eol-date.md
 tests-01-mndtr-02-date-and-time.md
 tests-02-recommended.md
 tests-02-rcmmndd-01-use-of-tba-where-eol-set.md
+tests-03-informative.md
+tests-03-nfrmtv-01-eossec-before-eos.md
 conformance.md
 references.md
 safety-security-and-data-protection.md

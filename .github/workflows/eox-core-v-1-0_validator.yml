@@ -31,8 +31,8 @@ jobs:
       run: ./eox-core-v-1-0/test/validator/run_tests.sh mandatory
     - name: Test validator/data/recommended against schema
       run: ./eox-core-v-1-0/test/validator/run_tests.sh recommended
-    #- name: Test validator/data/informative against schema
-    #  run: ./eox-core-v-1-0/test/validator/run_tests.sh informative
+    - name: Test validator/data/informative against schema
+      run: ./eox-core-v-1-0/test/validator/run_tests.sh informative
 
     - name: Test validator/data/testcases.json against testcase schema
       run: ./eox-core-v-1-0/test/validator/check_testcases.sh
