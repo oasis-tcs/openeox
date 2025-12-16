@@ -37,6 +37,22 @@
           "valid": true
         }
       ]
+    },
+    {
+      "id": "6.1.2",
+      "group": "mandatory",
+      "failures": [
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-02-01.json",
+          "valid": false
+        }
+      ],
+      "valid": [
+        {
+          "name": "mandatory/oasis_openeox_tc-core-1_0-2025-6-1-02-11.json",
+          "valid": true
+        }
+      ]
     }
   ]
 }
