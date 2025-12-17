@@ -1,0 +1,6 @@
+{
+  "$schema": "https://docs.oasis-open.org/openeox/v1.0/schema/core.json",
+  "end_of_life": "2017-01-01T02:59:59.999999+03:00",
+  "end_of_security_support": "2016-12-31T23:59:59.0123+00:00",
+  "last_updated": "2025-11-19T16:00:00Z"
+}
