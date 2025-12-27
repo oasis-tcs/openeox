@@ -41,7 +41,7 @@ A program satisfies the "OpenEoX Core Producer" conformance profile if the progr
 
 * produces output in the OpenEoX Core format, according to the conformance profile "OpenEoX Core Information".
 * satisfies those normative requirements in section [sec](#schema-elements) and
-  [sec](#safety-security-and-data-protection-considerations) that are designated as applying to OpenEoX Producers.
+  [sec](#safety-security-and-data-protection) that are designated as applying to OpenEoX Producers.
 
 ### Conformance Clause 3: OpenEoX Core Consumer
 
@@ -49,7 +49,7 @@ A processor satisfies the "OpenEoX Core Consumer" conformance profile if the pro
 
 * reads OpenEoX Core Information and interprets them according to the semantics defined in section [sec](#schema-elements).
 * satisfies those normative requirements in section [sec](#schema-elements) and
-  [sec](#safety-security-and-data-protection-considerations) that are designated as applying to OpenEoX Consumers.
+  [sec](#safety-security-and-data-protection) that are designated as applying to OpenEoX Consumers.
 
 ### Conformance Clause 4: OpenEoX Core Basic Validator
 
@@ -80,7 +80,7 @@ A OpenEoX Core Extended Validator MAY provide an additional function to only run
 A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" conformance profile if the OpenEoX Core Extended Validator:
 
 * satisfies the "OpenEoX Core Extended Validator" conformance profile.
-* additionally performs all guidance tests as given in section [sec](#guidance-tests).
+* additionally performs all guidance tests as given in section [sec](#informative-tests).
 * provides a function that allows to specify tests for which test results of information are reported as warning.
 * provides a function that allows to specify tests for which test results of information are reported as error.
 
