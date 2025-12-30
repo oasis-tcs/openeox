@@ -563,7 +563,7 @@ The relevant path for this test is:
   /end_of_security_support
 ```
 
-*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-4-1-3-eg-1'></a><a id='example-3'></a>
+*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-4-2-1-eg-1'></a><a id='example-3'></a>
 
 ```
   {
