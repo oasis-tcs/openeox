@@ -510,7 +510,7 @@ The relevant path for this test is:
     /end_of_life
 ```
 
-*Example 1 (which fails the test):*<a id='inconsistent-eol-date-eg-1'></a><a id='sec-4-1-1-eg-1'></a><a id='example-1'></a>
+*Example 1 (which fails the test):*<a id='inconsistent-eol-date-eg-1'></a><a id='sec-5-1-1-eg-1'></a><a id='example-1'></a>
 
 ```
   {
@@ -537,7 +537,7 @@ The relevant path for this test is:
   /last_updated
 ```
 
-*Example 1 (which fails the test):*<a id='mandatory-tests--date-and-time-eg-1'></a><a id='sec-4-1-2-eg-1'></a><a id='example-2'></a>
+*Example 1 (which fails the test):*<a id='mandatory-tests--date-and-time-eg-1'></a><a id='sec-5-1-2-eg-1'></a><a id='example-2'></a>
 
 ```
   "end_of_life": "2025-12-31 12:00:00Z",
@@ -563,7 +563,7 @@ The relevant path for this test is:
   /end_of_security_support
 ```
 
-*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-4-2-1-eg-1'></a><a id='example-3'></a>
+*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-5-2-1-eg-1'></a><a id='example-3'></a>
 
 ```
   {
@@ -599,7 +599,7 @@ The relevant path for this test is:
     /end_of_sales
 ```
 
-*Example 1 (which fails the test):*<a id='eossec-before-eos-eg-1'></a><a id='sec-4-3-1-eg-1'></a><a id='example-4'></a>
+*Example 1 (which fails the test):*<a id='eossec-before-eos-eg-1'></a><a id='sec-5-3-1-eg-1'></a><a id='example-4'></a>
 
 ```
   {
