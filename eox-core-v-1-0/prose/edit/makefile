@@ -68,7 +68,7 @@ render-html: render-markdown
 		--css style/base.css --css style/skin.css --standalone -o build/tmp.html && \
 	  bin/toccata.py && \
 	  timeout 2 tidy -config etc/tidy-config.txt build/injected.html -ashtml 2>/dev/null | \
-		sed 's/<!\[CDATA\[//g; s/\]\]>//g;' > $(out_html) && \
+		sed 's/<!\[CDATA\[//g; s/\]\]>//g; s/<meta.name=.generator..content=.HTML.Tidy.*/<meta name="generator" content="liitos, pandoc, and tidy." \/>/g;' > $(out_html) && \
 	  printf "Rendered user facing delivery item in html format:\n" && \
 	  ls -l $(out_html)
 
