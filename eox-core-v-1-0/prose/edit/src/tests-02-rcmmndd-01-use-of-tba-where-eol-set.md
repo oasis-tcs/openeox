@@ -1,4 +1,4 @@
-### Use of `tba` where Date is set for EoL
+### Use of `tba` where Date is set for EoL{#use-of-tba-where-date-is-set-for-eol}
 
 For each property of type `eox_timestamp_t`, it MUST be tested that it does not contain the value `tba` if the `end_of_life` value is set to a date.
 
