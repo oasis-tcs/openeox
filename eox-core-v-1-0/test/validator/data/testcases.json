@@ -155,6 +155,38 @@
       ]
     },
     {
+      "id": "6.2.2",
+      "group": "recommended",
+      "failures": [
+        {
+          "name": "recommended/oasis_openeox_tc-core-1_0-2025-6-2-02-01.json",
+          "valid": true
+        },
+        {
+          "name": "recommended/oasis_openeox_tc-core-1_0-2025-6-2-02-02.json",
+          "valid": true
+        },
+        {
+          "name": "recommended/oasis_openeox_tc-core-1_0-2025-6-2-02-03.json",
+          "valid": true
+        }
+      ],
+      "valid": [
+        {
+          "name": "recommended/oasis_openeox_tc-core-1_0-2025-6-2-02-11.json",
+          "valid": true
+        },
+        {
+          "name": "recommended/oasis_openeox_tc-core-1_0-2025-6-2-02-12.json",
+          "valid": true
+        },
+        {
+          "name": "recommended/oasis_openeox_tc-core-1_0-2025-6-2-02-13.json",
+          "valid": true
+        }
+      ]
+    },
+    {
       "id": "6.3.1",
       "group": "informative",
       "failures": [
