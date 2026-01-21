@@ -27,6 +27,11 @@ technical support can vary depending on the vendor's specific policies.
 The End-of-Security-Support (EoSSec) indicates the last day when the vendor has committed to providing
 security remediations for the particular product (or the product version/release).
 
+## General Availability
+
+The General Availability (GA) indicates the first day when the particular product (or the product version/release)
+is officially launched and made accessible to the general public or through its intended distribution channels.
+
 ## Product
 
 Product is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name.
