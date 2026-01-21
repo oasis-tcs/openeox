@@ -14,6 +14,7 @@ schema-elements-02-props-01-schema.md
 schema-elements-02-props-02-end-of-life.md
 schema-elements-02-props-02-end-of-sales.md
 schema-elements-02-props-02-end-of-security-support.md
+schema-elements-02-props-02-general-availability.md
 schema-elements-02-props-02-last-updated.md
 tests-00.md
 tests-01-mandatory.md
