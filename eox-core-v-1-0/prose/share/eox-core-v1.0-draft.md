@@ -118,9 +118,10 @@ For complete copyright information please see the full Notices section in [Appen
 	4.1 [End-of-Life](#end-of-life)  
 	4.2 [End-of-Sales](#end-of-sales)  
 	4.3 [End-of-Security-Support](#end-of-security-support)  
-	4.4 [Product](#product)  
-	4.5 [Product Lifecycle](#product-lifecycle)  
-	4.6 [Vendor](#vendor)  
+	4.4 [General Availability](#general-availability)  
+	4.5 [Product](#product)  
+	4.6 [Product Lifecycle](#product-lifecycle)  
+	4.7 [Vendor](#vendor)  
 5. [Schema Elements](#schema-elements)  
 	5.1 [Definitions](#definitions)  
 		5.1.1 [EoX Timestamp Type](#eox-timestamp-type)  
@@ -129,7 +130,8 @@ For complete copyright information please see the full Notices section in [Appen
 		5.2.2 [End-of-Life Property](#end-of-life-property)  
 		5.2.3 [End-of-Sales Property](#end-of-sales-property)  
 		5.2.4 [End-of-Security-Support Property](#end-of-security-support-property)  
-		5.2.5 [Last Updated Property](#last-updated-property)  
+		5.2.5 [General Availability Property](#general-availability-property)  
+		5.2.6 [Last Updated Property](#last-updated-property)  
 6. [Tests](#tests)  
 	6.1 [Mandatory Tests](#mandatory-tests)  
 		6.1.1 [Inconsistent EoL Date](#inconsistent-eol-date)  
@@ -425,12 +427,17 @@ technical support can vary depending on the vendor's specific policies.
 The End-of-Security-Support (EoSSec) indicates the last day when the vendor has committed to providing
 security remediations for the particular product (or the product version/release).
 
-## 4.4 Product <a id='product'></a>
+## 4.4 General Availability <a id='general-availability'></a>
+
+The General Availability (GA) indicates the first day when the particular product (or the product version/release)
+is officially launched and made accessible to the general public or through its intended distribution channels.
+
+## 4.5 Product <a id='product'></a>
 
 Product is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name.
 This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.
 
-## 4.5 Product Lifecycle <a id='product-lifecycle'></a>
+## 4.6 Product Lifecycle <a id='product-lifecycle'></a>
 
 Every product type (software, hardware, managed service and other deliverables) can be associated with a lifecycle model.
 It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention.
@@ -439,7 +446,7 @@ to its discontinuation (End-of-Life).
 During the product lifecycle, support models may switch from one state to another and may even run in parallel to meet individual requirements.
 Those requirements may depend on the product type, the vendor offerings, as well as geographical related regulations.
 
-## 4.6 Vendor <a id='vendor'></a>
+## 4.7 Vendor <a id='vendor'></a>
 
 Vendor refers to the community, individual, or organization that created or maintains a product (software, hardware,
 managed service and other deliverables).
@@ -509,7 +516,7 @@ In any semantic interpretation, the value `tba` MUST be treated as 'not yet anno
 
 The following subsections document the five properties of a OpenEoX Core JSON.
 The four mandatory properties are `$schema`, `end_of_life`, `end_of_security_support`, and `last_updated`.
-The property `end_of_sales` is optional.
+The properties `end_of_sales` and `general_availability` are optional.
 
 ### 5.2.1 Schema Property <a id='schema-property'></a>
 
@@ -538,7 +545,24 @@ ordered by customers from vendor sales channels.
 End-of-Security-Support (`end_of_security_support`) of value type `eox_timestamp_t` indicates the last day when the vendor
 has committed to providing security remediations for the particular product.
 
-### 5.2.5 Last Updated Property <a id='last-updated-property'></a>
+### 5.2.5 General Availability Property <a id='general-availability-property'></a>
+
+General Availability (`general_availability`) of value type `eox_timestamp_t` indicates the first day when the particular product
+is officially launched and made accessible to the general public or through its intended distribution channels.
+
+The following special cases are defined:
+
+* If the value of `general_availability` is equal to the value of `end_of_security_support`, this implies that the product is not supported.
+  However, the product may be before its EoL.
+* If a product is sunset (in terms of EoL) before its GA,
+  the `general_availability` entry SHALL be removed and just the EoL entry kept in the OpenEoX record.
+* If the value of `general_availability` is equal to the value of `end_of_life`,
+  this implies that the product was published but is not maintained at all.
+  
+  > An example could be the publication of source code as open source without the intend to maintain it.
+  > The clear communication allows others to take over the development as well as to assess the risks associated with using the product.
+
+### 5.2.6 Last Updated Property <a id='last-updated-property'></a>
 
 Timestamp of last change (`last_updated`) of value type `string` with format `date-time` contains the RFC 3339 timestamp when
 the record was last updated.
@@ -589,6 +613,7 @@ The relevant path for this test is:
   /end_of_life
   /end_of_sales
   /end_of_security_support
+  /general_availability
   /last_updated
 ```
 
@@ -616,6 +641,7 @@ The relevant path for this test is:
 ```
   /end_of_sales
   /end_of_security_support
+  /general_availability
 ```
 
 *Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-6-2-1-eg-1'></a><a id='example-3'></a>

@@ -565,11 +565,13 @@
             </li>
             <li>4.3 <a href="#end-of-security-support">End-of-Security-Support</a>
             </li>
-            <li>4.4 <a href="#product">Product</a>
+            <li>4.4 <a href="#general-availability">General Availability</a>
             </li>
-            <li>4.5 <a href="#product-lifecycle">Product Lifecycle</a>
+            <li>4.5 <a href="#product">Product</a>
             </li>
-            <li>4.6 <a href="#vendor">Vendor</a>
+            <li>4.6 <a href="#product-lifecycle">Product Lifecycle</a>
+            </li>
+            <li>4.7 <a href="#vendor">Vendor</a>
             </li>
           </ul>
         </li>
@@ -591,7 +593,9 @@
                 </li>
                 <li>5.2.4 <a href="#end-of-security-support-property">End-of-Security-Support Property</a>
                 </li>
-                <li>5.2.5 <a href="#last-updated-property">Last Updated Property</a>
+                <li>5.2.5 <a href="#general-availability-property">General Availability Property</a>
+                </li>
+                <li>5.2.6 <a href="#last-updated-property">Last Updated Property</a>
                 </li>
               </ul>
             </li>
@@ -995,22 +999,28 @@
     <p>
       The End-of-Security-Support (EoSSec) indicates the last day when the vendor has committed to providing security remediations for the particular product (or the product version/release).
     </p>
-    <h2 id="44-product-">
-      4.4 Product <a id='product'></a>
+    <h2 id="44-general-availability-">
+      4.4 General Availability <a id='general-availability'></a>
+    </h2>
+    <p>
+      The General Availability (GA) indicates the first day when the particular product (or the product version/release) is officially launched and made accessible to the general public or through its intended distribution channels.
+    </p>
+    <h2 id="45-product-">
+      4.5 Product <a id='product'></a>
     </h2>
     <p>
       Product is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name. This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.
     </p>
-    <h2 id="45-product-lifecycle-">
-      4.5 Product Lifecycle <a id='product-lifecycle'></a>
+    <h2 id="46-product-lifecycle-">
+      4.6 Product Lifecycle <a id='product-lifecycle'></a>
     </h2>
     <p>
       Every product type (software, hardware, managed service and other deliverables) can be associated with a lifecycle model. It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention. The lifecycle support model can be dynamic and may change over time, from
       the product's initial release (General Availability) to its discontinuation (End-of-Life). During the product lifecycle, support models may switch from one state to another and may even run in parallel to meet individual requirements. Those requirements may depend on the product type, the vendor offerings, as well as geographical
       related regulations.
     </p>
-    <h2 id="46-vendor-">
-      4.6 Vendor <a id='vendor'></a>
+    <h2 id="47-vendor-">
+      4.7 Vendor <a id='vendor'></a>
     </h2>
     <p>
       Vendor refers to the community, individual, or organization that created or maintains a product (software, hardware, managed service and other deliverables). This includes, but is not limited to, open-source software and hardware providers.
@@ -1079,7 +1089,7 @@
       5.2 Properties <a id='properties'></a>
     </h2>
     <p>
-      The following subsections document the five properties of a OpenEoX Core JSON. The four mandatory properties are <code>$schema</code>, <code>end_of_life</code>, <code>end_of_security_support</code>, and <code>last_updated</code>. The property <code>end_of_sales</code> is optional.
+      The following subsections document the five properties of a OpenEoX Core JSON. The four mandatory properties are <code>$schema</code>, <code>end_of_life</code>, <code>end_of_security_support</code>, and <code>last_updated</code>. The properties <code>end_of_sales</code> and <code>general_availability</code> are optional.
     </p>
     <h3 id="521-schema-property-">
       5.2.1 Schema Property <a id='schema-property'></a>
@@ -1111,8 +1121,39 @@
     <p>
       End-of-Security-Support (<code>end_of_security_support</code>) of value type <code>eox_timestamp_t</code> indicates the last day when the vendor has committed to providing security remediations for the particular product.
     </p>
-    <h3 id="525-last-updated-property-">
-      5.2.5 Last Updated Property <a id='last-updated-property'></a>
+    <h3 id="525-general-availability-property-">
+      5.2.5 General Availability Property <a id='general-availability-property'></a>
+    </h3>
+    <p>
+      General Availability (<code>general_availability</code>) of value type <code>eox_timestamp_t</code> indicates the first day when the particular product is officially launched and made accessible to the general public or through its intended distribution channels.
+    </p>
+    <p>
+      The following special cases are defined:
+    </p>
+    <ul>
+      <li>
+        <p>
+          If the value of <code>general_availability</code> is equal to the value of <code>end_of_security_support</code>, this implies that the product is not supported. However, the product may be before its EoL.
+        </p>
+      </li>
+      <li>
+        <p>
+          If a product is sunset (in terms of EoL) before its GA, the <code>general_availability</code> entry SHALL be removed and just the EoL entry kept in the OpenEoX record.
+        </p>
+      </li>
+      <li>
+        <p>
+          If the value of <code>general_availability</code> is equal to the value of <code>end_of_life</code>, this implies that the product was published but is not maintained at all.
+        </p>
+        <blockquote>
+          <p>
+            An example could be the publication of source code as open source without the intend to maintain it. The clear communication allows others to take over the development as well as to assess the risks associated with using the product.
+          </p>
+        </blockquote>
+      </li>
+    </ul>
+    <h3 id="526-last-updated-property-">
+      5.2.6 Last Updated Property <a id='last-updated-property'></a>
     </h3>
     <p>
       Timestamp of last change (<code>last_updated</code>) of value type <code>string</code> with format <code>date-time</code> contains the RFC 3339 timestamp when the record was last updated.
@@ -1166,6 +1207,7 @@
     <pre><code>  /end_of_life
   /end_of_sales
   /end_of_security_support
+  /general_availability
   /last_updated</code></pre>
     <p>
       <em>Example 1 (which fails the test):</em><a id='mandatory-tests--date-and-time-eg-1'></a><a id='sec-6-1-2-eg-1'></a><a id='example-2'></a>
@@ -1193,7 +1235,8 @@
       The relevant path for this test is:
     </p>
     <pre><code>  /end_of_sales
-  /end_of_security_support</code></pre>
+  /end_of_security_support
+  /general_availability</code></pre>
     <p>
       <em>Example 1 (which fails the test):</em><a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-6-2-1-eg-1'></a><a id='example-3'></a>
     </p>
