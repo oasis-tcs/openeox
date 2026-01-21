@@ -7,6 +7,7 @@ The relevant path for this test is:
 ```
   /end_of_sales
   /end_of_security_support
+  /general_availability
 ```
 
 *Example 1 (which fails the test):*

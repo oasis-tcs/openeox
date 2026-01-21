@@ -9,6 +9,7 @@ The relevant path for this test is:
   /end_of_life
   /end_of_sales
   /end_of_security_support
+  /general_availability
   /last_updated
 ```
 

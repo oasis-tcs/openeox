@@ -7,7 +7,7 @@
 
 ## Committee Specification Draft 01
 
-## 19 November 2025
+## 21 January 2026
 
 #### This stage:
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.md (Authoritative) \
@@ -77,13 +77,13 @@ When referencing this specification the following citation format should be used
 
 _OpenEOX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-19 November 2025.
+21 January 2026.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html. Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
 
 #### Notices
 
-Copyright &copy; OASIS Open 2025. All Rights Reserved.
+Copyright &copy; OASIS Open 2026. All Rights Reserved.
 
 Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr/).
 
@@ -114,39 +114,48 @@ For complete copyright information please see the full Notices section in [Appen
 	3.4 [Construction Principles](#construction-principles)  
 	3.5 [Format Validation](#format-validation)  
 	3.6 [Date and Time](#date-and-time)  
-4. [Schema Elements](#schema-elements)  
-	4.1 [Definitions](#definitions)  
-		4.1.1 [EoX Timestamp Type](#eox-timestamp-type)  
-	4.2 [Properties](#properties)  
-		4.2.1 [Schema Property](#schema-property)  
-		4.2.2 [End-of-Life Property](#end-of-life-property)  
-		4.2.3 [End-of-Sales Property](#end-of-sales-property)  
-		4.2.4 [End-of-Security-Support Property](#end-of-security-support-property)  
-		4.2.5 [Last Updated Property](#last-updated-property)  
-5. [Tests](#tests)  
-	5.1 [Mandatory Tests](#mandatory-tests)  
-		5.1.1 [Inconsistent EoL Date](#inconsistent-eol-date)  
-		5.1.2 [Date and Time](#mandatory-tests--date-and-time)  
-	5.2 [Recommended Tests](#recommended-tests)  
-		5.2.1 [Use of `tba` where Date is set for EoL](#use-of-tba-where-date-is-set-for-eol)  
-	5.3 [Informative Tests](#informative-tests)  
-		5.3.1 [EoSSec before EoS](#eossec-before-eos)  
-6. [Conformance](#conformance)  
-	6.1 [Conformance Targets](#conformance-targets)  
-		6.1.1 [Conformance Clause 1: OpenEoX Core Information](#conformance-clause-1-openeox-core-information)  
-		6.1.2 [Conformance Clause 2: OpenEoX Core Producer](#conformance-clause-2-openeox-core-producer)  
-		6.1.3 [Conformance Clause 3: OpenEoX Core Consumer](#conformance-clause-3-openeox-core-consumer)  
-		6.1.4 [Conformance Clause 4: OpenEoX Core Basic Validator](#conformance-clause-4-openeox-core-basic-validator)  
-		6.1.5 [Conformance Clause 5: OpenEoX Core Extended Validator](#conformance-clause-5-openeox-core-extended-validator)  
-		6.1.6 [Conformance Clause 6: OpenEoX Core Full Validator](#conformance-clause-6-openeox-core-full-validator)  
-		6.1.7 [Conformance Clause 7: OpenEoX Core Library](#conformance-clause-7-openeox-core-library)  
-		6.1.8 [Conformance Clause 8: OpenEoX Core Library with Basic Validation](#conformance-clause-8-openeox-core-library-with-basic-validation)  
-		6.1.9 [Conformance Clause 9: OpenEoX Core Library with Extended Validation](#conformance-clause-9-openeox-core-library-with-extended-validation)  
-		6.1.10 [Conformance Clause 10: OpenEoX Core Library with Full Validation](#conformance-clause-10-openeox-core-library-with-full-validation)  
-		6.1.11 [Conformance Clause 11: OpenEoX Core Differ](#conformance-clause-11-openeox-core-differ)  
-		6.1.12 [Conformance Clause 12: OpenEoX Core Comparator](#conformance-clause-12-openeox-core-comparator)  
-		6.1.13 [Conformance Clause 13: OpenEoX Core Sorter](#conformance-clause-13-openeox-core-sorter)  
-		6.1.14 [Conformance Clause 14: OpenEoX Core Merger](#conformance-clause-14-openeox-core-merger)  
+4. [Taxonomy](#taxonomy)  
+	4.1 [End-of-Life](#end-of-life)  
+	4.2 [End-of-Sales](#end-of-sales)  
+	4.3 [End-of-Security-Support](#end-of-security-support)  
+	4.4 [General Availability](#general-availability)  
+	4.5 [Product](#product)  
+	4.6 [Product Lifecycle](#product-lifecycle)  
+	4.7 [Vendor](#vendor)  
+5. [Schema Elements](#schema-elements)  
+	5.1 [Definitions](#definitions)  
+		5.1.1 [EoX Timestamp Type](#eox-timestamp-type)  
+	5.2 [Properties](#properties)  
+		5.2.1 [Schema Property](#schema-property)  
+		5.2.2 [End-of-Life Property](#end-of-life-property)  
+		5.2.3 [End-of-Sales Property](#end-of-sales-property)  
+		5.2.4 [End-of-Security-Support Property](#end-of-security-support-property)  
+		5.2.5 [General Availability Property](#general-availability-property)  
+		5.2.6 [Last Updated Property](#last-updated-property)  
+6. [Tests](#tests)  
+	6.1 [Mandatory Tests](#mandatory-tests)  
+		6.1.1 [Inconsistent EoL Date](#inconsistent-eol-date)  
+		6.1.2 [Date and Time](#mandatory-tests--date-and-time)  
+	6.2 [Recommended Tests](#recommended-tests)  
+		6.2.1 [Use of `tba` where Date is set for EoL](#use-of-tba-where-date-is-set-for-eol)  
+	6.3 [Informative Tests](#informative-tests)  
+		6.3.1 [EoSSec before EoS](#eossec-before-eos)  
+7. [Conformance](#conformance)  
+	7.1 [Conformance Targets](#conformance-targets)  
+		7.1.1 [Conformance Clause 1: OpenEoX Core Information](#conformance-clause-1-openeox-core-information)  
+		7.1.2 [Conformance Clause 2: OpenEoX Core Producer](#conformance-clause-2-openeox-core-producer)  
+		7.1.3 [Conformance Clause 3: OpenEoX Core Consumer](#conformance-clause-3-openeox-core-consumer)  
+		7.1.4 [Conformance Clause 4: OpenEoX Core Basic Validator](#conformance-clause-4-openeox-core-basic-validator)  
+		7.1.5 [Conformance Clause 5: OpenEoX Core Extended Validator](#conformance-clause-5-openeox-core-extended-validator)  
+		7.1.6 [Conformance Clause 6: OpenEoX Core Full Validator](#conformance-clause-6-openeox-core-full-validator)  
+		7.1.7 [Conformance Clause 7: OpenEoX Core Library](#conformance-clause-7-openeox-core-library)  
+		7.1.8 [Conformance Clause 8: OpenEoX Core Library with Basic Validation](#conformance-clause-8-openeox-core-library-with-basic-validation)  
+		7.1.9 [Conformance Clause 9: OpenEoX Core Library with Extended Validation](#conformance-clause-9-openeox-core-library-with-extended-validation)  
+		7.1.10 [Conformance Clause 10: OpenEoX Core Library with Full Validation](#conformance-clause-10-openeox-core-library-with-full-validation)  
+		7.1.11 [Conformance Clause 11: OpenEoX Core Differ](#conformance-clause-11-openeox-core-differ)  
+		7.1.12 [Conformance Clause 12: OpenEoX Core Comparator](#conformance-clause-12-openeox-core-comparator)  
+		7.1.13 [Conformance Clause 13: OpenEoX Core Sorter](#conformance-clause-13-openeox-core-sorter)  
+		7.1.14 [Conformance Clause 14: OpenEoX Core Merger](#conformance-clause-14-openeox-core-merger)  
 
 Appendix A. [References](#references)  
 	A.1 [Normative References](#normative-references)  
@@ -390,7 +399,60 @@ In contrast to the aforementioned standards, leap seconds MUST NOT be used.
 
 -------
 
-# 4. Schema Elements <a id='schema-elements'></a>
+# 4. Taxonomy <a id='taxonomy'></a>
+
+The following subsections describe the taxonomy defining and explaining all terms the standard is build upon.
+
+## 4.1 End-of-Life <a id='end-of-life'></a>
+
+The End-of-Life (EoL) indicates the last day when the particular product (or the product version/release) is officially
+supported in any way by the vendor.
+After this date there shouldn’t be more development, updates or any type of support expected from the vendor.
+The existing customers are also impacted by this product lifecycle stage and should consider migration to the
+still supported product version or release.
+
+## 4.2 End-of-Sales <a id='end-of-sales'></a>
+
+The End-of-Sales (EoS) indicates the last day when a particular product (or the product version/release) may be ordered
+by customers from vendor sales channels.
+After this date, the product is no longer for sale.
+However, there might be other sources where the product is still available.
+Once the product reaches the EoS lifecycle stage, it may still be supported by the vendor, based on the official or
+dedicated vendor lifecycle model for this product, for existing customers.
+The implications for existing customers regarding license renewals, updates, upgrades to newer versions or ongoing
+technical support can vary depending on the vendor's specific policies.
+
+## 4.3 End-of-Security-Support <a id='end-of-security-support'></a>
+
+The End-of-Security-Support (EoSSec) indicates the last day when the vendor has committed to providing
+security remediations for the particular product (or the product version/release).
+
+## 4.4 General Availability <a id='general-availability'></a>
+
+The General Availability (GA) indicates the first day when the particular product (or the product version/release)
+is officially launched and made accessible to the general public or through its intended distribution channels.
+
+## 4.5 Product <a id='product'></a>
+
+Product is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name.
+This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.
+
+## 4.6 Product Lifecycle <a id='product-lifecycle'></a>
+
+Every product type (software, hardware, managed service and other deliverables) can be associated with a lifecycle model.
+It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention.
+The lifecycle support model can be dynamic and may change over time, from the product's initial release (General Availability)
+to its discontinuation (End-of-Life).
+During the product lifecycle, support models may switch from one state to another and may even run in parallel to meet individual requirements.
+Those requirements may depend on the product type, the vendor offerings, as well as geographical related regulations.
+
+## 4.7 Vendor <a id='vendor'></a>
+
+Vendor refers to the community, individual, or organization that created or maintains a product (software, hardware,
+managed service and other deliverables).
+This includes, but is not limited to, open-source software and hardware providers.
+
+# 5. Schema Elements <a id='schema-elements'></a>
 
 The OpenEoX Core schema describes how to represent OpenEoX core information as a JSON document.
 
@@ -417,7 +479,7 @@ Types and properties together provide the vocabulary for the domain specific lan
 The four mandatory properties are `$schema`, `end_of_life`, `end_of_security_support`, and `last_updated`.
 The additional property, `end_of_sales`, is optional.
 
-## 4.1 Definitions <a id='definitions'></a>
+## 5.1 Definitions <a id='definitions'></a>
 
 The definitions (`$defs`) introduce the following domain specific types into the OpenEoX language:
 EoX Timestamp (`eox_timestamp_t`).
@@ -430,7 +492,7 @@ EoX Timestamp (`eox_timestamp_t`).
   },
 ```
 
-### 4.1.1 EoX Timestamp Type <a id='eox-timestamp-type'></a>
+### 5.1.1 EoX Timestamp Type <a id='eox-timestamp-type'></a>
 
 The EoX Timestamp (`eox_timestamp_t`) type of value type `string` contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.
 
@@ -450,13 +512,13 @@ Therefore, it MUST either be a `string` with format `date-time` or use the const
 OpenEoX Consumer MUST treat `tba` as a date greater than the maximum date.
 In any semantic interpretation, the value `tba` MUST be treated as 'not yet announced'.
 
-## 4.2 Properties <a id='properties'></a>
+## 5.2 Properties <a id='properties'></a>
 
 The following subsections document the five properties of a OpenEoX Core JSON.
 The four mandatory properties are `$schema`, `end_of_life`, `end_of_security_support`, and `last_updated`.
-The property `end_of_sales` is optional.
+The properties `end_of_sales` and `general_availability` are optional.
 
-### 4.2.1 Schema Property <a id='schema-property'></a>
+### 5.2.1 Schema Property <a id='schema-property'></a>
 
 The OpenEoX Core Schema (`$schema`) of value type `string` and `const` specifies the schema the JSON object must be valid against.
 The single valid value for this `const` is:
@@ -468,36 +530,53 @@ The single valid value for this `const` is:
 > This value allows for tools to identify that a JSON document is meant to be valid against this schema.
 > Tools can use that to support users by automatically checking whether the OpenEoX Core Object adheres to the JSON schema identified by this URL.
 
-### 4.2.2 End-of-Life Property <a id='end-of-life-property'></a>
+### 5.2.2 End-of-Life Property <a id='end-of-life-property'></a>
 
 End-of-Life (`end_of_life`) of value type `eox_timestamp_t` indicates the last day when the particular product
 is officially supported in any way by the vendor.
 
-### 4.2.3 End-of-Sales Property <a id='end-of-sales-property'></a>
+### 5.2.3 End-of-Sales Property <a id='end-of-sales-property'></a>
 
 End-of-Sales (`end_of_sales`) of value type `eox_timestamp_t` indicates the last day when a particular product may be
 ordered by customers from vendor sales channels.
 
-### 4.2.4 End-of-Security-Support Property <a id='end-of-security-support-property'></a>
+### 5.2.4 End-of-Security-Support Property <a id='end-of-security-support-property'></a>
 
 End-of-Security-Support (`end_of_security_support`) of value type `eox_timestamp_t` indicates the last day when the vendor
 has committed to providing security remediations for the particular product.
 
-### 4.2.5 Last Updated Property <a id='last-updated-property'></a>
+### 5.2.5 General Availability Property <a id='general-availability-property'></a>
+
+General Availability (`general_availability`) of value type `eox_timestamp_t` indicates the first day when the particular product
+is officially launched and made accessible to the general public or through its intended distribution channels.
+
+The following special cases are defined:
+
+* If the value of `general_availability` is equal to the value of `end_of_security_support`, this implies that the product is not supported.
+  However, the product may be before its EoL.
+* If a product is sunset (in terms of EoL) before its GA,
+  the `general_availability` entry SHALL be removed and just the EoL entry kept in the OpenEoX record.
+* If the value of `general_availability` is equal to the value of `end_of_life`,
+  this implies that the product was published but is not maintained at all.
+  
+  > An example could be the publication of source code as open source without the intend to maintain it.
+  > The clear communication allows others to take over the development as well as to assess the risks associated with using the product.
+
+### 5.2.6 Last Updated Property <a id='last-updated-property'></a>
 
 Timestamp of last change (`last_updated`) of value type `string` with format `date-time` contains the RFC 3339 timestamp when
 the record was last updated.
 
-# 5. Tests <a id='tests'></a>
+# 6. Tests <a id='tests'></a>
 
 The following subsections list a number of tests which all will have a short description and an excerpt of an example which fails the test.
 
-## 5.1 Mandatory Tests <a id='mandatory-tests'></a>
+## 6.1 Mandatory Tests <a id='mandatory-tests'></a>
 
 Mandatory tests MUST NOT fail at a valid OpenEoX Core Information.
 A program MUST handle a test failure as an error.
 
-### 5.1.1 Inconsistent EoL Date <a id='inconsistent-eol-date'></a>
+### 6.1.1 Inconsistent EoL Date <a id='inconsistent-eol-date'></a>
 
 It MUST be tested that the `end_of_life` is later than or equal to any other date value in the OpenEoX Core Information.
 The property `last_updated` is ignored in this test.
@@ -510,7 +589,7 @@ The relevant path for this test is:
     /end_of_life
 ```
 
-*Example 1 (which fails the test):*<a id='inconsistent-eol-date-eg-1'></a><a id='sec-5-1-1-eg-1'></a><a id='example-1'></a>
+*Example 1 (which fails the test):*<a id='inconsistent-eol-date-eg-1'></a><a id='sec-6-1-1-eg-1'></a><a id='example-1'></a>
 
 ```
   {
@@ -523,7 +602,7 @@ The relevant path for this test is:
 
 > The `end_of_security_support` is later than the `end_of_life`.
 
-### 5.1.2 Date and Time <a id='mandatory-tests--date-and-time'></a>
+### 6.1.2 Date and Time <a id='mandatory-tests--date-and-time'></a>
 
 For each item of type `string` and format `date-time` it MUST be tested that it conforms to the rules given in section [3.6](#date-and-time).
 Any property with the value `tba` is ignored in this comparison.
@@ -534,10 +613,11 @@ The relevant path for this test is:
   /end_of_life
   /end_of_sales
   /end_of_security_support
+  /general_availability
   /last_updated
 ```
 
-*Example 1 (which fails the test):*<a id='mandatory-tests--date-and-time-eg-1'></a><a id='sec-5-1-2-eg-1'></a><a id='example-2'></a>
+*Example 1 (which fails the test):*<a id='mandatory-tests--date-and-time-eg-1'></a><a id='sec-6-1-2-eg-1'></a><a id='example-2'></a>
 
 ```
   "end_of_life": "2025-12-31 12:00:00Z",
@@ -545,14 +625,14 @@ The relevant path for this test is:
 
 > The `end_of_life` uses a white space as separator instead the letter `T`.
 
-## 5.2 Recommended Tests <a id='recommended-tests'></a>
+## 6.2 Recommended Tests <a id='recommended-tests'></a>
 
 Recommended tests SHOULD NOT fail at a valid OpenEoX Core Information without a good reason.
 Failing such a test does not make the OpenEoX Core Information invalid.
 These tests may include information about features which are still supported but expected to be deprecated in a future version of OpenEoX.
 A program MUST handle a test failure as a warning.
 
-### 5.2.1 Use of `tba` where Date is set for EoL <a id='use-of-tba-where-date-is-set-for-eol'></a>
+### 6.2.1 Use of `tba` where Date is set for EoL <a id='use-of-tba-where-date-is-set-for-eol'></a>
 
 For each property of type `eox_timestamp_t`, it MUST be tested that it does not contain the value `tba` if the `end_of_life` value is set to a date.
 
@@ -561,9 +641,10 @@ The relevant path for this test is:
 ```
   /end_of_sales
   /end_of_security_support
+  /general_availability
 ```
 
-*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-5-2-1-eg-1'></a><a id='example-3'></a>
+*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-6-2-1-eg-1'></a><a id='example-3'></a>
 
 ```
   {
@@ -578,7 +659,7 @@ The relevant path for this test is:
 
 > A tool MAY set the `end_of_security_support` to the same value as `end_of_life` as a quick fix.
 
-## 5.3 Informative Tests <a id='informative-tests'></a>
+## 6.3 Informative Tests <a id='informative-tests'></a>
 
 Informative tests provide insights in common mistakes and bad practices.
 They MAY fail at a valid OpenEoX Core Information.
@@ -586,7 +667,7 @@ It is up to the issuing party to decide whether this was an intended behavior an
 These tests MAY include information about recommended usage.
 A program MUST handle a test failure as a information.
 
-### 5.3.1 EoSSec before EoS <a id='eossec-before-eos'></a>
+### 6.3.1 EoSSec before EoS <a id='eossec-before-eos'></a>
 
 It MUST be tested that if `end_of_sales` is present, its value is before or equal to the value of `end_of_security_support`.
 As the timestamps might use different timezones, the sorting MUST take timezones into account.
@@ -599,7 +680,7 @@ The relevant path for this test is:
     /end_of_sales
 ```
 
-*Example 1 (which fails the test):*<a id='eossec-before-eos-eg-1'></a><a id='sec-5-3-1-eg-1'></a><a id='example-4'></a>
+*Example 1 (which fails the test):*<a id='eossec-before-eos-eg-1'></a><a id='sec-6-3-1-eg-1'></a><a id='example-4'></a>
 
 ```
   {
@@ -612,7 +693,7 @@ The relevant path for this test is:
 
 > The `end_of_security_support` is earlier than the `end_of_sales`.
 
-# 6. Conformance <a id='conformance'></a>
+# 7. Conformance <a id='conformance'></a>
 
 The single subsection of this section lists the conformance targets and clauses.
 The clauses directly corresponding to the targets are listed in separate sub-subsections of the target list subsection.
@@ -620,7 +701,7 @@ The clauses directly corresponding to the targets are listed in separate sub-sub
 > The order in which targets, and their corresponding clauses appear is somewhat arbitrary as there is
 > no natural order on such diverse roles participating in the EoX exchanging ecosystem.
 
-## 6.1 Conformance Targets <a id='conformance-targets'></a>
+## 7.1 Conformance Targets <a id='conformance-targets'></a>
 
 This document defines requirements for the file format and for certain software components that interact with it.
 The entities ("conformance targets") for which this document defines requirements are:
@@ -640,37 +721,37 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Sorter**: A program that sorts OpenEoX Core Information from newest to oldest or vice versa.
 * **OpenEoX Core Merger**: A program that combines OpenEoX Core Information.
 
-### 6.1.1 Conformance Clause 1: OpenEoX Core Information <a id='conformance-clause-1-openeox-core-information'></a>
+### 7.1.1 Conformance Clause 1: OpenEoX Core Information <a id='conformance-clause-1-openeox-core-information'></a>
 
 A text file or data stream satisfies the "OpenEoX Core Information" conformance profile if it:
 
 * conforms to the syntax and semantics defined in section [3.5](#format-validation).
 * conforms to the syntax and semantics defined in section [3.6](#date-and-time).
-* conforms to the syntax and semantics defined in section [4](#schema-elements).
-* does not fail any mandatory test defined in section [5.1](#mandatory-tests).
+* conforms to the syntax and semantics defined in section [5](#schema-elements).
+* does not fail any mandatory test defined in section [6.1](#mandatory-tests).
 
-### 6.1.2 Conformance Clause 2: OpenEoX Core Producer <a id='conformance-clause-2-openeox-core-producer'></a>
+### 7.1.2 Conformance Clause 2: OpenEoX Core Producer <a id='conformance-clause-2-openeox-core-producer'></a>
 
 A program satisfies the "OpenEoX Core Producer" conformance profile if the program:
 
 * produces output in the OpenEoX Core format, according to the conformance profile "OpenEoX Core Information".
-* satisfies those normative requirements in section [4](#schema-elements) and
+* satisfies those normative requirements in section [5](#schema-elements) and
   [Appendix B](#safety-security-and-data-protection) that are designated as applying to OpenEoX Producers.
 
-### 6.1.3 Conformance Clause 3: OpenEoX Core Consumer <a id='conformance-clause-3-openeox-core-consumer'></a>
+### 7.1.3 Conformance Clause 3: OpenEoX Core Consumer <a id='conformance-clause-3-openeox-core-consumer'></a>
 
 A processor satisfies the "OpenEoX Core Consumer" conformance profile if the processor:
 
-* reads OpenEoX Core Information and interprets them according to the semantics defined in section [4](#schema-elements).
-* satisfies those normative requirements in section [4](#schema-elements) and
+* reads OpenEoX Core Information and interprets them according to the semantics defined in section [5](#schema-elements).
+* satisfies those normative requirements in section [5](#schema-elements) and
   [Appendix B](#safety-security-and-data-protection) that are designated as applying to OpenEoX Consumers.
 
-### 6.1.4 Conformance Clause 4: OpenEoX Core Basic Validator <a id='conformance-clause-4-openeox-core-basic-validator'></a>
+### 7.1.4 Conformance Clause 4: OpenEoX Core Basic Validator <a id='conformance-clause-4-openeox-core-basic-validator'></a>
 
 A program satisfies the "OpenEoX Core Basic Validator" conformance profile if the program:
 
 * reads JSON objects and performs a check against the JSON schema.
-* performs all mandatory tests as given in section [5.1](#mandatory-tests).
+* performs all mandatory tests as given in section [6.1](#mandatory-tests).
 * does not change the OpenEoX Core Information.
 
 A OpenEoX Core Basic Validator MAY provide one or more additional functions:
@@ -679,33 +760,33 @@ A OpenEoX Core Basic Validator MAY provide one or more additional functions:
 * Apply quick fixes as specified in the standard.
 * Apply additional quick fixes as implemented by the vendor.
 
-### 6.1.5 Conformance Clause 5: OpenEoX Core Extended Validator <a id='conformance-clause-5-openeox-core-extended-validator'></a>
+### 7.1.5 Conformance Clause 5: OpenEoX Core Extended Validator <a id='conformance-clause-5-openeox-core-extended-validator'></a>
 
 A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" conformance profile if the OpenEoX Core Basic Validator:
 
 * satisfies the "OpenEoX Core Basic Validator" conformance profile.
-* additionally performs all recommended tests as given in section [5.2](#recommended-tests).
+* additionally performs all recommended tests as given in section [6.2](#recommended-tests).
 * provides a function that allows to specify tests for which test results of warning are reported as error.
 
 A OpenEoX Core Extended Validator MAY provide an additional function to only run one or more selected recommended tests.
 
-### 6.1.6 Conformance Clause 6: OpenEoX Core Full Validator <a id='conformance-clause-6-openeox-core-full-validator'></a>
+### 7.1.6 Conformance Clause 6: OpenEoX Core Full Validator <a id='conformance-clause-6-openeox-core-full-validator'></a>
 
 A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" conformance profile if the OpenEoX Core Extended Validator:
 
 * satisfies the "OpenEoX Core Extended Validator" conformance profile.
-* additionally performs all guidance tests as given in section [5.3](#informative-tests).
+* additionally performs all guidance tests as given in section [6.3](#informative-tests).
 * provides a function that allows to specify tests for which test results of information are reported as warning.
 * provides a function that allows to specify tests for which test results of information are reported as error.
 
 A OpenEoX Core Full Validator MAY provide an additional function to only run one or more selected guidance tests.
 
-### 6.1.7 Conformance Clause 7: OpenEoX Core Library <a id='conformance-clause-7-openeox-core-library'></a>
+### 7.1.7 Conformance Clause 7: OpenEoX Core Library <a id='conformance-clause-7-openeox-core-library'></a>
 
 A library satisfies the "OpenEoX Core Library" conformance profile if the library:
 
 * implements all elements as data structures conforming to the syntax and semantics defined in sections
-  [3.5](#format-validation), [3.6](#date-and-time) and [4](#schema-elements).
+  [3.5](#format-validation), [3.6](#date-and-time) and [5](#schema-elements).
 * checks all elements according to the patterns provided in the JSON schema.
 * has a function that reads OpenEoX Core Information into the data structure from a
   * file system.
@@ -719,7 +800,7 @@ A library satisfies the "OpenEoX Core Library" conformance profile if the librar
 
 The library MAY implement an option to retrieve the keys unsorted.
 
-### 6.1.8 Conformance Clause 8: OpenEoX Core Library with Basic Validation <a id='conformance-clause-8-openeox-core-library-with-basic-validation'></a>
+### 7.1.8 Conformance Clause 8: OpenEoX Core Library with Basic Validation <a id='conformance-clause-8-openeox-core-library-with-basic-validation'></a>
 -1
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
 
@@ -733,7 +814,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Basic Validator" part and does not enforce its presence.
 
-### 6.1.9 Conformance Clause 9: OpenEoX Core Library with Extended Validation <a id='conformance-clause-9-openeox-core-library-with-extended-validation'></a>
+### 7.1.9 Conformance Clause 9: OpenEoX Core Library with Extended Validation <a id='conformance-clause-9-openeox-core-library-with-extended-validation'></a>
 
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
 
@@ -747,7 +828,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validat
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Extended Validator" part and does not enforce its presence.
 
-### 6.1.10 Conformance Clause 10: OpenEoX Core Library with Full Validation <a id='conformance-clause-10-openeox-core-library-with-full-validation'></a>
+### 7.1.10 Conformance Clause 10: OpenEoX Core Library with Full Validation <a id='conformance-clause-10-openeox-core-library-with-full-validation'></a>
 
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
 
@@ -761,7 +842,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validat
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Full Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Full Validator" part and does not enforce its presence.
 
-### 6.1.11 Conformance Clause 11: OpenEoX Core Differ <a id='conformance-clause-11-openeox-core-differ'></a>
+### 7.1.11 Conformance Clause 11: OpenEoX Core Differ <a id='conformance-clause-11-openeox-core-differ'></a>
 
 A program satisfies the "OpenEoX Core Differ" conformance profile if the program:
 
@@ -770,7 +851,7 @@ A program satisfies the "OpenEoX Core Differ" conformance profile if the program
 
 A OpenEoX Core Differ MAY choose to make that information also available in other data formats.
 
-### 6.1.12 Conformance Clause 12: OpenEoX Core Comparator <a id='conformance-clause-12-openeox-core-comparator'></a>
+### 7.1.12 Conformance Clause 12: OpenEoX Core Comparator <a id='conformance-clause-12-openeox-core-comparator'></a>
 
 A program satisfies the "OpenEoX Core Comparator" conformance profile if the program:
 
@@ -787,7 +868,7 @@ A program satisfies the "OpenEoX Core Comparator" conformance profile if the pro
 
 A OpenEoX Core Comparator MAY choose to make that information also available in other data formats.
 
-### 6.1.13 Conformance Clause 13: OpenEoX Core Sorter <a id='conformance-clause-13-openeox-core-sorter'></a>
+### 7.1.13 Conformance Clause 13: OpenEoX Core Sorter <a id='conformance-clause-13-openeox-core-sorter'></a>
 
 A program satisfies the "OpenEoX Core Sorter" conformance profile if the program:
 
@@ -798,7 +879,7 @@ A program satisfies the "OpenEoX Core Sorter" conformance profile if the program
 
 A OpenEoX Core Sorter MAY choose to make that information also available in other data formats.
 
-### 6.1.14 Conformance Clause 14: OpenEoX Core Merger <a id='conformance-clause-14-openeox-core-merger'></a>
+### 7.1.14 Conformance Clause 14: OpenEoX Core Merger <a id='conformance-clause-14-openeox-core-merger'></a>
 
 A program satisfies the "OpenEoX Core Merger" conformance profile if the program:
 
@@ -918,14 +999,14 @@ The following individuals were members of the OASIS OpenEOX Technical Committee 
 | eox-core-v1.0-wd20250716-dev | 2025-07-16 | Jautau White, Stefan Hagen, and Thomas Schmidt | Preparing initial Editor Revision |
 | eox-core-v1.0-wd20250820-dev | 2025-08-20 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision with first structure |
 | eox-core-v1.0-wd20251119-dev | 2025-11-19 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
-
+| eox-core-v1.0-wd20260121-dev | 2026-01-21 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
 -------
 
 # Appendix E. Notices <a id='notices'></a>
 
 <!-- Required section. Do not modify. -->
 
-Copyright &copy; OASIS Open 2025. All Rights Reserved.
+Copyright &copy; OASIS Open 2026. All Rights Reserved.
 
 All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full [Policy](https://www.oasis-open.org/policies-guidelines/ipr/) may be found at the OASIS website.
 
