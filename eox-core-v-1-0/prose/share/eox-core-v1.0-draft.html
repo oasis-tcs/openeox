@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0" />
+    <meta name="generator" content="liitos, pandoc, and tidy." />
     <meta charset="utf-8" />
-    <meta name="generator" content="pandoc" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>
       tmp
@@ -366,8 +365,8 @@
     <h2 id="committee-specification-draft-01">
       Committee Specification Draft 01
     </h2>
-    <h2 id="16-july-2025">
-      16 July 2025
+    <h2 id="19-november-2025">
+      19 November 2025
     </h2>
     <h4 id="this-stage">
       This stage:
@@ -422,6 +421,9 @@
       <li>OpenEOX Core JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json</a>.<br />
         Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json</a>.
       </li>
+      <li>OpenEOX Meta JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json</a>.<br />
+        Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json</a>.
+      </li>
     </ul>
     <h4 id="related-work">
       Related work:
@@ -439,6 +441,9 @@
     <ul>
       <li>
         <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json"><span>https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json</span></a>
+      </li>
+      <li>
+        <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json"><span>https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json</span></a>
       </li>
     </ul>
     <h4 id="abstract">
@@ -483,8 +488,8 @@
       <strong>[EOX-Core-v1.0]</strong>
     </p>
     <p>
-      <em>OpenEOX Core Schema Version 1.0</em>. Edited by Jautau White, Stefan Hagen, and Thomas Schmidt. DD MONTH 2025. OASIS Committee Specification Draft 01. <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html</a>. Latest
-      stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html">https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html</a>
+      <em>OpenEOX Core Schema Version 1.0</em>. Edited by Jautau White, Stefan Hagen, and Thomas Schmidt. 19 November 2025. OASIS Committee Specification Draft 01. <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html</a>.
+      Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html">https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html</a>
     </p>
     <h4 id="notices">
       Notices
@@ -516,7 +521,125 @@
         </li>
         <li>2. <a href="#overview">Overview</a>
         </li>
-        <li>3. <a href="#conformance">Conformance</a>
+        <li>3. <a href="#design-considerations">Design Considerations</a>
+          <ul>
+            <li>3.1 <a href="#openeox-architecture">OpenEoX Architecture</a>
+              <ul>
+                <li>3.1.1 <a href="#openeox-core-this-specification">OpenEoX Core (this specification)</a>
+                </li>
+                <li>3.1.2 <a href="#openeox-shell">OpenEoX Shell</a>
+                </li>
+                <li>3.1.3 <a href="#openeox-api">OpenEoX API</a>
+                </li>
+              </ul>
+            </li>
+            <li>3.2 <a href="#design-principles">Design Principles</a>
+              <ul>
+                <li>3.2.1 <a href="#standardization-and-interoperability">Standardization and Interoperability</a>
+                </li>
+                <li>3.2.2 <a href="#security-first-approach">Security-First Approach</a>
+                </li>
+              </ul>
+            </li>
+            <li>3.3 <a href="#industry-applications">Industry Applications</a>
+              <ul>
+                <li>3.3.1 <a href="#vendor-perspectives">Vendor Perspectives</a>
+                </li>
+                <li>3.3.2 <a href="#consumer-perspectives">Consumer Perspectives</a>
+                </li>
+              </ul>
+            </li>
+            <li>3.4 <a href="#construction-principles">Construction Principles</a>
+            </li>
+            <li>3.5 <a href="#format-validation">Format Validation</a>
+            </li>
+            <li>3.6 <a href="#date-and-time">Date and Time</a>
+            </li>
+          </ul>
+        </li>
+        <li>4. <a href="#schema-elements">Schema Elements</a>
+          <ul>
+            <li>4.1 <a href="#definitions">Definitions</a>
+              <ul>
+                <li>4.1.1 <a href="#eox-timestamp-type">EoX Timestamp Type</a>
+                </li>
+              </ul>
+            </li>
+            <li>4.2 <a href="#properties">Properties</a>
+              <ul>
+                <li>4.2.1 <a href="#schema-property">Schema Property</a>
+                </li>
+                <li>4.2.2 <a href="#end-of-life-property">End-of-Life Property</a>
+                </li>
+                <li>4.2.3 <a href="#end-of-sales-property">End-of-Sales Property</a>
+                </li>
+                <li>4.2.4 <a href="#end-of-security-support-property">End-of-Security-Support Property</a>
+                </li>
+                <li>4.2.5 <a href="#last-updated-property">Last Updated Property</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>5. <a href="#tests">Tests</a>
+          <ul>
+            <li>5.1 <a href="#mandatory-tests">Mandatory Tests</a>
+              <ul>
+                <li>5.1.1 <a href="#inconsistent-eol-date">Inconsistent EoL Date</a>
+                </li>
+                <li>5.1.2 <a href="#mandatory-tests--date-and-time">Date and Time</a>
+                </li>
+              </ul>
+            </li>
+            <li>5.2 <a href="#recommended-tests">Recommended Tests</a>
+              <ul>
+                <li>5.2.1 <a href="#use-of-tba-where-date-is-set-for-eol">Use of `tba` where Date is set for EoL</a>
+                </li>
+              </ul>
+            </li>
+            <li>5.3 <a href="#informative-tests">Informative Tests</a>
+              <ul>
+                <li>5.3.1 <a href="#eossec-before-eos">EoSSec before EoS</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>6. <a href="#conformance">Conformance</a>
+          <ul>
+            <li>6.1 <a href="#conformance-targets">Conformance Targets</a>
+              <ul>
+                <li>6.1.1 <a href="#conformance-clause-1-openeox-core-information">Conformance Clause 1: OpenEoX Core Information</a>
+                </li>
+                <li>6.1.2 <a href="#conformance-clause-2-openeox-core-producer">Conformance Clause 2: OpenEoX Core Producer</a>
+                </li>
+                <li>6.1.3 <a href="#conformance-clause-3-openeox-core-consumer">Conformance Clause 3: OpenEoX Core Consumer</a>
+                </li>
+                <li>6.1.4 <a href="#conformance-clause-4-openeox-core-basic-validator">Conformance Clause 4: OpenEoX Core Basic Validator</a>
+                </li>
+                <li>6.1.5 <a href="#conformance-clause-5-openeox-core-extended-validator">Conformance Clause 5: OpenEoX Core Extended Validator</a>
+                </li>
+                <li>6.1.6 <a href="#conformance-clause-6-openeox-core-full-validator">Conformance Clause 6: OpenEoX Core Full Validator</a>
+                </li>
+                <li>6.1.7 <a href="#conformance-clause-7-openeox-core-library">Conformance Clause 7: OpenEoX Core Library</a>
+                </li>
+                <li>6.1.8 <a href="#conformance-clause-8-openeox-core-library-with-basic-validation">Conformance Clause 8: OpenEoX Core Library with Basic Validation</a>
+                </li>
+                <li>6.1.9 <a href="#conformance-clause-9-openeox-core-library-with-extended-validation">Conformance Clause 9: OpenEoX Core Library with Extended Validation</a>
+                </li>
+                <li>6.1.10 <a href="#conformance-clause-10-openeox-core-library-with-full-validation">Conformance Clause 10: OpenEoX Core Library with Full Validation</a>
+                </li>
+                <li>6.1.11 <a href="#conformance-clause-11-openeox-core-differ">Conformance Clause 11: OpenEoX Core Differ</a>
+                </li>
+                <li>6.1.12 <a href="#conformance-clause-12-openeox-core-comparator">Conformance Clause 12: OpenEoX Core Comparator</a>
+                </li>
+                <li>6.1.13 <a href="#conformance-clause-13-openeox-core-sorter">Conformance Clause 13: OpenEoX Core Sorter</a>
+                </li>
+                <li>6.1.14 <a href="#conformance-clause-14-openeox-core-merger">Conformance Clause 14: OpenEoX Core Merger</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </li>
         <li>Appendix A. <a href="#references">References</a>
           <ul>
@@ -571,132 +694,966 @@
     <p>
       TBD
     </p>
-    <h1 id="3-conformance-">
-      3. Conformance <a id='conformance'></a>
+    <h1 id="3-design-considerations-">
+      3. Design Considerations <a id='design-considerations'></a>
     </h1>
     <p>
-      TBD
+      The OpenEoX provides the vocabulary for exchanging standardized End-of-X (EoX) life cycle data for any product. This includes, but is not limited to hardware, software and specifications, as well as all supplier-consumer relationships, services and offerings.
+    </p>
+    <h2 id="31-openeox-architecture-">
+      3.1 OpenEoX Architecture <a id='openeox-architecture'></a>
+    </h2>
+    <p>
+      The OpenEoX standard is architected as a modular three-layer framework:
+    </p>
+    <h3 id="311-openeox-core-this-specification-">
+      3.1.1 OpenEoX Core (this specification) <a id='openeox-core-this-specification'></a>
+    </h3>
+    <p>
+      The OpenEoX Core specification contains the fundamental EoX life cycle information elements and is designed to be imported by other standards or integrated directly into product responses. The Core schema establishes one part of the essential data elements required for any EoX statement:
+    </p>
+    <p>
+      <strong>Required fields:</strong>
+    </p>
+    <ul>
+      <li>
+        <code>end_of_life</code>: The definitive timestamp when all vendor support ceases
+      </li>
+      <li>
+        <code>end_of_security_support</code>: The critical timestamp when security remediation commitments end
+      </li>
+      <li>
+        <code>last_updated</code>: The timestamp tracking for data freshness and change management
+      </li>
+    </ul>
+    <p>
+      Optionally, the standard also conveys additional life cycle events.
+    </p>
+    <p>
+      The core information can be provided independently when the product context is available through other means, such as SNMP responses, HTTPS API responses.
+    </p>
+    <h3 id="312-openeox-shell-">
+      3.1.2 OpenEoX Shell <a id='openeox-shell'></a>
+    </h3>
+    <p>
+      The OpenEoX Shell specification provides the binding mechanism that combines OpenEoX Core life cycle information to specific product identifications. This combination is called an "OpenEoX statement" - a complete, standalone representation of life cycle information for a specific product. The Shell forms the standalone mode in OpenEoX,
+      enabling complete lifecycle statements that can be processed independently without external context.
+    </p>
+    <h3 id="313-openeox-api-">
+      3.1.3 OpenEoX API <a id='openeox-api'></a>
+    </h3>
+    <p>
+      The OpenEoX API specification addresses the distribution, discovery, and consumption of OpenEoX Core and Shell data across vendor ecosystems and consumer applications. The API specification defines standardized endpoints, query mechanisms, and data exchange patterns that enable automated integration.
+    </p>
+    <h2 id="32-design-principles-">
+      3.2 Design Principles <a id='design-principles'></a>
+    </h2>
+    <h3 id="321-standardization-and-interoperability-">
+      3.2.1 Standardization and Interoperability <a id='standardization-and-interoperability'></a>
+    </h3>
+    <p>
+      OpenEoX addresses the current industry challenge where vendors use proprietary, inconsistent formats for communicating life cycle information. By establishing a common JSON-based format, OpenEoX enables:
+    </p>
+    <ul>
+      <li>Automated processing and integration across vendor ecosystems
+      </li>
+      <li>Consistent interpretation of lifecycle stages regardless of vendor
+      </li>
+      <li>Reduced operational overhead in managing multi-vendor environments
+      </li>
+      <li>Enhanced accuracy in infrastructure lifecycle planning
+      </li>
+    </ul>
+    <h3 id="322-security-first-approach-">
+      3.2.2 Security-First Approach <a id='security-first-approach'></a>
+    </h3>
+    <p>
+      Recognition that End-of-Security-Support represents a critical inflection point for infrastructure security has influenced the OpenEoX design. The mandatory <code>end_of_security_support</code> field ensures that security life cycle information is always available, supporting:
+    </p>
+    <ul>
+      <li>Proactive vulnerability management planning
+      </li>
+      <li>Compliance with security frameworks requiring current support status
+      </li>
+      <li>Risk assessment for critical infrastructure components
+      </li>
+      <li>Automated alerting when security support approaches termination
+      </li>
+    </ul>
+    <h2 id="33-industry-applications-">
+      3.3 Industry Applications <a id='industry-applications'></a>
+    </h2>
+    <h3 id="331-vendor-perspectives-">
+      3.3.1 Vendor Perspectives <a id='vendor-perspectives'></a>
+    </h3>
+    <p>
+      <strong>OpenEoX enables vendors to:</strong>
+    </p>
+    <ul>
+      <li>Standardize EoX communication across all product lines and channels
+      </li>
+      <li>Reduce support inquiries related to life cycle confusion
+      </li>
+      <li>Demonstrate proactive customer stewardship through clear life cycle communication
+      </li>
+      <li>Support automated customer notification systems
+      </li>
+      <li>Facilitate integration with partner and reseller systems
+      </li>
+    </ul>
+    <h3 id="332-consumer-perspectives-">
+      3.3.2 Consumer Perspectives <a id='consumer-perspectives'></a>
+    </h3>
+    <p>
+      <strong>Organizations consuming OpenEoX information benefit through:</strong>
+    </p>
+    <ul>
+      <li>Automated discovery of life cycle status across multi-vendor environments
+      </li>
+      <li>Proactive planning for product refreshes and migrations
+      </li>
+      <li>Enhanced compliance reporting for security and regulatory frameworks
+      </li>
+      <li>Reduced operational risk from unexpected support terminations
+      </li>
+      <li>Streamlined asset management and inventory tracking
+      </li>
+    </ul>
+    <p>
+      The OpenEoX architecture ensures that organizations can adopt OpenEoX in a manner that aligns with their existing infrastructure and operational models while preserving the ability to enhance integration over time.
+    </p>
+    <h2 id="34-construction-principles-">
+      3.4 Construction Principles <a id='construction-principles'></a>
+    </h2>
+    <p>
+      The OpenEoX Core specification describes a map for well-known named transition events (like end-of-life) to dates. Producers use this mapping to bind products to this minimal set of life cycle events.
+    </p>
+    <p>
+      Other schemata provide models to add the data needed for product identification. Examples for such schemata are:
+    </p>
+    <ul>
+      <li>OpenEoX Shell
+      </li>
+      <li>OpenEoX API
+      </li>
+      <li>integration into the product itself (for example via SNMP calls or HTTPS requests)
+      </li>
+      <li>integration into other standards (for example CSAF)
+      </li>
+    </ul>
+    <p>
+      This separation provides consistent, interoperable, actionable, structured, and validated life cycle information with the goal to offer complete automation.
+    </p>
+    <p>
+      The chosen data format and version "JSON Schema Draft 2020-12" [<a href="#JSON-Schema-Core">JSON-Schema-Core</a>] allows validation and delegation to providers of referenced schemata. The latter enables separation of concerns as it allows other standards, specifications, and product-specific implementations to import and reference the
+      OpenEoX Core schema. This enables consistency and interoperability across different implementations.
+    </p>
+    <p>
+      The OpenEoX Core schema is defined at <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json</a>
+    </p>
+    <p>
+      The schema elements and their expected usage patterns are detailed in subsequent sections.
+    </p>
+    <p>
+      Linking and integration of the OpenEoX Core schema with product identification schema information may lead to inconsistencies. The producers of OpenEoX information items have to ensure the intended semantics. For example, that lifecycle dates are ordered logically. Semantic validation is out of scope for this OpenEoX Core specification.
+    </p>
+    <p>
+      The OpenEoX Core schema is designed to be self-contained with minimal external dependencies, utilizing only:
+    </p>
+    <dl>
+      <dt>
+        [<a href="#RFC3339">RFC3339</a>]
+      </dt>
+      <dd>
+        Date and time format specification for timestamp representation
+      </dd>
+      <dt>
+        [<a href="#JSON-Schema-Core">JSON-Schema-Core</a>]
+      </dt>
+      <dd>
+        Schema validation and structure definition
+      </dd>
+    </dl>
+    <p>
+      OpenEoX information items SHOULD only contain members where the value is an OpenEoX life cycle date. The use of placeholders or <code>null</code> values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
+    </p>
+    <blockquote>
+      <p>
+        In combination, these to preceding requirements maximize clarity and simplify automation.
+      </p>
+    </blockquote><!-- TODO(sthagen): Where and when did we decide on date references, like v25 will be end-of-support when v27 is GA? -->
+    <p>
+      OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of referenced schema instances. Suggestions for new fields or values SHOULD be made through issues in the TC's GitHub. The JSON schemas defined in this standard do not allow the use of additional properties and custom keywords.
+    </p>
+    <blockquote>
+      <p>
+        The standardized fields allow for scalability across different issuing parties and dramatically reduce the human effort and need for dedicated parsers as well as other tools on the side of the consuming parties.
+      </p>
+    </blockquote>
+    <h2 id="35-format-validation-">
+      3.5 Format Validation <a id='format-validation'></a>
+    </h2>
+    <p>
+      The JSON schema 2020-12 dialect per default uses the <code>format</code> keyword just as annotation. To be able to ensure that the format constraints are validated as intended, the following metaschema is defined.
+    </p>
+    <pre><code>  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json",
+    "$dynamicAnchor": "meta",
+    "$vocabulary": {
+      "https://json-schema.org/draft/2020-12/vocab/core": true,
+      "https://json-schema.org/draft/2020-12/vocab/format-assertion": true
+    },
+    "allOf": [
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/core" },
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/format-assertion" }
+    ]
+  }</code></pre>
+    <p>
+      It is then consequently used in all JSON schemas defined in this standard and replaces the reference to the JSON schema 2020-12.
+    </p>
+    <pre><code>  {
+    "$schema": "https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json",
+    // ...
+  }</code></pre>
+    <p>
+      The format validation is enforced by setting the corresponding vocabulary as required.
+    </p>
+    <blockquote>
+      <p>
+        If a library used to parse, modify or create OpenEoX content is unable to deal with this meta schema, it could reach the objective by interpreting the schema as JSON schema 2020-12 dialect and enforcing the format validation via its implementation.
+      </p>
+    </blockquote>
+    <h2 id="36-date-and-time-">
+      3.6 Date and Time <a id='date-and-time'></a>
+    </h2>
+    <p>
+      This standard uses the <code>date-time</code> format as defined in JSON Schema Draft 2020-12 Section 7.3.1. In accordance with [<a href="#RFC3339">RFC3339</a>] and [<a href="#ISO8601-1">ISO8601-1</a>], the following rules apply:
+    </p>
+    <ul>
+      <li>The letter <code>T</code> separating the date and time SHALL be upper case.
+      </li>
+      <li>The separator between date and time MUST be the letter <code>T</code>.
+      </li>
+      <li>The letter <code>Z</code> indicating the timezone UTC SHALL be upper case.
+      </li>
+      <li>Fractions of seconds are allowed as specified in the standards mention above with the full stop (<code>.</code>) as separator.
+      </li>
+      <li>Empty timezones MUST NOT be used.
+      </li>
+      <li>The ABNF of [<a href="#RFC3339">RFC3339</a>], section 5.6 applies.
+      </li>
+    </ul>
+    <p>
+      In contrast to the aforementioned standards, leap seconds MUST NOT be used.
+    </p>
+    <blockquote>
+      <p>
+        While a full support of [<a href="#RFC3339">RFC3339</a>] would be preferred, significant challenges have been mentioned by implementers as most libraries are lacking the support for leap seconds. To ensure interoperability, the decision was made to prohibit leap seconds.
+      </p>
+    </blockquote>
+    <hr />
+    <h1 id="4-schema-elements-">
+      4. Schema Elements <a id='schema-elements'></a>
+    </h1>
+    <p>
+      The OpenEoX Core schema describes how to represent OpenEoX core information as a JSON document.
+    </p>
+    <p>
+      The OpenEoX Core schema Version 1.0 builds on the JSON Schema draft 2020-12 rules extended by the format validation enforcement (see <a href="#format-validation">3.5</a>).
+    </p>
+    <pre><code>  "$schema": "https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json",</code></pre>
+    <p>
+      The schema identifier is:
+    </p>
+    <pre><code>  "$id": "https://docs.oasis-open.org/openeox/v1.0/schema/core.json",</code></pre>
+    <p>
+      The further documentation of the schema is organized via Definitions and Properties.
+    </p>
+    <ul>
+      <li>Definitions provide types that extend the JSON schema model
+      </li>
+      <li>Properties use these types to support assembling OpenEoX core information
+      </li>
+    </ul>
+    <p>
+      Types and properties together provide the vocabulary for the domain specific language supporting OpenEoX information.
+    </p>
+    <p>
+      The four mandatory properties are <code>$schema</code>, <code>end_of_life</code>, <code>end_of_security_support</code>, and <code>last_updated</code>. The additional property, <code>end_of_sales</code>, is optional.
+    </p>
+    <h2 id="41-definitions-">
+      4.1 Definitions <a id='definitions'></a>
+    </h2>
+    <p>
+      The definitions (<code>$defs</code>) introduce the following domain specific types into the OpenEoX language: EoX Timestamp (<code>eox_timestamp_t</code>).
+    </p>
+    <pre><code>  "$defs": {
+    "eox_timestamp_t": {
+      // ...
+    }
+  },</code></pre>
+    <h3 id="411-eox-timestamp-type-">
+      4.1.1 EoX Timestamp Type <a id='eox-timestamp-type'></a>
+    </h3>
+    <p>
+      The EoX Timestamp (<code>eox_timestamp_t</code>) type of value type <code>string</code> contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.
+    </p>
+    <pre><code>    "oneOf": [
+      {
+        "format": "date-time"
+      },
+      {
+        "const": "tba"
+      }
+    ]</code></pre>
+    <p>
+      Therefore, it MUST either be a <code>string</code> with format <code>date-time</code> or use the constant value <code>tba</code>.
+    </p>
+    <p>
+      OpenEoX Consumer MUST treat <code>tba</code> as a date greater than the maximum date. In any semantic interpretation, the value <code>tba</code> MUST be treated as 'not yet announced'.
+    </p>
+    <h2 id="42-properties-">
+      4.2 Properties <a id='properties'></a>
+    </h2>
+    <p>
+      The following subsections document the five properties of a OpenEoX Core JSON. The four mandatory properties are <code>$schema</code>, <code>end_of_life</code>, <code>end_of_security_support</code>, and <code>last_updated</code>. The property <code>end_of_sales</code> is optional.
+    </p>
+    <h3 id="421-schema-property-">
+      4.2.1 Schema Property <a id='schema-property'></a>
+    </h3>
+    <p>
+      The OpenEoX Core Schema (<code>$schema</code>) of value type <code>string</code> and <code>const</code> specifies the schema the JSON object must be valid against. The single valid value for this <code>const</code> is:
+    </p>
+    <pre><code>  https://docs.oasis-open.org/openeox/v1.0/schema/core.json</code></pre>
+    <blockquote>
+      <p>
+        This value allows for tools to identify that a JSON document is meant to be valid against this schema. Tools can use that to support users by automatically checking whether the OpenEoX Core Object adheres to the JSON schema identified by this URL.
+      </p>
+    </blockquote>
+    <h3 id="422-end-of-life-property-">
+      4.2.2 End-of-Life Property <a id='end-of-life-property'></a>
+    </h3>
+    <p>
+      End-of-Life (<code>end_of_life</code>) of value type <code>eox_timestamp_t</code> indicates the last day when the particular product is officially supported in any way by the vendor.
+    </p>
+    <h3 id="423-end-of-sales-property-">
+      4.2.3 End-of-Sales Property <a id='end-of-sales-property'></a>
+    </h3>
+    <p>
+      End-of-Sales (<code>end_of_sales</code>) of value type <code>eox_timestamp_t</code> indicates the last day when a particular product may be ordered by customers from vendor sales channels.
+    </p>
+    <h3 id="424-end-of-security-support-property-">
+      4.2.4 End-of-Security-Support Property <a id='end-of-security-support-property'></a>
+    </h3>
+    <p>
+      End-of-Security-Support (<code>end_of_security_support</code>) of value type <code>eox_timestamp_t</code> indicates the last day when the vendor has committed to providing security remediations for the particular product.
+    </p>
+    <h3 id="425-last-updated-property-">
+      4.2.5 Last Updated Property <a id='last-updated-property'></a>
+    </h3>
+    <p>
+      Timestamp of last change (<code>last_updated</code>) of value type <code>string</code> with format <code>date-time</code> contains the RFC 3339 timestamp when the record was last updated.
+    </p>
+    <h1 id="5-tests-">
+      5. Tests <a id='tests'></a>
+    </h1>
+    <p>
+      The following subsections list a number of tests which all will have a short description and an excerpt of an example which fails the test.
+    </p>
+    <h2 id="51-mandatory-tests-">
+      5.1 Mandatory Tests <a id='mandatory-tests'></a>
+    </h2>
+    <p>
+      Mandatory tests MUST NOT fail at a valid OpenEoX Core Information. A program MUST handle a test failure as an error.
+    </p>
+    <h3 id="511-inconsistent-eol-date-">
+      5.1.1 Inconsistent EoL Date <a id='inconsistent-eol-date'></a>
+    </h3>
+    <p>
+      It MUST be tested that the <code>end_of_life</code> is later than or equal to any other date value in the OpenEoX Core Information. The property <code>last_updated</code> is ignored in this test. As the timestamps might use different timezones, the sorting MUST take timezones into account. Except for <code>end_of_life</code>, any
+      property of type <code>eox_timestamp_t</code> with value <code>tba</code> MUST be ignored in the comparison.
+    </p>
+    <p>
+      The relevant path for this test is:
+    </p>
+    <pre><code>    /end_of_life</code></pre>
+    <p>
+      <em>Example 1 (which fails the test):</em><a id='inconsistent-eol-date-eg-1'></a><a id='sec-5-1-1-eg-1'></a><a id='example-1'></a>
+    </p>
+    <pre><code>  {
+    // ...
+    "end_of_life": "2025-11-19T16:00:00Z",
+    "end_of_security_support": "2025-12-31T12:00:00Z",
+    // ...
+  }</code></pre>
+    <blockquote>
+      <p>
+        The <code>end_of_security_support</code> is later than the <code>end_of_life</code>.
+      </p>
+    </blockquote>
+    <h3 id="512-date-and-time-">
+      5.1.2 Date and Time <a id='mandatory-tests--date-and-time'></a>
+    </h3>
+    <p>
+      For each item of type <code>string</code> and format <code>date-time</code> it MUST be tested that it conforms to the rules given in section <a href="#date-and-time">3.6</a>. Any property with the value <code>tba</code> is ignored in this comparison.
+    </p>
+    <p>
+      The relevant path for this test is:
+    </p>
+    <pre><code>  /end_of_life
+  /end_of_sales
+  /end_of_security_support
+  /last_updated</code></pre>
+    <p>
+      <em>Example 1 (which fails the test):</em><a id='mandatory-tests--date-and-time-eg-1'></a><a id='sec-5-1-2-eg-1'></a><a id='example-2'></a>
+    </p>
+    <pre><code>  "end_of_life": "2025-12-31 12:00:00Z",</code></pre>
+    <blockquote>
+      <p>
+        The <code>end_of_life</code> uses a white space as separator instead the letter <code>T</code>.
+      </p>
+    </blockquote>
+    <h2 id="52-recommended-tests-">
+      5.2 Recommended Tests <a id='recommended-tests'></a>
+    </h2>
+    <p>
+      Recommended tests SHOULD NOT fail at a valid OpenEoX Core Information without a good reason. Failing such a test does not make the OpenEoX Core Information invalid. These tests may include information about features which are still supported but expected to be deprecated in a future version of OpenEoX. A program MUST handle a test
+      failure as a warning.
+    </p>
+    <h3 id="521-use-of-tba-where-date-is-set-for-eol-">
+      5.2.1 Use of <code>tba</code> where Date is set for EoL <a id='use-of-tba-where-date-is-set-for-eol'></a>
+    </h3>
+    <p>
+      For each property of type <code>eox_timestamp_t</code>, it MUST be tested that it does not contain the value <code>tba</code> if the <code>end_of_life</code> value is set to a date.
+    </p>
+    <p>
+      The relevant path for this test is:
+    </p>
+    <pre><code>  /end_of_sales
+  /end_of_security_support</code></pre>
+    <p>
+      <em>Example 1 (which fails the test):</em><a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-5-2-1-eg-1'></a><a id='example-3'></a>
+    </p>
+    <pre><code>  {
+    // ...
+    "end_of_life": "2025-09-01T12:00:00Z",
+    "end_of_security_support": "tba",
+    // ...
+  }</code></pre>
+    <blockquote>
+      <p>
+        The <code>end_of_security_support</code> is set to <code>tba</code> but <code>end_of_life</code> already has a date.
+      </p>
+    </blockquote>
+    <blockquote>
+      <p>
+        A tool MAY set the <code>end_of_security_support</code> to the same value as <code>end_of_life</code> as a quick fix.
+      </p>
+    </blockquote>
+    <h2 id="53-informative-tests-">
+      5.3 Informative Tests <a id='informative-tests'></a>
+    </h2>
+    <p>
+      Informative tests provide insights in common mistakes and bad practices. They MAY fail at a valid OpenEoX Core Information. It is up to the issuing party to decide whether this was an intended behavior and can be ignore or should be treated. These tests MAY include information about recommended usage. A program MUST handle a test
+      failure as a information.
+    </p>
+    <h3 id="531-eossec-before-eos-">
+      5.3.1 EoSSec before EoS <a id='eossec-before-eos'></a>
+    </h3>
+    <p>
+      It MUST be tested that if <code>end_of_sales</code> is present, its value is before or equal to the value of <code>end_of_security_support</code>. As the timestamps might use different timezones, the sorting MUST take timezones into account. The test MUST be skipped, if <code>end_of_sales</code> is set to <code>tba</code>.
+    </p>
+    <p>
+      The relevant path for this test is:
+    </p>
+    <pre><code>    /end_of_sales</code></pre>
+    <p>
+      <em>Example 1 (which fails the test):</em><a id='eossec-before-eos-eg-1'></a><a id='sec-5-3-1-eg-1'></a><a id='example-4'></a>
+    </p>
+    <pre><code>  {
+    // ...
+    "end_of_sales": "2025-12-31T12:00:00Z",
+    "end_of_security_support": "2025-11-19T16:00:00Z",
+    // ...
+  }</code></pre>
+    <blockquote>
+      <p>
+        The <code>end_of_security_support</code> is earlier than the <code>end_of_sales</code>.
+      </p>
+    </blockquote>
+    <h1 id="6-conformance-">
+      6. Conformance <a id='conformance'></a>
+    </h1>
+    <p>
+      The single subsection of this section lists the conformance targets and clauses. The clauses directly corresponding to the targets are listed in separate sub-subsections of the target list subsection.
+    </p>
+    <blockquote>
+      <p>
+        The order in which targets, and their corresponding clauses appear is somewhat arbitrary as there is no natural order on such diverse roles participating in the EoX exchanging ecosystem.
+      </p>
+    </blockquote>
+    <h2 id="61-conformance-targets-">
+      6.1 Conformance Targets <a id='conformance-targets'></a>
+    </h2>
+    <p>
+      This document defines requirements for the file format and for certain software components that interact with it. The entities ("conformance targets") for which this document defines requirements are:
+    </p>
+    <ul>
+      <li>
+        <strong>OpenEoX Core Information</strong>: An EoX information in the format defined by this document.
+      </li>
+      <li>
+        <strong>OpenEoX Core Producer</strong>: A program which emits output in the OpenEoX Core format.
+      </li>
+      <li>
+        <strong>OpenEoX Core Consumer</strong>: A program that reads and interprets OpenEoX Core Information.
+      </li>
+      <li>
+        <strong>OpenEoX Core Basic Validator</strong>: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
+      </li>
+      <li>
+        <strong>OpenEoX Core Extended Validator</strong>: A OpenEoX Core Basic Validator that additionally performs recommended tests.
+      </li>
+      <li>
+        <strong>OpenEoX Core Full Validator</strong>: A OpenEoX Core Extended Validator that additionally performs guidance tests.
+      </li>
+      <li>
+        <strong>OpenEoX Core Library</strong>: A library that implements OpenEoX Core data capabilities.
+      </li>
+      <li>
+        <strong>OpenEoX Core Library with Basic Validation</strong>: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Basic Validator".
+      </li>
+      <li>
+        <strong>OpenEoX Core Library with Extended Validation</strong>: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Extended Validator".
+      </li>
+      <li>
+        <strong>OpenEoX Core Library with Full Validation</strong>: A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Full Validator".
+      </li>
+      <li>
+        <strong>OpenEoX Core Differ</strong>: A program that compares OpenEoX Core Information and calculates the changes.
+      </li>
+      <li>
+        <strong>OpenEoX Core Comparator</strong>: A program that compares OpenEoX Core Information and returns the newer one.
+      </li>
+      <li>
+        <strong>OpenEoX Core Sorter</strong>: A program that sorts OpenEoX Core Information from newest to oldest or vice versa.
+      </li>
+      <li>
+        <strong>OpenEoX Core Merger</strong>: A program that combines OpenEoX Core Information.
+      </li>
+    </ul>
+    <h3 id="611-conformance-clause-1-openeox-core-information-">
+      6.1.1 Conformance Clause 1: OpenEoX Core Information <a id='conformance-clause-1-openeox-core-information'></a>
+    </h3>
+    <p>
+      A text file or data stream satisfies the "OpenEoX Core Information" conformance profile if it:
+    </p>
+    <ul>
+      <li>conforms to the syntax and semantics defined in section <a href="#format-validation">3.5</a>.
+      </li>
+      <li>conforms to the syntax and semantics defined in section <a href="#date-and-time">3.6</a>.
+      </li>
+      <li>conforms to the syntax and semantics defined in section <a href="#schema-elements">4</a>.
+      </li>
+      <li>does not fail any mandatory test defined in section <a href="#mandatory-tests">5.1</a>.
+      </li>
+    </ul>
+    <h3 id="612-conformance-clause-2-openeox-core-producer-">
+      6.1.2 Conformance Clause 2: OpenEoX Core Producer <a id='conformance-clause-2-openeox-core-producer'></a>
+    </h3>
+    <p>
+      A program satisfies the "OpenEoX Core Producer" conformance profile if the program:
+    </p>
+    <ul>
+      <li>produces output in the OpenEoX Core format, according to the conformance profile "OpenEoX Core Information".
+      </li>
+      <li>satisfies those normative requirements in section <a href="#schema-elements">4</a> and <a href="#safety-security-and-data-protection">Appendix B</a> that are designated as applying to OpenEoX Producers.
+      </li>
+    </ul>
+    <h3 id="613-conformance-clause-3-openeox-core-consumer-">
+      6.1.3 Conformance Clause 3: OpenEoX Core Consumer <a id='conformance-clause-3-openeox-core-consumer'></a>
+    </h3>
+    <p>
+      A processor satisfies the "OpenEoX Core Consumer" conformance profile if the processor:
+    </p>
+    <ul>
+      <li>reads OpenEoX Core Information and interprets them according to the semantics defined in section <a href="#schema-elements">4</a>.
+      </li>
+      <li>satisfies those normative requirements in section <a href="#schema-elements">4</a> and <a href="#safety-security-and-data-protection">Appendix B</a> that are designated as applying to OpenEoX Consumers.
+      </li>
+    </ul>
+    <h3 id="614-conformance-clause-4-openeox-core-basic-validator-">
+      6.1.4 Conformance Clause 4: OpenEoX Core Basic Validator <a id='conformance-clause-4-openeox-core-basic-validator'></a>
+    </h3>
+    <p>
+      A program satisfies the "OpenEoX Core Basic Validator" conformance profile if the program:
+    </p>
+    <ul>
+      <li>reads JSON objects and performs a check against the JSON schema.
+      </li>
+      <li>performs all mandatory tests as given in section <a href="#mandatory-tests">5.1</a>.
+      </li>
+      <li>does not change the OpenEoX Core Information.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Basic Validator MAY provide one or more additional functions:
+    </p>
+    <ul>
+      <li>Only run one or more selected mandatory tests.
+      </li>
+      <li>Apply quick fixes as specified in the standard.
+      </li>
+      <li>Apply additional quick fixes as implemented by the vendor.
+      </li>
+    </ul>
+    <h3 id="615-conformance-clause-5-openeox-core-extended-validator-">
+      6.1.5 Conformance Clause 5: OpenEoX Core Extended Validator <a id='conformance-clause-5-openeox-core-extended-validator'></a>
+    </h3>
+    <p>
+      A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" conformance profile if the OpenEoX Core Basic Validator:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Basic Validator" conformance profile.
+      </li>
+      <li>additionally performs all recommended tests as given in section <a href="#recommended-tests">5.2</a>.
+      </li>
+      <li>provides a function that allows to specify tests for which test results of warning are reported as error.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Extended Validator MAY provide an additional function to only run one or more selected recommended tests.
+    </p>
+    <h3 id="616-conformance-clause-6-openeox-core-full-validator-">
+      6.1.6 Conformance Clause 6: OpenEoX Core Full Validator <a id='conformance-clause-6-openeox-core-full-validator'></a>
+    </h3>
+    <p>
+      A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" conformance profile if the OpenEoX Core Extended Validator:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Extended Validator" conformance profile.
+      </li>
+      <li>additionally performs all guidance tests as given in section <a href="#informative-tests">5.3</a>.
+      </li>
+      <li>provides a function that allows to specify tests for which test results of information are reported as warning.
+      </li>
+      <li>provides a function that allows to specify tests for which test results of information are reported as error.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Full Validator MAY provide an additional function to only run one or more selected guidance tests.
+    </p>
+    <h3 id="617-conformance-clause-7-openeox-core-library-">
+      6.1.7 Conformance Clause 7: OpenEoX Core Library <a id='conformance-clause-7-openeox-core-library'></a>
+    </h3>
+    <p>
+      A library satisfies the "OpenEoX Core Library" conformance profile if the library:
+    </p>
+    <ul>
+      <li>implements all elements as data structures conforming to the syntax and semantics defined in sections <a href="#format-validation">3.5</a>, <a href="#date-and-time">3.6</a> and <a href="#schema-elements">4</a>.
+      </li>
+      <li>checks all elements according to the patterns provided in the JSON schema.
+      </li>
+      <li>has a function that reads OpenEoX Core Information into the data structure from a
+        <ul>
+          <li>file system.
+          </li>
+          <li>URL.
+          </li>
+          <li>data stream.
+          </li>
+        </ul>
+      </li>
+      <li>provides function for sorting the keys and sorts the keys automatically on output.
+      </li>
+      <li>has a function that outputs the data structure as OpenEoX Core Information
+        <ul>
+          <li>on the file system.
+          </li>
+          <li>as string.
+          </li>
+          <li>into a data stream.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      The library MAY implement an option to retrieve the keys unsorted.
+    </p>
+    <h3 id="618-conformance-clause-8-openeox-core-library-with-basic-validation-">
+      6.1.8 Conformance Clause 8: OpenEoX Core Library with Basic Validation <a id='conformance-clause-8-openeox-core-library-with-basic-validation'></a>
+    </h3>
+    <p>
+      -1 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Library" conformance profile.
+      </li>
+      <li>satisfies the "OpenEoX Core Basic Validator" conformance profile.
+      </li>
+      <li>validates the OpenEoX Core Information before output according to the "OpenEoX Core Basic Validator" and presents the validation result accordingly.
+      </li>
+      <li>provide a function to validate the data structure in its current state according to the "OpenEoX Core Basic Validator" and presents the validation result accordingly.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library uses an external library or program for the "OpenEoX Core Basic Validator" part and does not enforce its presence.
+    </p>
+    <h3 id="619-conformance-clause-9-openeox-core-library-with-extended-validation-">
+      6.1.9 Conformance Clause 9: OpenEoX Core Library with Extended Validation <a id='conformance-clause-9-openeox-core-library-with-extended-validation'></a>
+    </h3>
+    <p>
+      A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Library" conformance profile.
+      </li>
+      <li>satisfies the "OpenEoX Core Extended Validator" conformance profile.
+      </li>
+      <li>validates the OpenEoX Core Information before output according to the "OpenEoX Core Extended Validator" and presents the validation result accordingly.
+      </li>
+      <li>provide a function to validate the data structure in its current state according to the "OpenEoX Core Extended Validator" and presents the validation result accordingly.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library uses an external library or program for the "OpenEoX Core Extended Validator" part and does not enforce its presence.
+    </p>
+    <h3 id="6110-conformance-clause-10-openeox-core-library-with-full-validation-">
+      6.1.10 Conformance Clause 10: OpenEoX Core Library with Full Validation <a id='conformance-clause-10-openeox-core-library-with-full-validation'></a>
+    </h3>
+    <p>
+      A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Library" conformance profile.
+      </li>
+      <li>satisfies the "OpenEoX Core Full Validator" conformance profile.
+      </li>
+      <li>validates the OpenEoX Core Information before output according to the "OpenEoX Core Full Validator" and presents the validation result accordingly.
+      </li>
+      <li>provide a function to validate the data structure in its current state according to the "OpenEoX Core Full Validator" and presents the validation result accordingly.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Full Validation" conformance profile if the OpenEoX Core Library uses an external library or program for the "OpenEoX Core Full Validator" part and does not enforce its presence.
+    </p>
+    <h3 id="6111-conformance-clause-11-openeox-core-differ-">
+      6.1.11 Conformance Clause 11: OpenEoX Core Differ <a id='conformance-clause-11-openeox-core-differ'></a>
+    </h3>
+    <p>
+      A program satisfies the "OpenEoX Core Differ" conformance profile if the program:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Consumer" conformance profile.
+      </li>
+      <li>calculates the difference between two OpenEoX Core Information JSON Objects and presents it as JSON Diff.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Differ MAY choose to make that information also available in other data formats.
+    </p>
+    <h3 id="6112-conformance-clause-12-openeox-core-comparator-">
+      6.1.12 Conformance Clause 12: OpenEoX Core Comparator <a id='conformance-clause-12-openeox-core-comparator'></a>
+    </h3>
+    <p>
+      A program satisfies the "OpenEoX Core Comparator" conformance profile if the program:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Consumer" conformance profile.
+      </li>
+      <li>provides a function to compares two OpenEoX Core Information Objects <code>a</code> and <code>b</code> based on their <code>last_updated</code> value and returns:
+        <ul>
+          <li>
+            <code>-1</code> if <code>a["last_updated"] &lt; b["last_updated"]</code>
+          </li>
+          <li>
+            <code>0</code> if <code>a["last_updated"] = b["last_updated"]</code>
+          </li>
+          <li>
+            <code>1</code> if <code>a["last_updated"] &gt; b["last_updated"]</code>
+          </li>
+        </ul>
+      </li>
+      <li>provides a function to compares two OpenEoX Core Information Objects <code>a</code> and <code>b</code> based on their <code>last_updated</code> value and returns:
+        <ul>
+          <li>
+            <code>b</code> if <code>a["last_updated"] &lt; b["last_updated"]</code>
+          </li>
+          <li>
+            <code>a</code> if <code>a["last_updated"] = b["last_updated"]</code>
+          </li>
+          <li>
+            <code>a</code> if <code>a["last_updated"] &gt; b["last_updated"]</code>
+          </li>
+        </ul>
+      </li>
+      <li>takes timezones into account.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Comparator MAY choose to make that information also available in other data formats.
+    </p>
+    <h3 id="6113-conformance-clause-13-openeox-core-sorter-">
+      6.1.13 Conformance Clause 13: OpenEoX Core Sorter <a id='conformance-clause-13-openeox-core-sorter'></a>
+    </h3>
+    <p>
+      A program satisfies the "OpenEoX Core Sorter" conformance profile if the program:
+    </p>
+    <ul>
+      <li>satisfies the "OpenEoX Core Consumer" conformance profile.
+      </li>
+      <li>provides a function to sort an arbitrary number of OpenEoX Core Information Objects <code>last_updated</code> value with that value descending (default).
+      </li>
+      <li>provides a function to sort an arbitrary number of OpenEoX Core Information Objects <code>last_updated</code> value with that value ascending.
+      </li>
+      <li>takes timezones into account.
+      </li>
+    </ul>
+    <p>
+      A OpenEoX Core Sorter MAY choose to make that information also available in other data formats.
+    </p>
+    <h3 id="6114-conformance-clause-14-openeox-core-merger-">
+      6.1.14 Conformance Clause 14: OpenEoX Core Merger <a id='conformance-clause-14-openeox-core-merger'></a>
+    </h3>
+    <p>
+      A program satisfies the "OpenEoX Core Merger" conformance profile if the program:
+    </p>
+    <ul>
+      <li>
+        <p>
+          satisfies the "OpenEoX Core Consumer" conformance profile.
+        </p>
+      </li>
+      <li>
+        <p>
+          provides a function to merge OpenEoX Core Information into a single OpenEoX Core Information Object by overwriting all old values of keys present in newer OpenEoX Core Information Objects with the values from newer objects.
+        </p>
+        <blockquote>
+          <p>
+            This includes the value of <code>last_updated</code>.
+          </p>
+        </blockquote>
+      </li>
+      <li>
+        <p>
+          provides a function to merge OpenEoX Core Information into a single OpenEoX Core Information Object by overwriting all old values of keys present in newer OpenEoX Core Information Objects with the values from newer objects but treating <code>tba</code> as not present during the overwrite process.
+        </p>
+        <blockquote>
+          <p>
+            This includes the value of <code>last_updated</code>. Ignoring <code>tba</code> while overwriting ensures that a date value is never overwritten by <code>tba</code>.
+          </p>
+        </blockquote>
+      </li>
+      <li>
+        <p>
+          provides a function to merge OpenEoX Core Information into a single OpenEoX Core Information Object by taking the newest as base and iterative appending keys that are not present in that object while iterating over the OpenEoX Core Information from newest to oldest.
+        </p>
+        <blockquote>
+          <p>
+            As <code>last_updated</code> is a required field, it is not changed during the process. Values of keys that are inserted are never changed in that process.
+          </p>
+        </blockquote>
+      </li>
+      <li>
+        <p>
+          takes timezones into account.
+        </p>
+      </li>
+    </ul>
+    <p>
+      A program MAY implement other algorithms than defined here, if and only if, the results are guaranteed to be the same.
+    </p>
+    <p>
+      A OpenEoX Core Merger MAY choose to make that information also available in other data formats.
     </p>
     <hr />
     <h1 id="appendix-a-references-">
       Appendix A. References <a id='references'></a>
     </h1>
     <p>
-      This appendix contains the normative and informative references that are used in this document.
+      <strong>[</strong><span id="This appendix contains the normative and informative references that are used in this document." class="anchor"></span><strong>This appendix contains the normative and informative references that are used in this document.]</strong>
     </p>
     <p>
-      While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.
+      <strong>[</strong><span id="While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity." class="anchor"></span><strong>While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.]</strong>
     </p>
     <h2 id="a1-normative-references-">
       A.1 Normative References <a id='normative-references'></a>
     </h2>
     <p>
-      The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
+      <strong>[</strong><span id="The following documents are referenced in such a way that some or all of their content constitutes requirements of this document." class="anchor"></span><strong>The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.]</strong>
     </p>
-    <dl>
-      <dt>
-        ECMA-262
-      </dt>
-      <dd>
-        <em>ECMAScript® 2024 Language Specification</em>, ECMA-262, 15th edition, June 2024, <a href="https://262.ecma-international.org/15.0/">https://262.ecma-international.org/15.0/</a>
-      </dd>
-      <dt>
-        ISO8601-1
-      </dt>
-      <dd>
-        <em>Date and time — Representations for information interchangePart 1: Basic rules</em>, International Standard, ISO 8601-1:2019(E), February 25, 2019, <a href="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</a>.
-      </dd>
-      <dt>
-        JSON-Schema-Core
-      </dt>
-      <dd>
-        <em>JSON Schema: A Media Type for Describing JSON Documents</em>, draft-bhutton-json-schema-00, December 2020, <a href="https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00">https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00</a>.
-      </dd>
-      <dt>
-        JSON-Schema-Validation
-      </dt>
-      <dd>
-        <em>JSON Schema Validation: A Vocabulary for Structural Validation of JSON</em>, draft-bhutton-json-schema-validation-00, December 2020, <a href="https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00">https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00</a>.
-      </dd>
-      <dt>
-        JSON-Hyper-Schema
-      </dt>
-      <dd>
-        <em>JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON</em>, draft-handrews-json-schema-hyperschema-02, September 2019, <a href="https://json-schema.org/draft/2019-09/json-schema-hypermedia.html">https://json-schema.org/draft/2019-09/json-schema-hypermedia.html</a>.
-      </dd>
-      <dt>
-        Relative-JSON-Pointers
-      </dt>
-      <dd>
-        <em>Relative JSON Pointers</em>, draft-bhutton-relative-json-pointer-00, December 2020, <a href="https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00">https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00</a>.
-      </dd>
-      <dt>
-        RFC2119
-      </dt>
-      <dd>
-        Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997, <a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>.
-      </dd>
-      <dt>
-        RFC3339
-      </dt>
-      <dd>
-        Klyne, G. and C. Newman, "Date and Time on the Internet: Timestamps", RFC 3339, DOI 10.17487/RFC3339, July 2002, <a href="https://www.rfc-editor.org/info/rfc3339">https://www.rfc-editor.org/info/rfc3339</a>.
-      </dd>
-      <dt>
-        RFC4180
-      </dt>
-      <dd>
-        Shafranovich, Y., "Common Format and MIME Type for Comma-Separated Values (CSV) Files", RFC 4180, DOI 10.17487/RFC4180, October 2005, <a href="https://www.rfc-editor.org/info/rfc4180">https://www.rfc-editor.org/info/rfc4180</a>.
-      </dd>
-      <dt>
-        RFC7230
-      </dt>
-      <dd>
-        Roy T. Fielding and Julian Reschke, "Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing", RFC 7230, DOI 10.17487/RFC7230, June 2014, <a href="https://www.rfc-editor.org/info/rfc7230">https://www.rfc-editor.org/info/rfc7230</a>.
-      </dd>
-      <dt>
-        RFC7464
-      </dt>
-      <dd>
-        Williams, N., "JavaScript Object Notation (JSON) Text Sequences", RFC 7464, DOI 10.17487/RFC7464, February 2015, <a href="https://www.rfc-editor.org/info/rfc7464">https://www.rfc-editor.org/info/rfc7464</a>.
-      </dd>
-      <dt>
-        RFC8174
-      </dt>
-      <dd>
-        Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, <a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>.
-      </dd>
-      <dt>
-        RFC8259
-      </dt>
-      <dd>
-        T. Bray, Ed., "The JavaScript Object Notation (JSON) Data Interchange Format", RFC 8259, DOI 10.17487/RFC8259, December 2017, <a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>.
-      </dd>
-      <dt>
-        RFC9562
-      </dt>
-      <dd>
-        Davis, K., Peabody, B., and P. Leach, "Universally Unique IDentifiers (UUIDs)", RFC 9562, DOI 10.17487/RFC9562, May 2024, <a href="https://www.rfc-editor.org/info/rfc9562">https://www.rfc-editor.org/info/rfc9562</a>.
-      </dd>
-      <dt>
-        SPDX301
-      </dt>
-      <dd>
-        <em>The System Package Data Exchange® (SPDX®) Specification Version 3.0.1</em>, Linux Foundation and its Contributors, 2024, <a href="https://spdx.github.io/spdx-spec/">https://spdx.github.io/spdx-spec/</a>.
-      </dd>
-    </dl>
+    <p>
+      <strong>[</strong><span id="&lt;https;//262.ecma-international.org/15.0/&gt;" class="anchor"></span><strong><a href="https://262.ecma-international.org/15.0/">https://262.ecma-international.org/15.0/</a>]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.iso.org/standard/70907.html&gt;." class="anchor"></span><strong><a href="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00&gt;." class="anchor"></span><strong><a href="https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00">https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="JSON-Schema-Validation" class="anchor"></span><strong>JSON-Schema-Validation]</strong> <em>JSON Schema Validation: A Vocabulary for Structural Validation of JSON</em>, draft-bhutton-json-schema-validation-00, December 2020, <a href=
+      "https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00">https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00</a>.
+    </p>
+    <p>
+      <strong>[</strong><span id="JSON-Hyper-Schema" class="anchor"></span><strong>JSON-Hyper-Schema]</strong> <em>JSON Hyper-Schema: A Vocabulary for Hypermedia Annotation of JSON</em>, draft-handrews-json-schema-hyperschema-02, September 2019, <a href=
+      "https://json-schema.org/draft/2019-09/json-schema-hypermedia.html">https://json-schema.org/draft/2019-09/json-schema-hypermedia.html</a>.
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00&gt;." class="anchor"></span><strong><a href="https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00">https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc2119&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc3339&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc3339">https://www.rfc-editor.org/info/rfc3339</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc4180&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc4180">https://www.rfc-editor.org/info/rfc4180</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc7230&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc7230">https://www.rfc-editor.org/info/rfc7230</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc7464&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc7464">https://www.rfc-editor.org/info/rfc7464</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc8174&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc8259&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc9562&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc9562">https://www.rfc-editor.org/info/rfc9562</a>.]</strong>
+    </p>
+    <p>
+      <strong>[</strong><span id="&lt;https;//spdx.github.io/spdx-spec/&gt;." class="anchor"></span><strong><a href="https://spdx.github.io/spdx-spec/">https://spdx.github.io/spdx-spec/</a>.]</strong>
+    </p>
     <h2 id="a2-informative-references-">
       A.2 Informative References <a id='informative-references'></a>
     </h2>
     <p>
-      TBD
+      <strong>[</strong><span id="TBD" class="anchor"></span><strong>TBD]</strong>
     </p>
     <h1 id="appendix-b-safety-security-and-data-protection-">
       Appendix B. Safety, Security and Data Protection <a id='safety-security-and-data-protection'></a>
     </h1>
     <p>
-      TBD
+      All safety, security, and data protection requirements relevant to the context in which OpenEoX information items are used MUST be translated into, and consistently enforced through, OpenEoX implementations and processes.
     </p>
+    <p>
+      OpenEoX information items are based on JSON, thus the security considerations of [<a href="#RFC8259">RFC8259</a>] apply and are repeated here as service for the reader:
+    </p>
+    <blockquote>
+      <p>
+        Generally, there are security issues with scripting languages. JSON is a subset of JavaScript but excludes assignment and invocation.
+      </p>
+      <p>
+        Since JSON's syntax is borrowed from JavaScript, it is possible to use that language's <code>eval()</code> function to parse most JSON texts (but not all; certain characters such as <code>U+2028 LINE SEPARATOR</code> and <code>U+2029 PARAGRAPH SEPARATOR</code> are legal in JSON but not JavaScript). This generally constitutes an
+        unacceptable security risk, since the text could contain executable code along with data declarations. The same consideration applies to the use of eval()-like functions in any other programming language in which JSON texts conform to that language's syntax.
+      </p>
+    </blockquote>
     <hr />
     <h1 id="appendix-c-acknowledgments-">
       Appendix C. Acknowledgments <a id='acknowledgments'></a>
@@ -868,6 +1825,34 @@
           </td>
           <td style="text-align: left;">
             Preparing initial Editor Revision
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">
+            eox-core-v1.0-wd20250820-dev
+          </td>
+          <td style="text-align: left;">
+            2025-08-20
+          </td>
+          <td style="text-align: left;">
+            Jautau White, Stefan Hagen, and Thomas Schmidt
+          </td>
+          <td style="text-align: left;">
+            Editor Revision with first structure
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">
+            eox-core-v1.0-wd20251119-dev
+          </td>
+          <td style="text-align: left;">
+            2025-11-19
+          </td>
+          <td style="text-align: left;">
+            Jautau White, Stefan Hagen, and Thomas Schmidt
+          </td>
+          <td style="text-align: left;">
+            Editor Revision for TC review
           </td>
         </tr>
       </tbody>

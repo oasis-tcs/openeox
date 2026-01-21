@@ -13,6 +13,12 @@ DOT = '.'
 
 LANG_PATCH = '<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">'
 LOGO_TARGET = 'https://docs.oasis-open.org/templates/OASISLogo-v3.0.png'
+GENERATOR_TIDY_STARTSWITH_TRIGGER = '<meta name="generator" content="HTML Tidy'
+GENERATOR_PANDOC_STARTSWITH_TRIGGER = '<meta name="generator" content="pandoc'
+
+DENOISE_1 = '/* default styles provided by pandoc.'
+DENOISE_2 = '** see https://pandoc.org/manual.html#variables-for-html for config info.'
+DENOISE_3 = '*/'
 
 TOC_STARTSWITH_TRIGGER = '<h1 id="table-of-contents'
 INTRO_STARTSWITH_TRIGGER = '<h1 id="1-introduction'
@@ -108,6 +114,7 @@ def main(argv: list[str]) -> int:
 
     outgoing = []
     in_toc = False
+    in_denoise = False
     for line in incoming:
         if in_toc:
             if line.startswith(INTRO_STARTSWITH_TRIGGER):
@@ -121,6 +128,16 @@ def main(argv: list[str]) -> int:
             outgoing.append(line)
             outgoing.append(the_toc)
             continue
+        if not in_denoise:
+            if line.strip().lower() == DENOISE_1:
+                in_denoise = True
+                continue
+        if in_denoise:
+             if line.strip().lower() == DENOISE_2:
+                 continue
+             elif line.strip().lower() == DENOISE_3:
+                 in_denoise = False
+                 continue
         if line.startswith('<html xmlns'):
             line = LANG_PATCH
         elif '</style>' in line:
@@ -131,6 +148,11 @@ def main(argv: list[str]) -> int:
             continue
         elif LOGO_TARGET in line:
             line = line.replace(LOGO_TARGET, logo_data)
+        elif line.lstrip().startswith(GENERATOR_TIDY_STARTSWITH_TRIGGER):
+            print('OKgen')
+            line = '    <meta name="generator" content="liitos, pandoc, and tidy." />'
+        elif line.lstrip().startswith(GENERATOR_PANDOC_STARTSWITH_TRIGGER):
+            continue
 
         outgoing.append(line)
 
