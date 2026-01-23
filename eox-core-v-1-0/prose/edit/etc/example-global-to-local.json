@@ -2,6 +2,8 @@
   "4321": "typographical-conventions-eg-1",
   "1": "inconsistent-eol-date-eg-1",
   "2": "mandatory-tests--date-and-time-eg-1",
-  "3": "use-of-tba-where-date-is-set-for-eol-eg-1",
-  "4": "eossec-before-eos-eg-1"
+  "3": "inconsistent-ga-date-eg-1",
+  "4": "use-of-tba-where-date-is-set-for-eol-eg-1",
+  "5": "use-of-tba-for-ga-where-other-date-is-set-eg-1",
+  "6": "eossec-before-eos-eg-1"
 }

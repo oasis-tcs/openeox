@@ -35,6 +35,7 @@
   "general-availability": "4.4",
   "general-availability-property": "5.2.5",
   "inconsistent-eol-date": "6.1.1",
+  "inconsistent-ga-date": "6.1.3",
   "industry-applications": "3.3",
   "informative-references": "A.2",
   "informative-tests": "6.3",
@@ -63,6 +64,7 @@
   "taxonomy": "4",
   "tests": "6",
   "typographical-conventions": "1.1",
+  "use-of-tba-for-ga-where-other-date-is-set": "6.2.2",
   "use-of-tba-where-date-is-set-for-eol": "6.2.1",
   "vendor": "4.7",
   "vendor-perspectives": "3.3.1"
