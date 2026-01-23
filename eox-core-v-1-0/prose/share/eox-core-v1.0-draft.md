@@ -120,7 +120,7 @@ For complete copyright information please see the full Notices section in [Appen
 	4.3 [End-of-Security-Support](#end-of-security-support)  
 	4.4 [General Availability](#general-availability)  
 	4.5 [Product](#product)  
-	4.6 [Product Lifecycle](#product-lifecycle)  
+	4.6 [Product Life Cycle](#product-life-cycle)  
 	4.7 [Vendor](#vendor)  
 5. [Schema Elements](#schema-elements)  
 	5.1 [Definitions](#definitions)  
@@ -136,8 +136,10 @@ For complete copyright information please see the full Notices section in [Appen
 	6.1 [Mandatory Tests](#mandatory-tests)  
 		6.1.1 [Inconsistent EoL Date](#inconsistent-eol-date)  
 		6.1.2 [Date and Time](#mandatory-tests--date-and-time)  
+		6.1.3 [Inconsistent GA Date](#inconsistent-ga-date)  
 	6.2 [Recommended Tests](#recommended-tests)  
 		6.2.1 [Use of `tba` where Date is set for EoL](#use-of-tba-where-date-is-set-for-eol)  
+		6.2.2 [Use of `tba` for GA where other Date is set](#use-of-tba-for-ga-where-other-date-is-set)  
 	6.3 [Informative Tests](#informative-tests)  
 		6.3.1 [EoSSec before EoS](#eossec-before-eos)  
 7. [Conformance](#conformance)  
@@ -230,7 +232,7 @@ The OpenEoX Shell specification provides the binding mechanism that combines Ope
 information to specific product identifications.
 This combination is called an "OpenEoX statement" - a complete, standalone representation of life cycle
 information for a specific product.
-The Shell forms the standalone mode in OpenEoX, enabling complete lifecycle statements that can be
+The Shell forms the standalone mode in OpenEoX, enabling complete life cycle statements that can be
 processed independently without external context.
 
 ### 3.1.3 OpenEoX API <a id='openeox-api'></a>
@@ -249,9 +251,9 @@ for communicating life cycle information.
 By establishing a common JSON-based format, OpenEoX enables:
 
 - Automated processing and integration across vendor ecosystems
-- Consistent interpretation of lifecycle stages regardless of vendor
+- Consistent interpretation of life cycle stages regardless of vendor
 - Reduced operational overhead in managing multi-vendor environments
-- Enhanced accuracy in infrastructure lifecycle planning
+- Enhanced accuracy in infrastructure life cycle planning
 
 ### 3.2.2 Security-First Approach <a id='security-first-approach'></a>
 
@@ -319,7 +321,7 @@ The schema elements and their expected usage patterns are detailed in subsequent
 
 Linking and integration of the OpenEoX Core schema with product identification schema information may lead to inconsistencies.
 The producers of OpenEoX information items have to ensure the intended semantics.
-For example, that lifecycle dates are ordered logically.
+For example, that life cycle dates are ordered logically.
 Semantic validation is out of scope for this OpenEoX Core specification.
 
 The OpenEoX Core schema is designed to be self-contained with minimal external dependencies, utilizing only:
@@ -408,7 +410,7 @@ The following subsections describe the taxonomy defining and explaining all term
 The End-of-Life (EoL) indicates the last day when the particular product (or the product version/release) is officially
 supported in any way by the vendor.
 After this date there shouldn’t be more development, updates or any type of support expected from the vendor.
-The existing customers are also impacted by this product lifecycle stage and should consider migration to the
+The existing customers are also impacted by this product life cycle stage and should consider migration to the
 still supported product version or release.
 
 ## 4.2 End-of-Sales <a id='end-of-sales'></a>
@@ -417,8 +419,8 @@ The End-of-Sales (EoS) indicates the last day when a particular product (or the 
 by customers from vendor sales channels.
 After this date, the product is no longer for sale.
 However, there might be other sources where the product is still available.
-Once the product reaches the EoS lifecycle stage, it may still be supported by the vendor, based on the official or
-dedicated vendor lifecycle model for this product, for existing customers.
+Once the product reaches the EoS life cycle stage, it may still be supported by the vendor, based on the official or
+dedicated vendor life cycle model for this product, for existing customers.
 The implications for existing customers regarding license renewals, updates, upgrades to newer versions or ongoing
 technical support can vary depending on the vendor's specific policies.
 
@@ -437,13 +439,13 @@ is officially launched and made accessible to the general public or through its 
 Product is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name.
 This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.
 
-## 4.6 Product Lifecycle <a id='product-lifecycle'></a>
+## 4.6 Product Life Cycle <a id='product-life-cycle'></a>
 
-Every product type (software, hardware, managed service and other deliverables) can be associated with a lifecycle model.
+Every product type (software, hardware, managed service and other deliverables) can be associated with a life cycle model.
 It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention.
-The lifecycle support model can be dynamic and may change over time, from the product's initial release (General Availability)
+The life cycle support model can be dynamic and may change over time, from the product's initial release (General Availability)
 to its discontinuation (End-of-Life).
-During the product lifecycle, support models may switch from one state to another and may even run in parallel to meet individual requirements.
+During the product life cycle, support models may switch from one state to another and may even run in parallel to meet individual requirements.
 Those requirements may depend on the product type, the vendor offerings, as well as geographical related regulations.
 
 ## 4.7 Vendor <a id='vendor'></a>
@@ -625,6 +627,33 @@ The relevant path for this test is:
 
 > The `end_of_life` uses a white space as separator instead the letter `T`.
 
+### 6.1.3 Inconsistent GA Date <a id='inconsistent-ga-date'></a>
+
+It MUST be tested that the `general_availability` is earlier than or equal to any other date value in the OpenEoX Core Information.
+The property `last_updated` is ignored in this test.
+As the timestamps might use different timezones, the sorting MUST take timezones into account.
+The test MUST be skipped if the value of `general_availability` is `tba`.
+Except for `general_availability`, any property of type `eox_timestamp_t` with value `tba` MUST be ignored in the comparison.
+
+The relevant path for this test is:
+
+```
+    /general_availability
+```
+
+*Example 1 (which fails the test):*<a id='inconsistent-ga-date-eg-1'></a><a id='sec-6-1-3-eg-1'></a><a id='example-3'></a>
+
+```
+  {
+    // ...
+    "end_of_security_support": "2025-11-19T16:00:00Z",
+    "general_availability": "2026-01-21T17:00:00Z",
+    // ...
+  }
+```
+
+> The `general_availability` is later than the `end_of_security_support`.
+
 ## 6.2 Recommended Tests <a id='recommended-tests'></a>
 
 Recommended tests SHOULD NOT fail at a valid OpenEoX Core Information without a good reason.
@@ -644,7 +673,7 @@ The relevant path for this test is:
   /general_availability
 ```
 
-*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-6-2-1-eg-1'></a><a id='example-3'></a>
+*Example 1 (which fails the test):*<a id='use-of-tba-where-date-is-set-for-eol-eg-1'></a><a id='sec-6-2-1-eg-1'></a><a id='example-4'></a>
 
 ```
   {
@@ -658,6 +687,31 @@ The relevant path for this test is:
 > The `end_of_security_support` is set to `tba` but `end_of_life` already has a date.
 
 > A tool MAY set the `end_of_security_support` to the same value as `end_of_life` as a quick fix.
+
+### 6.2.2 Use of `tba` for GA where other Date is set <a id='use-of-tba-for-ga-where-other-date-is-set'></a>
+
+It MUST be tested that `general_availability` does not contain the value `tba` if any other property of type `eox_timestamp_t` is set to a date.
+
+The relevant path for this test is:
+
+```
+  /general_availability
+```
+
+*Example 1 (which fails the test):*<a id='use-of-tba-for-ga-where-other-date-is-set-eg-1'></a><a id='sec-6-2-2-eg-1'></a><a id='example-5'></a>
+
+```
+  {
+    // ...
+    "end_of_security_support": "2025-06-17T14:00:00Z",
+    "general_availability": "tba",
+    // ...
+  }
+```
+
+> The `general_availability` is set to `tba` but `end_of_security_support` already has a date.
+
+> A tool MAY remove the `general_availability` as a quick fix.
 
 ## 6.3 Informative Tests <a id='informative-tests'></a>
 
@@ -680,7 +734,7 @@ The relevant path for this test is:
     /end_of_sales
 ```
 
-*Example 1 (which fails the test):*<a id='eossec-before-eos-eg-1'></a><a id='sec-6-3-1-eg-1'></a><a id='example-4'></a>
+*Example 1 (which fails the test):*<a id='eossec-before-eos-eg-1'></a><a id='sec-6-3-1-eg-1'></a><a id='example-6'></a>
 
 ```
   {

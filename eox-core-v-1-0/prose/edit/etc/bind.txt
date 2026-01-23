@@ -20,8 +20,10 @@ tests-00.md
 tests-01-mandatory.md
 tests-01-mndtr-01-inconsistent-eol-date.md
 tests-01-mndtr-02-date-and-time.md
+tests-01-mndtr-03-inconsistent-ga-date.md
 tests-02-recommended.md
 tests-02-rcmmndd-01-use-of-tba-where-eol-set.md
+tests-02-rcmmndd-02-use-of-tba-for-ga-where-other-date-set.md
 tests-03-informative.md
 tests-03-nfrmtv-01-eossec-before-eos.md
 conformance.md

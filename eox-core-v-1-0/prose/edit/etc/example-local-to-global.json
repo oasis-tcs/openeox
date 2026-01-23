@@ -1,8 +1,10 @@
 {
   "Please do not edit manually!": "Instead, call 'make invert-examples' inside the clone-root/eox-core-v-1-0/prose/edit folder.",
-  "eossec-before-eos-eg-1": "4",
+  "eossec-before-eos-eg-1": "6",
   "inconsistent-eol-date-eg-1": "1",
+  "inconsistent-ga-date-eg-1": "3",
   "mandatory-tests--date-and-time-eg-1": "2",
   "typographical-conventions-eg-1": "4321",
-  "use-of-tba-where-date-is-set-for-eol-eg-1": "3"
+  "use-of-tba-for-ga-where-other-date-is-set-eg-1": "5",
+  "use-of-tba-where-date-is-set-for-eol-eg-1": "4"
 }
