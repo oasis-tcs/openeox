@@ -31,7 +31,7 @@ The OpenEoX Shell specification provides the binding mechanism that combines Ope
 information to specific product identifications.
 This combination is called an "OpenEoX statement" - a complete, standalone representation of life cycle
 information for a specific product.
-The Shell forms the standalone mode in OpenEoX, enabling complete lifecycle statements that can be
+The Shell forms the standalone mode in OpenEoX, enabling complete life cycle statements that can be
 processed independently without external context.
 
 ### OpenEoX API
@@ -50,9 +50,9 @@ for communicating life cycle information.
 By establishing a common JSON-based format, OpenEoX enables:
 
 - Automated processing and integration across vendor ecosystems
-- Consistent interpretation of lifecycle stages regardless of vendor
+- Consistent interpretation of life cycle stages regardless of vendor
 - Reduced operational overhead in managing multi-vendor environments
-- Enhanced accuracy in infrastructure lifecycle planning
+- Enhanced accuracy in infrastructure life cycle planning
 
 ### Security-First Approach
 

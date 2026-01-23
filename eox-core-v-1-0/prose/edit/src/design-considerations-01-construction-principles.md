@@ -26,7 +26,7 @@ The schema elements and their expected usage patterns are detailed in subsequent
 
 Linking and integration of the OpenEoX Core schema with product identification schema information may lead to inconsistencies.
 The producers of OpenEoX information items have to ensure the intended semantics.
-For example, that lifecycle dates are ordered logically.
+For example, that life cycle dates are ordered logically.
 Semantic validation is out of scope for this OpenEoX Core specification.
 
 The OpenEoX Core schema is designed to be self-contained with minimal external dependencies, utilizing only:
