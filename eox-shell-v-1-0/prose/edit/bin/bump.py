@@ -159,7 +159,7 @@ for line in lines:
 
     prefix = 'Hagen, and Thomas Schmidt. '
     postfix = '. OASIS Committee Specification'
-    # Hagen, and Thomas Schmidt. 21 January 2026. OASIS Committee Specification
+    # Hagen, and Thomas Schmidt. 16 July 2025. OASIS Committee Specification
     if line.startswith(prefix) and line.endswith('. OASIS Committee Specification'):
         pub_date = line.replace(prefix, '').replace('. OASIS Committee Specification', '')
         DEBUG and print(f'DEBUG: Found prior pub-date ({pub_date})')
@@ -191,7 +191,7 @@ with open(PDF_META_YAML, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
 
 bumped = []
 for line in lines:
-    #     footer_outer_field_normal_pages: 21 January 2026 - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}
+    #    footer_outer_field_normal_pages: 14 Jul 2025 - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}
     prefix = '    footer_outer_field_normal_pages: '
     postfix = r' - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}'
     if line.startswith(prefix) and line.endswith(postfix):
@@ -329,12 +329,12 @@ bumped = []
 do_amend = True
 past_table = None  # State machine: None -> False -> True -> None
 trigger_prefix = '|:-----------------------------'
-prefix = '| eox-core-v1.0-wd'
+prefix = '| eox-shell-v1.0-wd'
 in_between = f'{PUB_YEAR}{PUB_MONTH}{PUB_DAY}-dev | {PUB_YEAR}-{PUB_MONTH}-{PUB_DAY}'
 stop_token = prefix + in_between
 postfix = ' | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |'
 for line in lines:
-    # | eox-core-v1.0-wd20260121-dev | 2026-01-21 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
+    # | eox-shell-v1.0-wd20250716-dev | 2025-07-16 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
     # <-- append here when past_table is True
     if line.startswith(trigger_prefix) and past_table is None:
         past_table = False
