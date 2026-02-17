@@ -2,7 +2,7 @@
 
 -------
 
-# OpenEOX Shell Schema Version 1.0
+# OpenEoX Shell Schema Version 1.0
 
 ## Committee Specification Draft 01/WD
 
@@ -25,7 +25,7 @@ https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.pdf
 
 #### Technical Committee
 
-[OASIS OpenEOX TC](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa)
+[OASIS OpenEoX TC](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa)
 
 #### Chairs
 
@@ -46,11 +46,11 @@ This specification is related to:
 
 #### Abstract
 
-The OpenEoX Shell Schema defines shell schemas for the OpenEOX unified machine-readable approach to managing and sharing End-of-Life (EOL) and End-of-Support (EOS) information for commercial and open source software and hardware.
+The OpenEoX Shell Schema defines shell schemas for the OpenEoX unified machine-readable approach to managing and sharing End-of-Life (EoL) and End-of-Support (EoS) information for commercial and open source software and hardware.
 
 #### Status
 
-This document was last revised or approved by the OASIS OpenEOX TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa.
+This document was last revised or approved by the OASIS OpenEoX TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa.
 
 TC members should send comments on this specification to the TC's email list. Any individual may submit comments by following the instructions listed at https://groups.oasis-open.org/communities/community-home?CommunityKey=c9295ed5-b5f9-4a51-8893-018f5aa7fc09. 
 
@@ -66,9 +66,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 When referencing this specification the following citation format should be used:
 
-**[EOX-Shell-v1.0]**
+**[EoX-Shell-v1.0]**
 
-_OpenEOX Shell Schema Version 1.0_.
+_OpenEoX Shell Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
 DD MONTH 2025.
 OASIS Committee Specification Draft 01.

@@ -8,9 +8,9 @@ toc:
 -->
 # Acknowledgments
 
-The following individuals were members of the OASIS OpenEOX Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
+The following individuals were members of the OASIS OpenEoX Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
 
-**OASIS OpenEOX TC Members:**
+**OASIS OpenEoX TC Members:**
 
 | First Name | Last Name        | Company                                                    |
 |:-----------|:-----------------|:-----------------------------------------------------------|

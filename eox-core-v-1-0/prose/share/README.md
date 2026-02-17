@@ -1,4 +1,4 @@
-# EOX-CORE v1.0 Prose - User Facing Delivery Items
+# EoX-CORE v1.0 Prose - User Facing Delivery Items
 
 This `share` folder provides the user facing delivery items we build from the sources in the `edit` folder.
 

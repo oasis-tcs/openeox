@@ -1,6 +1,6 @@
-# The EOX-SHELL v1.0 Prose Folder
+# The EoX-SHELL v1.0 Prose Folder
 
-This place offers access to the editable sources of the v1.0 EOX-SHELL specification (to be).
+This place offers access to the editable sources of the v1.0 EoX-SHELL specification (to be).
 
 In the `share` folder there are the user facing delivery items that offer layout and navigation
 optimized for online viewing per

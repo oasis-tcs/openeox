@@ -5,7 +5,7 @@ document:
     approvals_strategy: south  # one of east or south
     bold_font: LinLibertine_RB
     bold_italic_font: LinLibertine_RBI
-    bookmark_title: EOX API v1.0 Editor Revision
+    bookmark_title: EoX API v1.0 Editor Revision
     bookmatter_path: bookmatter.tex.in
     change_log_tune_header_sep: 0.1em
     chosen_logo: images/OASISLogo-v3.0.png
@@ -50,6 +50,6 @@ document:
     sub_title: ' '
     table_caption_below: false
     table_uglify: true
-    title: EOX API Version 1.0
+    title: EoX API Version 1.0
     toc_all_dots: '%'  # old default was not toc all dots, so '%' would restore
     toc_level: 4

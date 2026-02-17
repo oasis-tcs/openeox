@@ -3,7 +3,7 @@
 
 -------
 
-# OpenEOX Core Schema Version 1.0
+# OpenEoX Core Schema Version 1.0
 
 ## Committee Specification Draft 01
 
@@ -23,7 +23,7 @@ https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf
 
 #### Technical Committee:
-[OASIS OpenEOX TC](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa)
+[OASIS OpenEoX TC](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa)
 
 #### Chairs:
 Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
@@ -37,9 +37,9 @@ Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Sec
 #### Additional artifacts:
 This prose specification is one component of a Work Product that also includes:
 
-* OpenEOX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
+* OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json.
-* OpenEOX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
+* OpenEoX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json.
 
 #### Related work:
@@ -54,11 +54,11 @@ This specification is related to
 
 
 #### Abstract:
-The OpenEoX Core Schema defines the core schema for the OpenEOX unified machine-readable approach to
-managing and sharing End-of-Life (EOL) and End-of-Support (EOS) information for commercial and open source software and hardware.
+The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to
+managing and sharing End-of-Life (EoL) and End-of-Support (EoS) information for commercial and open source software and hardware.
 
 #### Status:
-This document was last revised or approved by the OASIS OpenEOX TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa.
+This document was last revised or approved by the OASIS OpenEoX TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa.
 
 TC members should send comments on this specification to the TC's email list. Any individual may submit comments by following the instructions listed at https://groups.oasis-open.org/communities/community-home?CommunityKey=c9295ed5-b5f9-4a51-8893-018f5aa7fc09. 
 
@@ -73,9 +73,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 #### Citation format:
 When referencing this specification the following citation format should be used:
 
-**[EOX-Core-v1.0]**
+**[EoX-Core-v1.0]**
 
-_OpenEOX Core Schema Version 1.0_.
+_OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
 18 February 2026.
 OASIS Committee Specification Draft 01.

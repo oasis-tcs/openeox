@@ -1,3 +1,3 @@
-# Submission request to advance EOX-CORE v1.0 to an International Standard
+# Submission request to advance EoX-CORE v1.0 to an International Standard
 
 TBD
