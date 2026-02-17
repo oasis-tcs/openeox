@@ -1,3 +1,3 @@
-# Examples of EOX-CORE v1.0 Instances
+# Examples of EoX-CORE v1.0 Instances
 
 TBD
