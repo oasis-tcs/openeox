@@ -6,7 +6,7 @@ toc:
   enumerate: Appendix B.
 ---
 -->
-# Safety, Security and Data Protection Considerations
+# Safety, Security and Data Protection Considerations{#safety-security-and-data-protection}
 
 All safety, security, and data protection requirements relevant to the context in which OpenEoX information items are used MUST
 be translated into, and consistently enforced through, OpenEoX implementations and processes.
