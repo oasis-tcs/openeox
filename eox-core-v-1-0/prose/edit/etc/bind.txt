@@ -32,6 +32,9 @@ tests-03-informative.md
 tests-03-nfrmtv-01-eossec-before-eos.md
 safety-security-and-data-protection.md
 conformance.md
+annex-a-00-license-document-status-notices.md
+annex-a-01-document-status.md
+annex-a-02-license-notices.md
 references.md
 acknowledgements.md
 revision-history.md
