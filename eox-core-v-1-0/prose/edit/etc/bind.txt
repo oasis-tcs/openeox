@@ -1,4 +1,6 @@
 frontmatter.md
+scope.md
+definitions-and-acronyms.md
 introduction-00.md
 introduction-01-typographical-conventions.md
 introduction-02-terminology.md
