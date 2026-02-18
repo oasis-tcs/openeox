@@ -59,8 +59,7 @@ DD MONTH 2025.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html. Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
 
-
-#### Related Work
+### Related Work
 
 This document replaces or supersedes:
 
