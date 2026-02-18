@@ -37,5 +37,5 @@ annex-a-01-document-status.md
 annex-a-02-license-notices.md
 references.md
 acknowledgements.md
+changes-from-previous-version.md
 revision-history.md
-notices.md

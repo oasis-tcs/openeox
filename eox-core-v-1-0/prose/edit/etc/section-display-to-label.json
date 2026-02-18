@@ -69,13 +69,13 @@
   "9.1.12": "conformance-clause-12-openeox-core-comparator",
   "9.1.13": "conformance-clause-13-openeox-core-sorter",
   "9.1.14": "conformance-clause-14-openeox-core-merger",
-  "A": "annex-a",
+  "Annex A": "annex-a",
   "A.1": "document-status",
   "A.2": "license-and-notices",
-  "B": "references",
+  "Annex B": "references",
   "B.1": "normative-references",
   "B.2": "informative-references",
-  "C": "acknowledgments",
-  "D": "revision-history",
-  "E": "notices"
+  "Appendix 1": "acknowledgments",
+  "Appendix 2": "changes-from-previous-version",
+  "Appendix 2.1": "revision-history"
 }
