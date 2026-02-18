@@ -5,11 +5,11 @@ document-conventions-00.md
 document-conventions-01-key-words.md
 document-conventions-02-typographical-conventions.md
 introduction-00.md
-overview.md
-design-considerations-00.md
-design-considerations-01-construction-principles.md
-design-considerations-02-format-validation.md
-design-considerations-03-date-time.md
+introduction-01-design-considerations-00.md
+introduction-01-design-considerations-01-construction-principles.md
+introduction-01-design-considerations-02-format-validation.md
+introduction-01-design-considerations-03-date-time.md
+introduction-02-changes-from-the-previous-version.md
 taxonomy.md
 schema-elements-00.md
 schema-elements-01-definitions.md
