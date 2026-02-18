@@ -1,7 +1,7 @@
 frontmatter.md
 scope.md
 definitions-and-acronyms.md
-document-conventions.md
+document-conventions-00.md
 document-conventions-01-key-words.md
 document-conventions-02-typographical-conventions.md
 introduction-00.md
