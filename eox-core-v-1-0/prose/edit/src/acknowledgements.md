@@ -32,18 +32,7 @@ The following individuals have had significant leadership positions during the d
 
 The following individuals have made substantial contributions to this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
-| First Name | Last Name        | Affiliation                                                    |
-|:-----------|:-----------------|:-----------------------------------------------------------|
-| Denny      | Page             | TIBCO Software Inc.                                        |
-| Feng       | Cao              | Oracle                                                     |
-| Jautau     | White            | Microsoft Corporation                                      |
-| Justin     | Murphy           | DHS Cybersecurity and Infrastructure Security Agency(CISA) |
-| Langley    | Rock             | Dell Technologies                                           |
-| Martin     | Prpic            | Red Hat                                                    |
-| Omar       | Santos           | Cisco Systems                                              |
-| Stefan     | Hagen            | Individual                                                 |
-| Thomas     | Schmidt          | Federal Office for Information Security (BSI) Germany      |
-| ...        | ...              | ...                                                        |
+tbd
 
 ## Participants
 
