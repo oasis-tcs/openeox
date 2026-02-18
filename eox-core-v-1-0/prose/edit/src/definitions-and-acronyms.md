@@ -65,4 +65,4 @@ This document uses the following abbreviations and acronyms:
 * EoSSec: End-of-Security-Support.
 * GA: General Availability.
 
----
+------
