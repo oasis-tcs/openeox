@@ -4,7 +4,6 @@ definitions-and-acronyms.md
 introduction-00.md
 introduction-01-typographical-conventions.md
 introduction-02-terminology.md
-introduction-02-terminology-glossary.md
 overview.md
 design-considerations-00.md
 design-considerations-01-construction-principles.md
