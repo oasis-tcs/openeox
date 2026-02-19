@@ -6,7 +6,7 @@ toc:
   enumerate: Appendix 2.1.
 ---
 -->
-# Revision History
+## Revision History
 
 | Revision                     | Date       | Editor                                         | Changes Made                      |
 |:-----------------------------|:-----------|:-----------------------------------------------|:----------------------------------|

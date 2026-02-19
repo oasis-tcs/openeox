@@ -9,11 +9,11 @@ This document uses the following terms defined elsewhere:
 * Embedded Link: [csaf-v2.1]:
   syntactic construct which enables a message string to refer to a location mentioned in the document.  
 * Empty Array: [csaf-v2.1]:
-  array that contains no elements, and so has a length of `0`.
+  array that contains no elements, and so has a length of zero.
 * Empty Object: [csaf-v2.1]:
   object that contains no properties.
 * Empty String: [csaf-v2.1]:
-  string that contains no characters, and so has a length of `0`.
+  string that contains no characters, and so has a length of zero.
 * (End) User: [csaf-v2.1]:
   person who uses the information in a document to investigate, triage, or resolve results.
 * Product: [csaf-v2.1]:
