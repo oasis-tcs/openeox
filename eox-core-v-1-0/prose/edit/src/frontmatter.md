@@ -27,7 +27,7 @@ https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf
 
 ### Technical Committee
 
-[OASIS OpenEoX TC](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa)
+[OASIS OpenEoX TC](https://www.oasis-open.org/tc-openeox/)
 
 ### Chairs
 Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
@@ -60,29 +60,31 @@ Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json
 ### Abstract
 
 The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to
-managing and sharing End-of-Life (EoL) and End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
+managing and sharing General Availability (GA), End-of-Sales (EoS), End-of-Life (EoL), and
+End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
 
 ### Citation Format
 
 When referencing this document, the following citation format should be used:
 
-**[EoX-Core-v1.0]**
+**\[EoX-Core-v1.0]**
 
 _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
 18 February 2026.
 OASIS Committee Specification Draft 01.
-https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html. Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
+https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.
+Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
 
 ### Related Work
 
 This document replaces or supersedes:
 
-* [ The full reference to the related document in IEEE reference format ]
+N/A
 
 This document is related to:
 
-* [ The full reference to the related document in IEEE reference format ]
+N/A
 
 ## License, Document Status, and Notices
 
