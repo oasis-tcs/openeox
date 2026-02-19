@@ -1,4 +1,4 @@
-## Construction Principles
+### Construction Principles
 
 The OpenEoX Core specification describes a map for well-known named transition events (like end-of-life) to dates.
 Producers use this mapping to bind products to this minimal set of life cycle events.

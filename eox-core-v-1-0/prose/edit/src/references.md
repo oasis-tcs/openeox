@@ -3,19 +3,21 @@
 toc:
   auto: false
   label: References
-  enumerate: Appendix A.
+  enumerate: Annex B.
   children:
   - label: Normative References
-    enumerate: A.1
+    enumerate: B.1
   - label: Informative References
-    enumerate: A.2
+    enumerate: B.2
 ---
 -->
 # References
 
-This appendix contains the normative and informative references that are used in this document.
+(This annex forms an integral part of this Specification.)
 
-While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.
+This section contains the normative and informative references that are used in this document.
+
+Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
 
 ## Normative References
 
@@ -81,4 +83,7 @@ SPDX301
 
 ## Informative References
 
-TBD
+The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
+
+csaf-v2.1
+:    _Common Security Advisory Framework Version 2.1_. Edited by Stefan Hagen, and Thomas Schmidt. 28 May 2025. OASIS Committee Specification Draft 01. https://docs.oasis-open.org/csaf/csaf/v2.1/csd01/csaf-v2.1-csd01.html. Latest stage: https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.html.

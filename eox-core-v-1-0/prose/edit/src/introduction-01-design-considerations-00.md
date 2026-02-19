@@ -1,14 +1,14 @@
-# Design Considerations
+## Design Considerations
 
 The OpenEoX provides the vocabulary for exchanging standardized End-of-X (EoX) life cycle data for any product.
 This includes, but is not limited to hardware, software and specifications, as well as all supplier-consumer
 relationships, services and offerings.
 
-## OpenEoX Architecture
+### OpenEoX Architecture
 
 The OpenEoX standard is architected as a modular three-layer framework:
 
-### OpenEoX Core (this specification)
+#### OpenEoX Core (this specification)
 
 The OpenEoX Core specification contains the fundamental EoX life cycle information elements and is
 designed to be imported by other standards or integrated directly into product responses.
@@ -25,7 +25,7 @@ Optionally, the standard also conveys additional life cycle events.
 The core information can be provided independently when the product context is available through
 other means, such as SNMP responses, HTTPS API responses.
 
-### OpenEoX Shell
+#### OpenEoX Shell
 
 The OpenEoX Shell specification provides the binding mechanism that combines OpenEoX Core life cycle
 information to specific product identifications.
@@ -34,16 +34,16 @@ information for a specific product.
 The Shell forms the standalone mode in OpenEoX, enabling complete life cycle statements that can be
 processed independently without external context.
 
-### OpenEoX API
+#### OpenEoX API
 
 The OpenEoX API specification addresses the distribution, discovery, and consumption of OpenEoX Core
 and Shell data across vendor ecosystems and consumer applications.
 The API specification defines standardized endpoints, query mechanisms, and data exchange patterns
 that enable automated integration.
 
-## Design Principles
+### Design Principles
 
-### Standardization and Interoperability
+#### Standardization and Interoperability
 
 OpenEoX addresses the current industry challenge where vendors use proprietary, inconsistent formats
 for communicating life cycle information.
@@ -54,7 +54,7 @@ By establishing a common JSON-based format, OpenEoX enables:
 - Reduced operational overhead in managing multi-vendor environments
 - Enhanced accuracy in infrastructure life cycle planning
 
-### Security-First Approach
+#### Security-First Approach
 
 Recognition that End-of-Security-Support represents a critical inflection point for infrastructure
 security has influenced the OpenEoX design.
@@ -66,9 +66,9 @@ always available, supporting:
 - Risk assessment for critical infrastructure components
 - Automated alerting when security support approaches termination
 
-## Industry Applications
+### Industry Applications
 
-### Vendor Perspectives
+#### Vendor Perspectives
 
 **OpenEoX enables vendors to:**
 
@@ -78,7 +78,7 @@ always available, supporting:
 - Support automated customer notification systems
 - Facilitate integration with partner and reseller systems
 
-### Consumer Perspectives
+#### Consumer Perspectives
 
 **Organizations consuming OpenEoX information benefit through:**
 
