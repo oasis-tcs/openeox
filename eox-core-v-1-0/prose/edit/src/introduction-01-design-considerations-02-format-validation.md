@@ -1,4 +1,4 @@
-## Format Validation
+### Format Validation
 
 The JSON schema 2020-12 dialect per default uses the `format` keyword just as annotation.
 To be able to ensure that the format constraints are validated as intended, the following metaschema is defined.
