@@ -7,6 +7,6 @@ toc:
 ---
 -->
 
-# Annex A License, Document Status and Notices{#annex-a}
+# License, Document Status and Notices{#annex-a}
 
 (This annex forms an integral part of this Specification.)
