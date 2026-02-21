@@ -111,7 +111,7 @@ CS_OF_SLOT: list[Union[str, None]] = []
 
 CITE_COSMETICS_TEMPLATE = '**\\[**<span id="$label$" class="anchor"></span>**$code$\\]** $text$'
 CITATION_SOURCES = ('references.md')
-GLOSSARY_SOURCES = ('introduction-02-terminology-glossary.md',)
+GLOSSARY_SOURCES = ('defs-acrs-01-defs-01-terms-ext-list.md', 'defs-acrs-01-defs-01-terms-int-list.md')
 
 # Type declarations:
 META_TOC_TYPE = dict[str, dict[str, Union[bool, str, list[dict[str, str]]]]]
