@@ -81,7 +81,7 @@ TOC_HEADER = f"""{YAML_X_SEP}
 
 # Table of Contents
 """
-CLEAN_MD_START = '# Introduction'
+CLEAN_MD_START = '# Scope'
 
 SECTION_DISPLAY_TO_LABEL = {}
 SECTION_LABEL_TO_DISPLAY: dict[str, str] = {}
