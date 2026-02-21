@@ -80,7 +80,7 @@ TOC_HEADER = f"""{YAML_X_SEP}
 
 # Table of Contents
 """
-CLEAN_MD_START = '# Introduction'
+CLEAN_MD_START = '# Scope'
 LOGO_URL = 'https://docs.oasis-open.org/templates/OASISLogo-v3.0.png'
 LOGO_LOCAL_PATH = 'images/OASISLogo-v3.0.png'
 TOP_LOGO_LINE = f'![OASIS Logo]({LOGO_URL})'
@@ -112,20 +112,36 @@ TOC = 'toc'
 
 CITE_COSMETICS_TEMPLATE = '**\\[**<span id="$label$" class="anchor"></span>**$code$\\]** $text$'
 CITATION_SOURCES = ('references.md')
-GLOSSARY_SOURCES = ('introduction-02-terminology-glossary.md',)
+GLOSSARY_SOURCES = ('defs-acrs-01-defs-01-terms-ext-list.md', 'defs-acrs-01-defs-01-terms-int-list.md')
 
 # Type declarations:
 META_TOC_TYPE = dict[str, dict[str, Union[bool, str, list[dict[str, str]]]]]
 
 APPENDIX_HEAD_REMAP = {
-    '# References': {'replace': ['# ', '# Appendix A. '], 'attrs': '{.unnumbered #references}'},
-    '## Normative References': {'replace': ['## ', '## A.1 '], 'attrs': '{.unnumbered #normative-references}'},
-    '## Informative References': {'replace': ['## ', '## A.2 '], 'attrs': '{.unnumbered #informative-references}'},
-    '# Safety, Security and Data Protection': {'replace': ['# ', '# Appendix B. '], 'attrs': '{.unnumbered #safety-security-and-data-protection}'},
-    '# Acknowledgments': {'replace': ['# ', '# Appendix C. '], 'attrs': '{.unnumbered #acknowledgments}'},
-    '# Revision History': {'replace': ['# ', '# Appendix D. '], 'attrs': '{.unnumbered #revision-history}'},
-    '# Notices': {'replace': ['# ', '# Appendix E. '], 'attrs': '{.unnumbered #notices}'},
+    '# License, Document Status and Notices{#annex-a}{#annex-a}': {'replace': ['# License, Document Status and Notices{#annex-a}{#annex-a}', '\\newpage\n\n# Annex A License, Document Status and Notices'], 'attrs': '{.unnumbered #annex-a}'},
+    '## Document Status': {'replace': ['## ', '## A.1 '], 'attrs': '{.unnumbered #document-status}'},
+    '## License and Notices': {'replace': ['## ', '## A.2 '], 'attrs': '{.unnumbered #license-and-notices}'},
+    '# References': {'replace': ['# ', '\\newpage\n\n# Annex B '], 'attrs': '{.unnumbered #references}'},
+    '## Normative References': {'replace': ['## ', '## B.1 '], 'attrs': '{.unnumbered #normative-references}'},
+    '## Informative References': {'replace': ['## ', '## B.2 '], 'attrs': '{.unnumbered #informative-references}'},
+    # '# Safety, Security and Data Protection': {'replace': ['# ', '# Appendix B. '], 'attrs': '{.unnumbered #safety-security-and-data-protection}'},
+    '# Acknowledgments': {'replace': ['# ', '\\newpage\n\n# Appendix 1 '], 'attrs': '{.unnumbered #acknowledgments}'},
+    '## Leadership': {'replace': ['## . ', '## '], 'attrs': '{.unnumbered #leadership}'},
+    '## Special Thanks': {'replace': ['## .. ', '## '], 'attrs': '{.unnumbered #special-thanks}'},
+    '## Participants': {'replace': ['## ... ', '## '], 'attrs': '{.unnumbered #participants}'},
+    '# Changes From Previous Version': {'replace': ['# ', '\\newpage\n\n# Appendix 2 '], 'attrs': '{.unnumbered #changes-from-previous-version}'},
+    '## Revision History': {'replace': ['## .... Revision History', '## Revision History'], 'attrs': '{.unnumbered #revision-history}'},
 }
+
+
+def highlight_in_context(text_lines: list[str], pos: int, span: int = 15, ) -> None:
+    """Help authors find the root cause of a problem by showing error line in span +/- context."""
+    for n in range(max(0, pos - span), min(pos + span, len(text_lines))):
+        if n != pos:
+            print(f'        {n:4} | {text_lines[n].rstrip(NL)}')
+        else:
+            print(f'HERE>>> {n:4} | {text_lines[n].rstrip(NL)} <<<HERE')
+    print(DASH * 69)
 
 
 def load_binder(binder_at: Union[str, pathlib.Path], ignores: Union[list[str], None] = None) -> list[pathlib.Path]:
@@ -137,7 +153,7 @@ def load_binder(binder_at: Union[str, pathlib.Path], ignores: Union[list[str], N
 
 def end_of_toc_in(text: str) -> bool:
     """Detect the end of the table of contents."""
-    return text.startswith('#') and ' Introduction' in text
+    return text.startswith('#') and ' Scope' in text
 
 
 def detect_meta(text_lines: list[str]) -> tuple[META_TOC_TYPE, list[str]]:
@@ -341,7 +357,7 @@ def main(args: list[str]) -> int:
             patched = []
             in_citation = False
             for line in part_lines:
-                if line.startswith(HASH):
+                if line.startswith((HASH, '(This ', 'This ', 'Normative ', 'The ')):  # Exempt from being references entries
                     patched.append(line)
                     continue
                 if line.strip() and not line.startswith(COLON):
@@ -429,7 +445,7 @@ def main(args: list[str]) -> int:
 
         lines.extend(part_lines)
 
-    # TODO: counter management -> class
+    print(f'INFO: Manage section counters and build the table of contents (for {len(lines)} text records)')
     lvl_min, lvl_sup = 1, 7
     sec_cnt = {f'{H * level} ': 0 for level in range(lvl_min, lvl_sup)}
     sec_lvl = {f'{H * level} ': level for level in range(lvl_min, lvl_sup)}
@@ -437,7 +453,6 @@ def main(args: list[str]) -> int:
     h1 = f'{H} '
     cur_lvl = sec_lvl[h1]
     meta_hook = {}
-    # TODO: ToC builder -> class
     tic_toc = [TOC_HEADER]
     mint = []
     did_appendix_sep = False
@@ -469,7 +484,9 @@ def main(args: list[str]) -> int:
                     sec_cnt_disp_vec = []
                     for s_tag, cnt in sec_cnt.items():
                         if cnt == 0:
-                            raise RuntimeError(f'counting is hard: {sec_cnt} at {tag} for {slot}:{line.rstrip(NL)}')
+                            print(f'ERROR: counting is hard: {sec_cnt} at {tag} for {slot}:{line.rstrip(NL)}')
+                            highlight_in_context(lines, slot)
+                            return 1
                         sec_cnt_disp_vec.append(str(cnt))
                         if s_tag == tag:
                             break
@@ -518,7 +535,11 @@ def main(args: list[str]) -> int:
                 if terse_line in APPENDIX_HEAD_REMAP:
                     transform = APPENDIX_HEAD_REMAP[terse_line]
                     this, that = transform['replace']
-                    line = terse_line.replace(this, that) + transform['attrs'] + NL  # type: ignore
+                    attributes = transform['attrs']
+                    if 'history' in terse_line.lower():
+                        attributes += NL + NL + r'\columns=27%,10%,,32%' + NL + NL
+                    line = terse_line.replace(this, that) + attributes + NL  # type: ignore
+                    print(f'DEBUG: ... ({terse_line}) -- ({transform}) --> ({line.rstrip(NL)}) ...')
 
                 # MAYBE_NO_SECTION_NUMBERS_AS_PART_OF_HEADING # line = line.replace(tag, f'{tag}{sec_cnt_disp} ', 1) + NL
                 cur_lvl = nxt_lvl
@@ -558,13 +579,13 @@ def main(args: list[str]) -> int:
             if line.startswith(tag) and not clean_headings:
                 lines[slot] = line.rstrip() + SEC_NO_TOC_POSTFIX + NL
 
-    # Process the text display of citation refs
+    print(f'INFO: Process the text display of citation references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         completed = insert_any_citation(line)
         if line != completed:
             lines[slot] = completed
 
-    # Process the text display of example refs
+    print(f'INFO: Process the text display of example references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if example_in(line):
             num = example_local_number(line)
@@ -612,13 +633,13 @@ def main(args: list[str]) -> int:
                     debug and print(line.rstrip(NL))
                     lines[slot] = line
 
-    # Process the text display of section refs
+    print(f'INFO: Process the text display of section references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         completed = insert_any_section_reference(line)
         if line != completed:
             lines[slot] = completed
 
-    # Process the code blocks for references to map from label to display value
+    print(f'INFO: Process the code blocks for references to map from label to display value (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if code_block_label_in(line):
             for ref in SEC_LABEL_BRACKET_CB_DETECT.finditer(line):
@@ -650,17 +671,17 @@ def main(args: list[str]) -> int:
 
     tic_toc.append(YAML_X_SEP)
     tic_toc.append(NL)
-    # Inject the table of contents:
+    print(f'INFO: Inject the table of contents (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if end_of_toc_in(line):
             # MAYBE_NO_TOC # lines[slot] = NL.join(tic_toc) + line
             break
 
-    # remove any trailing blank line
+    print(f'INFO: Remove any trailing blank line (for {len(lines)} text records)')
     while lines[-1] == NL:
         del lines[-1]
 
-    # detect left over citation and section references
+    print(f'INFO: Detect left over citation and section references (for {len(lines)} text records)')
     ref_defects = detect_leftovers(lines, marker='Found')
     if ref_defects:
         print(f'+ processing {len(ref_defects)} text lines for citation or section reference insertions ...')
@@ -684,10 +705,14 @@ def main(args: list[str]) -> int:
         ref_defects = detect_leftovers(lines, marker='Still found')
         if ref_defects:
             pass  # return 1
+    else:
+        print(f'INFO: No reference defects identified (Good)')
 
+    print(f'INFO: Dump the assembly (for {len(lines)} text records)')
     BUILD_AT.mkdir(parents=True, exist_ok=True)
     dump_assembly(lines, BUILD_AT / 'pdf.md')
 
+    print(f'INFO: Dump the minted table of contents database (of {len(mint)} entries)')
     with open(BUILD_AT / 'toc-mint.json', 'wt', encoding=ENCODING) as handle:
         json.dump(mint, handle, indent=2)
 

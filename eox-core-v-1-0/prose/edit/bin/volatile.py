@@ -81,7 +81,7 @@ TOC_HEADER = f"""{YAML_X_SEP}
 
 # Table of Contents
 """
-CLEAN_MD_START = '# Introduction'
+CLEAN_MD_START = '# Scope'
 
 SECTION_DISPLAY_TO_LABEL = {}
 SECTION_LABEL_TO_DISPLAY: dict[str, str] = {}
@@ -111,10 +111,29 @@ CS_OF_SLOT: list[Union[str, None]] = []
 
 CITE_COSMETICS_TEMPLATE = '**\\[**<span id="$label$" class="anchor"></span>**$code$\\]** $text$'
 CITATION_SOURCES = ('references.md')
-GLOSSARY_SOURCES = ('introduction-02-terminology-glossary.md',)
+GLOSSARY_SOURCES = ('defs-acrs-01-defs-01-terms-ext-list.md', 'defs-acrs-01-defs-01-terms-int-list.md')
 
 # Type declarations:
 META_TOC_TYPE = dict[str, dict[str, Union[bool, str, list[dict[str, str]]]]]
+
+# HACK A DID ACK
+APPENDIX_HEAD_REMAP = {
+    '## Appendix 1 Leadership': {'replace': ['## Appendix 1 ', '## '], 'attrs': ''},
+    '## 9.2 Special Thanks': {'replace': ['## 9.2 ', '## '], 'attrs': ''},
+    '## 9.3 Participants': {'replace': ['## 9.3 ', '## '], 'attrs': ''},
+    '# Changes From Previous Version': {'replace': ['# ', '# Appendix 2 '], 'attrs': ''},
+    '## Appendix 2.1. Revision History': {'replace': ['## Appendix 2.1. ', '##  '], 'attrs': ''},
+}
+
+
+def highlight_in_context(text_lines: list[str], pos: int, span: int = 15, ) -> None:
+    """Help authors find the root cause of a problem by showing error line in span +/- context."""
+    for n in range(max(0, pos - span), min(pos + span, len(text_lines))):
+        if n != pos:
+            print(f'        {n:4} | {text_lines[n].rstrip(NL)}')
+        else:
+            print(f'HERE>>> {n:4} | {text_lines[n].rstrip(NL)} <<<HERE')
+    print(DASH * 69)
 
 
 def load_binder(binder_at: Union[str, pathlib.Path]) -> list[pathlib.Path]:
@@ -125,7 +144,7 @@ def load_binder(binder_at: Union[str, pathlib.Path]) -> list[pathlib.Path]:
 
 def end_of_toc_in(text: str) -> bool:
     """Detect the end of the table of contents."""
-    return text.startswith('#') and ' Introduction' in text
+    return text.startswith('#') and ' Scope' in text
 
 
 def detect_meta(text_lines: list[str]) -> tuple[META_TOC_TYPE, list[str]]:
@@ -300,7 +319,7 @@ def main(argv: list[str]) -> int:
             patched = []
             in_citation = False
             for line in part_lines:
-                if line.startswith(HASH):
+                if line.startswith((HASH, '(This ', 'This ', 'Normative ', 'The ')):  # Exempt from being references entries
                     patched.append(line)
                     continue
                 if line.strip() and not line.startswith(COLON):
@@ -388,7 +407,7 @@ def main(argv: list[str]) -> int:
 
         lines.extend(part_lines)
 
-    # TODO: counter management -> class
+    print(f'INFO: Manage section counters and build the table of contents (for {len(lines)} text records)')
     lvl_min, lvl_sup = 1, 7
     sec_cnt = {f'{H * level} ': 0 for level in range(lvl_min, lvl_sup)}
     sec_lvl = {f'{H * level} ': level for level in range(lvl_min, lvl_sup)}
@@ -396,7 +415,6 @@ def main(argv: list[str]) -> int:
     H1 = f'{H} '
     cur_lvl = sec_lvl[H1]
     meta_hook = {}
-    # TODO: ToC builder -> class
     tic_toc = [TOC_HEADER]
     mint = []
     did_appendix_sep = False
@@ -424,7 +442,9 @@ def main(argv: list[str]) -> int:
                     sec_cnt_disp_vec = []
                     for s_tag, cnt in sec_cnt.items():
                         if cnt == 0:
-                            raise RuntimeError(f'counting is hard: {sec_cnt} at {tag} for {slot}:{line.rstrip(NL)}')
+                            print(f'ERROR: counting is hard: {sec_cnt} at {tag} for {slot}:{line.rstrip(NL)}')
+                            highlight_in_context(lines, slot)
+                            return 1
                         sec_cnt_disp_vec.append(str(cnt))
                         if s_tag == tag:
                             break
@@ -469,29 +489,65 @@ def main(argv: list[str]) -> int:
                 if not did_appendix_sep and meta_hook and slot < first_meta_slot:  # type: ignore
                     tic_toc.append(TOC_VERTICAL_SPACER)
                     did_appendix_sep = True
+                extended = 0
+                if sec_cnt_disp.upper().isupper():
+                    extended = 2 if set(sec_cnt_disp).intersection('0123456789') else 1
+                    if extended == 2:
+                        extended = sec_cnt_disp.count(DOT) + 1
+                # HACK A DID ACK --->
+                if label == 'document-status':
+                    extended = 2
+                elif label == 'license-and-notices':
+                    extended = 2
+                elif label == 'leadership':
+                    extended = 2
+                    sec_cnt_disp = ''  # '.'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
+                elif label == 'special-thanks':
+                    extended = 2
+                    sec_cnt_disp = ''  # '..'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
+                elif label == 'participants':
+                    extended = 2
+                    sec_cnt_disp = ''  # '...'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
+                elif label == 'revision-history':
+                    extended = 2
+                    sec_cnt_disp = ''  # '....'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
                 toc_template = TOC_TEMPLATE[cur_lvl if not meta_hook else app_lvl]
                 tic_toc.append(
                     toc_template.replace('$sec_cnt_disp$', sec_cnt_disp)
                     .replace('$text$', text)
                     .replace('$label$', label)
                 )
-                extended = 0
-                if sec_cnt_disp.upper().isupper():
-                    extended = 2 if set(sec_cnt_disp).intersection('0123456789') else 1
-                    if extended == 2:
-                        extended = sec_cnt_disp.count(DOT) + 1
+                # <--- KCA DID A KCAH
                 mint.append([list(sec_cnt.values()), extended, sec_cnt_disp, text, label])
                 current_cs = label  # Update state for label in non tag lines
                 # correct the default state assignment
                 CS_OF_SLOT[slot] = current_cs  # type: ignore
 
-    # Process the text display of citation refs
+    print(f'WARN: Post-process the text display of section labels (for {len(lines)} text records)')
+    for slot, line in enumerate(lines):
+        terse_line = line.rstrip()
+        if terse_line.startswith(tuple(APPENDIX_HEAD_REMAP.keys())):
+            for cand in APPENDIX_HEAD_REMAP:
+                if terse_line.startswith(cand):
+                    transform = APPENDIX_HEAD_REMAP[cand]
+                    this, that = transform['replace']
+                    attributes = transform['attrs']
+                    line = terse_line.replace(this, that) + attributes + NL  # type: ignore
+                    print(f'DEBUG: ... ({terse_line}) -- ({transform}) --> ({line.rstrip(NL)}) ...')
+                    lines[slot] = line
+                    break
+
+    print(f'INFO: Process the text display of citation references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         completed = insert_any_citation(line)
         if line != completed:
             lines[slot] = completed
 
-    # Process the text display of example refs
+    print(f'INFO: Process the text display of example references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if example_in(line):
             num = example_local_number(line)
@@ -500,6 +556,10 @@ def main(argv: list[str]) -> int:
             pl_anchor = TOK_EG.replace('$thing$', magic_label)
             line = line.rstrip(NL) + pl_anchor + NL
             # now the UX bonus:
+            if not section or section not in display_from:
+                print(f'ERROR: lines[{slot})]({line.rstrip(NL)}) has no registered section({section}) for example({1})')
+                highlight_in_context(lines, slot)
+                return 1
             sec_disp = 'sec-' + display_from[section].replace(FULL_STOP, '-')  # type: ignore
             sec_disp_num_label = f'{sec_disp}-eg-{num}'
             sec_disp_num_anchor = TOK_EG.replace('$thing$', sec_disp_num_label)
@@ -539,13 +599,13 @@ def main(argv: list[str]) -> int:
                     DEBUG and print(line.rstrip(NL))
                     lines[slot] = line
 
-    # Process the text display of section refs
+    print(f'INFO: Process the text display of section references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         completed = insert_any_section_reference(line)
         if line != completed:
             lines[slot] = completed
 
-    # Process the code blocks for references to map from label to display value
+    print(f'INFO: Process the code blocks for references to map from label to display value (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if code_block_label_in(line):
             for ref in SEC_LABEL_BRACKET_CB_DETECT.finditer(line):
@@ -577,17 +637,18 @@ def main(argv: list[str]) -> int:
 
     tic_toc.append(YAML_X_SEP)
     tic_toc.append(NL)
-    # Inject the table of contents:
+    print(f'INFO: Inject the table of contents (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if end_of_toc_in(line):
             lines[slot] = NL.join(tic_toc) + line
+            print(f'INFO: Inserted ToC ins slot({slot}) before the text({line.rstrip(NL)})')
             break
 
-    # remove any trailing blank line
+    print(f'INFO: Remove any trailing blank line (for {len(lines)} text records)')
     while lines[-1] == NL:
         del lines[-1]
 
-    # detect left over citation and section references
+    print(f'INFO: Detect left over citation and section references (for {len(lines)} text records)')
     ref_defects = detect_leftovers(lines, marker='Found')
     if ref_defects:
         print(f'+ processing {len(ref_defects)} text lines for citation or section reference insertions ...')
@@ -611,10 +672,15 @@ def main(argv: list[str]) -> int:
         ref_defects = detect_leftovers(lines, marker='Still found')
         if ref_defects:
             pass  # return 1
+    else:
+        print(f'INFO: No reference defects identified (Good)')
 
+
+    print(f'INFO: Dump the assembly (for {len(lines)} text records)')
     BUILD_AT.mkdir(parents=True, exist_ok=True)
     dump_assembly(lines, BUILD_AT / 'tmp.md')
 
+    print(f'INFO: Dump the minted table of contents database (of {len(mint)} entries)')
     with open(BUILD_AT / 'toc-mint.json', 'wt', encoding=ENCODING) as handle:
         json.dump(mint, handle, indent=2)
 

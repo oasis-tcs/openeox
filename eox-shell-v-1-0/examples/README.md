@@ -1,3 +1,3 @@
-# Examples of EOX-SCHEMA v1.0 Instances
+# Examples of EoX-SCHEMA v1.0 Instances
 
 TBD

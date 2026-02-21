@@ -5,7 +5,7 @@ document:
     approvals_strategy: south  # one of east or south
     bold_font: LinLibertine_RB
     bold_italic_font: LinLibertine_RBI
-    bookmark_title: EOX Core v1.0 Editor Revision
+    bookmark_title: EoX Core v1.0 Editor Revision
     bookmatter_path: bookmatter.tex.in
     change_log_tune_header_sep: 0.1em
     chosen_logo: images/OASISLogo-v3.0.png
@@ -16,7 +16,7 @@ document:
     font_path: /opt/fonts/
     font_suffix: .otf
     footer_frame_note: eox-core-v1.0-editor-revision
-    footer_outer_field_normal_pages: 21 January 2026 - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}
+    footer_outer_field_normal_pages: 18 February 2026 - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}
     footer_page_number_prefix: Page
     has_approvals: false
     has_changes: false
@@ -50,6 +50,6 @@ document:
     sub_title: ' '
     table_caption_below: false
     table_uglify: true
-    title: EOX Core Version 1.0
+    title: EoX Core Version 1.0
     toc_all_dots: '%'  # old default was not toc all dots, so '%' would restore
     toc_level: 4

@@ -21,7 +21,7 @@ DENOISE_2 = '** see https://pandoc.org/manual.html#variables-for-html for config
 DENOISE_3 = '*/'
 
 TOC_STARTSWITH_TRIGGER = '<h1 id="table-of-contents'
-INTRO_STARTSWITH_TRIGGER = '<h1 id="1-introduction'
+INTRO_STARTSWITH_TRIGGER = '<h1 id="1-scope'
 
 # Configuration and runtime parameter candidates:
 BUILD_AT = pathlib.Path('build')

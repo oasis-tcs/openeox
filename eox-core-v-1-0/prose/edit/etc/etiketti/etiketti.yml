@@ -16,10 +16,12 @@ label:
   creator:
   - Jautau White, Stefan Hagen, and Thomas Schmidt
   keywords:
-    - EOL
-    - EOS
-    - EOX
-    - OpenEOX
-  subject: OASIS OpenEOX TC
-  title: OpenEOX Core Schema Version 1.0
+    - EoL
+    - EoS
+    - EoSSec
+    - EoX
+    - GA
+    - OpenEoX
+  subject: OASIS OpenEoX TC
+  title: OpenEoX Core Schema Version 1.0
 

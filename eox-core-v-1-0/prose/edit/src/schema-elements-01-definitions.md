@@ -1,4 +1,4 @@
-## Definitions
+## Definitions{#schema-elements---definitions}
 
 The definitions (`$defs`) introduce the following domain specific types into the OpenEoX language:
 EoX Timestamp (`eox_timestamp_t`).
