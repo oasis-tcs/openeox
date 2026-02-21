@@ -3,7 +3,7 @@
 toc:
   auto: false
   label: References
-  enumerate: Annex B.
+  enumerate: Annex B
   children:
   - label: Normative References
     enumerate: B.1
