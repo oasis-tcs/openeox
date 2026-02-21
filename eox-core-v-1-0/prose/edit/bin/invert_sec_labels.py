@@ -26,7 +26,8 @@ if sorted(unique) != sorted(data.values()):
         else:
             pairs[v].append(k)
     for label, places in pairs.items():
-        print(f'{label=} occurs in {places=}')
+        flag_ambiguity = ' <<<--- ERROR:needs-disambiguation---|||' if len(places) > 1 else ''
+        print(f'{label=} occurs in {places=}{flag_ambiguity}')
     raise RuntimeError('Please ensure the section labels are unique')
 
 inverted = {v: k for k, v in data.items()}

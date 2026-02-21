@@ -33,7 +33,7 @@
   "5.6": "product-life-cycle",
   "5.7": "vendor",
   "6": "schema-elements",
-  "6.1": "definitions",
+  "6.1": "schema-elements---definitions",
   "6.1.1": "eox-timestamp-type",
   "6.2": "properties",
   "6.2.1": "schema-property",
