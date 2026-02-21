@@ -117,6 +117,16 @@ GLOSSARY_SOURCES = ('introduction-02-terminology-glossary.md',)
 META_TOC_TYPE = dict[str, dict[str, Union[bool, str, list[dict[str, str]]]]]
 
 
+def highlight_in_context(text_lines: list[str], pos: int, span: int = 15, ) -> None:
+    """Help authors find the root cause of a problem by showing error line in span +/- context."""
+    for n in range(max(0, pos - span), min(pos + span, len(text_lines))):
+        if n != pos:
+            print(f'        {n:4} | {text_lines[n].rstrip(NL)}')
+        else:
+            print(f'HERE>>> {n:4} | {text_lines[n].rstrip(NL)} <<<HERE')
+    print(DASH * 69)
+
+
 def load_binder(binder_at: Union[str, pathlib.Path]) -> list[pathlib.Path]:
     """Load the linear binder text file into a list of file paths."""
     with open(binder_at, 'rt', encoding=ENCODING) as resource:
@@ -424,7 +434,9 @@ def main(argv: list[str]) -> int:
                     sec_cnt_disp_vec = []
                     for s_tag, cnt in sec_cnt.items():
                         if cnt == 0:
-                            raise RuntimeError(f'counting is hard: {sec_cnt} at {tag} for {slot}:{line.rstrip(NL)}')
+                            print(f'ERROR: counting is hard: {sec_cnt} at {tag} for {slot}:{line.rstrip(NL)}')
+                            highlight_in_context(lines, slot)
+                            return 1
                         sec_cnt_disp_vec.append(str(cnt))
                         if s_tag == tag:
                             break
@@ -500,6 +512,10 @@ def main(argv: list[str]) -> int:
             pl_anchor = TOK_EG.replace('$thing$', magic_label)
             line = line.rstrip(NL) + pl_anchor + NL
             # now the UX bonus:
+            if not section or section not in display_from:
+                print(f'ERROR: lines[{slot})]({line.rstrip(NL)}) has no registered section({section}) for example({1})')
+                highlight_in_context(lines, slot)
+                return 1
             sec_disp = 'sec-' + display_from[section].replace(FULL_STOP, '-')  # type: ignore
             sec_disp_num_label = f'{sec_disp}-eg-{num}'
             sec_disp_num_anchor = TOK_EG.replace('$thing$', sec_disp_num_label)
