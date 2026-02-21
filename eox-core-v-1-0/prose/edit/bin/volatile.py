@@ -135,7 +135,7 @@ def load_binder(binder_at: Union[str, pathlib.Path]) -> list[pathlib.Path]:
 
 def end_of_toc_in(text: str) -> bool:
     """Detect the end of the table of contents."""
-    return text.startswith('#') and ' Introduction' in text
+    return text.startswith('#') and ' Scope' in text
 
 
 def detect_meta(text_lines: list[str]) -> tuple[META_TOC_TYPE, list[str]]:
@@ -398,7 +398,7 @@ def main(argv: list[str]) -> int:
 
         lines.extend(part_lines)
 
-    # TODO: counter management -> class
+    print(f'INFO: Manage section counters and build the table of contents (for {len(lines)} text records)')
     lvl_min, lvl_sup = 1, 7
     sec_cnt = {f'{H * level} ': 0 for level in range(lvl_min, lvl_sup)}
     sec_lvl = {f'{H * level} ': level for level in range(lvl_min, lvl_sup)}
@@ -406,7 +406,6 @@ def main(argv: list[str]) -> int:
     H1 = f'{H} '
     cur_lvl = sec_lvl[H1]
     meta_hook = {}
-    # TODO: ToC builder -> class
     tic_toc = [TOC_HEADER]
     mint = []
     did_appendix_sep = False
@@ -497,13 +496,13 @@ def main(argv: list[str]) -> int:
                 # correct the default state assignment
                 CS_OF_SLOT[slot] = current_cs  # type: ignore
 
-    # Process the text display of citation refs
+    print(f'INFO: Process the text display of citation references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         completed = insert_any_citation(line)
         if line != completed:
             lines[slot] = completed
 
-    # Process the text display of example refs
+    print(f'INFO: Process the text display of example references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if example_in(line):
             num = example_local_number(line)
@@ -555,13 +554,13 @@ def main(argv: list[str]) -> int:
                     DEBUG and print(line.rstrip(NL))
                     lines[slot] = line
 
-    # Process the text display of section refs
+    print(f'INFO: Process the text display of section references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         completed = insert_any_section_reference(line)
         if line != completed:
             lines[slot] = completed
 
-    # Process the code blocks for references to map from label to display value
+    print(f'INFO: Process the code blocks for references to map from label to display value (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if code_block_label_in(line):
             for ref in SEC_LABEL_BRACKET_CB_DETECT.finditer(line):
@@ -593,17 +592,18 @@ def main(argv: list[str]) -> int:
 
     tic_toc.append(YAML_X_SEP)
     tic_toc.append(NL)
-    # Inject the table of contents:
+    print(f'INFO: Inject the table of contents (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
         if end_of_toc_in(line):
             lines[slot] = NL.join(tic_toc) + line
+            print(f'INFO: Inserted ToC ins slot({slot}) before the text({line.rstrip(NL)})')
             break
 
-    # remove any trailing blank line
+    print(f'INFO: Remove any trailing blank line (for {len(lines)} text records)')
     while lines[-1] == NL:
         del lines[-1]
 
-    # detect left over citation and section references
+    print(f'INFO: Detect left over citation and section references (for {len(lines)} text records)')
     ref_defects = detect_leftovers(lines, marker='Found')
     if ref_defects:
         print(f'+ processing {len(ref_defects)} text lines for citation or section reference insertions ...')
@@ -627,10 +627,15 @@ def main(argv: list[str]) -> int:
         ref_defects = detect_leftovers(lines, marker='Still found')
         if ref_defects:
             pass  # return 1
+    else:
+        print(f'INFO: No reference defects identified (Good)')
 
+
+    print(f'INFO: Dump the assembly (for {len(lines)} text records)')
     BUILD_AT.mkdir(parents=True, exist_ok=True)
     dump_assembly(lines, BUILD_AT / 'tmp.md')
 
+    print(f'INFO: Dump the minted table of contents database (of {len(mint)} entries)')
     with open(BUILD_AT / 'toc-mint.json', 'wt', encoding=ENCODING) as handle:
         json.dump(mint, handle, indent=2)
 
