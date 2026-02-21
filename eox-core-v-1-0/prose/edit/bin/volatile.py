@@ -116,6 +116,15 @@ GLOSSARY_SOURCES = ('defs-acrs-01-defs-01-terms-ext-list.md', 'defs-acrs-01-defs
 # Type declarations:
 META_TOC_TYPE = dict[str, dict[str, Union[bool, str, list[dict[str, str]]]]]
 
+# HACK A DID ACK
+APPENDIX_HEAD_REMAP = {
+    '## Appendix 1 Leadership': {'replace': ['## Appendix 1 ', '## '], 'attrs': ''},
+    '## 9.2 Special Thanks': {'replace': ['## 9.2 ', '## '], 'attrs': ''},
+    '## 9.3 Participants': {'replace': ['## 9.3 ', '## '], 'attrs': ''},
+    '# Changes From Previous Version': {'replace': ['# ', '# Appendix 2 '], 'attrs': ''},
+    '## Appendix 2.1. Revision History': {'replace': ['## Appendix 2.1. ', '##  '], 'attrs': ''},
+}
+
 
 def highlight_in_context(text_lines: list[str], pos: int, span: int = 15, ) -> None:
     """Help authors find the root cause of a problem by showing error line in span +/- context."""
@@ -310,7 +319,7 @@ def main(argv: list[str]) -> int:
             patched = []
             in_citation = False
             for line in part_lines:
-                if line.startswith(HASH):
+                if line.startswith((HASH, '(This ', 'This ', 'Normative ', 'The ')):  # Exempt from being references entries
                     patched.append(line)
                     continue
                 if line.strip() and not line.startswith(COLON):
@@ -480,21 +489,57 @@ def main(argv: list[str]) -> int:
                 if not did_appendix_sep and meta_hook and slot < first_meta_slot:  # type: ignore
                     tic_toc.append(TOC_VERTICAL_SPACER)
                     did_appendix_sep = True
+                extended = 0
+                if sec_cnt_disp.upper().isupper():
+                    extended = 2 if set(sec_cnt_disp).intersection('0123456789') else 1
+                    if extended == 2:
+                        extended = sec_cnt_disp.count(DOT) + 1
+                # HACK A DID ACK --->
+                if label == 'document-status':
+                    extended = 2
+                elif label == 'license-and-notices':
+                    extended = 2
+                elif label == 'leadership':
+                    extended = 2
+                    sec_cnt_disp = ''  # '.'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
+                elif label == 'special-thanks':
+                    extended = 2
+                    sec_cnt_disp = ''  # '..'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
+                elif label == 'participants':
+                    extended = 2
+                    sec_cnt_disp = ''  # '...'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
+                elif label == 'revision-history':
+                    extended = 2
+                    sec_cnt_disp = ''  # '....'
+                    SEC_LABEL_TEXT[label] = sec_cnt_disp
                 toc_template = TOC_TEMPLATE[cur_lvl if not meta_hook else app_lvl]
                 tic_toc.append(
                     toc_template.replace('$sec_cnt_disp$', sec_cnt_disp)
                     .replace('$text$', text)
                     .replace('$label$', label)
                 )
-                extended = 0
-                if sec_cnt_disp.upper().isupper():
-                    extended = 2 if set(sec_cnt_disp).intersection('0123456789') else 1
-                    if extended == 2:
-                        extended = sec_cnt_disp.count(DOT) + 1
+                # <--- KCA DID A KCAH
                 mint.append([list(sec_cnt.values()), extended, sec_cnt_disp, text, label])
                 current_cs = label  # Update state for label in non tag lines
                 # correct the default state assignment
                 CS_OF_SLOT[slot] = current_cs  # type: ignore
+
+    print(f'WARN: Post-process the text display of section labels (for {len(lines)} text records)')
+    for slot, line in enumerate(lines):
+        terse_line = line.rstrip()
+        if terse_line.startswith(tuple(APPENDIX_HEAD_REMAP.keys())):
+            for cand in APPENDIX_HEAD_REMAP:
+                if terse_line.startswith(cand):
+                    transform = APPENDIX_HEAD_REMAP[cand]
+                    this, that = transform['replace']
+                    attributes = transform['attrs']
+                    line = terse_line.replace(this, that) + attributes + NL  # type: ignore
+                    print(f'DEBUG: ... ({terse_line}) -- ({transform}) --> ({line.rstrip(NL)}) ...')
+                    lines[slot] = line
+                    break
 
     print(f'INFO: Process the text display of citation references (for {len(lines)} text records)')
     for slot, line in enumerate(lines):
