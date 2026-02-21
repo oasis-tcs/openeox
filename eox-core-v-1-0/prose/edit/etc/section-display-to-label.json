@@ -76,6 +76,9 @@
   "B.1": "normative-references",
   "B.2": "informative-references",
   "Appendix 1": "acknowledgments",
+  ".": "leadership",
+  "..": "special-thanks",
+  "...": "participants",
   "Appendix 2": "changes-from-previous-version",
-  "Appendix 2.1": "revision-history"
+  "....": "revision-history"
 }
