@@ -62,6 +62,7 @@ PREFIX = 'prefix'
 POSTFIX = 'postfix'
 OPERATOR = 'operator'
 TOKEN = 'token'
+REPLACEMENT_CODE = 'replacement-code'
 
 # Nicer usage info
 here = pathlib.Path().absolute()
@@ -75,6 +76,59 @@ PDF_META_YAML = pathlib.Path('etc/liitos/meta.yml')
 PDF_SETUP_IN = pathlib.Path('etc/liitos/setup.tex.in')
 SRC_FRONTMATTER = pathlib.Path('src/frontmatter.md')
 SRC_HISTORY = pathlib.Path('src/revision-history.md')
+
+SIMPLE_TRANSFORMS = {
+    PDF_BOOKMATTER_IN:[
+        {
+            PREFIX: {
+                TOKEN: '\\subsection*{',
+                OPERATOR: 'startswith',
+            },
+            REPLACEMENT_CODE: PUB_DATE,
+            POSTFIX: {
+                TOKEN: '}\\label{pub-date}',
+                OPERATOR: 'endswith',
+            },
+        },
+        {
+            PREFIX: {
+                TOKEN: 'Hagen, and Thomas Schmidt. ',
+                OPERATOR: 'startswith',
+            },
+            REPLACEMENT_CODE: PUB_DATE,
+            POSTFIX: {
+                TOKEN: '. OASIS Committee Specification',
+                OPERATOR: 'endswith',
+            },
+        },
+    ],
+    PDF_META_YAML: [
+        {
+            PREFIX: {
+                TOKEN: '    footer_outer_field_normal_pages: ',
+                OPERATOR: 'startswith',
+            },
+            REPLACEMENT_CODE: PUB_DATE,
+            POSTFIX: {
+                TOKEN: ' - \\theMetaPageNumPrefix { } \\thepage { } of \\pageref{LastPage}',
+                OPERATOR: 'endswith',
+            },
+        },
+    ],
+    PDF_SETUP_IN: [
+        {
+            PREFIX: {
+                TOKEN: '  \\cfoot*{\\upshape{\\scriptsize Copyright © OASIS Open ',
+                OPERATOR: 'startswith',
+            },
+            REPLACEMENT_CODE: PUB_YEAR_STR,
+            POSTFIX: {
+                TOKEN: '. All Rights Reserved.}}',
+                OPERATOR: 'endswith',
+            },
+        },
+    ],
+}
 
 
 def parse_date_spec(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int, Job, Messages]:
@@ -232,28 +286,34 @@ def apply_simple_changes(
     file_path: PathLike,
     old: list[str],
     transforms: Transforms,
-    replacements: Replacements,
-    we_debug: bool
+    job: Job,
 ) -> tuple[int, list[str]]:
     """Apply the transforms and replacements to old in simple cases and return error code and new.
 
     Note: when error code not zero, than new contains not the transformed data but a list of messages"""
+    if file_path not in transforms:
+        msg = f'ERROR: [{file_path}] not in keys ({COMMA.join(transforms)}) of transforms map'
+        return 2, [msg]
+    we_debug = job.get(DEBUG, False)
     if we_debug:
         print('#  -  -  -  -  -  -  -  -  - ')
         print(f'DEBUG: [{file_path}] Applying transforms:')
-        print(json.dumps(transforms, indent=2))
-        print(f'DEBUG: [{file_path}] Using replacements:')
-        print(json.dumps(replacements, indent=2))
+        print(json.dumps(transforms[file_path], indent=2))
     new = []
     for line in old:
         applied = False
-        for transform, replacement in zip(transforms, replacements):
+        for transform in transforms[file_path]:
 
             pre_tok = transform[PREFIX][TOKEN]
             op_str = transform[PREFIX][OPERATOR]
             pre_op = getattr(line, op_str, None)
             if pre_op is None:
                 msg = f'ERROR: [{file_path}] unexpected prefix matching operator {op_str}'
+                return 2, [msg]
+
+            replacement = job.get(transform[REPLACEMENT_CODE], None)
+            if replacement is None:
+                msg = f'ERROR: [{file_path}] replacement code ({transform[REPLACEMENT_CODE]}) not known'
                 return 2, [msg]
 
             post_tok = transform[POSTFIX][TOKEN]
@@ -314,33 +374,7 @@ def main(args: list[str]) -> int:
     any_changes = False
 
     lines = load_target(PDF_BOOKMATTER_IN)
-    transforms = [
-        {
-            PREFIX: {
-                TOKEN: '\\subsection*{',
-                OPERATOR: 'startswith',
-            },
-            POSTFIX: {
-                TOKEN: '}\\label{pub-date}',
-                OPERATOR: 'endswith',
-            },
-        },
-        {
-            PREFIX: {
-                TOKEN: 'Hagen, and Thomas Schmidt. ',
-                OPERATOR: 'startswith',
-            },
-            POSTFIX: {
-                TOKEN: '. OASIS Committee Specification',
-                OPERATOR: 'endswith',
-            },
-        },
-    ]
-    replacements = [
-        job[PUB_DATE],
-        job[PUB_DATE],
-    ]
-    err, bumped = apply_simple_changes(PDF_BOOKMATTER_IN, lines, transforms, replacements, debug)
+    err, bumped = apply_simple_changes(PDF_BOOKMATTER_IN, lines, SIMPLE_TRANSFORMS, job)
     if err:
         for message in messages:
             print(message)
@@ -348,22 +382,7 @@ def main(args: list[str]) -> int:
     any_changes = output(PDF_BOOKMATTER_IN, lines, bumped, any_changes, do_commit)
 
     lines = load_target(PDF_META_YAML)
-    transforms = [
-        {
-            PREFIX: {
-                TOKEN: '    footer_outer_field_normal_pages: ',
-                OPERATOR: 'startswith',
-            },
-            POSTFIX: {
-                TOKEN: ' - \\theMetaPageNumPrefix { } \\thepage { } of \\pageref{LastPage}',
-                OPERATOR: 'endswith',
-            },
-        },
-    ]
-    replacements = [
-        job[PUB_DATE],
-    ]
-    err, bumped = apply_simple_changes(PDF_META_YAML, lines, transforms, replacements, debug)
+    err, bumped = apply_simple_changes(PDF_META_YAML, lines, SIMPLE_TRANSFORMS, job)
     if err:
         for message in messages:
             print(message)
@@ -371,22 +390,7 @@ def main(args: list[str]) -> int:
     any_changes = output(PDF_META_YAML, lines, bumped, any_changes, do_commit)
 
     lines = load_target(PDF_SETUP_IN)
-    transforms = [
-        {
-            PREFIX: {
-                TOKEN: '  \\cfoot*{\\upshape{\\scriptsize Copyright © OASIS Open ',
-                OPERATOR: 'startswith',
-            },
-            POSTFIX: {
-                TOKEN: '. All Rights Reserved.}}',
-                OPERATOR: 'endswith',
-            },
-        },
-    ]
-    replacements = [
-        job[PUB_YEAR_STR],
-    ]
-    err, bumped = apply_simple_changes(PDF_SETUP_IN, lines, transforms, replacements, debug)
+    err, bumped = apply_simple_changes(PDF_SETUP_IN, lines, SIMPLE_TRANSFORMS, job)
     if err:
         for message in messages:
             print(message)
