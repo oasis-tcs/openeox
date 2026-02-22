@@ -225,8 +225,8 @@ def main(args: list[str]) -> int:
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
-        prefix = r'\subsection*{'
-        postfix = r'}\label{pub-date}'
+        prefix = '\\subsection*{'
+        postfix = '}\\label{pub-date}'
         # \subsection*{21 January 2026}\label{pub-date}
         if line.startswith(prefix) and line.endswith(postfix):
             pub_date = line.replace(prefix, '').replace(postfix, '')
@@ -272,7 +272,7 @@ def main(args: list[str]) -> int:
     for line in lines:
         #     footer_outer_field_normal_pages: 21 January 2026 - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}
         prefix = '    footer_outer_field_normal_pages: '
-        postfix = r' - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}'
+        postfix = ' - \\theMetaPageNumPrefix { } \\thepage { } of \\pageref{LastPage}'
         if line.startswith(prefix) and line.endswith(postfix):
             pub_date = line.replace(prefix, '').replace(postfix, '')
             debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
@@ -306,8 +306,8 @@ def main(args: list[str]) -> int:
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
-        prefix = r'  \cfoot*{\upshape{\scriptsize Copyright © OASIS Open '
-        postfix = r'. All Rights Reserved.}}'
+        prefix = '  \\cfoot*{\\upshape{\\scriptsize Copyright © OASIS Open '
+        postfix = '. All Rights Reserved.}}'
         #   \cfoot*{\upshape{\scriptsize Copyright © OASIS Open 2026. All Rights Reserved.}}
         if line.startswith(prefix) and line.endswith(postfix):
             copyright_year = line.replace(prefix, '').replace(postfix, '')
