@@ -93,12 +93,12 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
         print('ERROR: Day part must be an integral number in [1, 31]')
         return 2, messages
 
-    if job[PUB_MONTH_NAME_EN] not in MONTHS_EN:
-        print(f'ERROR: English month part must be in ({CSEP.join(MONTHS_EN)})')
+    if job[PUB_MONTH_NAME_EN] not in month_names:
+        print(f'ERROR: English month part must be in ({CSEP.join(month_names)})')
         return 2, messages
 
     job[PUB_MONTH_STR] = '00'
-    for number, name in enumerate(MONTHS_EN, start=1):
+    for number, name in enumerate(month_names, start=1):
         if month_name_en == name:
             job[PUB_MONTH_STR] = f'{number :02d}'
 
@@ -181,13 +181,13 @@ def main(args: list[str]) -> int:
 
     if not err and not job:
         print(USAGE)
-        return 0
+        return err
 
     if err:
         print(USAGE)
         for message in messages:
             print(message)
-        return 2
+        return err
 
     err, messages = parse_date(job)
 
@@ -195,7 +195,7 @@ def main(args: list[str]) -> int:
         print(USAGE)
         for message in messages:
             print(message)
-        return 2
+        return err
 
     commit = job[COMMIT]
     debug = job[DEBUG]
