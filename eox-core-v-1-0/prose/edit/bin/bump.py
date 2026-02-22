@@ -12,6 +12,7 @@ import sys
 # Types
 Job = dict[str, bool | str | int]
 Messages = list[str]
+PathLike = str | pathlib.Path
 
 # General constants
 ENCODING = 'utf-8'
@@ -175,6 +176,29 @@ def parse_args(args: list[str]) -> tuple[int, Job, Messages]:
     return 0, job, messages
 
 
+def output(file_path: PathLike, old: list[str], new: list[str], changes_detected: bool, do_commit: bool) -> bool:
+    """Show change state, diff if applicable, dump to path if do-commit, and return chained change state."""
+    if old != new:
+        if not changes_detected:
+            changes_detected = True
+        print()
+        print(f'# - - - 8< - -(( {file_path} )) - - - - - - - - - - - - - - - - - - >')
+        print()
+        sys.stdout.writelines(difflib.unified_diff(
+            tuple(line + NL for line in old),
+            tuple(line + NL for line in new),
+            fromfile=f'{file_path}(old)',
+            tofile=f'{file_path}(new)',
+        ))
+        if do_commit:
+            with open(file_path, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
+                target.write(NL.join(new) + NL)
+    else:
+        print(f'INFO: No changes to {file_path}')
+
+    return changes_detected
+
+
 def main(args: list[str]) -> int:
     """Drive the transform to bump the dates based on the given argument."""
     err, job, messages = parse_args(args)
@@ -197,13 +221,13 @@ def main(args: list[str]) -> int:
             print(message)
         return err
 
-    commit = job[COMMIT]
+    do_commit = job[COMMIT]
     debug = job[DEBUG]
     if debug:
         print('DEBUG: The job was parsed as follows:')
         print(json.dumps(job, indent=2))
 
-    if not commit:
+    if not do_commit:
         print('INFO: Dry-run only - only diffs are shown and no files changed.')
         print()
     else:
@@ -247,22 +271,7 @@ def main(args: list[str]) -> int:
 
         bumped.append(line)
 
-    if lines != bumped:
-        if not any_changes:
-            any_changes = True
-        print(f'# - - - 8< - -(( {PDF_BOOKMATTER_IN} )) - - - - - - - - - - - - - - >')
-        print()
-        sys.stdout.writelines(difflib.unified_diff(
-            tuple(line + NL for line in lines),
-            tuple(line + NL for line in bumped),
-            fromfile='bookmatter.tex.in',
-            tofile='bookmatter-bumped.tex.in',
-        ))
-        if commit:
-            with open(PDF_BOOKMATTER_IN, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
-                target.write(NL.join(bumped) + NL)
-    else:
-        print(f'INFO: No changes to {PDF_BOOKMATTER_IN}')
+    any_changes = output(PDF_BOOKMATTER_IN, lines, bumped, any_changes, do_commit)
 
     with open(PDF_META_YAML, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
         lines = [line.rstrip(NL) for line in source.readlines()]
@@ -282,23 +291,7 @@ def main(args: list[str]) -> int:
 
         bumped.append(line)
 
-    if lines != bumped:
-        if not any_changes:
-            any_changes = True
-        print()
-        print(f'# - - - 8< - -(( {PDF_META_YAML} )) - - - - - - - - - - - - - - - - - - >')
-        print()
-        sys.stdout.writelines(difflib.unified_diff(
-            tuple(line + NL for line in lines),
-            tuple(line + NL for line in bumped),
-            fromfile='meta.yml',
-            tofile='meta-bumped.yml',
-        ))
-        if commit:
-            with open(PDF_META_YAML, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
-                target.write(NL.join(bumped) + NL)
-    else:
-        print(f'INFO: No changes to {PDF_META_YAML}')
+    any_changes = output(PDF_META_YAML, lines, bumped, any_changes, do_commit)
 
     with open(PDF_SETUP_IN, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
         lines = [line.rstrip(NL) for line in source.readlines()]
@@ -318,24 +311,7 @@ def main(args: list[str]) -> int:
 
         bumped.append(line)
 
-    if lines != bumped:
-        if not any_changes:
-            any_changes = True
-        print()
-        print(f'# - - - 8< - -(( {PDF_SETUP_IN} )) - - - - - - - - - - - - - - >')
-        print()
-        sys.stdout.writelines(difflib.unified_diff(
-            tuple(line + NL for line in lines),
-            tuple(line + NL for line in bumped),
-            fromfile='setup.tex.in',
-            tofile='setup-bumped.tex.in',
-        ))
-        if commit:
-            with open(PDF_SETUP_IN, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
-                target.write(NL.join(bumped) + NL)
-    else:
-        print(f'INFO: No changes to {PDF_SETUP_IN}')
-
+    any_changes = output(PDF_SETUP_IN, lines, bumped, any_changes, do_commit)
 
     with open(SRC_FRONTMATTER, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
         lines = [line.rstrip(NL) for line in source.readlines()]
@@ -385,23 +361,7 @@ def main(args: list[str]) -> int:
 
         bumped.append(line)
 
-    if lines != bumped:
-        if not any_changes:
-            any_changes = True
-        print()
-        print(f'# - - - 8< - -(( {SRC_FRONTMATTER} )) - - - - - - - - - - - - - - - - - - >')
-        print()
-        sys.stdout.writelines(difflib.unified_diff(
-            tuple(line + NL for line in lines),
-            tuple(line + NL for line in bumped),
-            fromfile='frontmatter.md',
-            tofile='frontmatter-bumped.md',
-        ))
-        if commit:
-            with open(SRC_FRONTMATTER, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
-                target.write(NL.join(bumped) + NL)
-    else:
-        print(f'INFO: No changes to {SRC_FRONTMATTER}')
+    any_changes = output(SRC_FRONTMATTER, lines, bumped, any_changes, do_commit)
 
     with open(SRC_HISTORY, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
         lines = [line.rstrip(NL) for line in source.readlines()]
@@ -442,30 +402,13 @@ def main(args: list[str]) -> int:
 
         bumped.append(line)
 
-    if lines != bumped:
-        if not any_changes:
-            any_changes = True
-        print()
-        print(f'# - - - 8< - -(( {SRC_HISTORY} )) - - - - - - - - - - - - - - - - - - >')
-        print()
-        sys.stdout.writelines(difflib.unified_diff(
-            tuple(line + NL for line in lines),
-            tuple(line + NL for line in bumped),
-            fromfile='revision-history.md',
-            tofile='revision-history-bumped.md',
-        ))
-        if commit:
-            with open(SRC_HISTORY, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
-                target.write(NL.join(bumped) + NL)
-            print()
-    else:
-        print(f'INFO: No changes to {SRC_HISTORY}')
+    any_changes = output(SRC_HISTORY, lines, bumped, any_changes, do_commit)
 
     print()
     if any_changes:
-        print('INFO: Bumped - OK') if commit else print('INFO: Dry-Bumped - OK')
+        print('INFO: Bumped - OK') if do_commit else print('INFO: Dry-Bumped - OK')
     else:
-        print('INFO: No changes - no commit - OK') if commit else print('INFO: No dry-changes - nothing would be committed - OK')
+        print('INFO: No changes - no commit - OK') if do_commit else print('INFO: No dry-changes - nothing would be committed - OK')
 
     return 0
 
