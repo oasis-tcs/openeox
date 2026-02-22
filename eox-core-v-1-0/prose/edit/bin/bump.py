@@ -82,7 +82,7 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
         return 2, messages
 
     if len(job[PUB_DAY_STR]) != 2:
-        print('ERROR: Day part must be two-digits (zero-padded)')
+        messages.append('ERROR: Day part must be two-digits (zero-padded)')
         return 2, messages
 
     try:
@@ -90,11 +90,11 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
         if not 1 <= job[PUB_DAY_INT] <= 31:
             raise ValueError
     except ValueError:
-        print('ERROR: Day part must be an integral number in [1, 31]')
+        messages.append('ERROR: Day part must be an integral number in [1, 31]')
         return 2, messages
 
     if job[PUB_MONTH_NAME_EN] not in month_names:
-        print(f'ERROR: English month part must be in ({CSEP.join(month_names)})')
+        messages.append(f'ERROR: English month part must be in ({CSEP.join(month_names)})')
         return 2, messages
 
     job[PUB_MONTH_STR] = '00'
@@ -103,11 +103,11 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
             job[PUB_MONTH_STR] = f'{number :02d}'
 
     if job[PUB_MONTH_STR] == '00':
-        print('ERROR: English month part to %m mapping failed')
+        messages.append('ERROR: English month part to %m mapping failed')
         return 1, messages
 
     if len(year_str) != 4:
-        print('ERROR: Year part must be four-digits')
+        messages.append('ERROR: Year part must be four-digits')
         return 2, messages
 
     now = dti.datetime.now(dti.UTC)
@@ -117,7 +117,7 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
         if job[PUB_YEAR_INT] < this_year - 1:
             raise ValueError
     except ValueError:
-        print(f'ERROR: Year part must be an integral number >= {this_year - 1}')
+        messages.append(f'ERROR: Year part must be an integral number >= {this_year - 1}')
         return 2, messages
 
     try:
@@ -125,12 +125,12 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
         if not 1 <= job[PUB_MONTH_INT] <= 12:
             raise ValueError
     except ValueError:
-        print('ERROR: Month part must map to an integral number in [1, 12]')
+        messages.append('ERROR: Month part must map to an integral number in [1, 12]')
         return 1, messages
 
     _, max_days_of_month = cal.monthrange(job[PUB_YEAR_INT], job[PUB_MONTH_INT])
     if job[PUB_DAY_INT] > max_days_of_month:
-        print(f'ERROR: Day part must be inside days of month [1, {max_days_of_month}]')
+        messages.append(f'ERROR: Day part must be inside days of month [1, {max_days_of_month}]')
         return 2, messages
 
     job[PUB_DATE] = f'{job[PUB_DAY_STR]}{SPACE}{job[PUB_MONTH_NAME_EN]}{SPACE}{job[PUB_YEAR_STR]}'
