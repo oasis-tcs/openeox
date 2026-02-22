@@ -251,7 +251,6 @@ def main(args: list[str]) -> int:
     for line in lines:
         prefix = '\\subsection*{'
         postfix = '}\\label{pub-date}'
-        # \subsection*{21 January 2026}\label{pub-date}
         if line.startswith(prefix) and line.endswith(postfix):
             pub_date = line.replace(prefix, '').replace(postfix, '')
             debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
@@ -261,7 +260,6 @@ def main(args: list[str]) -> int:
 
         prefix = 'Hagen, and Thomas Schmidt. '
         postfix = '. OASIS Committee Specification'
-        # Hagen, and Thomas Schmidt. 21 January 2026. OASIS Committee Specification
         if line.startswith(prefix) and line.endswith(postfix):
             pub_date = line.replace(prefix, '').replace(postfix, '')
             debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
@@ -279,7 +277,6 @@ def main(args: list[str]) -> int:
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
-        #     footer_outer_field_normal_pages: 21 January 2026 - \theMetaPageNumPrefix { } \thepage { } of \pageref{LastPage}
         prefix = '    footer_outer_field_normal_pages: '
         postfix = ' - \\theMetaPageNumPrefix { } \\thepage { } of \\pageref{LastPage}'
         if line.startswith(prefix) and line.endswith(postfix):
@@ -301,7 +298,6 @@ def main(args: list[str]) -> int:
     for line in lines:
         prefix = '  \\cfoot*{\\upshape{\\scriptsize Copyright © OASIS Open '
         postfix = '. All Rights Reserved.}}'
-        #   \cfoot*{\upshape{\scriptsize Copyright © OASIS Open 2026. All Rights Reserved.}}
         if line.startswith(prefix) and line.endswith(postfix):
             copyright_year = line.replace(prefix, '').replace(postfix, '')
             debug and print(f'DEBUG: Found prior copyright-year ({copyright_year})')
@@ -319,7 +315,6 @@ def main(args: list[str]) -> int:
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
-        # ## 21 January 2026
         prefix = '## '
         postfix = ''
         if line.startswith(prefix):
@@ -334,7 +329,6 @@ def main(args: list[str]) -> int:
             except ValueError:
                 pass
 
-        # 21 January 2026.
         prefix = ''
         postfix = '.'
         if 11 < len(line) < 19 and line.endswith(postfix):
@@ -349,7 +343,6 @@ def main(args: list[str]) -> int:
             debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
             continue
 
-        # Copyright &copy; OASIS Open 2026. All Rights Reserved.
         prefix = 'Copyright &copy; OASIS Open '
         postfix = '. All Rights Reserved.'
         if line.startswith(prefix) and line.endswith(postfix):
@@ -376,7 +369,6 @@ def main(args: list[str]) -> int:
     postfix = ' | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |'
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
-        # | eox-core-v1.0-wd20260121-dev | 2026-01-21 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
         # <-- append here when past_table is True
         if line.startswith(trigger_prefix) and past_table is None:
             past_table = False
