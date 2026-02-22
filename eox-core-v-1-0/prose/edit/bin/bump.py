@@ -81,24 +81,24 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
         messages.append(f'ERROR: Not enough arguments for date-spec in ({job[DATE_SPEC]})')
         return 2, messages
 
-    if len(day_str) != 2:
+    if len(job[PUB_DAY_STR]) != 2:
         print('ERROR: Day part must be two-digits (zero-padded)')
         return 2, messages
 
     try:
-        job[PUB_DAY_INT] = int(day_str)
+        job[PUB_DAY_INT] = int(job[PUB_DAY_STR])
         if not 1 <= job[PUB_DAY_INT] <= 31:
             raise ValueError
     except ValueError:
         print('ERROR: Day part must be an integral number in [1, 31]')
         return 2, messages
 
-    if month_name_en not in month_names:
-        print(f'ERROR: English month part must be in ({CSEP.join(month_names)})')
+    if job[PUB_MONTH_NAME_EN] not in MONTHS_EN:
+        print(f'ERROR: English month part must be in ({CSEP.join(MONTHS_EN)})')
         return 2, messages
 
     job[PUB_MONTH_STR] = '00'
-    for number, name in enumerate(month_names, start=1):
+    for number, name in enumerate(MONTHS_EN, start=1):
         if month_name_en == name:
             job[PUB_MONTH_STR] = f'{number :02d}'
 
@@ -113,7 +113,7 @@ def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int,
     now = dti.datetime.now(dti.UTC)
     this_year = now.year
     try:
-        job[PUB_YEAR_INT] = int(year_str)
+        job[PUB_YEAR_INT] = int(job[PUB_YEAR_STR])
         if job[PUB_YEAR_INT] < this_year - 1:
             raise ValueError
     except ValueError:
