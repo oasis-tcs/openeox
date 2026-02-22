@@ -13,6 +13,8 @@ import sys
 Job = dict[str, bool | str | int]
 Messages = list[str]
 PathLike = str | pathlib.Path
+Replacements = list[str]
+Transforms = list[dict[str, dict[str]]]
 
 # General constants
 ENCODING = 'utf-8'
@@ -54,6 +56,12 @@ PUB_YEAR_INT = 'pub-year-int'
 PUB_DATE = 'pub-date'
 PUB_ISO_COMPACT = 'pub-iso-compact'
 PUB_ISO_DASH = 'pub-iso-dash'
+
+# Transform keys
+PREFIX = 'prefix'
+POSTFIX = 'postfix'
+OPERATOR = 'operator'
+TOKEN = 'token'
 
 # Nicer usage info
 here = pathlib.Path().absolute()
@@ -220,6 +228,54 @@ def load_target(file_path: PathLike) -> list[str]:
         return [line.rstrip(NL) for line in source.readlines()]
 
 
+def apply_simple_changes(
+    file_path: PathLike,
+    old: list[str],
+    transforms: Transforms,
+    replacements: Replacements,
+    we_debug: bool
+) -> tuple[int, list[str]]:
+    """Apply the transforms and replacements to old in simple cases and return error code and new.
+
+    Note: when error code not zero, than new contains not the transformed data but a list of messages"""
+    if we_debug:
+        print('#  -  -  -  -  -  -  -  -  - ')
+        print(f'DEBUG: [{file_path}] Applying transforms:')
+        print(json.dumps(transforms, indent=2))
+        print(f'DEBUG: [{file_path}] Using replacements:')
+        print(json.dumps(replacements, indent=2))
+    new = []
+    for line in old:
+        applied = False
+        for transform, replacement in zip(transforms, replacements):
+
+            pre_tok = transform[PREFIX][TOKEN]
+            op_str = transform[PREFIX][OPERATOR]
+            pre_op = getattr(line, op_str, None)
+            if pre_op is None:
+                msg = f'ERROR: [{file_path}] unexpected prefix matching operator {op_str}'
+                return 2, [msg]
+
+            post_tok = transform[POSTFIX][TOKEN]
+            op_str = transform[POSTFIX][OPERATOR]
+            post_op = getattr(line, op_str, None)
+            if post_op is None:
+                msg = f'ERROR: [{file_path}] unexpected postfix matching operator {op_str}'
+                return 2, [msg]
+
+            if pre_op(pre_tok) and post_op(post_tok):
+                value = line.replace(pre_tok, '').replace(post_tok, '')
+                we_debug and print(f'DEBUG: Found prior value ({value})')
+                new.append(pre_tok + replacement + post_tok)
+                we_debug and print(f'DEBUG: Replaced with ({replacement})')
+                applied = True
+
+        if not applied:
+            new.append(line)
+
+    return 0, new
+
+
 def main(args: list[str]) -> int:
     """Drive the transform to bump the dates based on the given argument."""
     err, job, messages = parse_args(args)
@@ -258,63 +314,83 @@ def main(args: list[str]) -> int:
     any_changes = False
 
     lines = load_target(PDF_BOOKMATTER_IN)
-    bumped = []
-    debug and print('#  -  -  -  -  -  -  -  -  - ')
-    for line in lines:
-        prefix = '\\subsection*{'
-        postfix = '}\\label{pub-date}'
-        if line.startswith(prefix) and line.endswith(postfix):
-            pub_date = line.replace(prefix, '').replace(postfix, '')
-            debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
-            bumped.append(prefix + job[PUB_DATE] + postfix)
-            debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
-            continue
-
-        prefix = 'Hagen, and Thomas Schmidt. '
-        postfix = '. OASIS Committee Specification'
-        if line.startswith(prefix) and line.endswith(postfix):
-            pub_date = line.replace(prefix, '').replace(postfix, '')
-            debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
-            bumped.append(prefix + job[PUB_DATE] + '. OASIS Committee Specification')
-            debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
-            continue
-
-        bumped.append(line)
-
+    transforms = [
+        {
+            PREFIX: {
+                TOKEN: '\\subsection*{',
+                OPERATOR: 'startswith',
+            },
+            POSTFIX: {
+                TOKEN: '}\\label{pub-date}',
+                OPERATOR: 'endswith',
+            },
+        },
+        {
+            PREFIX: {
+                TOKEN: 'Hagen, and Thomas Schmidt. ',
+                OPERATOR: 'startswith',
+            },
+            POSTFIX: {
+                TOKEN: '. OASIS Committee Specification',
+                OPERATOR: 'endswith',
+            },
+        },
+    ]
+    replacements = [
+        job[PUB_DATE],
+        job[PUB_DATE],
+    ]
+    err, bumped = apply_simple_changes(PDF_BOOKMATTER_IN, lines, transforms, replacements, debug)
+    if err:
+        for message in messages:
+            print(message)
+        return err
     any_changes = output(PDF_BOOKMATTER_IN, lines, bumped, any_changes, do_commit)
 
     lines = load_target(PDF_META_YAML)
-    bumped = []
-    debug and print('#  -  -  -  -  -  -  -  -  - ')
-    for line in lines:
-        prefix = '    footer_outer_field_normal_pages: '
-        postfix = ' - \\theMetaPageNumPrefix { } \\thepage { } of \\pageref{LastPage}'
-        if line.startswith(prefix) and line.endswith(postfix):
-            pub_date = line.replace(prefix, '').replace(postfix, '')
-            debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
-            bumped.append(prefix + job[PUB_DATE] + postfix)
-            debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
-            continue
-
-        bumped.append(line)
-
+    transforms = [
+        {
+            PREFIX: {
+                TOKEN: '    footer_outer_field_normal_pages: ',
+                OPERATOR: 'startswith',
+            },
+            POSTFIX: {
+                TOKEN: ' - \\theMetaPageNumPrefix { } \\thepage { } of \\pageref{LastPage}',
+                OPERATOR: 'endswith',
+            },
+        },
+    ]
+    replacements = [
+        job[PUB_DATE],
+    ]
+    err, bumped = apply_simple_changes(PDF_META_YAML, lines, transforms, replacements, debug)
+    if err:
+        for message in messages:
+            print(message)
+        return err
     any_changes = output(PDF_META_YAML, lines, bumped, any_changes, do_commit)
 
     lines = load_target(PDF_SETUP_IN)
-    bumped = []
-    debug and print('#  -  -  -  -  -  -  -  -  - ')
-    for line in lines:
-        prefix = '  \\cfoot*{\\upshape{\\scriptsize Copyright © OASIS Open '
-        postfix = '. All Rights Reserved.}}'
-        if line.startswith(prefix) and line.endswith(postfix):
-            copyright_year = line.replace(prefix, '').replace(postfix, '')
-            debug and print(f'DEBUG: Found prior copyright-year ({copyright_year})')
-            bumped.append(prefix + job[PUB_YEAR_STR] + postfix)
-            debug and print(f'DEBUG: Bumped to ({job[PUB_YEAR_STR]})')
-            continue
-
-        bumped.append(line)
-
+    transforms = [
+        {
+            PREFIX: {
+                TOKEN: '  \\cfoot*{\\upshape{\\scriptsize Copyright © OASIS Open ',
+                OPERATOR: 'startswith',
+            },
+            POSTFIX: {
+                TOKEN: '. All Rights Reserved.}}',
+                OPERATOR: 'endswith',
+            },
+        },
+    ]
+    replacements = [
+        job[PUB_YEAR_STR],
+    ]
+    err, bumped = apply_simple_changes(PDF_SETUP_IN, lines, transforms, replacements, debug)
+    if err:
+        for message in messages:
+            print(message)
+        return err
     any_changes = output(PDF_SETUP_IN, lines, bumped, any_changes, do_commit)
 
     lines = load_target(SRC_FRONTMATTER)
@@ -330,7 +406,7 @@ def main(args: list[str]) -> int:
                 pub_date = line.replace(prefix, '').replace(postfix, '')
                 debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
                 bumped.append(prefix + job[PUB_DATE] + postfix)
-                debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
+                debug and print(f'DEBUG: Replaced with ({job[PUB_DATE]})')
                 continue
             except ValueError:
                 pass
@@ -346,7 +422,7 @@ def main(args: list[str]) -> int:
                 continue
             debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
             bumped.append(prefix + job[PUB_DATE] + postfix)
-            debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
+            debug and print(f'DEBUG: Replaced with ({job[PUB_DATE]})')
             continue
 
         prefix = 'Copyright &copy; OASIS Open '
@@ -355,7 +431,7 @@ def main(args: list[str]) -> int:
             pub_date = line.replace(prefix, '').replace(postfix, '')
             debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
             bumped.append(prefix + job[PUB_YEAR_STR] + postfix)
-            debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
+            debug and print(f'DEBUG: Replaced with ({job[PUB_DATE]})')
             continue
 
         bumped.append(line)
