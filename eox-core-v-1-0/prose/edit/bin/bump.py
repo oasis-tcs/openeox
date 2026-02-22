@@ -262,8 +262,8 @@ def main(args: list[str]) -> int:
         prefix = 'Hagen, and Thomas Schmidt. '
         postfix = '. OASIS Committee Specification'
         # Hagen, and Thomas Schmidt. 21 January 2026. OASIS Committee Specification
-        if line.startswith(prefix) and line.endswith('. OASIS Committee Specification'):
-            pub_date = line.replace(prefix, '').replace('. OASIS Committee Specification', '')
+        if line.startswith(prefix) and line.endswith(postfix):
+            pub_date = line.replace(prefix, '').replace(postfix, '')
             debug and print(f'DEBUG: Found prior pub-date ({pub_date})')
             bumped.append(prefix + job[PUB_DATE] + '. OASIS Committee Specification')
             debug and print(f'DEBUG: Bumped to ({job[PUB_DATE]})')
