@@ -61,7 +61,7 @@ path = tool.relative_to(here)
 USAGE = f'usage: {path} [--{COMMIT}] [--{DEBUG}] "DD Month YYYY"'
 
 
-def parse_date(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int, Job, Messages]:
+def parse_date_spec(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int, Job, Messages]:
     """Parse (and validate) the given date-spec in the job into a multi format structure.
 
     Note: Expected is format DD B YYYY, where B is the format-code for a title cased
@@ -189,7 +189,7 @@ def main(args: list[str]) -> int:
             print(message)
         return err
 
-    err, messages = parse_date(job)
+    err, messages = parse_date_spec(job)
 
     if err:
         print(USAGE)
