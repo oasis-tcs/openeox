@@ -61,6 +61,13 @@ tool = pathlib.Path(__file__)
 path = tool.relative_to(here)
 USAGE = f'usage: {path} [--{COMMIT}] [--{DEBUG}] "DD Month YYYY"'
 
+# Configuration and runtime parameter candidates:
+PDF_BOOKMATTER_IN = pathlib.Path('etc/liitos/bookmatter.tex.in')
+PDF_META_YAML = pathlib.Path('etc/liitos/meta.yml')
+PDF_SETUP_IN = pathlib.Path('etc/liitos/setup.tex.in')
+SRC_FRONTMATTER = pathlib.Path('src/frontmatter.md')
+SRC_HISTORY = pathlib.Path('src/revision-history.md')
+
 
 def parse_date_spec(job: Job, month_names: tuple[str, ...] = MONTHS_EN) -> tuple[int, Job, Messages]:
     """Parse (and validate) the given date-spec in the job into a multi format structure.
@@ -176,6 +183,15 @@ def parse_args(args: list[str]) -> tuple[int, Job, Messages]:
     return 0, job, messages
 
 
+def dump_target(file_path: PathLike, lines: list[str]) -> None:
+    """Dump the newline joined lines to the target text file path.
+
+    Note: a trailing newline is appended for POSIX conformance.
+    """
+    with open(file_path, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
+        target.write(NL.join(lines) + NL)
+
+
 def output(file_path: PathLike, old: list[str], new: list[str], changes_detected: bool, do_commit: bool) -> bool:
     """Show change state, diff if applicable, dump to path if do-commit, and return chained change state."""
     if old != new:
@@ -191,12 +207,17 @@ def output(file_path: PathLike, old: list[str], new: list[str], changes_detected
             tofile=f'{file_path}(new)',
         ))
         if do_commit:
-            with open(file_path, 'wt', encoding=ENCODING, errors=ENC_ERRS) as target:
-                target.write(NL.join(new) + NL)
+            dump_target(file_path, new)
     else:
         print(f'INFO: No changes to {file_path}')
 
     return changes_detected
+
+
+def load_target(file_path: PathLike) -> list[str]:
+    """Load the target text from file path and return the list of newline stripped lines."""
+    with open(file_path, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
+        return [line.rstrip(NL) for line in source.readlines()]
 
 
 def main(args: list[str]) -> int:
@@ -234,18 +255,9 @@ def main(args: list[str]) -> int:
         print('INFO: Commit mode - the magical five files will be bumped.')
         print()
 
-    # Configuration and runtime parameter candidates:
-    PDF_BOOKMATTER_IN = pathlib.Path('etc/liitos/bookmatter.tex.in')
-    PDF_META_YAML = pathlib.Path('etc/liitos/meta.yml')
-    PDF_SETUP_IN = pathlib.Path('etc/liitos/setup.tex.in')
-    SRC_FRONTMATTER = pathlib.Path('src/frontmatter.md')
-    SRC_HISTORY = pathlib.Path('src/revision-history.md')
-
     any_changes = False
 
-    with open(PDF_BOOKMATTER_IN, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
-        lines = [line.rstrip(NL) for line in source.readlines()]
-
+    lines = load_target(PDF_BOOKMATTER_IN)
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
@@ -271,9 +283,7 @@ def main(args: list[str]) -> int:
 
     any_changes = output(PDF_BOOKMATTER_IN, lines, bumped, any_changes, do_commit)
 
-    with open(PDF_META_YAML, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
-        lines = [line.rstrip(NL) for line in source.readlines()]
-
+    lines = load_target(PDF_META_YAML)
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
@@ -290,9 +300,7 @@ def main(args: list[str]) -> int:
 
     any_changes = output(PDF_META_YAML, lines, bumped, any_changes, do_commit)
 
-    with open(PDF_SETUP_IN, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
-        lines = [line.rstrip(NL) for line in source.readlines()]
-
+    lines = load_target(PDF_SETUP_IN)
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
@@ -309,9 +317,7 @@ def main(args: list[str]) -> int:
 
     any_changes = output(PDF_SETUP_IN, lines, bumped, any_changes, do_commit)
 
-    with open(SRC_FRONTMATTER, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
-        lines = [line.rstrip(NL) for line in source.readlines()]
-
+    lines = load_target(SRC_FRONTMATTER)
     bumped = []
     debug and print('#  -  -  -  -  -  -  -  -  - ')
     for line in lines:
@@ -356,9 +362,7 @@ def main(args: list[str]) -> int:
 
     any_changes = output(SRC_FRONTMATTER, lines, bumped, any_changes, do_commit)
 
-    with open(SRC_HISTORY, 'rt', encoding=ENCODING, errors=ENC_ERRS) as source:
-        lines = [line.rstrip(NL) for line in source.readlines()]
-
+    lines = load_target(SRC_HISTORY)
     bumped = []
     do_amend = True
     past_table = None  # State machine: None -> False -> True -> None
