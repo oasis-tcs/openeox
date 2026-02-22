@@ -3,6 +3,7 @@
 import calendar as cal
 import datetime as dti
 import difflib
+import locale
 import pathlib
 import os
 import sys
@@ -22,21 +23,10 @@ SEMI = ';'
 SPACE = ' '
 CSEP = COMMA + SPACE
 TM = '™'
+LANG_CODE = 'en_US'
 
-MONTHS_EN = (
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-)
+locale.setlocale(locale.LC_ALL, LANG_CODE)
+MONTHS_EN = tuple(name for name in cal.month_name[1:])
 
 here = pathlib.Path().absolute()
 tool = pathlib.Path(__file__)
