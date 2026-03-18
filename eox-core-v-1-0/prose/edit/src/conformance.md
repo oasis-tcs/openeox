@@ -50,6 +50,26 @@ A processor satisfies the "OpenEoX Core Consumer" conformance profile if the pro
 * reads OpenEoX Core Information and interprets them according to the semantics defined in section [sec](#schema-elements).
 * satisfies those normative requirements in section [sec](#schema-elements) and
   [sec](#safety-security-and-data-protection) that are designated as applying to OpenEoX Consumers.
+* provides an interpretation view for each lifecycle event that answers:
+  * at what date the event occurs.
+  * what lifecycle state changes at that date.
+  * which actions are needed.
+
+For OpenEoX Core v1.0, the first two answers are directly derived from property semantics and their values.
+The third answer (needed actions) is not explicitly represented by a dedicated OpenEoX Core property and therefore
+requires a defined action mapping by profile, implementation, or deployment policy.
+
+If no action mapping is available, an OpenEoX Core Consumer MUST still provide the date and change interpretation and
+SHOULD indicate that the action is not specified by OpenEoX Core v1.0.
+
+The following default action mapping SHOULD be supported by OpenEoX Core Consumers:
+
+* `end_of_sales`: Product can no longer be ordered from vendor sales channels.
+  Recommended action: evaluate and initiate replacement procurement plans for successor offerings.
+* `end_of_security_support`: Vendor no longer commits to security remediations.
+  Recommended action: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
+* `end_of_life`: Vendor support ends in any form.
+  Recommended action: complete replacement or decommissioning of affected deployments.
 
 ### Conformance Clause 4: OpenEoX Core Basic Validator
 
