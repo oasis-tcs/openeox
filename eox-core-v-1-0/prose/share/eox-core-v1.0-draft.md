@@ -7,7 +7,7 @@
 
 ## Committee Specification Draft 01
 
-## 18 February 2026
+## 15 March 2026
 
 ### This Version
 
@@ -71,7 +71,7 @@ When referencing this document, the following citation format should be used:
 
 _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-18 February 2026.
+15 March 2026.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.\
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
@@ -1018,7 +1018,7 @@ A library satisfies the "OpenEoX Core Library" conformance profile if the librar
 The library MAY implement an option to retrieve the keys unsorted.
 
 ### 9.1.8 Conformance Clause 8: OpenEoX Core Library with Basic Validation <a id='conformance-clause-8-openeox-core-library-with-basic-validation'></a>
--1
+
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
 
 * satisfies the "OpenEoX Core Library" conformance profile.
@@ -1269,6 +1269,7 @@ N/A.
 | eox-core-v1.0-wd20251119-dev | 2025-11-19 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
 | eox-core-v1.0-wd20260121-dev | 2026-01-21 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
 | eox-core-v1.0-wd20260218-dev | 2026-02-18 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
+| eox-core-v1.0-wd20260315-dev | 2026-03-15 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
 
 -------
 
