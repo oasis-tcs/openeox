@@ -15,6 +15,7 @@ toc:
 | eox-core-v1.0-wd20251119-dev | 2025-11-19 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
 | eox-core-v1.0-wd20260121-dev | 2026-01-21 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
 | eox-core-v1.0-wd20260218-dev | 2026-02-18 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
+| eox-core-v1.0-wd20260315-dev | 2026-03-15 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
 
 -------
 
