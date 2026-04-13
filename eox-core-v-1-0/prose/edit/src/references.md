@@ -1,3 +1,28 @@
+<!--
+---
+toc:
+  auto: false
+  label: References
+  enumerate: Annex B
+  children:
+  - label: Normative References
+    enumerate: B.1
+  - label: Informative References
+    enumerate: B.2
+---
+-->
+# References
+
+(This annex forms an integral part of this Specification.)
+
+This section contains the normative and informative references that are used in this document.
+
+Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
+
+## Normative References
+
+The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
+
 ECMA-262
 :    _ECMAScript® 2024 Language Specification_, ECMA-262, 15th edition, June 2024, <https://262.ecma-international.org/15.0/>
 
@@ -42,3 +67,10 @@ RFC9562
 
 SPDX301
 :    _The System Package Data Exchange® (SPDX®) Specification Version 3.0.1_, Linux Foundation and its Contributors, 2024, <https://spdx.github.io/spdx-spec/>.
+
+## Informative References
+
+The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
+
+CSAF-v2.1
+:    _Common Security Advisory Framework Version 2.1_. Edited by Stefan Hagen, and Thomas Schmidt. 28 May 2025. OASIS Committee Specification Draft 01. https://docs.oasis-open.org/csaf/csaf/v2.1/csd01/csaf-v2.1-csd01.html. Latest stage: https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.html.

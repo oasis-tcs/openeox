@@ -1,4 +1,13 @@
-## A.1. Document Status
+<!--
+---
+toc:
+  auto: false
+  label: Document Status
+  enumerate: A.1.
+---
+-->
+
+## Document Status
 
 This document was last revised or approved by the OASIS OpenEoX TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa>.
 

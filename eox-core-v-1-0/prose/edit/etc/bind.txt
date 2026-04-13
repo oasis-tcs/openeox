@@ -52,11 +52,7 @@ annex-a-00-license-document-status-notices.md
 annex-a-01-document-status.md
 annex-a-02-license-notices.md
 
-references-00.md
-references-00-normative-00.md
-references-00-normative-00-data.md
-references-00-informative-00.md
-references-00-informative-00-data.md
+references.md
 
 acknowledgements.md
 

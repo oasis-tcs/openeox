@@ -41,15 +41,21 @@ types:
 	command -v mypy >/dev/null 2>&1 || { echo >&2 "make types requires mypy but it's not installed - you can install with: 'pip install mypy'.  Aborting."; exit 1; }
 	$(types)
 
-.PHONY: sections
-sections: ; bin/sections.py
+.PHONY: inversions
+inversions: invert-sections invert-examples
+
+.PHONY: invert-examples
+invert-examples: ; bin/invert_eg_labels.py
+
+.PHONY: invert-sections
+invert-sections: ; bin/invert_sec_labels.py
 
 .PHONY: render
 render: render-html
 
 .PHONY: render-markdown
-render-markdown: sections
-	bin/assemble.py && \
+render-markdown: inversions
+	bin/volatile.py && \
 	  cp -a build/tmp.md $(out_gfm_plus) && \
 	  printf "Rendered user facing delivery item in markdown format:\n" && \
 	  ls -l $(out_gfm_plus)
@@ -58,7 +64,7 @@ render-markdown: sections
 render-html: render-markdown
 	command -v pandoc >/dev/null 2>&1 || { echo >&2 "make render-html requires pandoc but it's not installed - you can get help on installing at https://pandoc.org.  Aborting."; exit 1; }
 	command -v tidy >/dev/null 2>&1 || { echo >&2 "make render-html requires tidy but it's not installed - you can get help on installing by searching for it on the wild internets.  Aborting."; exit 1; }
-	pandoc -f gfm+definition_lists -t html build/tmp.md --columns=345 --title "OpenEoX Core Schema Version 1.0" \
+	pandoc -f gfm+definition_lists -t html build/tmp.md --columns=345  \
 		--css style/base.css --css style/skin.css --standalone -o build/tmp.html && \
 	  bin/toccata.py && \
 	  timeout 2 tidy -config etc/tidy-config.txt build/injected.html -ashtml 2>/dev/null | \
@@ -71,7 +77,7 @@ render-pdf:
 	command -v liitos >/dev/null 2>&1 || { echo >&2 "make render-pdf requires liitos but it's not installed - you can install per pip install liitos.  Aborting."; exit 1; }
 	command -v etiketti >/dev/null 2>&1 || { echo >&2 "make render-pdf requires etiketti but it's not installed - you can install per pip install etiketti.  Aborting."; exit 1; }
 	command -v qpdf >/dev/null 2>&1 || { echo >&2 "make render-pdf requires qpdf but it's not installed - you can search the internets on how to install qpdf.  Aborting."; exit 1; }
-	bin/assemble.py -t $(target_pdf) && \
+	bin/lapidify.py --target $(target_pdf) && \
 		mkdir -p $(build_pdf) && \
 		printf "pdf.md\n" > $(build_root)bind.txt && \
 		mkdir -p $(build_root)/images/ && \
@@ -101,7 +107,7 @@ build: render status
 .PHONY: status
 status:
 	printf "Current version control status:\n"; \
-	git status || true
+	git status
 
 .PHONY: diff-pdf
 diff-pdf:
@@ -111,17 +117,15 @@ diff-pdf:
 
 .PHONY: clean
 clean:
-	rm -rf `find . -name __pycache__`
-	rm -f `find . -type f -name '*.py[co]' `
-	rm -f `find . -type f -name '*~' `
-	rm -f `find . -type f -name '.*~' `
-	rm -rf .cache .*_cache
-	rm -f .DS_Store
-	rm -fr $(build_root)
-	mkdir -p $(build_root)
-
-.PHONY: clone-info
-clone-info:
-	printf "Revision-info:\n"
-	printf "%s revision.is(): sha1:%s\n" "-" "$$(git rev-parse HEAD)"
-	printf "%s node.id(): '%s'\n" "-" "$$(python -c 'import platform; import uuid; print(str(uuid.uuid3(uuid.NAMESPACE_DNS, platform.node())))')"
+	rm -f $(build_root)approvals.yml \
+	  $(build_root)bind.txt \
+	  $(build_root)bookmatter.tex.in \
+	  $(build_root)changes.yml \
+	  $(build_root)driver.tex.in \
+	  $(build_root)meta.yml \
+	  $(build_root)metadata.tex.in \
+	  $(build_root)patch.yml \
+	  $(build_root)publisher.tex.in \
+	  $(build_root)setup.tex.in \
+	  $(build_root)structure.yml
+	rm -fr $(build_root)src/ $(build_pdf)

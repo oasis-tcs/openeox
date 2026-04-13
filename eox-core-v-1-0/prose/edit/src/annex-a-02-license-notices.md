@@ -1,4 +1,13 @@
-## A.2. License and Notices
+<!--
+---
+toc:
+  auto: false
+  label: License and Notices
+  enumerate: A.2.
+---
+-->
+
+## License and Notices
 
 <!-- Required section. Do not modify. -->
 
