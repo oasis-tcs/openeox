@@ -1,10 +1,10 @@
 {
   "1": "scope",
   "2": "definitions-and-acronyms",
-  "2.1": "definitions",
-  "2.1.1": "terms-defined-elsewhere",
-  "2.1.2": "terms-defined-in-this-document",
-  "2.2": "abbreviations-and-acronyms",
+  "2.1": "abbreviations-and-acronyms",
+  "2.2": "definitions",
+  "2.2.1": "terms-defined-elsewhere",
+  "2.2.2": "terms-defined-in-this-document",
   "3": "document-conventions",
   "3.1": "key-words",
   "3.2": "typographical-conventions",
@@ -23,7 +23,7 @@
   "4.1.4": "construction-principles",
   "4.1.5": "format-validation",
   "4.1.6": "date-and-time",
-  "4.2": "changes-from-the previous-version",
+  "4.2": "changes-from-the-previous-version",
   "5": "taxonomy",
   "5.1": "end-of-life",
   "5.2": "end-of-sales",
@@ -76,9 +76,9 @@
   "B.1": "normative-references",
   "B.2": "informative-references",
   "Appendix 1": "acknowledgments",
-  ".": "leadership",
-  "..": "special-thanks",
-  "...": "participants",
+  "Leadership": "leadership",
+  "Special Thanks": "special-thanks",
+  "Participants": "participants",
   "Appendix 2": "changes-from-previous-version",
-  "....": "revision-history"
+  "Revision History": "revision-history"
 }
