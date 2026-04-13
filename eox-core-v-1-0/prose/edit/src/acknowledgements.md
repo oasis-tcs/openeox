@@ -1,12 +1,6 @@
-<!--
----
-toc:
-  auto: false
-  label: Acknowledgments
-  enumerate: Appendix 1
----
--->
-# Acknowledgments
+\newpage
+
+# Appendix 1 Acknowledgments
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
