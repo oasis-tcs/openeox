@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0" />
+    <meta name="generator" content="liitos, pandoc, and tidy." />
     <meta charset="utf-8" />
-    <meta name="generator" content="pandoc" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>
-      tmp
+      OpenEoX Shell Schema Version 1.0 – tmp
     </title>
     <style>
     
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
@@ -207,7 +205,7 @@
     margin-right:0in;
     margin-bottom:4.0pt;
     margin-left:0in;
-    font-size:10.0pt;
+    font-size:12.0pt;
     font-family:"Liberation Sans",sans-serif;
     }
     p.title, li.title, div.title {
@@ -240,7 +238,7 @@
     margin-bottom:0in;
     margin-left:0in;
     page-break-after:avoid;
-    font-size:10.0pt;
+    font-size:12.0pt;
     font-family:"Liberation Sans",sans-serif;
     color:#446CAA;
     font-weight:bold;
@@ -325,7 +323,7 @@
     }
 
     ul > li {
-    font-size:10.0pt;
+    font-size:12.0pt;
     font-family:"Liberation Sans",sans-serif;
     }
 
@@ -361,186 +359,548 @@
     </p>
     <hr />
     <h1 id="openeox-shell-schema-version-10">
-      OpenEOX Shell Schema Version 1.0
+      OpenEoX Shell Schema Version 1.0
     </h1>
     <h2 id="committee-specification-draft-01">
       Committee Specification Draft 01
     </h2>
-    <h2 id="16-july-2025">
-      16 July 2025
+    <h2 id="15-march-2026">
+      15 March 2026
     </h2>
-    <h4 id="this-stage">
-      This stage:
-    </h4>
+    <h3 id="this-version">
+      This Version
+    </h3>
     <p>
       <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.md">https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.md</a> (Authoritative)<br />
       <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.html">https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.html</a><br />
       <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.pdf">https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.pdf</a>
     </p>
-    <h4 id="previous-stage">
-      Previous stage:
-    </h4>
+    <h3 id="previous-version">
+      Previous Version
+    </h3>
     <p>
       N/A
     </p>
-    <h4 id="latest-stage">
-      Latest stage:
-    </h4>
+    <h3 id="latest-version">
+      Latest Version
+    </h3>
     <p>
       <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.md">https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.md</a> (Authoritative)<br />
       <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.html">https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.html</a><br />
       <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.pdf">https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.pdf</a>
     </p>
-    <h4 id="technical-committee">
-      Technical Committee:
-    </h4>
+    <h3 id="technical-committee">
+      Technical Committee
+    </h3>
     <p>
-      <a href="https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa">OASIS OpenEOX TC</a>
+      <a href="https://www.oasis-open.org/tc-openeox/">OASIS OpenEoX TC</a>
     </p>
-    <h4 id="chairs">
-      Chairs:
-    </h4>
+    <h3 id="chairs">
+      Chairs
+    </h3>
     <p>
       Justin Murphy (<a href="mailto:justin.murphy@mail.cisa.dhs.gov">justin.murphy@mail.cisa.dhs.gov</a>), <a href="https://www.cisa.gov">DHS Cybersecurity and Infrastructure Security Agency (CISA)</a><br />
       Omar Santos (<a href="mailto:osantos@cisco.com">osantos@cisco.com</a>), <a href="https://cisco.com/">Cisco Systems</a> \
     </p>
-    <h4 id="editors">
-      Editors:
-    </h4>
+    <h3 id="secretaries">
+      Secretaries
+    </h3>
+    <p>
+      Stefan Hagen (<a href="mailto:stefan@hagen.link">stefan@hagen.link</a>), <a href="https://stefan-hagen.website/">Individual</a>
+    </p>
+    <h3 id="editors">
+      Editors
+    </h3>
     <p>
       Jautau White (<a href="mailto:jaywhite@microsoft.com">jaywhite@microsoft.com</a>), Microsoft Corporation<br />
       Stefan Hagen (<a href="mailto:stefan@hagen.link">stefan@hagen.link</a>), <a href="https://stefan-hagen.website/">Individual</a><br />
       Thomas Schmidt (<a href="mailto:thomas.schmidt@bsi.bund.de">thomas.schmidt@bsi.bund.de</a>), <a href="https://www.bsi.bund.de/">Federal Office for Information Security (BSI) Germany</a>
     </p>
-    <h4 id="additional-artifacts">
-      Additional artifacts:
-    </h4>
+    <h3 id="additional-artifacts">
+      Additional Artifacts
+    </h3>
     <p>
       This prose specification is one component of a Work Product that also includes:
     </p>
     <ul>
-      <li>OpenEOX Shell JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/schema/eox-shell.json">https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/schema/eox-shell.json</a>.<br />
+      <li>OpenEoX SHell JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/schema/eox-shell.json">https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/schema/eox-shell.json</a>.<br />
         Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/eox-shell.json">https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/eox-shell.json</a>.
       </li>
-    </ul>
-    <h4 id="related-work">
-      Related work:
-    </h4>
-    <p>
-      This specification is related to
-    </p>
-    <ul>
-      <li>...
+      <li>OpenEoX Meta JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json</a>.<br />
+        Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json</a>.
       </li>
     </ul>
-    <h4 id="declared-json-namespaces">
-      Declared JSON namespaces:
-    </h4>
+    <h3 id="declared-json-namespaces">
+      Declared JSON namespaces
+    </h3>
     <ul>
       <li>
-        <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/eox-shell.json"><span>https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/eox-shell.json</span></a>
+        <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json"><span>https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/eox-shell.json</span></a>
+      </li>
+      <li>
+        <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json"><span>https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/meta.json</span></a>
       </li>
     </ul>
-    <h4 id="abstract">
-      Abstract:
-    </h4>
+    <h3 id="abstract">
+      Abstract
+    </h3>
     <p>
-      The OpenEoX Shell Schema defines shell schemas for the OpenEOX unified machine-readable approach to managing and sharing End-of-Life (EOL) and End-of-Support (EOS) information for commercial and open source software and hardware.
+      The OpenEoX Shell Schema defines the shell schemata for the OpenEoX unified machine-readable approach to managing and sharing General Availability (GA), End-of-Sales (EoS), End-of-Life (EoL), and End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
     </p>
-    <h4 id="status">
-      Status:
-    </h4>
+    <h3 id="citation-format">
+      Citation Format
+    </h3>
     <p>
-      This document was last revised or approved by the OASIS OpenEOX TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at
-      <a href="https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa">https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa</a>.
-    </p>
-    <p>
-      TC members should send comments on this specification to the TC's email list. Any individual may submit comments by following the instructions listed at <a href=
-      "https://groups.oasis-open.org/communities/community-home?CommunityKey=c9295ed5-b5f9-4a51-8893-018f5aa7fc09">https://groups.oasis-open.org/communities/community-home?CommunityKey=c9295ed5-b5f9-4a51-8893-018f5aa7fc09</a>.
+      When referencing this document, the following citation format should be used:
     </p>
     <p>
-      This specification is provided under the <a href="https://www.oasis-open.org/policies-guidelines/ipr/#Non-Assertion-Mode">Non-Assertion Mode</a> of the <a href="https://www.oasis-open.org/policies-guidelines/ipr/">OASIS IPR Policy</a>, the mode chosen when the Technical Committee was established. For information on whether any patents
-      have been disclosed that may be essential to implementing this specification, and any offers of patent licensing terms, please refer to the Intellectual Property Rights section of the TC's web page (<a href="https://www.oasis-open.org/committees/tosca/ipr.php">https://www.oasis-open.org/committees/tosca/ipr.php</a>).
+      <strong>[EoX-Shell-v1.0]</strong>
     </p>
     <p>
-      Note that any machine-readable content (<a href="https://www.oasis-open.org/policies-guidelines/tc-process-2017-05-26/#wpComponentsCompLang">Computer Language Definitions</a>) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display
-      content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
+      <em>OpenEoX Shell Schema Version 1.0</em>. Edited by Jautau White, Stefan Hagen, and Thomas Schmidt. 15 March 2026. OASIS Committee Specification Draft 01. <a href=
+      "https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.html./">https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.html.\</a> Latest stage: <a href=
+      "https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.html">https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.html</a>
     </p>
-    <h4 id="key-words">
-      Key Words
-    </h4>
+    <h3 id="related-work">
+      Related Work
+    </h3>
     <p>
-      The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [<a href="#RFC2119">RFC2119</a>] and [<a href="#RFC8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown
-      here.
-    </p>
-    <h4 id="citation-format">
-      Citation format:
-    </h4>
-    <p>
-      When referencing this specification the following citation format should be used:
+      This document replaces or supersedes:
     </p>
     <p>
-      <strong>[EOX-Shell-v1.0]</strong>
+      N/A
     </p>
     <p>
-      <em>OpenEOX Shell Schema Version 1.0</em>. Edited by Jautau White, Stefan Hagen, and Thomas Schmidt. DD MONTH 2025. OASIS Committee Specification Draft 01. <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.html">https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.html</a>.
-      Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.html">https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.html</a>
-    </p>
-    <h4 id="notices">
-      Notices
-    </h4>
-    <p>
-      Copyright © OASIS Open 2025. All Rights Reserved.
+      This document is related to:
     </p>
     <p>
-      Distributed under the terms of the OASIS <a href="https://www.oasis-open.org/policies-guidelines/ipr/">IPR Policy</a>.
+      N/A
+    </p>
+    <h2 id="license-document-status-and-notices">
+      License, Document Status, and Notices
+    </h2>
+    <p>
+      Copyright © OASIS Open 2026. All Rights Reserved.
     </p>
     <p>
-      The name "OASIS" is a trademark of <a href="https://www.oasis-open.org/">OASIS</a>, the owner and developer of this specification, and should be used only to refer to the organization and its official outputs.
+      For license and copyright information, and complete status, please see <a href="#annex-a">Annex A</a> which contains the License, Document Status and Notices.
     </p>
-    <p>
-      For complete copyright information please see the full Notices section in <a href="#appendix-e-notices">Appendix E</a>.
-    </p>
-    <hr />
     <hr />
     <h1 id="table-of-contents">
       Table of Contents
     </h1>
     <div id="toc_container">
       <ul class="toc_list">
-        <li>1. <a href="#introduction">Introduction</a>
+        <li>1. <a href="#scope">Scope</a>
+        </li>
+        <li>2. <a href="#definitions-and-acronyms">Definitions and Acronyms</a>
           <ul>
-            <li>1.1 <a href="#typographical-conventions">Typographical Conventions</a>
+            <li>2.1 <a href="#abbreviations-and-acronyms">Abbreviations and Acronyms</a>
+            </li>
+            <li>2.2 <a href="#definitions">Definitions</a>
+              <ul>
+                <li>2.2.1 <a href="#terms-defined-elsewhere">Terms Defined Elsewhere</a>
+                </li>
+                <li>2.2.2 <a href="#terms-defined-in-this-document">Terms Defined in this Document</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
-        <li>2. <a href="#overview">Overview</a>
-        </li>
-        <li>3. <a href="#conformance">Conformance</a>
-        </li>
-        <li>Appendix A. <a href="#references">References</a>
+        <li>3. <a href="#document-conventions">Document Conventions</a>
           <ul>
-            <li>A.1 <a href="#normative-references">Normative References</a>
+            <li>3.1 <a href="#key-words">Key Words</a>
             </li>
-            <li>A.2 <a href="#informative-references">Informative References</a>
+            <li>3.2 <a href="#typographical-conventions">Typographical Conventions</a>
             </li>
           </ul>
         </li>
-        <li>Appendix B. <a href="#safety-security-and-data-protection">Safety, Security and Data Protection</a>
+        <li>4. <a href="#introduction">Introduction</a>
+          <ul>
+            <li>4.1 <a href="#design-considerations">Design Considerations</a>
+              <ul>
+                <li>4.1.1 <a href="#openeox-architecture">OpenEoX Architecture</a>
+                  <ul>
+                    <li>4.1.1.1 <a href="#openeox-core">OpenEoX Core</a>
+                    </li>
+                    <li>4.1.1.2 <a href="#openeox-shell-this-specification">OpenEoX Shell (this specification)</a>
+                    </li>
+                    <li>4.1.1.3 <a href="#openeox-api">OpenEoX API</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>4.1.2 <a href="#design-principles">Design Principles</a>
+                  <ul>
+                    <li>4.1.2.1 <a href="#standardization-and-interoperability">Standardization and Interoperability</a>
+                    </li>
+                    <li>4.1.2.2 <a href="#security-first-approach">Security-First Approach</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>4.1.3 <a href="#industry-applications">Industry Applications</a>
+                  <ul>
+                    <li>4.1.3.1 <a href="#vendor-perspectives">Vendor Perspectives</a>
+                    </li>
+                    <li>4.1.3.2 <a href="#consumer-perspectives">Consumer Perspectives</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>4.1.4 <a href="#construction-principles">Construction Principles</a>
+                </li>
+                <li>4.1.5 <a href="#format-validation">Format Validation</a>
+                </li>
+                <li>4.1.6 <a href="#date-and-time">Date and Time</a>
+                </li>
+              </ul>
+            </li>
+            <li>4.2 <a href="#changes-from-the-previous-version">Changes From the Previous Version</a>
+            </li>
+          </ul>
         </li>
-        <li>Appendix C. <a href="#acknowledgments">Acknowledgments</a>
+        <li>5. <a href="#taxonomy">Taxonomy</a>
+          <ul>
+            <li>5.1 <a href="#end-of-life">End-of-Life</a>
+            </li>
+            <li>5.2 <a href="#end-of-sales">End-of-Sales</a>
+            </li>
+            <li>5.3 <a href="#end-of-security-support">End-of-Security-Support</a>
+            </li>
+            <li>5.4 <a href="#general-availability">General Availability</a>
+            </li>
+            <li>5.5 <a href="#product">Product</a>
+            </li>
+            <li>5.6 <a href="#product-life-cycle">Product Life Cycle</a>
+            </li>
+            <li>5.7 <a href="#vendor">Vendor</a>
+            </li>
+          </ul>
         </li>
-        <li>Appendix D. <a href="#revision-history">Revision History</a>
+        <li>6. <a href="#schema-elements">Schema Elements</a>
+          <ul>
+            <li>6.1 <a href="#schema-elements---definitions">Definitions</a>
+            </li>
+            <li>6.2 <a href="#properties">Properties</a>
+              <ul>
+                <li>6.2.1 <a href="#schema-property">Schema Property</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </li>
-        <li>Appendix E. <a href="#notices">Notices</a>
+        <li>7. <a href="#tests">Tests</a>
+          <ul>
+            <li>7.1 <a href="#mandatory-tests">Mandatory Tests</a>
+            </li>
+            <li>7.2 <a href="#recommended-tests">Recommended Tests</a>
+            </li>
+            <li>7.3 <a href="#informative-tests">Informative Tests</a>
+            </li>
+          </ul>
+        </li>
+        <li>8. <a href="#safety-security-and-data-protection">Safety, Security and Data Protection</a>
+        </li>
+        <li>9. <a href="#conformance">Conformance</a>
+          <ul>
+            <li>9.1 <a href="#conformance-targets">Conformance Targets</a>
+              <ul>
+                <li>9.1.1 <a href="#conformance-clause-1-tbc">Conformance Clause 1: TBC</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Annex A <a href="#annex-a">License, Document Status and Notices</a>
+          <ul>
+            <li>A.1. <a href="#document-status">Document Status</a>
+            </li>
+            <li>A.2. <a href="#license-and-notices">License and Notices</a>
+            </li>
+          </ul>
+        </li>
+        <li>Annex B <a href="#references">References</a>
+          <ul>
+            <li>B.1. <a href="#normative-references">Normative References</a>
+            </li>
+            <li>B.2. <a href="#informative-references">Informative References</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>Appendix 1 <a href="#acknowledgments">Acknowledgments</a>
+          <ul>
+            <li>
+              <a href="#leadership">Leadership</a>
+            </li>
+            <li>
+              <a href="#special-thanks">Special Thanks</a>
+            </li>
+            <li>
+              <a href="#participants">Participants</a>
+            </li>
+          </ul>
+        </li>
+        <li>Appendix 2 <a href="#changes-from-previous-version">Changes From Previous Version</a>
+          <ul>
+            <li>
+              <a href="#revision-history">Revision History</a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
-    <h1 id="1-introduction-">
-      1. Introduction <a id='introduction'></a>
+    <h1 id="1-scope-">
+      1. Scope <a id='scope'></a>
     </h1>
-    <h2 id="11-typographical-conventions-">
-      1.1 Typographical Conventions <a id='typographical-conventions'></a>
+    <p>
+      TBC
+    </p>
+    <hr />
+    <h1 id="2-definitions-and-acronyms-">
+      2. Definitions and Acronyms <a id='definitions-and-acronyms'></a>
+    </h1>
+    <h2 id="21-abbreviations-and-acronyms-">
+      2.1 Abbreviations and Acronyms <a id='abbreviations-and-acronyms'></a>
+    </h2>
+    <p>
+      This document uses the following abbreviations and acronyms:
+    </p>
+    <ul>
+      <li>EoL: End-of-Life.
+      </li>
+      <li>EoS: End-of-Sales.
+      </li>
+      <li>EoSSec: End-of-Security-Support.
+      </li>
+      <li>EoX: End-of-X.
+      </li>
+      <li>GA: General Availability.
+      </li>
+    </ul>
+    <hr />
+    <h2 id="22-definitions-">
+      2.2 Definitions <a id='definitions'></a>
+    </h2>
+    <h3 id="221-terms-defined-elsewhere-">
+      2.2.1 Terms Defined Elsewhere <a id='terms-defined-elsewhere'></a>
+    </h3>
+    <p>
+      This document uses the following terms defined elsewhere:
+    </p>
+    <dl>
+      <dt id="def;embedded-link-csaf-v2-1">
+        Embedded Link [CSAF-v2.1]
+      </dt>
+      <dd>
+        syntactic construct which enables a message string to refer to a location mentioned in the document.
+      </dd>
+      <dt id="def;empty-array-csaf-v2-1">
+        Empty Array: [CSAF-v2.1]
+      </dt>
+      <dd>
+        array that contains no elements, and so has a length of zero.
+      </dd>
+      <dt id="def;empty-object-csaf-v2-1">
+        Empty Object [CSAF-v2.1]
+      </dt>
+      <dd>
+        object that contains no properties.
+      </dd>
+      <dt id="def;empty-string-csaf-v2-1">
+        Empty String [CSAF-v2.1]
+      </dt>
+      <dd>
+        string that contains no characters, and so has a length of zero.
+      </dd>
+      <dt id="def;end-user-csaf-v2-1">
+        (End) User [CSAF-v2.1]
+      </dt>
+      <dd>
+        person who uses the information in a document to investigate, triage, or resolve results.
+      </dd>
+      <dt id="def;product-csaf-v2-1">
+        Product [CSAF-v2.1]
+      </dt>
+      <dd>
+        is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name. This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.
+      </dd>
+      <dt id="def;property-csaf-v2-1">
+        Property [CSAF-v2.1]
+      </dt>
+      <dd>
+        attribute of an object consisting of a name and a value associated with the name.
+      </dd>
+      <dt id="def;triage-csaf-v2-1">
+        Triage [CSAF-v2.1]
+      </dt>
+      <dd>
+        decide whether a result indicates a problem that needs to be corrected.
+      </dd>
+      <dt id="def;user-csaf-v2-1">
+        User [CSAF-v2.1]
+      </dt>
+      <dd>
+        see end user.
+      </dd>
+      <dt id="def;vendor-csaf-v2-1">
+        Vendor [CSAF-v2.1]
+      </dt>
+      <dd>
+        the community, individual, or organization that created or maintains a product (including open source software and hardware providers).
+      </dd>
+      <dt id="def;white-space-csaf-v2-1">
+        White Space [CSAF-v2.1]
+      </dt>
+      <dd>
+        code point used to improve text readability or token separation as defined in section 12.2 of <a href="#ECMA-262">cite</a>.
+      </dd>
+    </dl>
+    <h3 id="222-terms-defined-in-this-document-">
+      2.2.2 Terms Defined in this Document <a id='terms-defined-in-this-document'></a>
+    </h3>
+    <p>
+      This document defines the following terms:
+    </p>
+    <dl>
+      <dt id="def;end-of-life-eol">
+        End-of-Life (EoL)
+      </dt>
+      <dd>
+        indicates the last day when the particular product (or the product version/release) is officially supported in any way by the vendor.
+      </dd>
+      <dt id="def;end-of-sales-eos">
+        End-of-Sales (EoS)
+      </dt>
+      <dd>
+        indicates the last day when a particular product (or the product version/release) may be ordered by customers from vendor sales channels.
+      </dd>
+      <dt id="def;end-of-security-support-eossec">
+        End-of-Security-Support (EoSSec)
+      </dt>
+      <dd>
+        indicates the last day when the vendor has committed to providing security remediations for the particular product (or the product version/release).
+      </dd>
+      <dt id="def;general-availability-ga">
+        General Availability (GA)
+      </dt>
+      <dd>
+        indicates the first day when the particular product (or the product version/release) is officially launched and made accessible to the general public or through its intended distribution channels.
+      </dd>
+      <dt id="def;product-life-cycle">
+        Product Life Cycle
+      </dt>
+      <dd>
+        describes for a product type (software, hardware, managed service and other deliverables) the model it can be associated with. It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention.
+      </dd>
+      <dt id="def;openeox-core-basic-validator">
+        OpenEoX Core Basic Validator
+      </dt>
+      <dd>
+        A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
+      </dd>
+      <dt id="def;openeox-core-comparator">
+        OpenEoX Core Comparator
+      </dt>
+      <dd>
+        A program that compares OpenEoX Core Information and returns the newer one.
+      </dd>
+      <dt id="def;openeox-core-consumer">
+        OpenEoX Core Consumer
+      </dt>
+      <dd>
+        A program that reads and interprets OpenEoX Core Information.
+      </dd>
+      <dt id="def;openeox-core-differ">
+        OpenEoX Core Differ
+      </dt>
+      <dd>
+        A program that compares OpenEoX Core Information and calculates the changes.
+      </dd>
+      <dt id="def;openeox-core-extended-validator">
+        OpenEoX Core Extended Validator
+      </dt>
+      <dd>
+        A OpenEoX Core Basic Validator that additionally performs recommended tests.
+      </dd>
+      <dt id="def;openeox-core-full-validator">
+        OpenEoX Core Full Validator
+      </dt>
+      <dd>
+        A OpenEoX Core Extended Validator that additionally performs guidance tests.
+      </dd>
+      <dt id="def;openeox-core-information">
+        OpenEoX Core Information
+      </dt>
+      <dd>
+        An EoX information in the format defined by this document.
+      </dd>
+      <dt id="def;openeox-core-library">
+        OpenEoX Core Library
+      </dt>
+      <dd>
+        A library that implements OpenEoX Core data capabilities.
+      </dd>
+      <dt id="def;openeox-core-library-with-basic-validation">
+        OpenEoX Core Library with Basic Validation
+      </dt>
+      <dd>
+        A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Basic Validator".
+      </dd>
+      <dt id="def;openeox-core-library-with-extended-validation">
+        OpenEoX Core Library with Extended Validation
+      </dt>
+      <dd>
+        A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Extended Validator".
+      </dd>
+      <dt id="def;openeox-core-library-with-full-validation">
+        OpenEoX Core Library with Full Validation
+      </dt>
+      <dd>
+        A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Full Validator".
+      </dd>
+      <dt id="def;openeox-core-merger">
+        OpenEoX Core Merger
+      </dt>
+      <dd>
+        A program that combines OpenEoX Core Information.
+      </dd>
+      <dt id="def;openeox-core-producer">
+        OpenEoX Core Producer
+      </dt>
+      <dd>
+        A program which emits output in the OpenEoX Core format.
+      </dd>
+      <dt id="def;openeox-core-sorter">
+        OpenEoX Core Sorter
+      </dt>
+      <dd>
+        A program that sorts OpenEoX Core Information from newest to oldest or vice versa.
+      </dd>
+      <dt id="def;redactable-property">
+        Redactable Property
+      </dt>
+      <dd>
+        property that potentially contains sensitive information that a OpenEoX Producer might wish to redact.
+      </dd>
+      <dt id="def;taxonomy">
+        Taxonomy
+      </dt>
+      <dd>
+        classification of product life cycle stages into a set of categories.
+      </dd>
+    </dl>
+    <h1 id="3-document-conventions-">
+      3. Document Conventions <a id='document-conventions'></a>
+    </h1>
+    <h2 id="31-key-words-">
+      3.1 Key Words <a id='key-words'></a>
+    </h2>
+    <p>
+      The key words "<strong>MUST</strong>", "<strong>MUST NOT</strong>", "<strong>REQUIRED</strong>", "<strong>SHALL</strong>", "<strong>SHALL NOT</strong>", "<strong>SHOULD</strong>", "<strong>SHOULD NOT</strong>", "<strong>RECOMMENDED</strong>", "<strong>NOT RECOMMENDED</strong>", "<strong>MAY</strong>", and "<strong>OPTIONAL</strong>" in
+      this document are to be interpreted as described in BCP 14 [<a href="#RFC2119">RFC2119</a>] [<a href="#RFC8174">RFC8174</a>] when, and only when, they appear in all capitals, as shown here.
+    </p>
+    <h2 id="32-typographical-conventions-">
+      3.2 Typographical Conventions <a id='typographical-conventions'></a>
     </h2>
     <p>
       Keywords defined by this specification use this <code>monospaced</code> font.
@@ -550,7 +910,7 @@
       Some sections of this specification are illustrated with non-normative examples introduced with "Example" or "Examples" like so:
     </p>
     <p>
-      <em>Example 1:</em><a id='typographical-conventions-eg-1'></a><a id='sec-1-1-eg-1'></a><a id='example-4321'></a>
+      <em>Example 1:</em><a id='typographical-conventions-eg-1'></a><a id='sec-3-2-eg-1'></a><a id='example-4321'></a>
     </p>
     <pre><code>    Informative examples also use this paragraph style but preceded by the text "Example(s)".</code></pre>
     <p>
@@ -565,42 +925,540 @@
       </p>
     </blockquote>
     <hr />
-    <h1 id="2-overview-">
-      2. Overview <a id='overview'></a>
+    <h1 id="4-introduction-">
+      4. Introduction <a id='introduction'></a>
     </h1>
-    <p>
-      TBD
-    </p>
-    <h1 id="3-conformance-">
-      3. Conformance <a id='conformance'></a>
-    </h1>
-    <p>
-      TBD
-    </p>
-    <hr />
-    <h1 id="appendix-a-references-">
-      Appendix A. References <a id='references'></a>
-    </h1>
-    <p>
-      <strong>[</strong><span id="This appendix contains the normative and informative references that are used in this document." class="anchor"></span><strong>This appendix contains the normative and informative references that are used in this document.]</strong>
-    </p>
-    <p>
-      <strong>[</strong><span id="While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity." class="anchor"></span><strong>While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.]</strong>
-    </p>
-    <h2 id="a1-normative-references-">
-      A.1 Normative References <a id='normative-references'></a>
+    <h2 id="41-design-considerations-">
+      4.1 Design Considerations <a id='design-considerations'></a>
     </h2>
     <p>
-      <strong>[</strong><span id="The following documents are referenced in such a way that some or all of their content constitutes requirements of this document." class="anchor"></span><strong>The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.]</strong>
+      The OpenEoX provides the vocabulary for exchanging standardized End-of-X (EoX) life cycle data for any product. This includes, but is not limited to hardware, software and specifications, as well as all supplier-consumer relationships, services and offerings.
+    </p>
+    <h3 id="411-openeox-architecture-">
+      4.1.1 OpenEoX Architecture <a id='openeox-architecture'></a>
+    </h3>
+    <p>
+      The OpenEoX standard is architected as a modular three-layer framework:
+    </p>
+    <h4 id="4111-openeox-core-">
+      4.1.1.1 OpenEoX Core <a id='openeox-core'></a>
+    </h4>
+    <p>
+      The OpenEoX Core specification contains the fundamental EoX life cycle information elements and is designed to be imported by other standards or integrated directly into product responses. The Core schema establishes one part of the essential data elements required for any EoX statement:
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//262.ecma-international.org/15.0/&gt;" class="anchor"></span><strong><a href="https://262.ecma-international.org/15.0/">https://262.ecma-international.org/15.0/</a>]</strong>
+      <strong>Required fields:</strong>
+    </p>
+    <ul>
+      <li>
+        <code>end_of_life</code>: The definitive timestamp when all vendor support ceases
+      </li>
+      <li>
+        <code>end_of_security_support</code>: The critical timestamp when security remediation commitments end
+      </li>
+      <li>
+        <code>last_updated</code>: The timestamp tracking for data freshness and change management
+      </li>
+    </ul>
+    <p>
+      Optionally, the standard also conveys additional life cycle events.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.iso.org/standard/70907.html&gt;." class="anchor"></span><strong><a href="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</a>.]</strong>
+      The core information can be provided independently when the product context is available through other means, such as SNMP responses, HTTPS API responses.
+    </p>
+    <h4 id="4112-openeox-shell-this-specification-">
+      4.1.1.2 OpenEoX Shell (this specification) <a id='openeox-shell-this-specification'></a>
+    </h4>
+    <p>
+      The OpenEoX Shell specification provides the binding mechanism that combines OpenEoX Core life cycle information to specific product identifications. This combination is called an "OpenEoX statement" - a complete, standalone representation of life cycle information for a specific product. The Shell forms the standalone mode in OpenEoX,
+      enabling complete life cycle statements that can be processed independently without external context.
+    </p>
+    <h4 id="4113-openeox-api-">
+      4.1.1.3 OpenEoX API <a id='openeox-api'></a>
+    </h4>
+    <p>
+      The OpenEoX API specification addresses the distribution, discovery, and consumption of OpenEoX Core and Shell data across vendor ecosystems and consumer applications. The API specification defines standardized endpoints, query mechanisms, and data exchange patterns that enable automated integration.
+    </p>
+    <h3 id="412-design-principles-">
+      4.1.2 Design Principles <a id='design-principles'></a>
+    </h3>
+    <h4 id="4121-standardization-and-interoperability-">
+      4.1.2.1 Standardization and Interoperability <a id='standardization-and-interoperability'></a>
+    </h4>
+    <p>
+      OpenEoX addresses the current industry challenge where vendors use proprietary, inconsistent formats for communicating life cycle information. By establishing a common JSON-based format, OpenEoX enables:
+    </p>
+    <ul>
+      <li>Automated processing and integration across vendor ecosystems
+      </li>
+      <li>Consistent interpretation of life cycle stages regardless of vendor
+      </li>
+      <li>Reduced operational overhead in managing multi-vendor environments
+      </li>
+      <li>Enhanced accuracy in infrastructure life cycle planning
+      </li>
+    </ul>
+    <h4 id="4122-security-first-approach-">
+      4.1.2.2 Security-First Approach <a id='security-first-approach'></a>
+    </h4>
+    <p>
+      Recognition that End-of-Security-Support represents a critical inflection point for infrastructure security has influenced the OpenEoX design. The mandatory <code>end_of_security_support</code> field ensures that security life cycle information is always available, supporting:
+    </p>
+    <ul>
+      <li>Proactive vulnerability management planning
+      </li>
+      <li>Compliance with security frameworks requiring current support status
+      </li>
+      <li>Risk assessment for critical infrastructure components
+      </li>
+      <li>Automated alerting when security support approaches termination
+      </li>
+    </ul>
+    <h3 id="413-industry-applications-">
+      4.1.3 Industry Applications <a id='industry-applications'></a>
+    </h3>
+    <h4 id="4131-vendor-perspectives-">
+      4.1.3.1 Vendor Perspectives <a id='vendor-perspectives'></a>
+    </h4>
+    <p>
+      <strong>OpenEoX enables vendors to:</strong>
+    </p>
+    <ul>
+      <li>Standardize EoX communication across all product lines and channels
+      </li>
+      <li>Reduce support inquiries related to life cycle confusion
+      </li>
+      <li>Demonstrate proactive customer stewardship through clear life cycle communication
+      </li>
+      <li>Support automated customer notification systems
+      </li>
+      <li>Facilitate integration with partner and reseller systems
+      </li>
+    </ul>
+    <h4 id="4132-consumer-perspectives-">
+      4.1.3.2 Consumer Perspectives <a id='consumer-perspectives'></a>
+    </h4>
+    <p>
+      <strong>Organizations consuming OpenEoX information benefit through:</strong>
+    </p>
+    <ul>
+      <li>Automated discovery of life cycle status across multi-vendor environments
+      </li>
+      <li>Proactive planning for product refreshes and migrations
+      </li>
+      <li>Enhanced compliance reporting for security and regulatory frameworks
+      </li>
+      <li>Reduced operational risk from unexpected support terminations
+      </li>
+      <li>Streamlined asset management and inventory tracking
+      </li>
+    </ul>
+    <p>
+      The OpenEoX architecture ensures that organizations can adopt OpenEoX in a manner that aligns with their existing infrastructure and operational models while preserving the ability to enhance integration over time.
+    </p>
+    <h3 id="414-construction-principles-">
+      4.1.4 Construction Principles <a id='construction-principles'></a>
+    </h3>
+    <p>
+      The OpenEoX Core specification describes a map for well-known named transition events (like end-of-life) to dates. Producers use this mapping to bind products to this minimal set of life cycle events.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00&gt;." class="anchor"></span><strong><a href="https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00">https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00</a>.]</strong>
+      Other schemata provide models to add the data needed for product identification. Examples for such schemata are:
+    </p>
+    <ul>
+      <li>OpenEoX Shell
+      </li>
+      <li>OpenEoX API
+      </li>
+      <li>integration into the product itself (for example via SNMP calls or HTTPS requests)
+      </li>
+      <li>integration into other standards (for example CSAF)
+      </li>
+    </ul>
+    <p>
+      This separation provides consistent, interoperable, actionable, structured, and validated life cycle information with the goal to offer complete automation.
+    </p>
+    <p>
+      The chosen data format and version "JSON Schema Draft 2020-12" [<a href="#JSON-Schema-Core">JSON-Schema-Core</a>] allows validation and delegation to providers of referenced schemata. The latter enables separation of concerns as it allows other standards, specifications, and product-specific implementations to import and reference the
+      OpenEoX Core schema. This enables consistency and interoperability across different implementations.
+    </p>
+    <p>
+      The OpenEoX Core schema is defined at <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json</a>
+    </p>
+    <p>
+      The schema elements and their expected usage patterns are detailed in subsequent sections.
+    </p>
+    <p>
+      Linking and integration of the OpenEoX Core schema with product identification schema information may lead to inconsistencies. The producers of OpenEoX information items have to ensure the intended semantics. For example, that life cycle dates are ordered logically. Semantic validation is out of scope for this OpenEoX Core
+      specification.
+    </p>
+    <p>
+      The OpenEoX Core schema is designed to be self-contained with minimal external dependencies, utilizing only:
+    </p>
+    <dl>
+      <dt>
+        [<a href="#RFC3339">RFC3339</a>]
+      </dt>
+      <dd>
+        Date and time format specification for timestamp representation
+      </dd>
+      <dt>
+        [<a href="#JSON-Schema-Core">JSON-Schema-Core</a>]
+      </dt>
+      <dd>
+        Schema validation and structure definition
+      </dd>
+    </dl>
+    <p>
+      OpenEoX information items SHOULD only contain members where the value is an OpenEoX life cycle date. The use of placeholders or <code>null</code> values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
+    </p>
+    <blockquote>
+      <p>
+        In combination, these to preceding requirements maximize clarity and simplify automation.
+      </p>
+    </blockquote><!-- TODO(sthagen): Where and when did we decide on date references, like v25 will be end-of-support when v27 is GA? -->
+    <p>
+      OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of referenced schema instances. Suggestions for new fields or values SHOULD be made through issues in the TC's GitHub. The JSON schemas defined in this standard do not allow the use of additional properties and custom keywords.
+    </p>
+    <blockquote>
+      <p>
+        The standardized fields allow for scalability across different issuing parties and dramatically reduce the human effort and need for dedicated parsers as well as other tools on the side of the consuming parties.
+      </p>
+    </blockquote>
+    <h3 id="415-format-validation-">
+      4.1.5 Format Validation <a id='format-validation'></a>
+    </h3>
+    <p>
+      The JSON schema 2020-12 dialect per default uses the <code>format</code> keyword just as annotation. To be able to ensure that the format constraints are validated as intended, the following metaschema is defined.
+    </p>
+    <pre><code>  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/meta.json",
+    "$dynamicAnchor": "meta",
+    "$vocabulary": {
+      "https://json-schema.org/draft/2020-12/vocab/core": true,
+      "https://json-schema.org/draft/2020-12/vocab/applicator": true,
+      "https://json-schema.org/draft/2020-12/vocab/unevaluated": true,
+      "https://json-schema.org/draft/2020-12/vocab/validation": true,
+      "https://json-schema.org/draft/2020-12/vocab/meta-data": true,
+      "https://json-schema.org/draft/2020-12/vocab/format-assertion": true,
+      "https://json-schema.org/draft/2020-12/vocab/content": true
+    },
+    "allOf": [
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/core" },
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/applicator" },
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/unevaluated" },
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/validation" },
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/meta-data" },
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/format-assertion" },
+      { "$ref": "https://json-schema.org/draft/2020-12/meta/content" }
+    ]
+  }</code></pre>
+    <blockquote>
+      <p>
+        All vocabularies that can be used are defined in this metaschema as JSON schema 2020-12 dialect has the rule of non-inheritability of vocabularies.
+      </p>
+    </blockquote>
+    <p>
+      It is then consequently used in all JSON schemas defined in this standard and replaces the reference to the JSON schema 2020-12.
+    </p>
+    <pre><code>  {
+    "$schema": "https://docs.oasis-open.org/openeox/eox-shell/v1.0/schema/meta.json",
+    // ...
+  }</code></pre>
+    <p>
+      The format validation is enforced by setting the corresponding vocabulary as required.
+    </p>
+    <blockquote>
+      <p>
+        If a library used to parse, modify or create OpenEoX content is unable to deal with this meta schema, it could reach the objective by interpreting the schema as JSON schema 2020-12 dialect and enforcing the format validation via its implementation.
+      </p>
+    </blockquote>
+    <h3 id="416-date-and-time-">
+      4.1.6 Date and Time <a id='date-and-time'></a>
+    </h3>
+    <p>
+      This standard uses the <code>date-time</code> format as defined in JSON Schema Draft 2020-12 Section 7.3.1. In accordance with [<a href="#RFC3339">RFC3339</a>] and [<a href="#ISO8601-1">ISO8601-1</a>], the following rules apply:
+    </p>
+    <ul>
+      <li>The letter <code>T</code> separating the date and time SHALL be upper case.
+      </li>
+      <li>The separator between date and time MUST be the letter <code>T</code>.
+      </li>
+      <li>The letter <code>Z</code> indicating the timezone UTC SHALL be upper case.
+      </li>
+      <li>Fractions of seconds are allowed as specified in the standards mention above with the full stop (<code>.</code>) as separator.
+      </li>
+      <li>Empty timezones MUST NOT be used.
+      </li>
+      <li>The ABNF of [<a href="#RFC3339">RFC3339</a>], section 5.6 applies.
+      </li>
+    </ul>
+    <p>
+      In contrast to the aforementioned standards, leap seconds MUST NOT be used.
+    </p>
+    <blockquote>
+      <p>
+        While a full support of [<a href="#RFC3339">RFC3339</a>] would be preferred, significant challenges have been mentioned by implementers as most libraries are lacking the support for leap seconds. To ensure interoperability, the decision was made to prohibit leap seconds.
+      </p>
+    </blockquote>
+    <h2 id="42-changes-from-the-previous-version-">
+      4.2 Changes From the Previous Version <a id='changes-from-the-previous-version'></a>
+    </h2>
+    <p>
+      The list of changes from the previous version and any revision history can be found in <a href="#revision-history">Appendix 2</a>.
+    </p>
+    <hr />
+    <h1 id="5-taxonomy-">
+      5. Taxonomy <a id='taxonomy'></a>
+    </h1>
+    <p>
+      The following subsections describe the taxonomy defining and explaining all terms the standard is build upon.
+    </p>
+    <h2 id="51-end-of-life-">
+      5.1 End-of-Life <a id='end-of-life'></a>
+    </h2>
+    <p>
+      The End-of-Life (EoL) indicates the last day when the particular product (or the product version/release) is officially supported in any way by the vendor. After this date there shouldn’t be more development, updates or any type of support expected from the vendor. The existing customers are also impacted by this product life cycle
+      stage and should consider migration to the still supported product version or release.
+    </p>
+    <h2 id="52-end-of-sales-">
+      5.2 End-of-Sales <a id='end-of-sales'></a>
+    </h2>
+    <p>
+      The End-of-Sales (EoS) indicates the last day when a particular product (or the product version/release) may be ordered by customers from vendor sales channels. After this date, the product is no longer for sale. However, there might be other sources where the product is still available. Once the product reaches the EoS life cycle
+      stage, it may still be supported by the vendor, based on the official or dedicated vendor life cycle model for this product, for existing customers. The implications for existing customers regarding license renewals, updates, upgrades to newer versions or ongoing technical support can vary depending on the vendor's specific policies.
+    </p>
+    <h2 id="53-end-of-security-support-">
+      5.3 End-of-Security-Support <a id='end-of-security-support'></a>
+    </h2>
+    <p>
+      The End-of-Security-Support (EoSSec) indicates the last day when the vendor has committed to providing security remediations for the particular product (or the product version/release).
+    </p>
+    <h2 id="54-general-availability-">
+      5.4 General Availability <a id='general-availability'></a>
+    </h2>
+    <p>
+      The General Availability (GA) indicates the first day when the particular product (or the product version/release) is officially launched and made accessible to the general public or through its intended distribution channels.
+    </p>
+    <h2 id="55-product-">
+      5.5 Product <a id='product'></a>
+    </h2>
+    <p>
+      Product is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name. This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.
+    </p>
+    <h2 id="56-product-life-cycle-">
+      5.6 Product Life Cycle <a id='product-life-cycle'></a>
+    </h2>
+    <p>
+      Every product type (software, hardware, managed service and other deliverables) can be associated with a life cycle model. It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention. The life cycle support model can be dynamic and may change over time, from
+      the product's initial release (General Availability) to its discontinuation (End-of-Life). During the product life cycle, support models may switch from one state to another and may even run in parallel to meet individual requirements. Those requirements may depend on the product type, the vendor offerings, as well as geographical
+      related regulations.
+    </p>
+    <h2 id="57-vendor-">
+      5.7 Vendor <a id='vendor'></a>
+    </h2>
+    <p>
+      Vendor refers to the community, individual, or organization that created or maintains a product (software, hardware, managed service and other deliverables). This includes, but is not limited to, open-source software and hardware providers.
+    </p>
+    <h1 id="6-schema-elements-">
+      6. Schema Elements <a id='schema-elements'></a>
+    </h1>
+    <p>
+      TBC
+    </p>
+    <h2 id="61-definitions-">
+      6.1 Definitions <a id='schema-elements---definitions'></a>
+    </h2>
+    <p>
+      TBC
+    </p>
+    <h2 id="62-properties-">
+      6.2 Properties <a id='properties'></a>
+    </h2>
+    <p>
+      TBC
+    </p>
+    <h3 id="621-schema-property-">
+      6.2.1 Schema Property <a id='schema-property'></a>
+    </h3>
+    <p>
+      The OpenEoX Core Schema (<code>$schema</code>) of value type <code>string</code> and <code>const</code> specifies the schema the JSON object must be valid against. The single valid value for this <code>const</code> is:
+    </p>
+    <pre><code>  https://docs.oasis-open.org/openeox/v1.0/schema/shell.json</code></pre>
+    <blockquote>
+      <p>
+        This value allows for tools to identify that a JSON document is meant to be valid against this schema. Tools can use that to support users by automatically checking whether the OpenEoX Core Object adheres to the JSON schema identified by this URL.
+      </p>
+    </blockquote>
+    <h1 id="7-tests-">
+      7. Tests <a id='tests'></a>
+    </h1>
+    <p>
+      The following subsections list a number of tests which all will have a short description and an excerpt of an example which fails the test.
+    </p>
+    <h2 id="71-mandatory-tests-">
+      7.1 Mandatory Tests <a id='mandatory-tests'></a>
+    </h2>
+    <p>
+      Mandatory tests MUST NOT fail at a valid OpenEoX Shell Information. A program MUST handle a test failure as an error.
+    </p>
+    <h2 id="72-recommended-tests-">
+      7.2 Recommended Tests <a id='recommended-tests'></a>
+    </h2>
+    <p>
+      Recommended tests SHOULD NOT fail at a valid OpenEoX Shell Information without a good reason. Failing such a test does not make the OpenEoX Shell Information invalid. These tests may include information about features which are still supported but expected to be deprecated in a future version of OpenEoX. A program MUST handle a test
+      failure as a warning.
+    </p>
+    <h2 id="73-informative-tests-">
+      7.3 Informative Tests <a id='informative-tests'></a>
+    </h2>
+    <p>
+      Informative tests provide insights in common mistakes and bad practices. They MAY fail at a valid OpenEoX Shell Information. It is up to the issuing party to decide whether this was an intended behavior and can be ignore or should be treated. These tests MAY include information about recommended usage. A program MUST handle a test
+      failure as a information.
+    </p>
+    <h1 id="8-safety-security-and-data-protection-">
+      8. Safety, Security and Data Protection <a id='safety-security-and-data-protection'></a>
+    </h1>
+    <p>
+      All safety, security, and data protection requirements relevant to the context in which OpenEoX information items are used MUST be translated into, and consistently enforced through, OpenEoX implementations and processes.
+    </p>
+    <p>
+      OpenEoX information items are based on JSON, thus the security considerations of [<a href="#RFC8259">RFC8259</a>] apply and are repeated here as service for the reader:
+    </p>
+    <blockquote>
+      <p>
+        Generally, there are security issues with scripting languages. JSON is a subset of JavaScript but excludes assignment and invocation.
+      </p>
+      <p>
+        Since JSON's syntax is borrowed from JavaScript, it is possible to use that language's <code>eval()</code> function to parse most JSON texts (but not all; certain characters such as <code>U+2028 LINE SEPARATOR</code> and <code>U+2029 PARAGRAPH SEPARATOR</code> are legal in JSON but not JavaScript). This generally constitutes an
+        unacceptable security risk, since the text could contain executable code along with data declarations. The same consideration applies to the use of eval()-like functions in any other programming language in which JSON texts conform to that language's syntax.
+      </p>
+    </blockquote>
+    <hr />
+    <h1 id="9-conformance-">
+      9. Conformance <a id='conformance'></a>
+    </h1>
+    <p>
+      The single subsection of this section lists the conformance targets and clauses. The clauses directly corresponding to the targets are listed in separate sub-subsections of the target list subsection.
+    </p>
+    <blockquote>
+      <p>
+        The order in which targets, and their corresponding clauses appear is somewhat arbitrary as there is no natural order on such diverse roles participating in the EoX exchanging ecosystem.
+      </p>
+    </blockquote>
+    <h2 id="91-conformance-targets-">
+      9.1 Conformance Targets <a id='conformance-targets'></a>
+    </h2>
+    <p>
+      This document defines requirements for the file format and for certain software components that interact with it. The entities ("conformance targets") for which this document defines requirements are:
+    </p>
+    <p>
+      TBC
+    </p>
+    <h3 id="911-conformance-clause-1-tbc-">
+      9.1.1 Conformance Clause 1: TBC <a id='conformance-clause-1-tbc'></a>
+    </h3>
+    <p>
+      TBC
+    </p>
+    <hr />
+    <h1 id="annex-a-license-document-status-and-notices-">
+      Annex A License, Document Status and Notices <a id='annex-a'></a>
+    </h1>
+    <p>
+      (This annex forms an integral part of this Specification.)
+    </p>
+    <h2 id="a1-document-status-">
+      A.1. Document Status <a id='document-status'></a>
+    </h2>
+    <p>
+      This document was last revised or approved by the OASIS OpenEoX TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at
+      <a href="https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa">https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa</a>.
+    </p>
+    <p>
+      TC members should send comments on this document to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at <a href=
+      "https://www.oasis-open.org/committees/openeox/">https://www.oasis-open.org/committees/openeox/</a>.
+    </p>
+    <p>
+      NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
+    </p>
+    <h2 id="a2-license-and-notices-">
+      A.2. License and Notices <a id='license-and-notices'></a>
+    </h2><!-- Required section. Do not modify. -->
+    <p>
+      Copyright © OASIS Open 2026. All Rights Reserved.
+    </p>
+    <p>
+      All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full Policy, which governs the licensure of this document, may be found at the OASIS website: [<a href=
+      "https://www.oasis-open.org/policies-guidelines/ipr/"><span>https://www.oasis-open.org/policies-guidelines/ipr/</span></a>]
+    </p>
+    <p>
+      This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are
+      included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to
+      copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.
+    </p>
+    <p>
+      The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns, as provided in the OASIS IPR Policy.
+    </p>
+    <p>
+      This document is provided under the “Non-Assertion” IPR mode that was chosen when the project was established, as defined in the IPR Policy. For information on whether any patents have been disclosed that may be essential to implementing this document, and any offers of patent licensing terms, please refer to the Intellectual Property
+      Rights section of the project’s web page (<a href="https://www.oasis-open.org/committees/openeox/ipr.php"><span>https://www.oasis-open.org/committees/openeox/ipr.php</span></a>).
+    </p>
+    <p>
+      This document and the information contained herein is provided on an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+      PURPOSE. OASIS AND ITS MEMBERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THIS DOCUMENT OR ANY PART THEREOF.
+    </p>
+    <p>
+      As stated in the OASIS IPR Policy, the following three paragraphs in brackets apply to OASIS Standards Final Deliverable documents (Committee Specifications, OASIS Standards, or Approved Errata).
+    </p>
+    <p>
+      OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable, to notify OASIS TC Administrator and provide an indication of its willingness to grant patent licenses to such patent claims in a manner consistent
+      with the IPR Mode of the OASIS Technical Committee that produced this deliverable.
+    </p>
+    <p>
+      OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable by a patent holder that is not willing to provide a license to such patent claims in a manner consistent with the IPR
+      Mode of the OASIS Technical Committee that produced this OASIS Standards Final Deliverable. OASIS may include such claims on its website, but disclaims any obligation to do so.
+    </p>
+    <p>
+      OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this OASIS Standards Final Deliverable or the extent to which any license under such rights might or might not be available; neither does it
+      represent that it has made any effort to identify any such rights. Information on OASIS' procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of claims of rights made available for publication and any assurances of licenses to be made
+      available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Standards Final Deliverable, can be obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will
+      at any time be complete, or that any claims in such list are, in fact, Essential Claims.
+    </p>
+    <p>
+      The name "OASIS" is a trademark of OASIS, the owner and developer of this document, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, its documents, while reserving the right to enforce its marks against misleading uses. Please see <a href=
+      "https://www.oasis-open.org/policies-guidelines/trademark/"><span>https://www.oasis-open.org/policies-guidelines/trademark/</span></a> for guidance.
+    </p>
+    <hr />
+    <h1 id="annex-b-references-">
+      Annex B References <a id='references'></a>
+    </h1>
+    <p>
+      (This annex forms an integral part of this Specification.)
+    </p>
+    <p>
+      This section contains the normative and informative references that are used in this document.
+    </p>
+    <p>
+      Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments)
+      applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
+    </p>
+    <h2 id="b1-normative-references-">
+      B.1. Normative References <a id='normative-references'></a>
+    </h2>
+    <p>
+      The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
+    </p>
+    <p>
+      <strong>[</strong><span id="ECMA-262" class="anchor"></span><strong>ECMA-262]</strong> <em>ECMAScript® 2024 Language Specification</em>, ECMA-262, 15th edition, June 2024, <a href="https://262.ecma-international.org/15.0/">https://262.ecma-international.org/15.0/</a>
+    </p>
+    <p>
+      <strong>[</strong><span id="ISO8601-1" class="anchor"></span><strong>ISO8601-1]</strong> <em>Date and time — Representations for information interchangePart 1: Basic rules</em>, International Standard, ISO 8601-1:2019(E), February 25, 2019, <a href="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</a>.
+    </p>
+    <p>
+      <strong>[</strong><span id="JSON-Schema-Core" class="anchor"></span><strong>JSON-Schema-Core]</strong> <em>JSON Schema: A Media Type for Describing JSON Documents</em>, draft-bhutton-json-schema-00, December 2020, <a href=
+      "https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00">https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00</a>.
     </p>
     <p>
       <strong>[</strong><span id="JSON-Schema-Validation" class="anchor"></span><strong>JSON-Schema-Validation]</strong> <em>JSON Schema Validation: A Vocabulary for Structural Validation of JSON</em>, draft-bhutton-json-schema-validation-00, December 2020, <a href=
@@ -611,188 +1469,127 @@
       "https://json-schema.org/draft/2019-09/json-schema-hypermedia.html">https://json-schema.org/draft/2019-09/json-schema-hypermedia.html</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00&gt;." class="anchor"></span><strong><a href="https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00">https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00</a>.]</strong>
+      <strong>[</strong><span id="Relative-JSON-Pointers" class="anchor"></span><strong>Relative-JSON-Pointers]</strong> <em>Relative JSON Pointers</em>, draft-bhutton-relative-json-pointer-00, December 2020, <a href=
+      "https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00">https://datatracker.ietf.org/doc/html/draft-bhutton-relative-json-pointer-00</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc2119&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>.]</strong>
+      <strong>[</strong><span id="RFC2119" class="anchor"></span><strong>RFC2119]</strong> Bradner, S., "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/RFC2119, March 1997, <a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc3339&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc3339">https://www.rfc-editor.org/info/rfc3339</a>.]</strong>
+      <strong>[</strong><span id="RFC3339" class="anchor"></span><strong>RFC3339]</strong> Klyne, G. and C. Newman, "Date and Time on the Internet: Timestamps", RFC 3339, DOI 10.17487/RFC3339, July 2002, <a href="https://www.rfc-editor.org/info/rfc3339">https://www.rfc-editor.org/info/rfc3339</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc4180&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc4180">https://www.rfc-editor.org/info/rfc4180</a>.]</strong>
+      <strong>[</strong><span id="RFC4180" class="anchor"></span><strong>RFC4180]</strong> Shafranovich, Y., "Common Format and MIME Type for Comma-Separated Values (CSV) Files", RFC 4180, DOI 10.17487/RFC4180, October 2005, <a href="https://www.rfc-editor.org/info/rfc4180">https://www.rfc-editor.org/info/rfc4180</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc7230&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc7230">https://www.rfc-editor.org/info/rfc7230</a>.]</strong>
+      <strong>[</strong><span id="RFC7230" class="anchor"></span><strong>RFC7230]</strong> Roy T. Fielding and Julian Reschke, "Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing", RFC 7230, DOI 10.17487/RFC7230, June 2014, <a href="https://www.rfc-editor.org/info/rfc7230">https://www.rfc-editor.org/info/rfc7230</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc7464&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc7464">https://www.rfc-editor.org/info/rfc7464</a>.]</strong>
+      <strong>[</strong><span id="RFC7464" class="anchor"></span><strong>RFC7464]</strong> Williams, N., "JavaScript Object Notation (JSON) Text Sequences", RFC 7464, DOI 10.17487/RFC7464, February 2015, <a href="https://www.rfc-editor.org/info/rfc7464">https://www.rfc-editor.org/info/rfc7464</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc8174&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>.]</strong>
+      <strong>[</strong><span id="RFC8174" class="anchor"></span><strong>RFC8174]</strong> Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017, <a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc8259&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>.]</strong>
+      <strong>[</strong><span id="RFC8259" class="anchor"></span><strong>RFC8259]</strong> T. Bray, Ed., "The JavaScript Object Notation (JSON) Data Interchange Format", RFC 8259, DOI 10.17487/RFC8259, December 2017, <a href="https://www.rfc-editor.org/info/rfc8259">https://www.rfc-editor.org/info/rfc8259</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//www.rfc-editor.org/info/rfc9562&gt;." class="anchor"></span><strong><a href="https://www.rfc-editor.org/info/rfc9562">https://www.rfc-editor.org/info/rfc9562</a>.]</strong>
+      <strong>[</strong><span id="RFC9562" class="anchor"></span><strong>RFC9562]</strong> Davis, K., Peabody, B., and P. Leach, "Universally Unique IDentifiers (UUIDs)", RFC 9562, DOI 10.17487/RFC9562, May 2024, <a href="https://www.rfc-editor.org/info/rfc9562">https://www.rfc-editor.org/info/rfc9562</a>.
     </p>
     <p>
-      <strong>[</strong><span id="&lt;https;//spdx.github.io/spdx-spec/&gt;." class="anchor"></span><strong><a href="https://spdx.github.io/spdx-spec/">https://spdx.github.io/spdx-spec/</a>.]</strong>
+      <strong>[</strong><span id="SPDX301" class="anchor"></span><strong>SPDX301]</strong> <em>The System Package Data Exchange® (SPDX®) Specification Version 3.0.1</em>, Linux Foundation and its Contributors, 2024, <a href="https://spdx.github.io/spdx-spec/">https://spdx.github.io/spdx-spec/</a>.
     </p>
-    <h2 id="a2-informative-references-">
-      A.2 Informative References <a id='informative-references'></a>
+    <h2 id="b2-informative-references-">
+      B.2. Informative References <a id='informative-references'></a>
     </h2>
     <p>
-      <strong>[</strong><span id="TBD" class="anchor"></span><strong>TBD]</strong>
+      The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
     </p>
-    <h1 id="appendix-b-safety-security-and-data-protection-">
-      Appendix B. Safety, Security and Data Protection <a id='safety-security-and-data-protection'></a>
+    <p>
+      <strong>[</strong><span id="CSAF-v2.1" class="anchor"></span><strong>CSAF-v2.1]</strong> <em>Common Security Advisory Framework Version 2.1</em>. Edited by Stefan Hagen, and Thomas Schmidt. 28 May 2025. OASIS Committee Specification Draft 01. <a href=
+      "https://docs.oasis-open.org/csaf/csaf/v2.1/csd01/csaf-v2.1-csd01.html">https://docs.oasis-open.org/csaf/csaf/v2.1/csd01/csaf-v2.1-csd01.html</a>. Latest stage: <a href="https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.html">https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.html</a>.
+    </p>
+    <h1 id="appendix-1-acknowledgments-">
+      Appendix 1 Acknowledgments <a id='acknowledgments'></a>
     </h1>
     <p>
-      TBD
+      (This appendix does not form an integral part of this Specification and is informational.)
+    </p>
+    <p>
+      The following individuals were members of the OASIS OpenEoX Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
+    </p>
+    <h2 id="leadership-">
+      Leadership <a id='leadership'></a>
+    </h2>
+    <p>
+      The following individuals have had significant leadership positions during the development of this document, not just this version of the document, and they are gratefully acknowledged:
+    </p>
+    <ul>
+      <li>
+        <p>
+          Chairs:
+        </p>
+        <ul>
+          <li>Co-Chair, Justin Murphy (<a href="mailto:justin.murphy@mail.cisa.dhs.gov">justin.murphy@mail.cisa.dhs.gov</a>), <a href="https://www.cisa.gov">DHS Cybersecurity and Infrastructure Security Agency (CISA)</a>
+          </li>
+          <li>Co-Chair, Omar Santos (<a href="mailto:osantos@cisco.com">osantos@cisco.com</a>), <a href="https://cisco.com/">Cisco Systems</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Secretaries:
+        </p>
+        <ul>
+          <li>Secretary, Stefan Hagen (<a href="mailto:stefan@hagen.link">stefan@hagen.link</a>), <a href="https://stefan-hagen.website/">Individual</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Editors
+        </p>
+        <ul>
+          <li>Editor, Jautau White (<a href="mailto:jaywhite@microsoft.com">jaywhite@microsoft.com</a>), Microsoft Corporation
+          </li>
+          <li>Editor, Stefan Hagen (<a href="mailto:stefan@hagen.link">stefan@hagen.link</a>), <a href="https://stefan-hagen.website/">Individual</a>
+          </li>
+          <li>Editor, Thomas Schmidt (<a href="mailto:thomas.schmidt@bsi.bund.de">thomas.schmidt@bsi.bund.de</a>), <a href="https://www.bsi.bund.de/">Federal Office for Information Security (BSI) Germany</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h2 id="special-thanks-">
+      Special Thanks <a id='special-thanks'></a>
+    </h2>
+    <p>
+      The following individuals have made substantial contributions to this document, not just this version of the document, and their contributions are gratefully acknowledged:
+    </p>
+    <p>
+      tbd
+    </p>
+    <h2 id="participants-">
+      Participants <a id='participants'></a>
+    </h2>
+    <p>
+      The following individuals were members of this committee during the creation of this document, not just this version of the document, and their contributions are gratefully acknowledged:
+    </p>
+    <p>
+      tbd
     </p>
     <hr />
-    <h1 id="appendix-c-acknowledgments-">
-      Appendix C. Acknowledgments <a id='acknowledgments'></a>
+    <h1 id="appendix-2-changes-from-previous-version-">
+      Appendix 2 Changes From Previous Version <a id='changes-from-previous-version'></a>
     </h1>
     <p>
-      The following individuals were members of the OASIS OpenEOX Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
+      (This appendix does not form an integral part of this Specification and is informational.)
     </p>
     <p>
-      <strong>OASIS OpenEOX TC Members:</strong>
+      N/A.
     </p>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: left;">
-            First Name
-          </th>
-          <th style="text-align: left;">
-            Last Name
-          </th>
-          <th style="text-align: left;">
-            Company
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left;">
-            Denny
-          </td>
-          <td style="text-align: left;">
-            Page
-          </td>
-          <td style="text-align: left;">
-            TIBCO Software Inc.
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Feng
-          </td>
-          <td style="text-align: left;">
-            Cao
-          </td>
-          <td style="text-align: left;">
-            Oracle
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Jautau
-          </td>
-          <td style="text-align: left;">
-            White
-          </td>
-          <td style="text-align: left;">
-            Microsoft Corporation
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Justin
-          </td>
-          <td style="text-align: left;">
-            Murphy
-          </td>
-          <td style="text-align: left;">
-            DHS Cybersecurity and Infrastructure Security Agency(CISA)
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Langley
-          </td>
-          <td style="text-align: left;">
-            Rock
-          </td>
-          <td style="text-align: left;">
-            Red Hat
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Martin
-          </td>
-          <td style="text-align: left;">
-            Prpic
-          </td>
-          <td style="text-align: left;">
-            Red Hat
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Omar
-          </td>
-          <td style="text-align: left;">
-            Santos
-          </td>
-          <td style="text-align: left;">
-            Cisco Systems
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Stefan
-          </td>
-          <td style="text-align: left;">
-            Hagen
-          </td>
-          <td style="text-align: left;">
-            Individual
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            Thomas
-          </td>
-          <td style="text-align: left;">
-            Schmidt
-          </td>
-          <td style="text-align: left;">
-            Federal Office for Information Security (BSI) Germany
-          </td>
-        </tr>
-        <tr>
-          <td style="text-align: left;">
-            ...
-          </td>
-          <td style="text-align: left;">
-            ...
-          </td>
-          <td style="text-align: left;">
-            ...
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <hr />
-    <h1 id="appendix-d-revision-history-">
-      Appendix D. Revision History <a id='revision-history'></a>
-    </h1>
+    <h2 id="revision-history-">
+      Revision History <a id='revision-history'></a>
+    </h2>
     <table>
       <thead>
         <tr>
@@ -822,54 +1619,14 @@
             Jautau White, Stefan Hagen, and Thomas Schmidt
           </td>
           <td style="text-align: left;">
-            Preparing initial Editor Revision
+            Editor Revision for TC review
           </td>
         </tr>
       </tbody>
     </table>
     <hr />
-    <h1 id="appendix-e-notices-">
-      Appendix E. Notices <a id='notices'></a>
-    </h1><!-- Required section. Do not modify. -->
     <p>
-      Copyright © OASIS Open 2025. All Rights Reserved.
+      ________________________________________
     </p>
-    <p>
-      All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full <a href="https://www.oasis-open.org/policies-guidelines/ipr/">Policy</a> may be found at the OASIS website.
-    </p>
-    <p>
-      This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are
-      included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to
-      copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.
-    </p>
-    <p>
-      The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.
-    </p>
-    <p>
-      This document and the information contained herein is provided on an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR
-      PURPOSE.
-    </p>
-    <p>
-      As stated in the OASIS IPR Policy, the following three paragraphs in brackets apply to OASIS Standards Final Deliverable documents (Committee Specification, Candidate OASIS Standard, OASIS Standard, or Approved Errata).
-    </p>
-    <p>
-      [OASIS requests that any OASIS Party or any other party that believes it has patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable, to notify OASIS TC Administrator and provide an indication of its willingness to grant patent licenses to such patent claims in a manner consistent
-      with the IPR Mode of the OASIS Technical Committee that produced this deliverable.]
-    </p>
-    <p>
-      [OASIS invites any party to contact the OASIS TC Administrator if it is aware of a claim of ownership of any patent claims that would necessarily be infringed by implementations of this OASIS Standards Final Deliverable by a patent holder that is not willing to provide a license to such patent claims in a manner consistent with the IPR
-      Mode of the OASIS Technical Committee that produced this OASIS Standards Final Deliverable. OASIS may include such claims on its website, but disclaims any obligation to do so.]
-    </p>
-    <p>
-      [OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this OASIS Standards Final Deliverable or the extent to which any license under such rights might or might not be available; neither does it
-      represent that it has made any effort to identify any such rights. Information on OASIS' procedures with respect to rights in any document or deliverable produced by an OASIS Technical Committee can be found on the OASIS website. Copies of claims of rights made available for publication and any assurances of licenses to be made
-      available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementers or users of this OASIS Standards Final Deliverable, can be obtained from the OASIS TC Administrator. OASIS makes no representation that any information or list of intellectual property rights will
-      at any time be complete, or that any claims in such list are, in fact, Essential Claims.]
-    </p>
-    <p>
-      The name "OASIS" is a trademark of <a href="https://www.oasis-open.org/">OASIS</a>, the owner and developer of this specification, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, specifications, while reserving the right to enforce its marks
-      against misleading uses. Please see <a href="https://www.oasis-open.org/policies-guidelines/trademark/">https://www.oasis-open.org/policies-guidelines/trademark/</a> for above guidance.
-    </p>
-    <hr />
   </body>
 </html>
