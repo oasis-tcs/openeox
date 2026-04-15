@@ -14,9 +14,9 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Information**: An EoX information in the format defined by this document.
 * **OpenEoX Core Producer**: A program which emits output in the OpenEoX Core format.
 * **OpenEoX Core Consumer**: A program that reads and interprets OpenEoX Core Information.
-* **OpenEoX Core Viewer**: An OpenEoX Consumer that reads a OpenEoX Core Information, displays a list of the results it contains,
+* **OpenEoX Core Viewer**: An OpenEoX Consumer that reads OpenEoX Core Information, displays a list of the results it contains,
   and allows an end user to view each result in the context of the artifact in which it occurs.
-* **OpenEoX Core Actionable Viewer**: A program that satisfies the "OpenEoX Viewer" conformance profile and presents actionable interpretations by mapping life cycle events to recommended actions.
+* **OpenEoX Core Actionable Viewer**: An OpenEoX Viewer that presents actionable interpretations by mapping life cycle events to recommended actions.
 * **OpenEoX Core Basic Validator**: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
 * **OpenEoX Core Extended Validator**: A OpenEoX Core Basic Validator that additionally performs recommended tests.
 * **OpenEoX Core Full Validator**: A OpenEoX Core Extended Validator that additionally performs guidance tests.
@@ -62,26 +62,28 @@ The viewer:
 * satisfies the "OpenEoX Consumer" conformance profile.
 * satisfies the normative requirements given below.
 
-For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](#RFC3339] the viewer:
+For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](#RFC3339) the viewer:
 
 * SHOULD output the raw string value if the value is not `tba`.
 * SHOULD display a value that is understandable to the user as a replacement for the technical value `tba`.
 
 > A tool MAY provide an option to suppress dates with value `tba`.
 
-### Conformance Clause 4: OpenEoX Core Actionable Viewer
+### Conformance Clause 5: OpenEoX Core Actionable Viewer
 
 A viewer satisfies the "OpenEoX Core Actionable Viewer" conformance profile if the viewer fulfills the following groups of requirements:
+
+The viewer:
 
 * satisfies the "OpenEoX Core Viewer" conformance profile.
 * provides an interpretation view for each life cycle event that additionally answers:
   1. at what date the event occurs.
   2. what lifecycle state changes at that date. 
-  3.  which actions are needed.
+  3. which actions are needed.
   
-  > For this specification, both answers are directly derived from property semantics and their values.
+  > For this specification, the first two answers are directly derived from property semantics and their values.
   > The third answer (needed actions) is not explicitly represented by a dedicated OpenEoX Core property and therefore
-requires a defined action mapping by profile, implementation, or deployment policy.
+requires a defined action mapping by specification, profile, implementation, or deployment policy.
 
 * still provides the date and change interpretation, if no action mapping is available.
 
@@ -89,19 +91,19 @@ The OpenEoX Core Actionable Viewer SHOULD:
 
 * indicate that the action is not specified by this specification, if no action mapping is available.
 
-The following action mapping is RECOMMENDED for OpenEoX Core Actionable Viewer:
+* use the following action mapping as default:
 
-* `end-of-sales`: Product can no longer be ordered from vendor sales channels.
-  *Recommended action*: evaluate and initiate replacement procurement plans for successor offerings.
-* `end-of-security-support`: Vendor no longer commits to security remediations.
-  *Recommended action*: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
-* `end-of-life`: Vendor support ends in any form.
-  *Recommended action*: complete replacement or decommissioning of affected deployments.
+  * `end-of-sales`: Product can no longer be ordered from vendor sales channels.
+    *Recommended action*: evaluate and initiate replacement procurement plans for successor offerings.
+  * `end-of-security-support`: Vendor no longer commits to security remediations.
+    *Recommended action*: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
+  * `end-of-life`: Vendor support ends in any form.
+    *Recommended action*: complete replacement or decommissioning of affected deployments.
 
 A OpenEoX Core Actionable Viewer MAY use different action mappings or expand on the recommended actions. 
   
 
-### Conformance Clause 5: OpenEoX Core Basic Validator
+### Conformance Clause 6: OpenEoX Core Basic Validator
 
 A program satisfies the "OpenEoX Core Basic Validator" conformance profile if the program:
 
@@ -115,7 +117,7 @@ A OpenEoX Core Basic Validator MAY provide one or more additional functions:
 * Apply quick fixes as specified in the standard.
 * Apply additional quick fixes as implemented by the vendor.
 
-### Conformance Clause 6: OpenEoX Core Extended Validator
+### Conformance Clause 7: OpenEoX Core Extended Validator
 
 A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" conformance profile if the OpenEoX Core Basic Validator:
 
@@ -125,7 +127,7 @@ A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" c
 
 A OpenEoX Core Extended Validator MAY provide an additional function to only run one or more selected recommended tests.
 
-### Conformance Clause 7: OpenEoX Core Full Validator
+### Conformance Clause 8: OpenEoX Core Full Validator
 
 A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" conformance profile if the OpenEoX Core Extended Validator:
 
@@ -136,7 +138,7 @@ A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" co
 
 A OpenEoX Core Full Validator MAY provide an additional function to only run one or more selected guidance tests.
 
-### Conformance Clause 8: OpenEoX Core Library
+### Conformance Clause 9: OpenEoX Core Library
 
 A library satisfies the "OpenEoX Core Library" conformance profile if the library:
 
@@ -155,7 +157,7 @@ A library satisfies the "OpenEoX Core Library" conformance profile if the librar
 
 The library MAY implement an option to retrieve the keys unsorted.
 
-### Conformance Clause 9: OpenEoX Core Library with Basic Validation
+### Conformance Clause 10: OpenEoX Core Library with Basic Validation
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
 
 * satisfies the "OpenEoX Core Library" conformance profile.
@@ -168,7 +170,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Basic Validator" part and does not enforce its presence.
 
-### Conformance Clause 10: OpenEoX Core Library with Extended Validation
+### Conformance Clause 11: OpenEoX Core Library with Extended Validation
 
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
 
@@ -182,7 +184,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validat
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Extended Validator" part and does not enforce its presence.
 
-### Conformance Clause 11: OpenEoX Core Library with Full Validation
+### Conformance Clause 12: OpenEoX Core Library with Full Validation
 
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
 
@@ -196,7 +198,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validat
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Full Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Full Validator" part and does not enforce its presence.
 
-### Conformance Clause 12: OpenEoX Core Differ
+### Conformance Clause 13: OpenEoX Core Differ
 
 A program satisfies the "OpenEoX Core Differ" conformance profile if the program:
 
@@ -205,7 +207,7 @@ A program satisfies the "OpenEoX Core Differ" conformance profile if the program
 
 A OpenEoX Core Differ MAY choose to make that information also available in other data formats.
 
-### Conformance Clause 13: OpenEoX Core Comparator
+### Conformance Clause 14: OpenEoX Core Comparator
 
 A program satisfies the "OpenEoX Core Comparator" conformance profile if the program:
 
@@ -222,7 +224,7 @@ A program satisfies the "OpenEoX Core Comparator" conformance profile if the pro
 
 A OpenEoX Core Comparator MAY choose to make that information also available in other data formats.
 
-### Conformance Clause 14: OpenEoX Core Sorter
+### Conformance Clause 15: OpenEoX Core Sorter
 
 A program satisfies the "OpenEoX Core Sorter" conformance profile if the program:
 
@@ -233,7 +235,7 @@ A program satisfies the "OpenEoX Core Sorter" conformance profile if the program
 
 A OpenEoX Core Sorter MAY choose to make that information also available in other data formats.
 
-### Conformance Clause 15: OpenEoX Core Merger
+### Conformance Clause 16: OpenEoX Core Merger
 
 A program satisfies the "OpenEoX Core Merger" conformance profile if the program:
 
