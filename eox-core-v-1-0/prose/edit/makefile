@@ -64,7 +64,7 @@ render-markdown: inversions
 render-html: render-markdown
 	command -v pandoc >/dev/null 2>&1 || { echo >&2 "make render-html requires pandoc but it's not installed - you can get help on installing at https://pandoc.org.  Aborting."; exit 1; }
 	command -v tidy >/dev/null 2>&1 || { echo >&2 "make render-html requires tidy but it's not installed - you can get help on installing by searching for it on the wild internets.  Aborting."; exit 1; }
-	pandoc -f gfm+definition_lists -t html build/tmp.md --columns=345  \
+	pandoc -f gfm+definition_lists -t html build/tmp.md --columns=345 --title "OpenEoX Core Schema Version 1.0" \
 		--css style/base.css --css style/skin.css --standalone -o build/tmp.html && \
 	  bin/toccata.py && \
 	  timeout 2 tidy -config etc/tidy-config.txt build/injected.html -ashtml 2>/dev/null | \
