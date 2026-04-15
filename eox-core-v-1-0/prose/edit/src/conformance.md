@@ -69,11 +69,6 @@ For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](
 
 > A tool MAY provide an option to suppress dates with value `tba`.
 
-  1. at what date the event occurs.
-  2. what lifecycle state changes at that date.
-
-For OpenEoX Core v1.0, both answers are directly derived from property semantics and their values.
-
 ### Conformance Clause 4: OpenEoX Core Actionable Viewer
 
 A program satisfies the "OpenEoX Core Actionable Viewer" conformance profile if the program:
