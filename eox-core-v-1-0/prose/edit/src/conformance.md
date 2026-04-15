@@ -71,26 +71,35 @@ For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](
 
 ### Conformance Clause 4: OpenEoX Core Actionable Viewer
 
-A program satisfies the "OpenEoX Core Actionable Viewer" conformance profile if the program:
+A viewer satisfies the "OpenEoX Core Actionable Viewer" conformance profile if the viewer fulfills the following groups of requirements:
 
-* satisfies the "OpenEoX Core Consumer" conformance profile.
-* provides an interpretation view for each lifecycle event that additionally answers:
-  * which actions are needed.
-
-The third answer (needed actions) is not explicitly represented by a dedicated OpenEoX Core property and therefore
+* satisfies the "OpenEoX Core Viewer" conformance profile.
+* provides an interpretation view for each life cycle event that additionally answers:
+  1. at what date the event occurs.
+  2. what lifecycle state changes at that date. 
+  3.  which actions are needed.
+  
+  > For this specification, both answers are directly derived from property semantics and their values.
+  > The third answer (needed actions) is not explicitly represented by a dedicated OpenEoX Core property and therefore
 requires a defined action mapping by profile, implementation, or deployment policy.
 
-If no action mapping is available, an OpenEoX Core Actionable Viewer MUST still provide the date and change interpretation.
-If no action mapping is available, an OpenEoX Core Actionable Viewer SHOULD indicate that the action is not specified by OpenEoX Core v1.0.
+* still provides the date and change interpretation, if no action mapping is available.
 
-The following default action mapping SHOULD be supported by OpenEoX Core Actionable Viewers:
+The OpenEoX Core Actionable Viewer SHOULD: 
+
+* indicate that the action is not specified by this specification, if no action mapping is available.
+
+The following action mapping is RECOMMENDED for OpenEoX Core Actionable Viewer:
 
 * `end-of-sales`: Product can no longer be ordered from vendor sales channels.
-  Recommended action: evaluate and initiate replacement procurement plans for successor offerings.
+  *Recommended action*: evaluate and initiate replacement procurement plans for successor offerings.
 * `end-of-security-support`: Vendor no longer commits to security remediations.
-  Recommended action: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
+  *Recommended action*: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
 * `end-of-life`: Vendor support ends in any form.
-  Recommended action: complete replacement or decommissioning of affected deployments.
+  *Recommended action*: complete replacement or decommissioning of affected deployments.
+
+A OpenEoX Core Actionable Viewer MAY use different action mappings or expand on the recommended actions. 
+  
 
 ### Conformance Clause 5: OpenEoX Core Basic Validator
 
