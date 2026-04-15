@@ -53,7 +53,22 @@ A processor satisfies the "OpenEoX Core Consumer" conformance profile if the pro
 * reads OpenEoX Core Information and interprets them according to the semantics defined in section [sec](#schema-elements).
 * satisfies those normative requirements in section [sec](#schema-elements) and
   [sec](#safety-security-and-data-protection) that are designated as applying to OpenEoX Consumers.
-* provides an interpretation view for each lifecycle event that answers:
+### Conformance Clause 4: OpenEoX Core Viewer
+
+A viewer satisfies the "OpenEoX Core Viewer" conformance profile if the viewer fulfills the following two groups of requirements:
+
+The viewer:
+
+* satisfies the "OpenEoX Consumer" conformance profile.
+* satisfies the normative requirements given below.
+
+For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](#RFC3339] the viewer:
+
+* SHOULD output the raw string value if the value is not `tba`.
+* SHOULD display a value that is understandable to the user as a replacement for the technical value `tba`.
+
+> A tool MAY provide an option to suppress dates with value `tba`.
+
   1. at what date the event occurs.
   2. what lifecycle state changes at that date.
 
