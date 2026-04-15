@@ -147,7 +147,6 @@ A library satisfies the "OpenEoX Core Library" conformance profile if the librar
 The library MAY implement an option to retrieve the keys unsorted.
 
 ### Conformance Clause 9: OpenEoX Core Library with Basic Validation
--1
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
 
 * satisfies the "OpenEoX Core Library" conformance profile.
