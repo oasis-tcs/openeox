@@ -94,7 +94,7 @@ The OpenEoX Core Actionable Viewer SHOULD:
 
 * use the following action mapping as default:
 
-  * `end-of-sales`: Product can no longer be ordered from vendor sales channels.
+  * EoS: Product can no longer be ordered from vendor sales channels.
     *Recommended action*: evaluate and initiate replacement procurement plans for successor offerings.
   * EoSSec: Vendor no longer commits to security remediations.
     *Recommended action*: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
