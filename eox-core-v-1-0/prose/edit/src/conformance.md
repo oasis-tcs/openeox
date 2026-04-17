@@ -72,7 +72,7 @@ For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](
 
 ### Conformance Clause 5: OpenEoX Core Actionable Viewer
 
-A viewer satisfies the "OpenEoX Core Actionable Viewer" conformance profile if the viewer fulfills the following groups of requirements:
+A viewer satisfies the "OpenEoX Core Recommending Viewer" conformance profile if the viewer fulfills the following groups of requirements:
 
 The viewer:
 
