@@ -1,0 +1,15 @@
+clean-md-start: "# Scope"
+sec-ref-style: number          # number | number-title | section-sign-number
+track-examples: true           # scan, validate, and generate example LUTs
+meta-example-global-number: 4321  # global counter assigned to the meta/typographic example
+
+citation-sources:
+- references-00-normative-00-data.md
+- references-00-informative-00-data.md
+
+glossary-sources:
+- defs-acrs-01-defs-01-terms-ext-list.md
+- defs-acrs-01-defs-01-terms-int-list.md
+
+citation-skip-prefixes:
+- '#'

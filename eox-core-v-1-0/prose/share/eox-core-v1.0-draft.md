@@ -167,19 +167,19 @@ which contains the License, Document Status and Notices.
 		9.1.12 [Conformance Clause 12: OpenEoX Core Comparator](#conformance-clause-12-openeox-core-comparator)  
 		9.1.13 [Conformance Clause 13: OpenEoX Core Sorter](#conformance-clause-13-openeox-core-sorter)  
 		9.1.14 [Conformance Clause 14: OpenEoX Core Merger](#conformance-clause-14-openeox-core-merger)  
-
 Annex A [License, Document Status and Notices](#annex-a)  
-A.1. [Document Status](#document-status)  
-A.2. [License and Notices](#license-and-notices)  
+	A.1. [Document Status](#document-status)  
+	A.2. [License and Notices](#license-and-notices)  
 Annex B [References](#references)  
-	B.1 [Normative References](#normative-references)  
-	B.2 [Informative References](#informative-references)  
+	B.1. [Normative References](#normative-references)  
+	B.2. [Informative References](#informative-references)  
 Appendix 1 [Acknowledgments](#acknowledgments)  
- [Leadership](#leadership)  
+	 [Leadership](#leadership)  
 	 [Special Thanks](#special-thanks)  
 	 [Participants](#participants)  
 Appendix 2 [Changes From Previous Version](#changes-from-previous-version)  
- [Revision History](#revision-history)  
+
+Appendix 2.1. [Revision History](#revision-history)  
 -------
 
 # 1. Scope <a id='scope'></a>
@@ -1128,10 +1128,10 @@ A OpenEoX Core Merger MAY choose to make that information also available in othe
 -------
 
 
+
 # Annex A License, Document Status and Notices <a id='annex-a'></a>
 
 (This annex forms an integral part of this Specification.)
-
 
 ## A.1. Document Status <a id='document-status'></a>
 
@@ -1140,7 +1140,6 @@ This document was last revised or approved by the OASIS OpenEoX TC on the above 
 TC members should send comments on this document to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at <https://www.oasis-open.org/committees/openeox/>.
 
 NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
-
 
 ## A.2. License and Notices <a id='license-and-notices'></a>
 
@@ -1170,6 +1169,8 @@ The name "OASIS" is a trademark of OASIS, the owner and developer of this docume
 
 -------
 
+
+
 # Annex B References <a id='references'></a>
 
 (This annex forms an integral part of this Specification.)
@@ -1178,7 +1179,7 @@ This section contains the normative and informative references that are used in 
 
 Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
 
-## B.1 Normative References <a id='normative-references'></a>
+## B.1. Normative References <a id='normative-references'></a>
 
 The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
 
@@ -1212,11 +1213,13 @@ The following documents are referenced in such a way that some or all of their c
 
 **\[**<span id="SPDX301" class="anchor"></span>**SPDX301\]** _The System Package Data Exchange® (SPDX®) Specification Version 3.0.1_, Linux Foundation and its Contributors, 2024, <https://spdx.github.io/spdx-spec/>.
 
-## B.2 Informative References <a id='informative-references'></a>
+## B.2. Informative References <a id='informative-references'></a>
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
 **\[**<span id="CSAF-v2.1" class="anchor"></span>**CSAF-v2.1\]** _Common Security Advisory Framework Version 2.1_. Edited by Stefan Hagen, and Thomas Schmidt. 28 May 2025. OASIS Committee Specification Draft 01. https://docs.oasis-open.org/csaf/csaf/v2.1/csd01/csaf-v2.1-csd01.html. Latest stage: https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.html.
+
+
 
 # Appendix 1 Acknowledgments <a id='acknowledgments'></a>
 
@@ -1253,6 +1256,8 @@ The following individuals were members of this committee during the creation of 
 tbd
 
 -------
+
+
 
 # Appendix 2 Changes From Previous Version <a id='changes-from-previous-version'></a>
 
