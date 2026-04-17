@@ -53,6 +53,7 @@ A processor satisfies the "OpenEoX Core Consumer" conformance profile if the pro
 * reads OpenEoX Core Information and interprets them according to the semantics defined in section [sec](#schema-elements).
 * satisfies those normative requirements in section [sec](#schema-elements) and
   [sec](#safety-security-and-data-protection) that are designated as applying to OpenEoX Consumers.
+
 ### Conformance Clause 4: OpenEoX Core Viewer
 
 A viewer satisfies the "OpenEoX Core Viewer" conformance profile if the viewer fulfills the following two groups of requirements:
