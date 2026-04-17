@@ -101,7 +101,7 @@ The OpenEoX Core Actionable Viewer SHOULD:
   * `end_of_life`: Vendor support ends in any form.
     *Recommended action*: complete replacement or decommissioning of affected deployments.
 
-An OpenEoX Core Actionable Viewer MAY use different action mappings or expand on the recommended actions. 
+An OpenEoX Core Recommending Viewer MAY use different action mappings or expand on the recommended actions. 
   
 
 ### Conformance Clause 6: OpenEoX Core Basic Validator
