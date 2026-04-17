@@ -70,7 +70,7 @@ For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](
 
 > A tool MAY provide an option to suppress dates with value `tba`.
 
-### Conformance Clause 5: OpenEoX Core Actionable Viewer
+### Conformance Clause 5: OpenEoX Core Recommending Viewer
 
 A viewer satisfies the "OpenEoX Core Recommending Viewer" conformance profile if the viewer fulfills the following groups of requirements:
 
