@@ -95,11 +95,11 @@ The OpenEoX Core Actionable Viewer SHOULD:
 * use the following action mapping as default:
 
   * EoS: Product can no longer be ordered from vendor sales channels.
-    *Recommended action*: evaluate and initiate replacement procurement plans for successor offerings.
+    _Recommended action_: evaluate and initiate replacement procurement plans for successor offerings.
   * EoSSec: Vendor no longer commits to security remediations.
-    *Recommended action*: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
+    _Recommended action_: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
   * EoL: All vendor support ends.
-    *Recommended action*: complete replacement or decommissioning of affected deployments.
+    _Recommended action_: complete replacement or decommissioning of affected deployments.
 
 An OpenEoX Core Recommending Viewer MAY use different action mappings or expand on the recommended actions. 
   
