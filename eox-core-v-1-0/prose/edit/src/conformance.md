@@ -98,7 +98,7 @@ The OpenEoX Core Actionable Viewer SHOULD:
     *Recommended action*: evaluate and initiate replacement procurement plans for successor offerings.
   * `end-of-security-support`: Vendor no longer commits to security remediations.
     *Recommended action*: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
-  * `end-of-life`: Vendor support ends in any form.
+  * `end_of_life`: Vendor support ends in any form.
     *Recommended action*: complete replacement or decommissioning of affected deployments.
 
 An OpenEoX Core Actionable Viewer MAY use different action mappings or expand on the recommended actions. 
