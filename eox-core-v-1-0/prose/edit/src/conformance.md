@@ -16,7 +16,7 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Consumer**: A program that reads and interprets OpenEoX Core Information.
 * **OpenEoX Core Viewer**: An OpenEoX Consumer that reads OpenEoX Core Information, displays a list of the results it contains,
   and allows an end user to view each result in the context of the artifact in which it occurs.
-* **OpenEoX Core Recommending Viewer**: An OpenEoX Viewer that presents actionable interpretations by mapping life cycle events to recommended actions.
+* **OpenEoX Core Recommending Viewer**: An OpenEoX Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
 * **OpenEoX Core Basic Validator**: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
 * **OpenEoX Core Extended Validator**: A OpenEoX Core Basic Validator that additionally performs recommended tests.
 * **OpenEoX Core Full Validator**: A OpenEoX Core Extended Validator that additionally performs guidance tests.
