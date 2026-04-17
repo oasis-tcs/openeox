@@ -84,7 +84,7 @@ The viewer:
   
   > For this specification, the first two answers are directly derived from property semantics and their values.
   > The third answer (needed actions) is not explicitly represented by a dedicated OpenEoX Core property and therefore
-   > requires a defined action mapping by specification, profile, implementation, or deployment policy.
+  > requires a defined action mapping by specification, profile, implementation, or deployment policy.
 
 * still provides the date and change interpretation, if no action mapping is available.
 
