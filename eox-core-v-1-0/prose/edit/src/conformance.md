@@ -96,7 +96,7 @@ The OpenEoX Core Actionable Viewer SHOULD:
 
   * `end-of-sales`: Product can no longer be ordered from vendor sales channels.
     *Recommended action*: evaluate and initiate replacement procurement plans for successor offerings.
-  * `end-of-security-support`: Vendor no longer commits to security remediations.
+  * EoSSec: Vendor no longer commits to security remediations.
     *Recommended action*: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
   * `end_of_life`: Vendor support ends in any form.
     *Recommended action*: complete replacement or decommissioning of affected deployments.
