@@ -8,8 +8,7 @@ toc:
 -->
 # Revision History
 
-| Revision                    | Date       | Editor                                         | Changes Made                      |
-|:----------------------------|:-----------|:-----------------------------------------------|:----------------------------------|
-| eox-api-v1.0-wd20250716-dev | 2025-07-16 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
+Revision tracking is publicly available in the version control system at
+<https://github.com/oasis-tcs/openeox/commits/main>.
 
--------
+---
