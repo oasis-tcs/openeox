@@ -8,15 +8,7 @@ toc:
 -->
 ## Revision History
 
-| Revision                     | Date       | Editor                                         | Changes Made                      |
-|:-----------------------------|:-----------|:-----------------------------------------------|:----------------------------------|
-| eox-core-v1.0-wd20250716-dev | 2025-07-16 | Jautau White, Stefan Hagen, and Thomas Schmidt | Preparing initial Editor Revision |
-| eox-core-v1.0-wd20250820-dev | 2025-08-20 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision with first structure |
-| eox-core-v1.0-wd20251119-dev | 2025-11-19 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
-| eox-core-v1.0-wd20260121-dev | 2026-01-21 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
-| eox-core-v1.0-wd20260218-dev | 2026-02-18 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
-| eox-core-v1.0-wd20260315-dev | 2026-03-15 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
+Revision tracking is publicly available in the version control system at
+<https://github.com/oasis-tcs/openeox/commits/main>.
 
--------
-
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+---
