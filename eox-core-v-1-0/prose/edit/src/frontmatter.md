@@ -7,7 +7,7 @@
 
 ## Committee Specification Draft 01
 
-## 15 March 2026
+## 20 May 2026
 
 ### This Version
 
@@ -71,7 +71,7 @@ When referencing this document, the following citation format should be used:
 
 _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-15 March 2026.
+20 May 2026.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.\
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
