@@ -7,10 +7,9 @@
 \hrule
 \section*{OpenEoX Core Schema Version 1.0}\label{eox-core-schema-version-1.0}
 
-\subsection*{Committee Specification Draft
-01/WD}\label{committee-specification-draft-01}
+\subsection*{Committee Specification Draft 01}\label{committee-specification-draft-01}
 
-\subsection*{18 February 2026}\label{pub-date}
+\subsection*{15 March 2026}\label{pub-date}
 
 \paragraph*{This Version:}\label{this-stage}
 
@@ -94,7 +93,7 @@ be used:
 \textbf{{[}EoX-Core-v1.0{]}}
 
 \emph{OpenEoX Core Schema Version 1.0}. Edited by Jautau White, Stefan
-Hagen, and Thomas Schmidt. 18 February 2026. OASIS Committee Specification
+Hagen, and Thomas Schmidt. 15 March 2026. OASIS Committee Specification
 Draft 01.
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html}.\\
 Latest stage: \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0-csd01.html}.

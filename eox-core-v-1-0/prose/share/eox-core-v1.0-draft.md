@@ -7,7 +7,7 @@
 
 ## Committee Specification Draft 01
 
-## 18 February 2026
+## 15 March 2026
 
 ### This Version
 
@@ -71,7 +71,7 @@ When referencing this document, the following citation format should be used:
 
 _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-18 February 2026.
+15 March 2026.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.\
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
@@ -156,17 +156,19 @@ which contains the License, Document Status and Notices.
 		9.1.1 [Conformance Clause 1: OpenEoX Core Information](#conformance-clause-1-openeox-core-information)  
 		9.1.2 [Conformance Clause 2: OpenEoX Core Producer](#conformance-clause-2-openeox-core-producer)  
 		9.1.3 [Conformance Clause 3: OpenEoX Core Consumer](#conformance-clause-3-openeox-core-consumer)  
-		9.1.4 [Conformance Clause 4: OpenEoX Core Basic Validator](#conformance-clause-4-openeox-core-basic-validator)  
-		9.1.5 [Conformance Clause 5: OpenEoX Core Extended Validator](#conformance-clause-5-openeox-core-extended-validator)  
-		9.1.6 [Conformance Clause 6: OpenEoX Core Full Validator](#conformance-clause-6-openeox-core-full-validator)  
-		9.1.7 [Conformance Clause 7: OpenEoX Core Library](#conformance-clause-7-openeox-core-library)  
-		9.1.8 [Conformance Clause 8: OpenEoX Core Library with Basic Validation](#conformance-clause-8-openeox-core-library-with-basic-validation)  
-		9.1.9 [Conformance Clause 9: OpenEoX Core Library with Extended Validation](#conformance-clause-9-openeox-core-library-with-extended-validation)  
-		9.1.10 [Conformance Clause 10: OpenEoX Core Library with Full Validation](#conformance-clause-10-openeox-core-library-with-full-validation)  
-		9.1.11 [Conformance Clause 11: OpenEoX Core Differ](#conformance-clause-11-openeox-core-differ)  
-		9.1.12 [Conformance Clause 12: OpenEoX Core Comparator](#conformance-clause-12-openeox-core-comparator)  
-		9.1.13 [Conformance Clause 13: OpenEoX Core Sorter](#conformance-clause-13-openeox-core-sorter)  
-		9.1.14 [Conformance Clause 14: OpenEoX Core Merger](#conformance-clause-14-openeox-core-merger)  
+		9.1.4 [Conformance Clause 4: OpenEoX Core Viewer](#conformance-clause-4-openeox-core-viewer)  
+		9.1.5 [Conformance Clause 5: OpenEoX Core Recommending Viewer](#conformance-clause-5-openeox-core-recommending-viewer)  
+		9.1.6 [Conformance Clause 6: OpenEoX Core Basic Validator](#conformance-clause-6-openeox-core-basic-validator)  
+		9.1.7 [Conformance Clause 7: OpenEoX Core Extended Validator](#conformance-clause-7-openeox-core-extended-validator)  
+		9.1.8 [Conformance Clause 8: OpenEoX Core Full Validator](#conformance-clause-8-openeox-core-full-validator)  
+		9.1.9 [Conformance Clause 9: OpenEoX Core Library](#conformance-clause-9-openeox-core-library)  
+		9.1.10 [Conformance Clause 10: OpenEoX Core Library with Basic Validation](#conformance-clause-10-openeox-core-library-with-basic-validation)  
+		9.1.11 [Conformance Clause 11: OpenEoX Core Library with Extended Validation](#conformance-clause-11-openeox-core-library-with-extended-validation)  
+		9.1.12 [Conformance Clause 12: OpenEoX Core Library with Full Validation](#conformance-clause-12-openeox-core-library-with-full-validation)  
+		9.1.13 [Conformance Clause 13: OpenEoX Core Differ](#conformance-clause-13-openeox-core-differ)  
+		9.1.14 [Conformance Clause 14: OpenEoX Core Comparator](#conformance-clause-14-openeox-core-comparator)  
+		9.1.15 [Conformance Clause 15: OpenEoX Core Sorter](#conformance-clause-15-openeox-core-sorter)  
+		9.1.16 [Conformance Clause 16: OpenEoX Core Merger](#conformance-clause-16-openeox-core-merger)  
 
 Annex A [License, Document Status and Notices](#annex-a)  
 A.1. [Document Status](#document-status)  
@@ -184,7 +186,17 @@ Appendix 2 [Changes From Previous Version](#changes-from-previous-version)
 
 # 1. Scope <a id='scope'></a>
 
-TODO: add scope (see [#165](https://github.com/oasis-tcs/openeox/issues/165))
+This specification defines the OpenEoX Core Schema - a minimal, machine-readable JSON format for
+representing product life cycle milestone information for commercial and open source software and hardware products.
+The schema provides a common vocabulary for four key life cycle events: General Availability (GA),
+End-of-Sales (EoS), End-of-Life (EoL), and End-of-Security-Support (EoSSec).
+
+The OpenEoX Core Schema is designed to be imported by or integrated into other standards, specifications,
+and product-specific implementations, enabling consistent and interoperable exchange of
+life cycle information across vendor ecosystems and consumer applications.
+
+Product identification - the binding of life cycle milestone information to a specific product -
+is addressed by complementary specifications such as OpenEoX Shell and is therefore out of scope of this document.
 
 -------
 
@@ -916,6 +928,9 @@ The entities ("conformance targets") for which this document defines requirement
 * **OpenEoX Core Information**: An EoX information in the format defined by this document.
 * **OpenEoX Core Producer**: A program which emits output in the OpenEoX Core format.
 * **OpenEoX Core Consumer**: A program that reads and interprets OpenEoX Core Information.
+* **OpenEoX Core Viewer**: An OpenEoX Consumer that reads OpenEoX Core Information, displays a list of the results it contains,
+  and allows an end user to view each result in the context of the artifact in which it occurs.
+* **OpenEoX Core Recommending Viewer**: An OpenEoX Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
 * **OpenEoX Core Basic Validator**: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
 * **OpenEoX Core Extended Validator**: A OpenEoX Core Basic Validator that additionally performs recommended tests.
 * **OpenEoX Core Full Validator**: A OpenEoX Core Extended Validator that additionally performs guidance tests.
@@ -953,7 +968,57 @@ A processor satisfies the "OpenEoX Core Consumer" conformance profile if the pro
 * satisfies those normative requirements in section [6](#schema-elements) and
   [8](#safety-security-and-data-protection) that are designated as applying to OpenEoX Consumers.
 
-### 9.1.4 Conformance Clause 4: OpenEoX Core Basic Validator <a id='conformance-clause-4-openeox-core-basic-validator'></a>
+### 9.1.4 Conformance Clause 4: OpenEoX Core Viewer <a id='conformance-clause-4-openeox-core-viewer'></a>
+
+A viewer satisfies the "OpenEoX Core Viewer" conformance profile if the viewer fulfills the following two groups of requirements:
+
+The viewer:
+
+* satisfies the "OpenEoX Consumer" conformance profile.
+* satisfies the normative requirements given below.
+
+For each value of type `/$defs/eox_timestamp_t` that does not conform to \[[RFC3339](#RFC3339)\] the viewer:
+
+* SHOULD output the raw string value if the value is not `tba`.
+* SHOULD display a value that is understandable to the user as a replacement for the technical value `tba`.
+
+> A tool MAY provide an option to suppress dates with value `tba`.
+
+### 9.1.5 Conformance Clause 5: OpenEoX Core Recommending Viewer <a id='conformance-clause-5-openeox-core-recommending-viewer'></a>
+
+A viewer satisfies the "OpenEoX Core Recommending Viewer" conformance profile if the viewer fulfills the following groups of requirements:
+
+The viewer:
+
+* satisfies the "OpenEoX Core Viewer" conformance profile.
+* provides an interpretation view for each life cycle event that additionally answers:
+  1. at what date the event occurs.
+  2. what lifecycle state changes at that date. 
+  3. which actions are needed.
+  
+  > For this specification, the first two answers are directly derived from property semantics and their values.
+  > The third answer (needed actions) is not explicitly represented by a dedicated OpenEoX Core property and therefore
+  > requires a defined action mapping by specification, profile, implementation, or deployment policy.
+
+* still provides the date and change interpretation, if no action mapping is available.
+
+The OpenEoX Core Actionable Viewer SHOULD: 
+
+* indicate that the action is not specified by this specification, if no action mapping is available.
+
+* use the following action mapping as default:
+
+  * EoS: Product can no longer be ordered from vendor sales channels.
+    _Recommended action_: evaluate and initiate replacement procurement plans for successor offerings.
+  * EoSSec: Vendor no longer commits to security remediations.
+    _Recommended action_: complete upgrade or migration to a supported product version and apply risk treatment until migration is complete.
+  * EoL: All vendor support ends.
+    _Recommended action_: complete replacement or decommissioning of affected deployments.
+
+An OpenEoX Core Recommending Viewer MAY use different action mappings or expand on the recommended actions. 
+  
+
+### 9.1.6 Conformance Clause 6: OpenEoX Core Basic Validator <a id='conformance-clause-6-openeox-core-basic-validator'></a>
 
 A program satisfies the "OpenEoX Core Basic Validator" conformance profile if the program:
 
@@ -967,7 +1032,7 @@ A OpenEoX Core Basic Validator MAY provide one or more additional functions:
 * Apply quick fixes as specified in the standard.
 * Apply additional quick fixes as implemented by the vendor.
 
-### 9.1.5 Conformance Clause 5: OpenEoX Core Extended Validator <a id='conformance-clause-5-openeox-core-extended-validator'></a>
+### 9.1.7 Conformance Clause 7: OpenEoX Core Extended Validator <a id='conformance-clause-7-openeox-core-extended-validator'></a>
 
 A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" conformance profile if the OpenEoX Core Basic Validator:
 
@@ -977,7 +1042,7 @@ A OpenEoX Core Basic Validator satisfies the "OpenEoX Core Extended Validator" c
 
 A OpenEoX Core Extended Validator MAY provide an additional function to only run one or more selected recommended tests.
 
-### 9.1.6 Conformance Clause 6: OpenEoX Core Full Validator <a id='conformance-clause-6-openeox-core-full-validator'></a>
+### 9.1.8 Conformance Clause 8: OpenEoX Core Full Validator <a id='conformance-clause-8-openeox-core-full-validator'></a>
 
 A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" conformance profile if the OpenEoX Core Extended Validator:
 
@@ -988,7 +1053,7 @@ A OpenEoX Core Extended Validator satisfies the "OpenEoX Core Full Validator" co
 
 A OpenEoX Core Full Validator MAY provide an additional function to only run one or more selected guidance tests.
 
-### 9.1.7 Conformance Clause 7: OpenEoX Core Library <a id='conformance-clause-7-openeox-core-library'></a>
+### 9.1.9 Conformance Clause 9: OpenEoX Core Library <a id='conformance-clause-9-openeox-core-library'></a>
 
 A library satisfies the "OpenEoX Core Library" conformance profile if the library:
 
@@ -1007,8 +1072,7 @@ A library satisfies the "OpenEoX Core Library" conformance profile if the librar
 
 The library MAY implement an option to retrieve the keys unsorted.
 
-### 9.1.8 Conformance Clause 8: OpenEoX Core Library with Basic Validation <a id='conformance-clause-8-openeox-core-library-with-basic-validation'></a>
--1
+### 9.1.10 Conformance Clause 10: OpenEoX Core Library with Basic Validation <a id='conformance-clause-10-openeox-core-library-with-basic-validation'></a>
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core Library:
 
 * satisfies the "OpenEoX Core Library" conformance profile.
@@ -1021,7 +1085,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Basic Validation
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Basic Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Basic Validator" part and does not enforce its presence.
 
-### 9.1.9 Conformance Clause 9: OpenEoX Core Library with Extended Validation <a id='conformance-clause-9-openeox-core-library-with-extended-validation'></a>
+### 9.1.11 Conformance Clause 11: OpenEoX Core Library with Extended Validation <a id='conformance-clause-11-openeox-core-library-with-extended-validation'></a>
 
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
 
@@ -1035,7 +1099,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validat
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Extended Validator" part and does not enforce its presence.
 
-### 9.1.10 Conformance Clause 10: OpenEoX Core Library with Full Validation <a id='conformance-clause-10-openeox-core-library-with-full-validation'></a>
+### 9.1.12 Conformance Clause 12: OpenEoX Core Library with Full Validation <a id='conformance-clause-12-openeox-core-library-with-full-validation'></a>
 
 A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validation" conformance profile if the OpenEoX Core Library:
 
@@ -1049,7 +1113,7 @@ A OpenEoX Core Library satisfies the "OpenEoX Core Library with Extended Validat
 A OpenEoX Core Library does not satisfies the "OpenEoX Core Library with Full Validation" conformance profile if the OpenEoX Core
 Library uses an external library or program for the "OpenEoX Core Full Validator" part and does not enforce its presence.
 
-### 9.1.11 Conformance Clause 11: OpenEoX Core Differ <a id='conformance-clause-11-openeox-core-differ'></a>
+### 9.1.13 Conformance Clause 13: OpenEoX Core Differ <a id='conformance-clause-13-openeox-core-differ'></a>
 
 A program satisfies the "OpenEoX Core Differ" conformance profile if the program:
 
@@ -1058,7 +1122,7 @@ A program satisfies the "OpenEoX Core Differ" conformance profile if the program
 
 A OpenEoX Core Differ MAY choose to make that information also available in other data formats.
 
-### 9.1.12 Conformance Clause 12: OpenEoX Core Comparator <a id='conformance-clause-12-openeox-core-comparator'></a>
+### 9.1.14 Conformance Clause 14: OpenEoX Core Comparator <a id='conformance-clause-14-openeox-core-comparator'></a>
 
 A program satisfies the "OpenEoX Core Comparator" conformance profile if the program:
 
@@ -1075,7 +1139,7 @@ A program satisfies the "OpenEoX Core Comparator" conformance profile if the pro
 
 A OpenEoX Core Comparator MAY choose to make that information also available in other data formats.
 
-### 9.1.13 Conformance Clause 13: OpenEoX Core Sorter <a id='conformance-clause-13-openeox-core-sorter'></a>
+### 9.1.15 Conformance Clause 15: OpenEoX Core Sorter <a id='conformance-clause-15-openeox-core-sorter'></a>
 
 A program satisfies the "OpenEoX Core Sorter" conformance profile if the program:
 
@@ -1086,7 +1150,7 @@ A program satisfies the "OpenEoX Core Sorter" conformance profile if the program
 
 A OpenEoX Core Sorter MAY choose to make that information also available in other data formats.
 
-### 9.1.14 Conformance Clause 14: OpenEoX Core Merger <a id='conformance-clause-14-openeox-core-merger'></a>
+### 9.1.16 Conformance Clause 16: OpenEoX Core Merger <a id='conformance-clause-16-openeox-core-merger'></a>
 
 A program satisfies the "OpenEoX Core Merger" conformance profile if the program:
 
@@ -1252,14 +1316,7 @@ N/A.
 
 ##  Revision History <a id='revision-history'></a>
 
-| Revision                     | Date       | Editor                                         | Changes Made                      |
-|:-----------------------------|:-----------|:-----------------------------------------------|:----------------------------------|
-| eox-core-v1.0-wd20250716-dev | 2025-07-16 | Jautau White, Stefan Hagen, and Thomas Schmidt | Preparing initial Editor Revision |
-| eox-core-v1.0-wd20250820-dev | 2025-08-20 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision with first structure |
-| eox-core-v1.0-wd20251119-dev | 2025-11-19 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
-| eox-core-v1.0-wd20260121-dev | 2026-01-21 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
-| eox-core-v1.0-wd20260218-dev | 2026-02-18 | Jautau White, Stefan Hagen, and Thomas Schmidt | Editor Revision for TC review     |
+Revision tracking is publicly available in the version control system at
+<https://github.com/oasis-tcs/openeox/commits/main>.
 
--------
-
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+---
