@@ -1,7 +1,7 @@
 
 ![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
--------
+---
 
 # OpenEoX API Schema Version 1.0
 
@@ -30,7 +30,7 @@ Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastr
 Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/) \
 
 #### Editors:
-Jautau White (jaywhite@microsoft.com), Microsoft Corporation \
+Jautau White (jaywhite@microsoft.com), [Microsoft Corporation](https://microsoft.com/) \
 Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/) \
 Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Security (BSI) Germany](https://www.bsi.bund.de/)
 
@@ -73,7 +73,7 @@ When referencing this specification the following citation format should be used
 
 _OpenEoX API Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-DD MONTH 2025.
+16 July 2025.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-api/v1.0/csd01/eox-api-v1.0-csd01.html. Latest stage: https://docs.oasis-open.org/openeox/eox-api/v1.0/eox-api-v1.0.html
 
@@ -87,4 +87,4 @@ The name "OASIS" is a trademark of [OASIS](https://www.oasis-open.org/), the own
 
 For complete copyright information please see the full Notices section in [Appendix E](#appendix-e-notices).
 
--------
+---

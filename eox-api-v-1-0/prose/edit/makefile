@@ -117,15 +117,27 @@ diff-pdf:
 
 .PHONY: clean
 clean:
-	rm -f $(build_root)approvals.yml \
-	  $(build_root)bind.txt \
-	  $(build_root)bookmatter.tex.in \
-	  $(build_root)changes.yml \
-	  $(build_root)driver.tex.in \
-	  $(build_root)meta.yml \
-	  $(build_root)metadata.tex.in \
-	  $(build_root)patch.yml \
-	  $(build_root)publisher.tex.in \
-	  $(build_root)setup.tex.in \
-	  $(build_root)structure.yml
-	rm -fr $(build_root)src/ $(build_pdf)
+	rm -rf `find . -name __pycache__`
+	rm -f `find . -type f -name '*.py[co]' `
+	rm -f `find . -type f -name '*~' `
+	rm -f `find . -type f -name '.*~' `
+	rm -rf .cache .*_cache
+	rm -f .DS_Store
+	rm -fr $(build_root)
+	mkdir -p $(build_root)
+
+.PHONY: distclean
+distclean: clean
+	rm -fr $(build_root)
+
+.PHONY: clone-info
+clone-info:
+	printf "Clone-info:\n"
+	printf "%s name.is(): '%s'\n" "-" "$$(basename `git rev-parse --show-toplevel`)"
+	printf "%s branch.is(): '%s'\n" "-" "$$(git branch --show-current)"
+	printf "%s revision.is(): sha1:%s\n" "-" "$$(git rev-parse HEAD)"
+	printf "%s location.is(): %s\n" "-" "$$(python -c "$$(printf "from pathlib import Path; g = '.git'; o = p = c = Path().resolve(); x = lambda p, c, g: (c, c.parent if not (c / g).is_dir() else c); _ , c = x(p, c, g);|while c != p and str(c) != '/': p, c = x(p, c, g);|print(f'(orga/repo=\\\'{c.parent.name}/{c.name}\\\', rel-path=\\\'{o.relative_to(c)}\\\')' if c == p else '(orga/repo=\\\'?/?\\\', rel-path=\\\'?\\\')')" | tr '|' '\n')")"
+	printf "%s node.id(): '%s'\n" "-" "$$(python -c 'import platform; import uuid; print(str(uuid.uuid3(uuid.NAMESPACE_DNS, platform.node())))')"
+
+.PHONY: name
+name: clone-info
