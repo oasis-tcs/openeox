@@ -26,7 +26,7 @@ EoX Core Full Validator
 :    An EoX Core Extended Validator that additionally performs guidance tests.
 
 EoX Core Information
-:    An EoX information in the format defined by this document.
+:    Information about end-of-anything in the format defined by this document.
 
 EoX Core Library
 :    A library that implements OpenEoX Core data capabilities.
