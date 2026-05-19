@@ -34,7 +34,7 @@ EoX Core Library
 EoX Core Library with Basic Validation
 :    An EoX Core Library that also satisfies the conformance target "EoX Core Basic Validator".
 
-OpenEoX Core Library with Extended Validation
+EoX Core Library with Extended Validation
 :    An EoX Core Library that also satisfies the conformance target "EoX Core Extended Validator".
 
 EoX Core Library with Full Validation

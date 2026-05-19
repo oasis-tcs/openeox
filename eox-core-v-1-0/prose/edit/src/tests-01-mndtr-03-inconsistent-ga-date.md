@@ -1,6 +1,6 @@
 ### Inconsistent GA Date
 
-It MUST be tested that the `general_availability` is earlier than or equal to any other date value in the OpenEoX Core Information.
+It MUST be tested that the `general_availability` is earlier than or equal to any other date value in the EoX Core Information.
 The property `last_updated` is ignored in this test.
 As the timestamps might use different timezones, the sorting MUST take timezones into account.
 The test MUST be skipped if the value of `general_availability` is `tba`.
