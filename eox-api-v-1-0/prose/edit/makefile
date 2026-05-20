@@ -117,15 +117,27 @@ diff-pdf:
 
 .PHONY: clean
 clean:
-	rm -f $(build_root)approvals.yml \
-	  $(build_root)bind.txt \
-	  $(build_root)bookmatter.tex.in \
-	  $(build_root)changes.yml \
-	  $(build_root)driver.tex.in \
-	  $(build_root)meta.yml \
-	  $(build_root)metadata.tex.in \
-	  $(build_root)patch.yml \
-	  $(build_root)publisher.tex.in \
-	  $(build_root)setup.tex.in \
-	  $(build_root)structure.yml
-	rm -fr $(build_root)src/ $(build_pdf)
+	rm -rf `find . -name __pycache__`
+	rm -f `find . -type f -name '*.py[co]' `
+	rm -f `find . -type f -name '*~' `
+	rm -f `find . -type f -name '.*~' `
+	rm -rf .cache .*_cache
+	rm -f .DS_Store
+	rm -fr $(build_root)
+	mkdir -p $(build_root)
+
+.PHONY: distclean
+distclean: clean
+	rm -fr $(build_root)
+
+.PHONY: clone-info
+clone-info:
+	printf "Clone-info:\n"
+	printf "%s name.is(): '%s'\n" "-" "$$(basename `git rev-parse --show-toplevel`)"
+	printf "%s branch.is(): '%s'\n" "-" "$$(git branch --show-current)"
+	printf "%s revision.is(): sha1:%s\n" "-" "$$(git rev-parse HEAD)"
+	printf "%s location.is(): %s\n" "-" "$$(python -c "(lambda _Y: (lambda _mod: (lambda Path: (lambda g: [(lambda x: [(lambda c, p: (lambda _loop1: _loop1(c, p))(_Y(lambda _loop1: (lambda c, p: ([_loop1(c, p) for (p, c) in [x(p, c, g)]][0]) if (c != p) and (str(c) != '/') else print((f\"(orga/repo='{c.parent.name}/{c.name}', rel-path='{o.relative_to(c)}')\" if (c == p) else \"(orga/repo='?/?', rel-path='?')\"))))))(c if 'c' in dir() else None, p if 'p' in dir() else None) for (_, c) in [x(p, c, g)]][0])(lambda p, c, g: (c, c.parent if not (c / g).is_dir() else c)) for o, p, c in [[Path().resolve()] * 3]][0])('.git'))(_mod.Path))(__import__('pathlib', {}, {}, ['Path'])))((lambda f: (lambda x: x(x))(lambda y: f(lambda *args: y(y)(*args)))))")"
+	printf "%s node.id(): '%s'\n" "-" "$$(python -c 'import platform; import uuid; print(str(uuid.uuid3(uuid.NAMESPACE_DNS, platform.node())))')"
+
+.PHONY: name
+name: clone-info
