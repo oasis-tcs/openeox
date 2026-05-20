@@ -12,15 +12,15 @@ This document defines requirements for the file format and for certain software 
 The entities ("conformance targets") for which this document defines requirements are:
 
 * **EoX Core Information**: Information about end-of-anything in the format defined by this document.
-* **Producer**: A program which emits output in the EoX Core format.
+* **Producer**: A program which emits output in the OpenEoX Core format.
 * **Consumer**: A program that reads and interprets EoX Core Information.
-* **Viewer**: An EoX Consumer that reads EoX Core Information, displays a list of the results it contains,
+* **Viewer**: An Consumer that reads EoX Core Information, displays a list of the results it contains,
   and allows an end user to view each result in the context of the artifact in which it occurs.
-* **Viewer Recommending Actions**: An EoX Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
+* **Viewer Recommending Actions**: A Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
 * **Validator Basic**: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
 * **Validator Extended**: A Validator Basic that additionally performs recommended tests.
 * **Validator Full**: A Validator Extended that additionally performs guidance tests.
-* **Library**: A library that implements EoX Core data capabilities.
+* **Library**: A library that implements OpenEoX Core data capabilities.
 * **Library with Basic Validation**: A Library that also satisfies the conformance target "Validator Basic".
 * **Library with Extended Validation**: A Library that also satisfies the conformance target "Validator Extended".
 * **Library with Full Validation**: A Library that also satisfies the conformance target "Validator Full".
@@ -268,6 +268,6 @@ A program satisfies the "Merger" conformance profile if the program:
 
 A program MAY implement other algorithms than defined here, if and only if, the results are guaranteed to be the same.
 
-An Merger MAY choose to make that information also available in other data formats.
+A Merger MAY choose to make that information also available in other data formats.
 
 -------
