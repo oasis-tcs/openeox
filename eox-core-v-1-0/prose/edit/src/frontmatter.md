@@ -30,7 +30,7 @@ https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf
 [OASIS OpenEoX TC](https://www.oasis-open.org/tc-openeox/)
 
 ### Chairs
-Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
+Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
 Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/) \
 
 ### Secretaries

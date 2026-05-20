@@ -17,7 +17,7 @@ The following individuals were members of the OASIS OpenEoX Technical Committee 
 The following individuals have had significant leadership positions during the development of this document, not just this version of the document, and they are gratefully acknowledged:
 
 * Chairs:
-  * Co-Chair, Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov)
+  * Co-Chair, Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov)
   * Co-Chair, Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/)
 
 * Secretaries:
