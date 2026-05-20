@@ -1,7 +1,7 @@
 
 ![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
--------
+---
 
 # OpenEoX Core Schema Version 1.0
 
@@ -39,7 +39,7 @@ Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/)
 
 ### Editors
 
-Jautau White (jaywhite@microsoft.com), Microsoft Corporation \
+Jautau White (jaywhite@microsoft.com), [Microsoft Corporation](https://microsoft.com/) \
 Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/) \
 Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Security (BSI) Germany](https://www.bsi.bund.de/)
 
@@ -47,15 +47,15 @@ Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Sec
 
 This prose specification is one component of a Work Product that also includes:
 
-* OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
+- OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json.
-* OpenEoX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
+- OpenEoX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json.
 
 ### Declared JSON namespaces
 
-* [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json)
-* [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json)
+- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json)
+- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json)
 
 ### Abstract
 

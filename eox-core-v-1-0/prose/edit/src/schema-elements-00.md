@@ -17,8 +17,8 @@ The schema identifier is:
 
 The further documentation of the schema is organized via Definitions and Properties.
 
-* Definitions provide types that extend the JSON schema model
-* Properties use these types to support assembling OpenEoX core information
+- Definitions provide types that extend the JSON schema model
+- Properties use these types to support assembling OpenEoX core information
 
 Types and properties together provide the vocabulary for the domain specific language supporting OpenEoX information.
 
