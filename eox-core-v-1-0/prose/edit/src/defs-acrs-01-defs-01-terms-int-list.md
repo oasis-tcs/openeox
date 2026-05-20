@@ -1,3 +1,9 @@
+Comparator
+:    A program that compares EoX Core Information and returns the newer one.
+
+Consumer
+:    A program that reads and interprets EoX Core Information.
+
 End-of-Life (EoL)
 :    indicates the last day when the particular product (or the product version/release) is officially supported in any way by the vendor.
 
@@ -7,57 +13,58 @@ End-of-Sales (EoS)
 End-of-Security-Support (EoSSec)
 :    indicates the last day when the vendor has committed to providing security remediations for the particular product (or the product version/release).
 
+EoX Core Information
+:    Information about end-of-anything in the format defined by this document.
+
+Differ
+:    A program that compares EoX Core Information and calculates the changes.
+
 General Availability (GA)
 :    indicates the first day when the particular product (or the product version/release) is officially launched and made accessible to the general public or through its intended distribution channels.
+
+Library
+:    A library that implements OpenEoX Core data capabilities.
+
+Library with Basic Validation
+:    A Library that also satisfies the conformance target "Validator Basic".
+
+Library with Extended Validation
+:    A Library that also satisfies the conformance target "Validator Extended".
+
+Library with Full Validation
+:    A Library that also satisfies the conformance target "Validator Full".
+
+Merger
+:    A program that combines EoX Core Information.
+
+Producer
+:    A program which emits output in the OpenEoX Core format.
 
 Product Life Cycle
 :    describes for a product type (software, hardware, managed service and other deliverables) the model it can be associated with.
 It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention.
 
-OpenEoX Core Basic Validator
-:    A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
-
-OpenEoX Core Comparator
-:    A program that compares OpenEoX Core Information and returns the newer one.
-
-OpenEoX Core Consumer
-:    A program that reads and interprets OpenEoX Core Information.
-
-OpenEoX Core Differ
-:    A program that compares OpenEoX Core Information and calculates the changes.
-
-OpenEoX Core Extended Validator
-:    A OpenEoX Core Basic Validator that additionally performs recommended tests.
-
-OpenEoX Core Full Validator
-:    A OpenEoX Core Extended Validator that additionally performs guidance tests.
-
-OpenEoX Core Information
-:    An EoX information in the format defined by this document.
-
-OpenEoX Core Library
-:    A library that implements OpenEoX Core data capabilities.
-
-OpenEoX Core Library with Basic Validation
-:    A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Basic Validator".
-
-OpenEoX Core Library with Extended Validation
-:    A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Extended Validator".
-
-OpenEoX Core Library with Full Validation
-:    A OpenEoX Core Library that also satisfies the conformance target "OpenEoX Core Full Validator".
-
-OpenEoX Core Merger
-:    A program that combines OpenEoX Core Information.
-
-OpenEoX Core Producer
-:    A program which emits output in the OpenEoX Core format.
-
-OpenEoX Core Sorter
-:    A program that sorts OpenEoX Core Information from newest to oldest or vice versa.
-
 Redactable Property
-:    property that potentially contains sensitive information that a OpenEoX Producer might wish to redact.
+:    property that potentially contains sensitive information that an EoX Producer might wish to redact.
+
+Sorter
+:    A program that sorts EoX Core Information from newest to oldest or vice versa.
 
 Taxonomy
 :    classification of product life cycle stages into a set of categories.
+
+Validator Basic
+:    A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
+
+Validator Extended
+:    A Validator Basic that additionally performs recommended tests.
+
+Validator Full
+:    A Validator Extended that additionally performs guidance tests.
+
+Viewer
+:    A Consumer that reads EoX Core Information, displays a list of the results it contains,
+and allows an end user to view each result in the context of the artifact in which it occurs.
+
+Viewer Recommending Actions
+:    A Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
