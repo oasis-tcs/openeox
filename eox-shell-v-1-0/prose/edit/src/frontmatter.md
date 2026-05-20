@@ -26,7 +26,7 @@ https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.pdf
 [OASIS OpenEoX TC](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa)
 
 #### Chairs:
-Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
+Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
 Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/) \
 
 #### Editors:
