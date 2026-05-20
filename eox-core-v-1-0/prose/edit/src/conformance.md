@@ -16,14 +16,14 @@ The entities ("conformance targets") for which this document defines requirement
 * **Consumer**: A program that reads and interprets EoX Core Information.
 * **Viewer**: An EoX Consumer that reads EoX Core Information, displays a list of the results it contains,
   and allows an end user to view each result in the context of the artifact in which it occurs.
-* **Recommending Viewer**: An EoX Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
-* **Basic Validator**: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
-* **Extended Validator**: A Basic Validator that additionally performs recommended tests.
-* **Full Validator**: A Extended Validator that additionally performs guidance tests.
+* **Viewer Recommending Actions**: An EoX Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
+* **Validator Basic**: A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
+* **Validator Extended**: A Validator Basic that additionally performs recommended tests.
+* **Validator Full**: A Validator Extended that additionally performs guidance tests.
 * **Library**: A library that implements EoX Core data capabilities.
-* **Library with Basic Validation**: A Library that also satisfies the conformance target "Basic Validator".
-* **Library with Extended Validation**: A Library that also satisfies the conformance target "Extended Validator".
-* **Library with Full Validation**: A Library that also satisfies the conformance target "Full Validator".
+* **Library with Basic Validation**: A Library that also satisfies the conformance target "Validator Basic".
+* **Library with Extended Validation**: A Library that also satisfies the conformance target "Validator Extended".
+* **Library with Full Validation**: A Library that also satisfies the conformance target "Validator Full".
 * **Differ**: A program that compares EoX Core Information and calculates the changes.
 * **Comparator**: A program that compares EoX Core Information and returns the newer one.
 * **Sorter**: A program that sorts EoX Core Information from newest to oldest or vice versa.
@@ -75,9 +75,9 @@ For each value of type `/$defs/eox_timestamp_t` that does not conform to [cite](
 
 > A tool MAY provide an option to suppress dates with value `tba`.
 
-### Conformance Clause 5: Recommending Viewer
+### Conformance Clause 5: Viewer Recommending Actions
 
-A viewer satisfies the "Recommending Viewer" conformance profile if the viewer fulfills the following groups of requirements:
+A viewer satisfies the "Viewer Recommending Actions" conformance profile if the viewer fulfills the following groups of requirements:
 
 The viewer:
 
@@ -93,7 +93,7 @@ The viewer:
 
 * still provides the date and change interpretation, if no action mapping is available.
 
-The Recommending Viewer SHOULD:
+The Viewer Recommending Actions SHOULD:
 
 * indicate that the action is not specified by this specification, if no action mapping is available.
 
@@ -106,42 +106,42 @@ The Recommending Viewer SHOULD:
   * EoL: All vendor support ends.
     _Recommended action_: complete replacement or decommissioning of affected deployments.
 
-An Recommending Viewer MAY use different action mappings or expand on the recommended actions.  
+An Viewer Recommending Actions MAY use different action mappings or expand on the recommended actions.  
 
-### Conformance Clause 6: Basic Validator
+### Conformance Clause 6: Validator Basic
 
-A program satisfies the "Basic Validator" conformance profile if the program:
+A program satisfies the "Validator Basic" conformance profile if the program:
 
 * reads JSON objects and performs a check against the JSON schema.
 * performs all mandatory tests as given in section [sec](#mandatory-tests).
 * does not change the EoX Core Information.
 
-A Basic Validator MAY provide one or more additional functions:
+A Validator Basic MAY provide one or more additional functions:
 
 * Only run one or more selected mandatory tests.
 * Apply quick fixes as specified in the standard.
 * Apply additional quick fixes as implemented by the vendor.
 
-### Conformance Clause 7: Extended Validator
+### Conformance Clause 7: Validator Extended
 
-A Basic Validator satisfies the "Extended Validator" conformance profile if the Basic Validator:
+A Validator Basic satisfies the "Validator Extended" conformance profile if the Validator Basic:
 
-* satisfies the "Basic Validator" conformance profile.
+* satisfies the "Validator Basic" conformance profile.
 * additionally performs all recommended tests as given in section [sec](#recommended-tests).
 * provides a function that allows to specify tests for which test results of warning are reported as error.
 
-A Extended Validator MAY provide an additional function to only run one or more selected recommended tests.
+A Validator Extended MAY provide an additional function to only run one or more selected recommended tests.
 
-### Conformance Clause 8: Full Validator
+### Conformance Clause 8: Validator Full
 
-A Extended Validator satisfies the "Full Validator" conformance profile if the Extended Validator:
+A Validator Extended satisfies the "Validator Full" conformance profile if the Validator Extended:
 
-* satisfies the "Extended Validator" conformance profile.
+* satisfies the "Validator Extended" conformance profile.
 * additionally performs all guidance tests as given in section [sec](#informative-tests).
 * provides a function that allows to specify tests for which test results of information are reported as warning.
 * provides a function that allows to specify tests for which test results of information are reported as error.
 
-A Full Validator MAY provide an additional function to only run one or more selected guidance tests.
+A Validator Full MAY provide an additional function to only run one or more selected guidance tests.
 
 ### Conformance Clause 9: Library
 
@@ -163,45 +163,46 @@ A library satisfies the "Library" conformance profile if the library:
 The library MAY implement an option to retrieve the keys unsorted.
 
 ### Conformance Clause 10: Library with Basic Validation
+
 A Library satisfies the "Library with Basic Validation" conformance profile if the Library:
 
 * satisfies the "Library" conformance profile.
-* satisfies the "Basic Validator" conformance profile.
-* validates the EoX Core Information before output according to the "Basic Validator" and
+* satisfies the "Validator Basic" conformance profile.
+* validates the EoX Core Information before output according to the "Validator Basic" and
   presents the validation result accordingly.
-* provide a function to validate the data structure in its current state according to the "Basic Validator"
+* provide a function to validate the data structure in its current state according to the "Validator Basic"
   and presents the validation result accordingly.
 
 A Library does not satisfies the "Library with Basic Validation" conformance profile if the EoX Core
-Library uses an external library or program for the "Basic Validator" part and does not enforce its presence.
+Library uses an external library or program for the "Validator Basic" part and does not enforce its presence.
 
 ### Conformance Clause 11: Library with Extended Validation
 
 A Library satisfies the "Library with Extended Validation" conformance profile if the Library:
 
 * satisfies the "Library" conformance profile.
-* satisfies the "Extended Validator" conformance profile.
-* validates the EoX Core Information before output according to the "Extended Validator" and
+* satisfies the "Validator Extended" conformance profile.
+* validates the EoX Core Information before output according to the "Validator Extended" and
   presents the validation result accordingly.
-* provide a function to validate the data structure in its current state according to the "Extended Validator"
+* provide a function to validate the data structure in its current state according to the "Validator Extended"
   and presents the validation result accordingly.
 
 A Library does not satisfies the "Library with Extended Validation" conformance profile if the EoX Core
-Library uses an external library or program for the "Extended Validator" part and does not enforce its presence.
+Library uses an external library or program for the "Validator Extended" part and does not enforce its presence.
 
 ### Conformance Clause 12: Library with Full Validation
 
 A Library satisfies the "Library with Extended Validation" conformance profile if the Library:
 
 * satisfies the "Library" conformance profile.
-* satisfies the "Full Validator" conformance profile.
-* validates the EoX Core Information before output according to the "Full Validator" and
+* satisfies the "Validator Full" conformance profile.
+* validates the EoX Core Information before output according to the "Validator Full" and
   presents the validation result accordingly.
-* provide a function to validate the data structure in its current state according to the "Full Validator" and
+* provide a function to validate the data structure in its current state according to the "Validator Full" and
   presents the validation result accordingly.
 
 A Library does not satisfies the "Library with Full Validation" conformance profile if the EoX Core
-Library uses an external library or program for the "Full Validator" part and does not enforce its presence.
+Library uses an external library or program for the "Validator Full" part and does not enforce its presence.
 
 ### Conformance Clause 13: Differ
 
