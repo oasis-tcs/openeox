@@ -1,13 +1,13 @@
 
 ![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
--------
+---
 
 # OpenEoX Core Schema Version 1.0
 
 ## Committee Specification Draft 01
 
-## 15 March 2026
+## 20 May 2026
 
 ### This Version
 
@@ -30,7 +30,7 @@ https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf
 [OASIS OpenEoX TC](https://www.oasis-open.org/tc-openeox/)
 
 ### Chairs
-Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
+Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
 Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/) \
 
 ### Secretaries
@@ -39,7 +39,7 @@ Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/)
 
 ### Editors
 
-Jautau White (jaywhite@microsoft.com), Microsoft Corporation \
+Jautau White (jaywhite@microsoft.com), [Microsoft Corporation](https://microsoft.com/) \
 Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/) \
 Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Security (BSI) Germany](https://www.bsi.bund.de/)
 
@@ -47,15 +47,15 @@ Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Sec
 
 This prose specification is one component of a Work Product that also includes:
 
-* OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
+- OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json.
-* OpenEoX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
+- OpenEoX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json.
 
 ### Declared JSON namespaces
 
-* [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json)
-* [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json)
+- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json)
+- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json)
 
 ### Abstract
 
@@ -71,7 +71,7 @@ When referencing this document, the following citation format should be used:
 
 _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-15 March 2026.
+20 May 2026.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.\
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html

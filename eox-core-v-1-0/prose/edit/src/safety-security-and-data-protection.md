@@ -13,4 +13,4 @@ are repeated here as service for the reader:
 > This generally constitutes an unacceptable security risk, since the text could contain executable code along with data declarations.
 > The same consideration applies to the use of eval()-like functions in any other programming language in which JSON texts conform to that language's syntax.
 
--------
+---
