@@ -12,4 +12,4 @@ life cycle information across vendor ecosystems and consumer applications.
 Product identification - the binding of life cycle milestone information to a specific product -
 is addressed by complementary specifications such as OpenEoX Shell and is therefore out of scope of this document.
 
--------
+---
