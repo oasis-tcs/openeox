@@ -1,7 +1,7 @@
 
 ![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
--------
+---
 
 # OpenEoX Shell Schema Version 1.0
 
@@ -26,11 +26,11 @@ https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.pdf
 [OASIS OpenEoX TC](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa)
 
 #### Chairs:
-Justin Murphy (justin.murphy@mail.cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
+Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
 Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/) \
 
 #### Editors:
-Jautau White (jaywhite@microsoft.com), Microsoft Corporation \
+Jautau White (jaywhite@microsoft.com), [Microsoft Corporation](https://microsoft.com/) \
 Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/) \
 Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Security (BSI) Germany](https://www.bsi.bund.de/)
 
@@ -74,7 +74,7 @@ When referencing this specification the following citation format should be used
 
 _OpenEoX Shell Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-DD MONTH 2025.
+16 July 2025.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-shell/v1.0/csd01/eox-shell-v1.0-csd01.html. Latest stage: https://docs.oasis-open.org/openeox/eox-shell/v1.0/eox-shell-v1.0.html
 
@@ -88,4 +88,4 @@ The name "OASIS" is a trademark of [OASIS](https://www.oasis-open.org/), the own
 
 For complete copyright information please see the full Notices section in [Appendix E](#appendix-e-notices).
 
--------
+---
