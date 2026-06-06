@@ -78,11 +78,9 @@ render-pdf:
 	command -v etiketti >/dev/null 2>&1 || { echo >&2 "make render-pdf requires etiketti but it's not installed - you can install per pip install etiketti.  Aborting."; exit 1; }
 	command -v qpdf >/dev/null 2>&1 || { echo >&2 "make render-pdf requires qpdf but it's not installed - you can search the internets on how to install qpdf.  Aborting."; exit 1; }
 	bin/lapidify.py --target $(target_pdf) && \
-		mkdir -p $(build_pdf) && \
+		mkdir -p $(build_root)/images $(build_pdf)images/ && \
 		printf "pdf.md\n" > $(build_root)bind.txt && \
-		mkdir -p $(build_root)/images/ && \
 		cp -a ../media/OASISLogo-v3.0.png $(build_root)images/ && \
-		mkdir -p $(build_pdf)images/ && \
 		cp -a ../media/OASISLogo-v3.0.png $(build_pdf)images/ && \
 		cp -a $(liitos_templates)approvals.yml $(build_root) && \
 		cp -a $(liitos_templates)bookmatter.tex.in $(build_root) && \
