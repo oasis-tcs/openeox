@@ -20,7 +20,7 @@ The latter enables separation of concerns as it allows other standards, specific
 and product-specific implementations to import and reference the OpenEoX Core schema.
 This enables consistency and interoperability across different implementations.
 
-The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json>
+The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json>
 
 The schema elements and their expected usage patterns are detailed in subsequent sections.
 

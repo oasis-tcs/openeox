@@ -24,7 +24,7 @@ N/A
 
 \paragraph*{Latest Version:}\label{latest-stage}
 
-\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md}{https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.md}
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md}
 (Authoritative)\\
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html}\\
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf}
@@ -59,9 +59,9 @@ includes:
 \tightlist
 \item
   EoX Core JSON schema:
-  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json}.\\
+  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json}.\\
   Latest stage:
-  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}.
+  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}.
 \item
   EoX Meta JSON schema:
   \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json}.\\
@@ -74,7 +74,7 @@ includes:
 \begin{itemize}
 \tightlist
 \item
-  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json}
+  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}
 \item
   \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}
 \end{itemize}

@@ -9,6 +9,7 @@
     </title>
     <style>
     
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
@@ -400,7 +401,7 @@
     </h3>
     <p>
       Justin Murphy (<a href="mailto:justin.murphy@cisa.dhs.gov">justin.murphy@cisa.dhs.gov</a>), <a href="https://www.cisa.gov">DHS Cybersecurity and Infrastructure Security Agency (CISA)</a><br />
-      Omar Santos (<a href="mailto:osantos@cisco.com">osantos@cisco.com</a>), <a href="https://cisco.com/">Cisco Systems</a> \
+      Omar Santos (<a href="mailto:osantos@cisco.com">osantos@cisco.com</a>), <a href="https://cisco.com/">Cisco Systems</a>
     </p>
     <h3 id="secretaries">
       Secretaries
@@ -423,8 +424,8 @@
       This prose specification is one component of a Work Product that also includes:
     </p>
     <ul>
-      <li>OpenEoX Core JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json</a>.<br />
-        Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json</a>.
+      <li>OpenEoX Core JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json</a>.<br />
+        Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json</a>.
       </li>
       <li>OpenEoX Meta JSON schema: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json</a>.<br />
         Latest stage: <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json</a>.
@@ -435,10 +436,10 @@
     </h3>
     <ul>
       <li>
-        <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json"><span>https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json</span></a>
+        <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json</a>
       </li>
       <li>
-        <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json"><span>https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json</span></a>
+        <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json</a>
       </li>
     </ul>
     <h3 id="abstract">
@@ -1161,7 +1162,7 @@
       OpenEoX Core schema. This enables consistency and interoperability across different implementations.
     </p>
     <p>
-      The OpenEoX Core schema is defined at <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json</a>
+      The OpenEoX Core schema is defined at <a href="https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json">https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json</a>
     </p>
     <p>
       The schema elements and their expected usage patterns are detailed in subsequent sections.
@@ -1411,7 +1412,7 @@
     <p>
       The OpenEoX Core Schema (<code>$schema</code>) of value type <code>string</code> and <code>const</code> specifies the schema the JSON object must be valid against. The single valid value for this <code>const</code> is:
     </p>
-    <pre><code>  https://docs.oasis-open.org/openeox/v1.0/schema/core.json</code></pre>
+    <pre><code>  https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json</code></pre>
     <blockquote>
       <p>
         This value allows for tools to identify that a JSON document is meant to be valid against this schema. Tools can use that to support users by automatically checking whether the OpenEoX Core Object adheres to the JSON schema identified by this URL.

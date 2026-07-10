@@ -30,8 +30,9 @@ https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf
 [OASIS OpenEoX TC](https://www.oasis-open.org/tc-openeox/)
 
 ### Chairs
+
 Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
-Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/) \
+Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/)
 
 ### Secretaries
 
@@ -47,15 +48,15 @@ Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Sec
 
 This prose specification is one component of a Work Product that also includes:
 
-- OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
-Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json.
+- OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json. \
+Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json.
 - OpenEoX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json.
 
 ### Declared JSON namespaces
 
-- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json)
-- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json)
+- <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json>
+- <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json>
 
 ### Abstract
 
@@ -451,7 +452,7 @@ The latter enables separation of concerns as it allows other standards, specific
 and product-specific implementations to import and reference the OpenEoX Core schema.
 This enables consistency and interoperability across different implementations.
 
-The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json>
+The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json>
 
 The schema elements and their expected usage patterns are detailed in subsequent sections.
 
@@ -679,7 +680,7 @@ The OpenEoX Core Schema (`$schema`) of value type `string` and `const` specifies
 The single valid value for this `const` is:
 
 ```
-  https://docs.oasis-open.org/openeox/v1.0/schema/core.json
+  https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json
 ```
 
 > This value allows for tools to identify that a JSON document is meant to be valid against this schema.

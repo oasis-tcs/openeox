@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ORIG_SCHEMA=eox-core-v-1-0/schema/eox-core.json
+ORIG_SCHEMA=eox-core-v-1-0/schema/core.json
 META_SCHEMA=eox-core-v-1-0/schema/meta.json
 VALIDATOR=eox-core-v-1-0/test/validator.py
 STRICT_GENERATOR=eox-core-v-1-0/test/generate_strict_schema.py
