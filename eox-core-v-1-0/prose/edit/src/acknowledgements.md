@@ -1,12 +1,5 @@
-<!--
----
-toc:
-  auto: false
-  label: Acknowledgments
-  enumerate: Appendix 1
----
--->
-# Acknowledgments
+
+# Appendix 1. Acknowledgments
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
@@ -32,12 +25,12 @@ The following individuals have had significant leadership positions during the d
 
 The following individuals have made substantial contributions to this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
-tbd
+- \< Will be filled in at CS01 \>
 
 ## Participants
 
 The following individuals were members of this committee during the creation of this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
-tbd
+- \< Will be filled in at CS01 \>
 
 ---

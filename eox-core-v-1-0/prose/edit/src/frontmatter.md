@@ -7,19 +7,19 @@
 
 ## Committee Specification Draft 01
 
-## 20 May 2026
+## 13 July 2026
 
-### This Version
+### This Stage
 
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.md (Authoritative) \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.pdf
 
-### Previous Version
+### Previous Stage
 
 N/A
 
-### Latest Version
+### Latest Stage
 
 https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md (Authoritative) \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html \
@@ -60,9 +60,8 @@ Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json
 
 ### Abstract
 
-The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to
-managing and sharing General Availability (GA), End-of-Sales (EoS), End-of-Life (EoL), and
-End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
+The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to managing and sharing General Availability (GA),
+End-of-Sales (EoS), End-of-Life (EoL), and End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
 
 ### Citation Format
 
@@ -72,7 +71,7 @@ When referencing this document, the following citation format should be used:
 
 _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-20 May 2026.
+13 July 2026.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.\
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html

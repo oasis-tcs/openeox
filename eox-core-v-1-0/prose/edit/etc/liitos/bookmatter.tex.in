@@ -9,67 +9,58 @@
 
 \subsection*{Committee Specification Draft 01}\label{committee-specification-draft-01}
 
-\subsection*{20 May 2026}\label{pub-date}
+\subsection*{13 July 2026}\label{pub-date}
 
-\paragraph*{This Version:}\label{this-stage}
+\paragraph*{This Stage}\label{this-stage}
 
-\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.md}{https://docs.oasis-open.org/openeox/eox-core/v2.1/csd01/eox-core-v1.0-csd01.md}
-(Authoritative)\\
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.md}{https://docs.oasis-open.org/openeox/eox-core/v2.1/csd01/eox-core-v1.0-csd01.md} (Authoritative)\\
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v2.1/csd01/eox-core-v1.0-csd01.html}\\
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.pdf}{https://docs.oasis-open.org/openeox/eox-core/v2.1/csd01/eox-core-v1.0-csd01.pdf}
 
-\paragraph*{Previous Version:}\label{previous-stage}
+\paragraph*{Previous Stage}\label{previous-stage}
 
 N/A
 
-\paragraph*{Latest Version:}\label{latest-stage}
+\paragraph*{Latest Stage}\label{latest-stage}
 
-\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md}
-(Authoritative)\\
+\href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md} (Authoritative)\\
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html}\\
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf}
 
-\paragraph*{Technical Committee:}\label{technical-committee}
+\paragraph*{Technical Committee}\label{technical-committee}
 
 \href{https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa}{OASIS OpenEoX TC}
 
-\paragraph*{Chair:}\label{chair}
+\paragraph*{Chairs}\label{chairs}
 
-Justin Murphy (justin.murphy@cisa.dhs.gov),
-\href{https://www.cisa.gov}{DHS Cybersecurity and Infrastructure Security Agency (CISA)} \\
-Omar Santos (osantos@cisco.com),
-\href{https://cisco.com/}{Cisco Systems}
+Justin Murphy (justin.murphy@cisa.dhs.gov), \href{https://www.cisa.gov}{DHS Cybersecurity and Infrastructure Security Agency (CISA)} \\
+Omar Santos (osantos@cisco.com), \href{https://cisco.com/}{Cisco Systems}
 
-\paragraph*{Editors:}\label{editors}
+\paragraph*{Secretaries}\label{secretaries}
 
-Jautau White (jaywhite@microsoft.com),
-\href{https://microsoft.com/}{Microsoft Corporation}\\
-Stefan Hagen (stefan@hagen.link),
-\href{https://stefan-hagen.website/}{Individual}\\
-Thomas Schmidt (thomas.schmidt@bsi.bund.de),
-\href{https://www.bsi.bund.de/}{Federal Office for Information Security
-(BSI) Germany}
+Stefan Hagen (stefan@hagen.link), \href{https://stefan-hagen.website/}{Individual}
 
-\paragraph*{Additional artifacts:}\label{additional-artifacts}
+\paragraph*{Editors}\label{editors}
 
-This prose specification is one component of a Work Product that also
-includes:
+Jautau White (jaywhite@microsoft.com), \href{https://microsoft.com/}{Microsoft Corporation}\\
+Stefan Hagen (stefan@hagen.link), \href{https://stefan-hagen.website/}{Individual}\\
+Thomas Schmidt (thomas.schmidt@bsi.bund.de), \href{https://www.bsi.bund.de/}{Federal Office for Information Security (BSI) Germany}
+
+\paragraph*{Additional artifacts}\label{additional-artifacts}
+
+This prose specification is one component of a Work Product that also includes:
 
 \begin{itemize}
 \tightlist
 \item
-  EoX Core JSON schema:
-  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json}.\\
-  Latest stage:
-  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}.
+  EoX Core JSON schema: \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json}.\\
+  Latest stage: \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json}.
 \item
-  EoX Meta JSON schema:
-  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json}.\\
-  Latest stage:
-  \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}.
+  EoX Meta JSON schema: \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json}.\\
+  Latest stage: \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}.
 \end{itemize}
 
-\paragraph*{Declared JSON namespaces:}\label{declared-json-namespaces}
+\paragraph*{Declared JSON namespaces}\label{declared-json-namespaces}
 
 \begin{itemize}
 \tightlist
@@ -79,26 +70,22 @@ includes:
   \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}{https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json}
 \end{itemize}
 
-\paragraph*{Abstract:}\label{abstract}
+\paragraph*{Abstract}\label{abstract}
 
-The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to
-managing and sharing General Availability (GA), End-of-Sales (EoS), End-of-Life (EoL), and
-End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
+The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to managing and sharing General Availability (GA),
+End-of-Sales (EoS), End-of-Life (EoL), and End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
 
-\paragraph*{Citation Format:}\label{citation-format}
+\paragraph*{Citation Format}\label{citation-format}
 
-When referencing this specification the following citation format should
-be used:
+When referencing this specification the following citation format should be used:
 
 \textbf{{[}EoX-Core-v1.0{]}}
 
-\emph{OpenEoX Core Schema Version 1.0}. Edited by Jautau White, Stefan
-Hagen, and Thomas Schmidt. 20 May 2026. OASIS Committee Specification
-Draft 01.
+\emph{OpenEoX Core Schema Version 1.0}. Edited by Jautau White, Stefan Hagen, and Thomas Schmidt. 13 July 2026. OASIS Committee Specification Draft 01.
 \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html}.\\
 Latest stage: \href{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0-csd01.html}{https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0-csd01.html}.
 
-\paragraph*{Related Work:}\label{related-work}
+\paragraph*{Related Work}\label{related-work}
 
 This document replaces or supersedes:
 
@@ -112,5 +99,4 @@ N/A
 
 Copyright \textcopyright\ OASIS Open 2026. All Rights Reserved.
 
-For license and copyright information, and complete status, please see \hyperref[annex-a]{Annex A}
-which contains the License, Document Status and Notices.
+For license and copyright information, and complete status, please see \hyperref[annex-a]{Annex A} which contains the License, Document Status and Notices.

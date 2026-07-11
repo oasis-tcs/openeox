@@ -1,0 +1,38 @@
+section-type-prefixes: [Annex, Appendix]
+binder: bind.txt
+binder-ignores:
+  gfm-plus:
+  - table-of-contents.md
+  html: []
+  pdf:
+  - frontmatter.md
+  - table-of-contents.md
+build-path: build
+citation-skip-prefixes: []
+citation-sources:
+- references-01-norm-01-list.md
+- references-02-info-01-list.md
+delete-when: []
+etc-path: etc
+example-local-to-global-db: example-local-to-global.json
+example-global-to-local-db: example-global-to-local.json
+first-authored-section: '# Scope'
+glossary-sources:
+- defs-acrs-01-defs-01-terms-ext-list.md
+- defs-acrs-01-defs-01-terms-int-list.md
+html-title: OpenEoX Core Schema Version 1.0
+meta-example-global-number: 4321
+section-display-to-label-db: section-display-to-label.json
+section-display-to-text-db: section-display-to-text.json
+section-label-to-display-db: section-label-to-display.json
+section-reference-style: number
+source-path: src
+track-examples: true
+html-inject:
+  css-base: ../share/style/base.css
+  css-skin: ../share/style/skin.css
+  images: false
+  intro-trigger: '<h1 id="1-scope'
+  logo-data-url: ../media/logo-data-url.txt
+  logo-remote-url: 'https://docs.oasis-open.org/templates/OASISLogo-v3.0.png'
+  toc-trigger: '<h1 id="table-of-contents'
