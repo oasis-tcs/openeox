@@ -48,15 +48,15 @@ render: render-html
 sections:
 	python -m nide harvest
 
-.PHONY: render-markdown
-render-markdown: sections
+.PHONY: gfm-plus
+gfm-plus: sections
 	python -m nide assemble -t $(target_gfm_plus) && \
 	  cp -a build/tmp.md $(out_gfm_plus) && \
 	  printf "Rendered user facing delivery item in markdown format:\n" && \
 	  ls -l $(out_gfm_plus)
 
-.PHONY: render-html
-render-html: render-markdown
+.PHONY: html
+render-html: gfm-plus
 	command -v pandoc >/dev/null 2>&1 || { echo >&2 "make render-html requires pandoc but it's not installed - you can get help on installing at https://pandoc.org.  Aborting."; exit 1; }
 	command -v tidy >/dev/null 2>&1 || { echo >&2 "make render-html requires tidy but it's not installed - you can get help on installing by searching for it on the wild internets.  Aborting."; exit 1; }
 	python -m nide assemble -t html && \
@@ -68,8 +68,8 @@ render-html: render-markdown
 	  printf "Rendered user facing delivery item in html format:\n" && \
 	  ls -l $(out_html)
 
-.PHONY: render-pdf
-render-pdf:
+.PHONY: deprecated-pdf
+deprecated-pdf:
 	command -v liitos >/dev/null 2>&1 || { echo >&2 "make render-pdf requires liitos but it's not installed - you can install per pip install liitos.  Aborting."; exit 1; }
 	command -v etiketti >/dev/null 2>&1 || { echo >&2 "make render-pdf requires etiketti but it's not installed - you can install per pip install etiketti.  Aborting."; exit 1; }
 	command -v qpdf >/dev/null 2>&1 || { echo >&2 "make render-pdf requires qpdf but it's not installed - you can search the internets on how to install qpdf.  Aborting."; exit 1; }
@@ -94,6 +94,33 @@ render-pdf:
 		max_print_line=10000 liitos render ../../ --target eox-core --facet pdf --patch-tables --filters ' ' --label "etiketti --config etiketti.yml --enforce" && \
 		$(optimize_pdf) -- this.pdf && \
 		cp -a this.pdf ../../../$(out_pdf)
+
+.PHONY: typst
+typst:
+	command -v typst >/dev/null 2>&1 || { echo >&2 "make typst requires typst but it's not installed - you can install per brew install typst.  Aborting."; exit 1; }
+	# Pass 1+2: assemble IR and render typst channel
+	nide assemble
+	nide render -t typst
+	# Prepare logo (pandoc/typst resolves image paths relative to the .typ file)
+	mkdir -p build/images
+	cp ../media/OASISLogo-v3.0.png build/images/
+	# Convert to typst source
+	pandoc -f markdown+definition_lists -t typst --standalone --template etc/openeox.typ --lua-filter build/nide-columns.lua build/typst.md -o build/typst.typ
+	# Compile to PDF
+	typst compile --root . build/typst.typ build/typst.pdf && \
+	  $(optimize_pdf) -- build/typst.pdf && cp -a build/typst.pdf $(out_pdf) && open $(out_pdf)
+
+.PHONY: pdf
+pdf: typst
+
+.PHONY: render-pdf  # Deprecated - backwards compatibility target
+render-pdf: typst
+
+.PHONY: render-html # Deprecated - backwards compatibility target
+render-html: html
+
+.PHONY: render-markdown # Deprecated - backwards compatibility target
+render-markdown: gfm-plus
 
 .PHONY: build
 build: render status
