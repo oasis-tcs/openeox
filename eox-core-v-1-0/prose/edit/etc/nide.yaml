@@ -1,0 +1,64 @@
+assembly:
+  binder: bind.txt
+  source-path: src
+  build-path: build
+  etc-path: etc
+  first-authored-section: '# Scope'
+  binder-ignores:
+    gfm-plus:
+    - table-of-contents.md
+    html: []
+    pdf:
+    - frontmatter.md
+    - table-of-contents.md
+  delete-when: []
+
+structure:
+  section-type-prefixes: [Annex, Appendix]
+
+enumeration:
+  sections:
+    l1-dot: true
+    sub-dot: false
+    reference-style: number
+    lut:
+      label-to-display: section-label-to-display.json
+      display-to-label: section-display-to-label.json
+      display-to-text: section-display-to-text.json
+  examples:
+    track: true
+    global-start: 4321
+    lut:
+      local-to-global: example-local-to-global.json
+      global-to-local: example-global-to-local.json
+
+references:
+  citations:
+    sources:
+    - references-01-norm-01-list.md
+    - references-02-info-01-list.md
+    skip-prefixes: []
+    keyword: cite
+  sections:
+    keyword: sec
+  glossary:
+    sources:
+    - defs-acrs-01-defs-01-terms-ext-list.md
+    - defs-acrs-01-defs-01-terms-int-list.md
+
+channels:
+  html:
+    title: OpenEoX Core Schema Version 1.0
+    inject:
+      css-base: ../share/style/base.css
+      css-skin: ../share/style/skin.css
+      images: false
+      intro-trigger: '<h1 id="1-scope'
+      logo-data-url: ../media/logo-data-url.txt
+      logo-remote-url: 'https://docs.oasis-open.org/templates/OASISLogo-v3.0.png'
+      toc-trigger: '<h1 id="table-of-contents'
+  pdf:
+    logo-local-path: images/OASISLogo-v3.0.png
+    logo-remote-url: 'https://docs.oasis-open.org/templates/OASISLogo-v3.0.png'
+  typst:
+    page-break-l1: true

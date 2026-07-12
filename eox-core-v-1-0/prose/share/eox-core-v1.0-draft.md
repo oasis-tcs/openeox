@@ -1,69 +1,69 @@
 
-![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
+![](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
 ---
 
-# OpenEoX Core Schema Version 1.0
+# OpenEoX Core Schema Version 1.0 <a id='openeox-core-schema-version-1-0'></a>
 
-## Committee Specification Draft 01
+## Committee Specification Draft 01 <a id='committee-specification-draft-01'></a>
 
-## 20 May 2026
+## 13 July 2026 <a id='13-july-2026'></a>
 
-### This Version
+### This Stage <a id='this-stage'></a>
 
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.md (Authoritative) \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.pdf
 
-### Previous Version
+### Previous Stage <a id='previous-stage'></a>
 
 N/A
 
-### Latest Version
+### Latest Stage <a id='latest-stage'></a>
 
 https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.md (Authoritative) \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html \
 https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.pdf
 
-### Technical Committee
+### Technical Committee <a id='technical-committee'></a>
 
 [OASIS OpenEoX TC](https://www.oasis-open.org/tc-openeox/)
 
-### Chairs
-Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
-Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/) \
+### Chairs <a id='chairs'></a>
 
-### Secretaries
+Justin Murphy (justin.murphy@cisa.dhs.gov), [DHS Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov) \
+Omar Santos (osantos@cisco.com), [Cisco Systems](https://cisco.com/)
+
+### Secretaries <a id='secretaries'></a>
 
 Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/)
 
-### Editors
+### Editors <a id='editors'></a>
 
 Jautau White (jaywhite@microsoft.com), [Microsoft Corporation](https://microsoft.com/) \
 Stefan Hagen (stefan@hagen.link), [Individual](https://stefan-hagen.website/) \
 Thomas Schmidt (thomas.schmidt@bsi.bund.de), [Federal Office for Information Security (BSI) Germany](https://www.bsi.bund.de/)
 
-### Additional Artifacts
+### Additional Artifacts <a id='additional-artifacts'></a>
 
 This prose specification is one component of a Work Product that also includes:
 
-- OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/eox-core.json. \
-Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json.
+- OpenEoX Core JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/core.json. \
+Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json.
 - OpenEoX Meta JSON schema: https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/schema/meta.json. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json.
 
-### Declared JSON namespaces
+### Declared JSON namespaces <a id='declared-json-namespaces'></a>
 
-- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json)
-- [https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json](https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json)
+- <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json>
+- <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/meta.json>
 
-### Abstract
+### Abstract <a id='abstract'></a>
 
-The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to
-managing and sharing General Availability (GA), End-of-Sales (EoS), End-of-Life (EoL), and
-End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
+The OpenEoX Core Schema defines the core schema for the OpenEoX unified machine-readable approach to managing and sharing General Availability (GA),
+End-of-Sales (EoS), End-of-Life (EoL), and End-of-Security-Support (EoSSec) information for commercial and open source software and hardware.
 
-### Citation Format
+### Citation Format <a id='citation-format'></a>
 
 When referencing this document, the following citation format should be used:
 
@@ -71,12 +71,12 @@ When referencing this document, the following citation format should be used:
 
 _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
-20 May 2026.
+13 July 2026.
 OASIS Committee Specification Draft 01.
 https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.\
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
 
-### Related Work
+### Related Work <a id='related-work'></a>
 
 This document replaces or supersedes:
 
@@ -86,7 +86,7 @@ This document is related to:
 
 N/A
 
-## License, Document Status, and Notices
+## License, Document Status, and Notices <a id='license-document-status-and-notices'></a>
 
 Copyright &copy; OASIS Open 2026. All Rights Reserved.
 
@@ -170,18 +170,20 @@ which contains the License, Document Status and Notices.
 		9.1.15 [Conformance Clause 15: Sorter](#conformance-clause-15-sorter)  
 		9.1.16 [Conformance Clause 16: Merger](#conformance-clause-16-merger)  
 
-Annex A [License, Document Status and Notices](#annex-a)  
-A.1. [Document Status](#document-status)  
-A.2. [License and Notices](#license-and-notices)  
-Annex B [References](#references)  
+Annex A. [License, Document Status and Notices](#annex-a)  
+	A.1 [Document Status](#document-status)  
+	A.2 [License and Notices](#license-and-notices)  
+Annex B. [References](#references)  
 	B.1 [Normative References](#normative-references)  
 	B.2 [Informative References](#informative-references)  
-Appendix 1 [Acknowledgments](#acknowledgments)  
- [Leadership](#leadership)  
+Appendix 1. [Acknowledgments](#acknowledgments)  
+	 [Leadership](#leadership)  
 	 [Special Thanks](#special-thanks)  
 	 [Participants](#participants)  
-Appendix 2 [Changes From Previous Version](#changes-from-previous-version)  
- [Revision History](#revision-history)  
+Appendix 2. [Changes From Previous Version](#changes-from-previous-version)  
+	 [Revision History](#revision-history)  
+
+
 -------
 
 # 1. Scope <a id='scope'></a>
@@ -220,86 +222,114 @@ This document uses the following abbreviations and acronyms:
 
 This document uses the following terms defined elsewhere:
 
-<dl>
-  <dt id="def;embedded-link-csaf-v2-1">Embedded Link [CSAF-v2.1]</dt>
-  <dd>syntactic construct which enables a message string to refer to a location mentioned in the document.</dd>
-  <dt id="def;empty-array-csaf-v2-1">Empty Array: [CSAF-v2.1]</dt>
-  <dd>array that contains no elements, and so has a length of zero.</dd>
-  <dt id="def;empty-object-csaf-v2-1">Empty Object [CSAF-v2.1]</dt>
-  <dd>object that contains no properties.</dd>
-  <dt id="def;empty-string-csaf-v2-1">Empty String [CSAF-v2.1]</dt>
-  <dd>string that contains no characters, and so has a length of zero.</dd>
-  <dt id="def;end-user-csaf-v2-1">(End) User [CSAF-v2.1]</dt>
-  <dd>person who uses the information in a document to investigate, triage, or resolve results.</dd>
-  <dt id="def;product-csaf-v2-1">Product [CSAF-v2.1]</dt>
-  <dd>is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name.
-      This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.</dd>
-  <dt id="def;property-csaf-v2-1">Property [CSAF-v2.1]</dt>
-  <dd>attribute of an object consisting of a name and a value associated with the name.</dd>
-  <dt id="def;triage-csaf-v2-1">Triage [CSAF-v2.1]</dt>
-  <dd>decide whether a result indicates a problem that needs to be corrected.</dd>
-  <dt id="def;user-csaf-v2-1">User [CSAF-v2.1]</dt>
-  <dd>see end user.</dd>
-  <dt id="def;vendor-csaf-v2-1">Vendor [CSAF-v2.1]</dt>
-  <dd>the community, individual, or organization that created or maintains a product (including open source software and hardware providers).</dd>
-  <dt id="def;white-space-csaf-v2-1">White Space [CSAF-v2.1]</dt>
-  <dd>code point used to improve text readability or token separation as defined in section 12.2 of <a href="#ECMA-262">cite</a>.</dd>
-</dl>
+Embedded Link [CSAF-v2.1]
+:    syntactic construct which enables a message string to refer to a location mentioned in the document.  
+
+Empty Array: [CSAF-v2.1]
+:    array that contains no elements, and so has a length of zero.
+
+Empty Object [CSAF-v2.1]
+:    object that contains no properties.
+
+Empty String [CSAF-v2.1]
+:    string that contains no characters, and so has a length of zero.
+
+(End) User [CSAF-v2.1]
+:    person who uses the information in a document to investigate, triage, or resolve results.
+
+Product [CSAF-v2.1]
+:    is any deliverable (e.g. software, hardware, specification, or service) which can be referred to with a name.
+This applies regardless of the origin, the license model, or the mode of distribution of the deliverable.
+
+Property [CSAF-v2.1]
+:    attribute of an object consisting of a name and a value associated with the name.
+
+Triage [CSAF-v2.1]
+:    decide whether a result indicates a problem that needs to be corrected.
+
+User [CSAF-v2.1]
+:    see end user.
+
+Vendor [CSAF-v2.1]
+:    the community, individual, or organization that created or maintains a product (including open source software and hardware providers).
+
+White Space [CSAF-v2.1]
+:    code point used to improve text readability or token separation as defined in section 12.2 of \[[ECMA-262](#ECMA-262)\].
 
 ### 2.2.2 Terms Defined in this Document <a id='terms-defined-in-this-document'></a>
 
 This document defines the following terms:
 
-<dl>
-  <dt id="def;comparator">Comparator</dt>
-  <dd>A program that compares EoX Core Information and returns the newer one.</dd>
-  <dt id="def;consumer">Consumer</dt>
-  <dd>A program that reads and interprets EoX Core Information.</dd>
-  <dt id="def;end-of-life-eol">End-of-Life (EoL)</dt>
-  <dd>indicates the last day when the particular product (or the product version/release) is officially supported in any way by the vendor.</dd>
-  <dt id="def;end-of-sales-eos">End-of-Sales (EoS)</dt>
-  <dd>indicates the last day when a particular product (or the product version/release) may be ordered by customers from vendor sales channels.</dd>
-  <dt id="def;end-of-security-support-eossec">End-of-Security-Support (EoSSec)</dt>
-  <dd>indicates the last day when the vendor has committed to providing security remediations for the particular product (or the product version/release).</dd>
-  <dt id="def;eox-core-information">EoX Core Information</dt>
-  <dd>Information about end-of-anything in the format defined by this document.</dd>
-  <dt id="def;differ">Differ</dt>
-  <dd>A program that compares EoX Core Information and calculates the changes.</dd>
-  <dt id="def;general-availability-ga">General Availability (GA)</dt>
-  <dd>indicates the first day when the particular product (or the product version/release) is officially launched and made accessible to the general public or through its intended distribution channels.</dd>
-  <dt id="def;library">Library</dt>
-  <dd>A library that implements OpenEoX Core data capabilities.</dd>
-  <dt id="def;library-with-basic-validation">Library with Basic Validation</dt>
-  <dd>A Library that also satisfies the conformance target "Validator Basic".</dd>
-  <dt id="def;library-with-extended-validation">Library with Extended Validation</dt>
-  <dd>A Library that also satisfies the conformance target "Validator Extended".</dd>
-  <dt id="def;library-with-full-validation">Library with Full Validation</dt>
-  <dd>A Library that also satisfies the conformance target "Validator Full".</dd>
-  <dt id="def;merger">Merger</dt>
-  <dd>A program that combines EoX Core Information.</dd>
-  <dt id="def;producer">Producer</dt>
-  <dd>A program which emits output in the OpenEoX Core format.</dd>
-  <dt id="def;product-life-cycle">Product Life Cycle</dt>
-  <dd>describes for a product type (software, hardware, managed service and other deliverables) the model it can be associated with.
-      It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention.</dd>
-  <dt id="def;redactable-property">Redactable Property</dt>
-  <dd>property that potentially contains sensitive information that an EoX Producer might wish to redact.</dd>
-  <dt id="def;sorter">Sorter</dt>
-  <dd>A program that sorts EoX Core Information from newest to oldest or vice versa.</dd>
-  <dt id="def;taxonomy">Taxonomy</dt>
-  <dd>classification of product life cycle stages into a set of categories.</dd>
-  <dt id="def;validator-basic">Validator Basic</dt>
-  <dd>A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.</dd>
-  <dt id="def;validator-extended">Validator Extended</dt>
-  <dd>A Validator Basic that additionally performs recommended tests.</dd>
-  <dt id="def;validator-full">Validator Full</dt>
-  <dd>A Validator Extended that additionally performs guidance tests.</dd>
-  <dt id="def;viewer">Viewer</dt>
-  <dd>A Consumer that reads EoX Core Information, displays a list of the results it contains,
-      and allows an end user to view each result in the context of the artifact in which it occurs.</dd>
-  <dt id="def;viewer-recommending-actions">Viewer Recommending Actions</dt>
-  <dd>A Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.</dd>
-</dl>
+Comparator
+:    A program that compares EoX Core Information and returns the newer one.
+
+Consumer
+:    A program that reads and interprets EoX Core Information.
+
+End-of-Life (EoL)
+:    indicates the last day when the particular product (or the product version/release) is officially supported in any way by the vendor.
+
+End-of-Sales (EoS)
+:    indicates the last day when a particular product (or the product version/release) may be ordered by customers from vendor sales channels.
+
+End-of-Security-Support (EoSSec)
+:    indicates the last day when the vendor has committed to providing security remediations for the particular product (or the product version/release).
+
+EoX Core Information
+:    Information about end-of-anything in the format defined by this document.
+
+Differ
+:    A program that compares EoX Core Information and calculates the changes.
+
+General Availability (GA)
+:    indicates the first day when the particular product (or the product version/release) is officially launched and made accessible to the general public or through its intended distribution channels.
+
+Library
+:    A library that implements OpenEoX Core data capabilities.
+
+Library with Basic Validation
+:    A Library that also satisfies the conformance target "Validator Basic".
+
+Library with Extended Validation
+:    A Library that also satisfies the conformance target "Validator Extended".
+
+Library with Full Validation
+:    A Library that also satisfies the conformance target "Validator Full".
+
+Merger
+:    A program that combines EoX Core Information.
+
+Producer
+:    A program which emits output in the OpenEoX Core format.
+
+Product Life Cycle
+:    describes for a product type (software, hardware, managed service and other deliverables) the model it can be associated with.
+It can contain definitions of various support models (different levels of maintenance) in association to the product versioning convention.
+
+Redactable Property
+:    property that potentially contains sensitive information that an EoX Producer might wish to redact.
+
+Sorter
+:    A program that sorts EoX Core Information from newest to oldest or vice versa.
+
+Taxonomy
+:    classification of product life cycle stages into a set of categories.
+
+Validator Basic
+:    A program that reads a JSON object and checks it against the JSON schema and performs mandatory tests.
+
+Validator Extended
+:    A Validator Basic that additionally performs recommended tests.
+
+Validator Full
+:    A Validator Extended that additionally performs guidance tests.
+
+Viewer
+:    A Consumer that reads EoX Core Information, displays a list of the results it contains,
+and allows an end user to view each result in the context of the artifact in which it occurs.
+
+Viewer Recommending Actions
+:    A Viewer that provides actionable interpretations by mapping life cycle events to recommended actions.
 
 # 3. Document Conventions <a id='document-conventions'></a>
 
@@ -451,7 +481,7 @@ The latter enables separation of concerns as it allows other standards, specific
 and product-specific implementations to import and reference the OpenEoX Core schema.
 This enables consistency and interoperability across different implementations.
 
-The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json>
+The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json>
 
 The schema elements and their expected usage patterns are detailed in subsequent sections.
 
@@ -472,7 +502,6 @@ OpenEoX information items SHOULD only contain members where the value is an Open
 The use of placeholders or `null` values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
 
 > In combination, these to preceding requirements maximize clarity and simplify automation.
-<!-- TODO(sthagen): Where and when did we decide on date references, like v25 will be end-of-support when v27 is GA? -->
 
 OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of
 referenced schema instances.
@@ -679,7 +708,7 @@ The OpenEoX Core Schema (`$schema`) of value type `string` and `const` specifies
 The single valid value for this `const` is:
 
 ```
-  https://docs.oasis-open.org/openeox/v1.0/schema/core.json
+  https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json
 ```
 
 > This value allows for tools to identify that a JSON document is meant to be valid against this schema.
@@ -1192,12 +1221,12 @@ A Merger MAY choose to make that information also available in other data format
 ---
 
 
-# Annex A License, Document Status and Notices <a id='annex-a'></a>
+# Annex A. License, Document Status and Notices <a id='annex-a'></a>
 
 (This annex forms an integral part of this Specification.)
 
 
-## A.1. Document Status <a id='document-status'></a>
+## A.1 Document Status <a id='document-status'></a>
 
 This document was last revised or approved by the OASIS OpenEoX TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa>.
 
@@ -1206,7 +1235,7 @@ TC members should send comments on this document to the TC's email list. Others 
 NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
 
-## A.2. License and Notices <a id='license-and-notices'></a>
+## A.2 License and Notices <a id='license-and-notices'></a>
 
 <!-- Required section. Do not modify. -->
 
@@ -1234,7 +1263,8 @@ The name "OASIS" is a trademark of OASIS, the owner and developer of this docume
 
 ---
 
-# Annex B References <a id='references'></a>
+
+# Annex B. References <a id='references'></a>
 
 (This annex forms an integral part of this Specification.)
 
@@ -1242,11 +1272,13 @@ This section contains the normative and informative references that are used in 
 
 Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
 
+
 ## B.1 Normative References <a id='normative-references'></a>
 
 The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
 
-**\[**<span id="ECMA-262" class="anchor"></span>**ECMA-262\]** _ECMAScript® 2024 Language Specification_, ECMA-262, 15th edition, June 2024, <https://262.ecma-international.org/15.0/>
+
+**\[**<span id="ECMA-262" class="anchor"></span>**ECMA-262\]** _ECMAScript® 2024 Language Specification_, ECMA-262, 15th edition, June 2024, <https://262.ecma-international.org/15.0/>.
 
 **\[**<span id="ISO8601-1" class="anchor"></span>**ISO8601-1\]** _Date and time — Representations for information interchangePart 1: Basic rules_, International Standard, ISO 8601-1:2019(E), February 25, 2019, <https://www.iso.org/standard/70907.html>.
 
@@ -1276,13 +1308,16 @@ The following documents are referenced in such a way that some or all of their c
 
 **\[**<span id="SPDX301" class="anchor"></span>**SPDX301\]** _The System Package Data Exchange® (SPDX®) Specification Version 3.0.1_, Linux Foundation and its Contributors, 2024, <https://spdx.github.io/spdx-spec/>.
 
+
 ## B.2 Informative References <a id='informative-references'></a>
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
+
 **\[**<span id="CSAF-v2.1" class="anchor"></span>**CSAF-v2.1\]** _Common Security Advisory Framework Version 2.1_. Edited by Stefan Hagen, and Thomas Schmidt. 28 May 2025. OASIS Committee Specification Draft 01. https://docs.oasis-open.org/csaf/csaf/v2.1/csd01/csaf-v2.1-csd01.html. Latest stage: https://docs.oasis-open.org/csaf/csaf/v2.1/csaf-v2.1.html.
 
-# Appendix 1 Acknowledgments <a id='acknowledgments'></a>
+
+# Appendix 1. Acknowledgments <a id='acknowledgments'></a>
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
@@ -1308,25 +1343,26 @@ The following individuals have had significant leadership positions during the d
 
 The following individuals have made substantial contributions to this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
-tbd
+- \< Will be filled in at CS01 \>
 
 ## Participants <a id='participants'></a>
 
 The following individuals were members of this committee during the creation of this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
-tbd
+- \< Will be filled in at CS01 \>
 
 ---
 
-# Appendix 2 Changes From Previous Version <a id='changes-from-previous-version'></a>
+
+# Appendix 2. Changes From Previous Version <a id='changes-from-previous-version'></a>
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
 N/A.
 
-##  Revision History <a id='revision-history'></a>
 
-Revision tracking is publicly available in the version control system at
-<https://github.com/oasis-tcs/openeox/commits/main>.
+## Revision History <a id='revision-history'></a>
+
+Revision tracking is publicly available in the [version control system](https://github.com/oasis-tcs/openeox/commits/main).
 
 ---

@@ -20,7 +20,7 @@ The latter enables separation of concerns as it allows other standards, specific
 and product-specific implementations to import and reference the OpenEoX Core schema.
 This enables consistency and interoperability across different implementations.
 
-The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/eox-core.json>
+The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json>
 
 The schema elements and their expected usage patterns are detailed in subsequent sections.
 
@@ -41,7 +41,6 @@ OpenEoX information items SHOULD only contain members where the value is an Open
 The use of placeholders or `null` values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
 
 > In combination, these to preceding requirements maximize clarity and simplify automation.
-<!-- TODO(sthagen): Where and when did we decide on date references, like v25 will be end-of-support when v27 is GA? -->
 
 OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of
 referenced schema instances.
