@@ -113,6 +113,9 @@ typst:
 .PHONY: pdf
 pdf: typst
 
+.PHONY: release
+release: distclean gfm-plus html pdf
+
 .PHONY: render-pdf  # Deprecated - backwards compatibility target
 render-pdf: typst
 
