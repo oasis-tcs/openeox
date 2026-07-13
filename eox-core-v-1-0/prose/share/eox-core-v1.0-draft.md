@@ -501,7 +501,7 @@ The OpenEoX Core schema is designed to be self-contained with minimal external d
 OpenEoX information items SHOULD only contain members where the value is an OpenEoX life cycle date.
 The use of placeholders or `null` values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
 
-> In combination, these to preceding requirements maximize clarity and simplify automation.
+> In combination, these two preceding requirements maximize clarity and simplify automation.
 
 OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of
 referenced schema instances.
@@ -567,7 +567,7 @@ In accordance with \[[RFC3339](#RFC3339)\] and \[[ISO8601-1](#ISO8601-1)\], the 
 - The letter `T` separating the date and time SHALL be upper case.
 - The separator between date and time MUST be the letter `T`.
 - The letter `Z` indicating the timezone UTC SHALL be upper case.
-- Fractions of seconds are allowed as specified in the standards mention above with the full stop (`.`) as separator.
+- Fractions of seconds are allowed as specified in the standards mentioned above with the full stop (`.`) as separator.
 - Empty timezones MUST NOT be used.
 - The ABNF of \[[RFC3339](#RFC3339)\], section 5.6 applies.
 
@@ -585,7 +585,7 @@ The list of changes from the previous version and any revision history can be fo
 
 # 5. Taxonomy <a id='taxonomy'></a>
 
-The following subsections describe the taxonomy defining and explaining all terms the standard is build upon.
+The following subsections describe the taxonomy defining and explaining all terms the standard is built upon.
 
 ## 5.1 End-of-Life <a id='end-of-life'></a>
 
@@ -695,7 +695,7 @@ In any semantic interpretation, the value `tba` MUST be treated as 'not yet anno
 
 ## 6.2 Properties <a id='properties'></a>
 
-The following subsections document the six properties of a OpenEoX Core JSON.
+The following subsections document the six properties of an OpenEoX Core JSON document.
 The four mandatory properties are `$schema`, `end_of_life`, `end_of_security_support`, and `last_updated`.
 The properties `end_of_sales` and `general_availability` are optional.
 
