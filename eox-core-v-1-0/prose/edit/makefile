@@ -56,7 +56,7 @@ gfm-plus: sections
 	  ls -l $(out_gfm_plus)
 
 .PHONY: html
-render-html: gfm-plus
+html: gfm-plus
 	command -v pandoc >/dev/null 2>&1 || { echo >&2 "make render-html requires pandoc but it's not installed - you can get help on installing at https://pandoc.org.  Aborting."; exit 1; }
 	command -v tidy >/dev/null 2>&1 || { echo >&2 "make render-html requires tidy but it's not installed - you can get help on installing by searching for it on the wild internets.  Aborting."; exit 1; }
 	python -m nide assemble -t html && \
