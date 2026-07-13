@@ -12,7 +12,7 @@ enforcement (see [sec](#format-validation)).
 The schema identifier is:
 
 ```
-  "$id": "https://docs.oasis-open.org/openeox/v1.0/schema/core.json",
+  "$id": "https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json",
 ```
 
 The further documentation of the schema is organized via Definitions and Properties.
@@ -21,6 +21,3 @@ The further documentation of the schema is organized via Definitions and Propert
 - Properties use these types to support assembling OpenEoX core information
 
 Types and properties together provide the vocabulary for the domain specific language supporting OpenEoX information.
-
-The four mandatory properties are `$schema`, `end_of_life`, `end_of_security_support`, and `last_updated`.
-The additional property, `end_of_sales`, is optional.
