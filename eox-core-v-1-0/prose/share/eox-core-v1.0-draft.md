@@ -73,7 +73,7 @@ _OpenEoX Core Schema Version 1.0_.
 Edited by Jautau White, Stefan Hagen, and Thomas Schmidt.
 13 July 2026.
 OASIS Committee Specification Draft 01.
-https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html.\
+https://docs.oasis-open.org/openeox/eox-core/v1.0/csd01/eox-core-v1.0-csd01.html. \
 Latest stage: https://docs.oasis-open.org/openeox/eox-core/v1.0/eox-core-v1.0.html
 
 ### Related Work <a id='related-work'></a>
@@ -501,7 +501,7 @@ The OpenEoX Core schema is designed to be self-contained with minimal external d
 OpenEoX information items SHOULD only contain members where the value is an OpenEoX life cycle date.
 The use of placeholders or `null` values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
 
-> In combination, these to preceding requirements maximize clarity and simplify automation.
+> In combination, these two preceding requirements maximize clarity and simplify automation.
 
 OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of
 referenced schema instances.
@@ -567,7 +567,7 @@ In accordance with \[[RFC3339](#RFC3339)\] and \[[ISO8601-1](#ISO8601-1)\], the 
 - The letter `T` separating the date and time SHALL be upper case.
 - The separator between date and time MUST be the letter `T`.
 - The letter `Z` indicating the timezone UTC SHALL be upper case.
-- Fractions of seconds are allowed as specified in the standards mention above with the full stop (`.`) as separator.
+- Fractions of seconds are allowed as specified in the standards mentioned above with the full stop (`.`) as separator.
 - Empty timezones MUST NOT be used.
 - The ABNF of \[[RFC3339](#RFC3339)\], section 5.6 applies.
 
@@ -585,7 +585,7 @@ The list of changes from the previous version and any revision history can be fo
 
 # 5. Taxonomy <a id='taxonomy'></a>
 
-The following subsections describe the taxonomy defining and explaining all terms the standard is build upon.
+The following subsections describe the taxonomy defining and explaining all terms the standard is built upon.
 
 ## 5.1 End-of-Life <a id='end-of-life'></a>
 
@@ -650,7 +650,7 @@ enforcement (see [4.1.5](#format-validation)).
 The schema identifier is:
 
 ```
-  "$id": "https://docs.oasis-open.org/openeox/v1.0/schema/core.json",
+  "$id": "https://docs.oasis-open.org/openeox/eox-core/v1.0/schema/core.json",
 ```
 
 The further documentation of the schema is organized via Definitions and Properties.
@@ -659,9 +659,6 @@ The further documentation of the schema is organized via Definitions and Propert
 - Properties use these types to support assembling OpenEoX core information
 
 Types and properties together provide the vocabulary for the domain specific language supporting OpenEoX information.
-
-The four mandatory properties are `$schema`, `end_of_life`, `end_of_security_support`, and `last_updated`.
-The additional property, `end_of_sales`, is optional.
 
 ## 6.1 Definitions <a id='schema-elements---definitions'></a>
 
@@ -698,7 +695,7 @@ In any semantic interpretation, the value `tba` MUST be treated as 'not yet anno
 
 ## 6.2 Properties <a id='properties'></a>
 
-The following subsections document the five properties of a OpenEoX Core JSON.
+The following subsections document the six properties of an OpenEoX Core JSON document.
 The four mandatory properties are `$schema`, `end_of_life`, `end_of_security_support`, and `last_updated`.
 The properties `end_of_sales` and `general_availability` are optional.
 

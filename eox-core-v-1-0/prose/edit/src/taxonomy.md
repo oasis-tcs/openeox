@@ -1,6 +1,6 @@
 # Taxonomy
 
-The following subsections describe the taxonomy defining and explaining all terms the standard is build upon.
+The following subsections describe the taxonomy defining and explaining all terms the standard is built upon.
 
 ## End-of-Life
 
