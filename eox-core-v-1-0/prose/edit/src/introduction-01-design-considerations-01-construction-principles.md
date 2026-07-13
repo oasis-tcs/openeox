@@ -40,7 +40,7 @@ The OpenEoX Core schema is designed to be self-contained with minimal external d
 OpenEoX information items SHOULD only contain members where the value is an OpenEoX life cycle date.
 The use of placeholders or `null` values is discouraged and any compliant OpenEoX implementation SHOULD ignore such members.
 
-> In combination, these to preceding requirements maximize clarity and simplify automation.
+> In combination, these two preceding requirements maximize clarity and simplify automation.
 
 OpenEoX information items SHOULD NOT contain additional properties in themselves or as part of
 referenced schema instances.
