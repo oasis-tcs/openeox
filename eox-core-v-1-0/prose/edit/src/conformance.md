@@ -192,7 +192,7 @@ Library uses an external library or program for the "Validator Extended" part an
 
 ### Conformance Clause 12: Library with Full Validation
 
-A Library satisfies the "Library with Extended Validation" conformance profile if the Library:
+A Library satisfies the "Library with Full Validation" conformance profile if the Library:
 
 - satisfies the "Library" conformance profile.
 - satisfies the "Validator Full" conformance profile.
