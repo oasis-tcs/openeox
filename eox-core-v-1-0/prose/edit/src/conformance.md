@@ -119,6 +119,10 @@ A program satisfies the "Validator Basic" conformance profile if the program:
 A Validator Basic MAY provide one or more additional functions:
 
 - Only run one or more selected mandatory tests.
+
+  > If only one or more selected tests are run, the tool cannot decide whether the data is overall valid.
+  > Nevertheless, if one selected mandatory test fails, the overall result fails also.
+
 - Apply quick fixes as specified in the standard.
 - Apply additional quick fixes as implemented by the vendor.
 
