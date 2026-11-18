@@ -24,10 +24,19 @@ The OpenEoX Core schema is defined at <https://docs.oasis-open.org/openeox/eox-c
 
 The schema elements and their expected usage patterns are detailed in subsequent sections.
 
-Linking and integration of the OpenEoX Core schema with product identification schema information may lead to inconsistencies.
-The producers of OpenEoX information items have to ensure the intended semantics.
-For example, that life cycle dates are ordered logically.
-Semantic validation is out of scope for this OpenEoX Core specification.
+Linking and integration of the OpenEoX Core schema with product identification
+schema information may lead to inconsistencies. Producers of OpenEoX information
+items remain responsible for ensuring the intended semantics in the relevant
+product context.
+
+OpenEoX Core defines a limited set of high-level semantic checks on relationships
+among life cycle dates within a single EoX Core Information object. Section 7
+specifies these checks and their categories; the applicable conformance
+requirements specify which tests a conforming validator performs and how
+failures are handled. OpenEoX Core does not define or require checks that need
+product-specific or external context, such as verifying dates against the
+published lifecycle of the identified product or checking consistency between
+separate EoX Core Information objects.
 
 The OpenEoX Core schema is designed to be self-contained with minimal external dependencies, utilizing only:
 
